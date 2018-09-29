@@ -20,8 +20,8 @@ infile = open(original_asc, 'r')
 line = ''
 
 while True:
+    # get the next line
     line = infile.readline()
-
     # stop looping at end of file
     if not line:
         break
@@ -30,6 +30,10 @@ while True:
         buffer.append(line)
         freelines -= 1
         continue # skips remainder of this iteration
+
+    ############################################
+    ### METADATA, CALIBRATION, VALIDATION, ETC.
+    ############################################
 
     # keep all blank lines
     if line == '':
@@ -63,6 +67,11 @@ while True:
     # keep this stuff to i guess
     elif 'MSG' in line and 'ERROR MESSAGES LOST' in line:
         buffer.append(line)
+
+
+    ############################################
+    ### TRIALS #################################
+    ############################################
     elif 'MSG' in line and 'TRIALID' in line:
         buffer.append(line)
         # .ias stuff goes here
@@ -75,39 +84,32 @@ while True:
                 break
             elif 'START' in line:
                 # save a space for !MODE RECORD since it comes in the wrong spot
-                filler_index = len(buffer)
-                buffer.append('filler for !MODE RECORD')
+                # seems to already be in place
+                # filler_index = len(buffer)
+                # buffer.append('filler for !MODE RECORD')
                 # keep the START line
                 buffer.append(line)
-                # read PRESCALAR
-                line = infile.readline()
-                if not line:
-                    break
-                buffer.append(line)
-                # read VPRESCALALR
-                line = infile.readline()
-                if not line:
-                    break
-                buffer.append(line)
-                # read PUPIL AREA
-                line = infile.readline()
-                if not line:
-                    break
-                buffer.append(line)
-                # read EVENTS GAZE R/L RATE
-                line = infile.readline()
-                if not line:
-                    break
-                buffer.append(line)
-                # read INPUT something
-                line = infile.readline()
-                if not line:
-                    break
-                buffer.append(line)
+                # read PRESCALER, VPRESCALER, PUPIL AREA, EVENTS GAZE LR RATE, INPUT something
+                for i in range(5):
+                    line = infile.readline()
+                    if not line:
+                        break
+                    if 'PRESCALER' in line or \
+                            'VPRESCALER' in line or \
+                            'PUPIL AREA' in line or \
+                            ('EVENTS' in line and 'GAZE' in line) or \
+                            'INPUT' in line:
+                        buffer.append(line)
                 # read !MODE RECORD and put it back up there in the filler where it belongs
                 line = infile.readline()
-                buffer[filler_index] = line
-                # begin saccads, fizations, blinkings
+                if not line:
+                    break
+                buffer.append(line) # seems to actually be in right place
+                # buffer[filler_index] = line
+                # done reading trial infometatadatastuff
+                done = True
+                # begin saccads, fizations, blinkings TODO
+
 
             elif 'MSG' in line and (\
                     'DRIFTCORRECT' in line or \
@@ -121,6 +123,10 @@ while True:
                     'ELCL_PROC' in line or \
                     'ELCL_PCR_PARAM' in line):
                 buffer.append(line)
+
+    ############################################
+    ### UNKNOWN STUFF ##########################
+    ############################################
 
     else:
         print line

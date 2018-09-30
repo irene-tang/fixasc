@@ -36,7 +36,7 @@ def read_ias(line, timestamp):
     iasfile = open(line, 'r')
 
     buffer_slice = []
-    char = 0
+    char_number = 0
     line_number = 0
 
     buffer_slice.append('MSG ' + str(timestamp) + ' DISPLAY TEXT 1\n')
@@ -53,25 +53,28 @@ def read_ias(line, timestamp):
         x_end = int(line[5])
         y_start = int(line[4])
         y_end = int(line[6])
-        x_step = (x_end - x_start)/len(word)
+        x_step = (x_end - x_start)/(len(word) + 1)
 
         sequence = int(line[2])
         if sequence == 1:
             line_number += 1
+            char_number = 0
 
-        # FIXME: has no spaces
-        for i, c in enumerate(word):
-            if i == len(word)-1:
+        # FIXME: spacing
+        for i in range(len(word)+1):
+            if i == len(word):
+                c = ' '
                 x = x_end
             else:
+                c = word[i]
                 x = x_start + x_step
 
-            buffer_slice.append('MSG ' + str(timestamp) + ' REGION CHAR ' + str(char) + ' ' + str(line_number) + ' ' + c + ' ' + str(x_start) + ' ' + str(y_start) + ' ' + str(x) + ' ' + str(y_end) + '\n')
+            buffer_slice.append('MSG ' + str(timestamp) + ' REGION CHAR ' + str(char_number) + ' ' + str(line_number) + ' ' + c + ' ' + str(x_start) + ' ' + str(y_start) + ' ' + str(x) + ' ' + str(y_end) + '\n')
             buffer_slice.append('MSG ' + str(timestamp) + ' DELAY 1 MS' + '\n')
             x_start = x_start + x_step
 
             timestamp += 1
-            char += 1
+            char_number += 1
 
 while True:
     # get the next line

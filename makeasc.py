@@ -7,7 +7,6 @@ inputs:
 """
 original_asc = sys.argv[1]
 new_asc = sys.argv[2]
-ia_2 = sys.argv[3]
 
 buffer = []
 header = False
@@ -33,37 +32,46 @@ def write_to_outfile():
     outfile.close()
 
 def read_ias(line, timestamp):
-    line = line.split('/')[-1]
+    line = 'COPY OF aoi/' + line.split('/')[-1].strip()
     iasfile = open(line, 'r')
 
     buffer_slice = []
     char = 0
+    line_number = 0
 
-    buffer_slice.append('MSG ' + timestamp + ' DISPLAY TEXT 1')
+    buffer_slice.append('MSG ' + str(timestamp) + ' DISPLAY TEXT 1\n')
 
     while True:
         line = iasfile.readline()
+
         if not line:
             return buffer_slice
 
         line = line.split()
         word = line[-1]
-        x_start = line[3]
-        x_end = line[5]
-        y_start = line[4]
-        y_end = line[6]
+        x_start = int(line[3])
+        x_end = int(line[5])
+        y_start = int(line[4])
+        y_end = int(line[6])
         x_step = (x_end - x_start)/len(word)
 
+        sequence = int(line[2])
+        if sequence == 1:
+            line_number += 1
+
+        # FIXME: has no spaces
         for i, c in enumerate(word):
-            if i = len(word)-1:
-                buffer_slice.append('MSG ' + timestamp + ' REGION CHAR ' + char + ' 1 ' + c + ' ' + x_start + ' ' + y_start + ' ' + x_end + ' ' + y_end)
+            if i == len(word)-1:
+                x = x_end
             else:
-                buffer_slice.append('MSG ' + timestamp + ' REGION CHAR ' + char + ' 1 ' + c + ' ' + x_start + ' ' + y_start + ' ' + (x_start + x_step) + ' ' + y_end)
-            buffer_slice.append('MSG '+ timestamp + ' DELAY 1 MS')
+                x = x_start + x_end
+
+            buffer_slice.append('MSG ' + str(timestamp) + ' REGION CHAR ' + str(char) + ' ' + str(line_number) + ' ' + c + ' ' + str(x_start) + ' ' + str(y_start) + ' ' + str(x) + ' ' + str(y_end) + '\n')
+            buffer_slice.append('MSG ' + str(timestamp) + ' DELAY 1 MS' + '\n')
             x_start = x_start + x_step
 
-        timestamp += 1
-        char += 1
+            timestamp += 1
+            char += 1
 
 while True:
     # get the next line
@@ -125,7 +133,7 @@ while True:
         buffer.append(line)
 
         # TODO .ias stuff goes here
-
+        buffer_holder_index = len(buffer)
 
         line = infile.readline()
         if not line:
@@ -168,7 +176,7 @@ while True:
         # then read in saccads, fizations, blinkings
         done = False
         while not done:
-            #FIXME trying to just get the ones betwween secondarytask while reading limerick
+            #FIXME trying to just get the ones betwween secondarytask while reading limerick?
             if 'SFIX' in line or \
                     'EFIX' in line or \
                     'SSACC' in line or \
@@ -183,6 +191,11 @@ while True:
             elif 'MSG' in line and 'end_trial' in line:
                 buffer.append('ENDTRIALFORMATTING\n')
                 done = True
+
+            elif 'IAREA FILE' in line:
+                timestamp = int(line.split()[1])
+                ias_info = read_ias(line, timestamp)
+                buffer[buffer_holder_index:buffer_holder_index] = ias_info
 
             line = infile.readline()
             if not line:

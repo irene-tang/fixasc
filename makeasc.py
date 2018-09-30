@@ -5,7 +5,6 @@ inputs:
     subjx.asc
     IA_2.ias ... IA101.ias
 """
-
 original_asc = sys.argv[1]
 new_asc = sys.argv[2]
 ia_2 = sys.argv[3]
@@ -18,6 +17,53 @@ freelines = 0 # number of following lines to include with no questions asked
 
 infile = open(original_asc, 'r')
 line = ''
+
+count = 0
+
+def get_next_line():
+    line = infile.readline()
+    if not line:
+        return False
+    return True
+
+def write_to_outfile():
+    with open(new_asc, 'w') as outfile:
+        for x in buffer:
+            outfile.write(x)
+    outfile.close()
+
+def read_ias(line, timestamp):
+    line = line.split('/')[-1]
+    iasfile = open(line, 'r')
+
+    buffer_slice = []
+    char = 0
+
+    buffer_slice.append('MSG ' + timestamp + ' DISPLAY TEXT 1')
+
+    while True:
+        line = iasfile.readline()
+        if not line:
+            return buffer_slice
+
+        line = line.split()
+        word = line[-1]
+        x_start = line[3]
+        x_end = line[5]
+        y_start = line[4]
+        y_end = line[6]
+        x_step = (x_end - x_start)/len(word)
+
+        for i, c in enumerate(word):
+            if i = len(word)-1:
+                buffer_slice.append('MSG ' + timestamp + ' REGION CHAR ' + char + ' 1 ' + c + ' ' + x_start + ' ' + y_start + ' ' + x_end + ' ' + y_end)
+            else:
+                buffer_slice.append('MSG ' + timestamp + ' REGION CHAR ' + char + ' 1 ' + c + ' ' + x_start + ' ' + y_start + ' ' + (x_start + x_step) + ' ' + y_end)
+            buffer_slice.append('MSG '+ timestamp + ' DELAY 1 MS')
+            x_start = x_start + x_step
+
+        timestamp += 1
+        char += 1
 
 while True:
     # get the next line
@@ -72,45 +118,24 @@ while True:
     ############################################
     ### TRIALS #################################
     ############################################
+    # NOTE: ordering of !MODE RECORD and START
+
     elif 'MSG' in line and 'TRIALID' in line:
+        # TODO: rename trialid
         buffer.append(line)
-        # .ias stuff goes here
-        # can read in the following info
+
+        # TODO .ias stuff goes here
+
+
+        line = infile.readline()
+        if not line:
+            break
+
+        # then read in the following info
         done = False
-        filler_index = 0
         while not done:
-            line = infile.readline()
-            if not line:
-                break
-            elif 'START' in line:
-                # save a space for !MODE RECORD since it comes in the wrong spot
-                # seems to already be in place
-                # filler_index = len(buffer)
-                # buffer.append('filler for !MODE RECORD')
-                # keep the START line
+            if 'INPUT' in line:
                 buffer.append(line)
-                # read PRESCALER, VPRESCALER, PUPIL AREA, EVENTS GAZE LR RATE, INPUT something
-                for i in range(5):
-                    line = infile.readline()
-                    if not line:
-                        break
-                    if 'PRESCALER' in line or \
-                            'VPRESCALER' in line or \
-                            'PUPIL AREA' in line or \
-                            ('EVENTS' in line and 'GAZE' in line) or \
-                            'INPUT' in line:
-                        buffer.append(line)
-                # read !MODE RECORD and put it back up there in the filler where it belongs
-                line = infile.readline()
-                if not line:
-                    break
-                buffer.append(line) # seems to actually be in right place
-                # buffer[filler_index] = line
-                # done reading trial infometatadatastuff
-                done = True
-                # begin saccads, fizations, blinkings TODO
-
-
             elif 'MSG' in line and (\
                     'DRIFTCORRECT' in line or \
                     'RECCFG' in line or \
@@ -123,18 +148,58 @@ while True:
                     'ELCL_PROC' in line or \
                     'ELCL_PCR_PARAM' in line):
                 buffer.append(line)
+            elif 'START' in line or \
+                    'PRESCALER' in line or \
+                    'VPRESCALER' in line or \
+                    'PUPIL' in line or \
+                    ('EVENTS' in line and 'GAZE' in line):
+                buffer.append(line)
+            elif 'MSG' in line and '!MODE RECORD' in line:
+                buffer.append(line)
+                done = True
+            else: # error
+                print "ERROR IN LINE: " + line
+                exit(-1)
+
+            line = infile.readline()
+            if not line:
+                break
+
+        # then read in saccads, fizations, blinkings
+        done = False
+        while not done:
+            #FIXME trying to just get the ones betwween secondarytask while reading limerick
+            if 'SFIX' in line or \
+                    'EFIX' in line or \
+                    'SSACC' in line or \
+                    'ESACC' in line or \
+                    'SBLINK' in line or \
+                    'EBLINK' in line:
+                buffer.append(line)
+
+            elif 'BUTTON' in line:
+                buffer.append(line)
+
+            elif 'MSG' in line and 'end_trial' in line:
+                buffer.append('ENDTRIALFORMATTING\n')
+                done = True
+
+            line = infile.readline()
+            if not line:
+                break
+
+
 
     ############################################
-    ### UNKNOWN STUFF ##########################
+    ### UNKNOWN STUFF, LOST INFOMORMATION ######
     ############################################
 
     else:
-        print line
+        if 'TRIAL_VAR' not in line:
+            count += 1
+            print line
 
-
-with open(new_asc, 'w') as outfile:
-    for x in buffer:
-        outfile.write(x)
+write_to_outfile()
+print count
 
 infile.close()
-outfile.close()

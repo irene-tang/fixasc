@@ -64,7 +64,7 @@ def read_ias(line, timestamp):
             if i == len(word)-1:
                 x = x_end
             else:
-                x = x_start + x_end
+                x = x_start + x_step
 
             buffer_slice.append('MSG ' + str(timestamp) + ' REGION CHAR ' + str(char) + ' ' + str(line_number) + ' ' + c + ' ' + str(x_start) + ' ' + str(y_start) + ' ' + str(x) + ' ' + str(y_end) + '\n')
             buffer_slice.append('MSG ' + str(timestamp) + ' DELAY 1 MS' + '\n')

@@ -146,6 +146,11 @@ def main():
     count = 0
     lostcount = 0
 
+    # info about the trial
+    dirtytype = 0
+    rhymetype = 0
+    clashtype = 0
+
     while True:
         # get the next line
         line = infile.readline()
@@ -209,10 +214,11 @@ def main():
             # TODO: rename trialid
 
             #include this line
+            buffer_holder_index_trialid = len(buffer)
             buffer.append(line)
 
             # placeholder index for the .ias stuff that will go here
-            buffer_holder_index = len(buffer)
+            buffer_holder_index_ias = len(buffer)
 
             # get the next line
             line = infile.readline()
@@ -276,11 +282,11 @@ def main():
                     buffer.append('MSG ' + timestamp + ' DISPLAY OFF\n')
                     done = True
 
-                # insert info from .ias file into the stored buffer_holder_index
+                # insert info from .ias file into the stored buffer_holder_index_ias
                 elif 'IAREA FILE' in line:
                     timestamp = int(line.split()[1])
                     ias_info = read_ias_word(line, timestamp)
-                    buffer[buffer_holder_index:buffer_holder_index] = ias_info
+                    buffer[buffer_holder_index_ias:buffer_holder_index_ias] = ias_info
 
                 # get the next line
                 line = infile.readline()
@@ -316,7 +322,14 @@ def main():
         # convert this line to TRIAL OK
         elif 'MSG' in line and 'TRIAL_RESULT' in line and '0' in line:
             timestamp = str(line.split()[1])
-            buffer.append('MSG ' + timestamp + ' TRIAL OK')
+            buffer.append('MSG ' + timestamp + ' TRIAL OK\n')
+
+        # revisit TRIALID for this kind of trial naming convention
+        elif 'MSG' in line and 'TRIAL_VAR' in line and 'DirtyType' in line:
+            print "DirtyType"
+        elif 'MSG' in line and 'TRIAL_VAR' in line and 'RhymeType' in line:
+            new_trialid = 'D\n'
+            buffer[buffer_holder_index_trialid] = new_trialid
 
         # stuff that gets thrown out by this script
         else:

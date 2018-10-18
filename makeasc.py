@@ -31,7 +31,42 @@ def write_to_outfile():
             outfile.write(x)
     outfile.close()
 
-def read_ias(line, timestamp):
+def read_ias_word(line, timestamp):
+    line = 'COPY OF aoi/' + line.split('/')[-1].strip()
+    iasfile = open(line, 'r')
+
+    buffer_slice = []
+    word_number = 0
+    line_number = 0
+
+    buffer_slice.append('MSG ' + str(timestamp) + ' DISPLAY TEXT 1\n')
+
+    while True:
+        line = iasfile.readline()
+
+        if not line:
+            return buffer_slice
+
+        line = line.split()
+
+        word = line[-1]
+        x_start = int(line[3])
+        x_end = int(line[5])
+        y_start = int(line[4])
+        y_end = int(line[6])
+
+        sequence = int(line[2])
+        if sequence == 1:
+            line_number += 1
+            word_number = 0
+
+        buffer_slice.append('MSG ' + str(timestamp) + ' REGION CHAR ' + str(word_number) + ' ' + str(line_number) + ' ' + word + ' ' + str(x_start) + ' ' + str(y_start) + ' ' + str(x_end) + ' ' + str(y_end) + '\n')
+        buffer_slice.append('MSG ' + str(timestamp) + ' DELAY 1 MS' + '\n')
+
+        timestamp += 1
+        word_number += 1
+
+def read_ias_letter(line, timestamp):
     line = 'COPY OF aoi/' + line.split('/')[-1].strip()
     iasfile = open(line, 'r')
 
@@ -197,7 +232,7 @@ while True:
 
             elif 'IAREA FILE' in line:
                 timestamp = int(line.split()[1])
-                ias_info = read_ias(line, timestamp)
+                ias_info = read_ias_word(line, timestamp)
                 buffer[buffer_holder_index:buffer_holder_index] = ias_info
 
             line = infile.readline()

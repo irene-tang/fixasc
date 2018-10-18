@@ -1,10 +1,5 @@
 import sys
 
-"""
-inputs:
-    subjx.asc
-    IA_2.ias ... IA101.ias
-"""
 original_asc = sys.argv[1]
 new_asc = sys.argv[2]
 
@@ -18,6 +13,7 @@ infile = open(original_asc, 'r')
 line = ''
 
 count = 0
+lostcount = 0
 
 def get_next_line():
     line = infile.readline()
@@ -159,6 +155,9 @@ while True:
     # keep this stuff to i guess
     elif 'MSG' in line and 'ERROR MESSAGES LOST' in line:
         buffer.append(line)
+    # keep drift correction info
+    elif 'MSG' in line and 'DRIFTCORRECT' in line:
+        buffer.append(line)
 
 
     ############################################
@@ -214,7 +213,6 @@ while True:
         # then read in saccads, fizations, blinkings
         done = False
         while not done:
-            #FIXME trying to just get the ones betwween secondarytask while reading limerick?
             if 'SFIX' in line or \
                     'EFIX' in line or \
                     'SSACC' in line or \
@@ -227,7 +225,8 @@ while True:
                 buffer.append(line)
 
             elif 'MSG' in line and 'end_trial' in line:
-                buffer.append('ENDTRIALFORMATTING\n')
+                timestamp = str(line.split()[1])
+                buffer.append('MSG ' + timestamp + ' DISPLAY OFF\n')
                 done = True
 
             elif 'IAREA FILE' in line:
@@ -239,18 +238,45 @@ while True:
             if not line:
                 break
 
+    ############################################
+    ### FOLLOWUP ###############################
+    ############################################
+    elif 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
+        buffer.append(line)
 
+        done = False
+        while not done:
+            line = infile.readline()
+            if not line:
+                break
+            if 'END' in line and 'EVENTS' in line and 'RES' in line:
+                done = True
+            buffer.append(line)
 
     ############################################
     ### UNKNOWN STUFF, LOST INFOMORMATION ######
     ############################################
 
+    elif 'MSG' in line and 'TRIAL_RESULT' in line and '0' in line:
+        timestamp = str(line.split()[1])
+        buffer.append('MSG ' + timestamp + ' TRIAL OK')
+
     else:
-        if 'TRIAL_VAR' not in line:
+        if 'TRIAL_VAR' not in line and \
+            'TRIAL_RESULT' not in line and \
+            'BUTTON' not in line and \
+            'SFIX' not in line and \
+            'EFIX' not in line and \
+            'SSACC' not in line and \
+            'ESACC' not in line and \
+            'prepare_sequence' not in line:
             count += 1
             print line
+        else:
+            lostcount += 1
 
 write_to_outfile()
 print count
+print lostcount
 
 infile.close()

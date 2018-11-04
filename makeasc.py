@@ -9,12 +9,12 @@ def write_to_outfile(new_asc, buffer):
             outfile.write(x)
     outfile.close()
 
-def read_ias_word(line, timestamp):
+def read_ias_word(line, timestamp, ias_folder):
     """
     Reads the contentes of the .ias file word-by-word into a buffer
     """
     # format the path to the folder where the .ias files are stored
-    line = 'COPY OF aoi/' + line.split('/')[-1].strip()
+    line = ias_folder + line.split('/')[-1].strip()
     iasfile = open(line, 'r')
 
     # buffer to hold the lines before they get combined into
@@ -57,13 +57,13 @@ def read_ias_word(line, timestamp):
         timestamp += 1
         word_number += 1
 
-def read_ias_letter(line, timestamp):
+def read_ias_letter(line, timestamp, ias_folder):
     """
     Reads the contentes of the .ias file letter-by-letter into a buffer
     (This method is not currently being used)
     """
     # format the path to the folder where the .ias files are stored
-    line = 'COPY OF aoi/' + line.split('/')[-1].strip()
+    line = ias_folder + line.split('/')[-1].strip()
     iasfile = open(line, 'r')
 
     # buffer to hold the lines before they get combined into
@@ -124,14 +124,16 @@ def main():
     parsed by UMass Eyetracking clean-up software
     """
     # check for correct command-line inputs
-    if len(sys.argv) != 3:
-        print "usage: python makeasc.py [original_asc input] [new_asc output]"
+    if len(sys.argv) != 4:
+        print "usage: python makeasc.py [original_asc input] [new_asc output] [ias_folder]"
         exit(-1)
 
     # the original asc input file
     original_asc = sys.argv[1]
     # the desired asc output file
     new_asc = sys.argv[2]
+    # the folder where .ias files are stored
+    ias_folder = sys.argv[3]
     # open the input file
     infile = open(original_asc, 'r')
 
@@ -212,10 +214,10 @@ def main():
         # parsing info for one trail
         elif 'MSG' in line and 'TRIALID' in line:
             # TODO: rename trialid
-
             #include this line
             buffer_holder_index_trialid = len(buffer)
-            buffer.append(line)
+            print line
+            # buffer.append(line)
 
             # placeholder index for the .ias stuff that will go here
             buffer_holder_index_ias = len(buffer)
@@ -285,7 +287,7 @@ def main():
                 # insert info from .ias file into the stored buffer_holder_index_ias
                 elif 'IAREA FILE' in line:
                     timestamp = int(line.split()[1])
-                    ias_info = read_ias_word(line, timestamp)
+                    ias_info = read_ias_word(line, timestamp, ias_folder)
                     buffer[buffer_holder_index_ias:buffer_holder_index_ias] = ias_info
 
                 # get the next line
@@ -325,11 +327,16 @@ def main():
             buffer.append('MSG ' + timestamp + ' TRIAL OK\n')
 
         # revisit TRIALID for this kind of trial naming convention
-        elif 'MSG' in line and 'TRIAL_VAR' in line and 'DirtyType' in line:
-            print "DirtyType"
+        # elif 'MSG' in line and 'TRIAL_VAR' in line and 'DirtyType' in line:
+            # print "DirtyType" # NOTE testing
+            # skip
+
         elif 'MSG' in line and 'TRIAL_VAR' in line and 'RhymeType' in line:
-            new_trialid = 'D\n'
-            buffer[buffer_holder_index_trialid] = new_trialid
+        #     # NOTE testing
+            new_trialid = 'DNEWTRIALID\n'
+            print buffer[buffer_holder_index_trialid]
+            buffer[buffer_holder_index_trialid:buffer_holder_index_trialid] = new_trialid
+            print buffer[buffer_holder_index_trialid]
 
         # stuff that gets thrown out by this script
         else:

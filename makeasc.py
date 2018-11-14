@@ -148,10 +148,10 @@ def main():
     count = 0
     lostcount = 0
 
-    # info about the trial
-    dirtytype = 0
-    rhymetype = 0
-    clashtype = 0
+    # # info about the trial
+    # dirtytype = 0
+    # rhymetype = 0
+    # clashtype = 0
 
     while True:
         # get the next line
@@ -213,11 +213,9 @@ def main():
         # NOTE: ordering of !MODE RECORD and START seems to be inconsistent sometimes
         # parsing info for one trail
         elif 'MSG' in line and 'TRIALID' in line:
-            # TODO: rename trialid
             #include this line
             buffer_holder_index_trialid = len(buffer)
-            print line
-            # buffer.append(line)
+            old_trialid = line
 
             # placeholder index for the .ias stuff that will go here
             buffer_holder_index_ias = len(buffer)
@@ -296,10 +294,61 @@ def main():
                 if not line:
                     break
 
+
+        ############################################
+        ### TWEAK TRIALID ##########################
+        ############################################
+
+        # revisit TRIALID for this kind of trial naming convention
+        elif 'MSG' in line and 'TRIAL_VAR' in line and 'TrialID' in line:
+            # FIXME not sure if this actually what we want as I
+            # FIXME the TrialID line doesn't work
+            trial_id = line.split()[-1]
+            # print "ues"
+        elif 'MSG' in line and 'TRIAL_VAR' in line and 'ClashType' in line:
+        #     # NOTE testing
+            clash_type = line.split()[-1]
+        elif 'MSG' in line and 'TRIAL_VAR' in line and 'SecondaryTask' in line:
+            secondary_task = line.split()[-1]
+
+            if clash_type == 'match' and secondary_task == 'tap':
+                E = 'E1'
+                D = 'D0'
+                # print trial_id
+            elif clash_type == 'match' and secondary_task == 'this':
+                E = 'E2'
+                D = 'D0'
+            elif clash_type == 'clash' and secondary_task == 'tap':
+                E = 'E3'
+                D = 'D0'
+            elif clash_type == 'clash' and secondary_task == 'this':
+                E = 'E4'
+                D = 'D0'
+            elif clash_type == 'FILLLER':
+                # NOTE the asc does say filller with three L's
+                E = 'E5'
+                D = 'D1'
+            else:
+                print("something broken with tweaking TRIALID")
+                print clash_type + secondary_task
+                exit(-1)
+
+            # I = 'I' + trial_id
+
+            # old_trialid = buffer[buffer_holder_index_trialid -2]
+            print old_trialid
+            new_trialid = old_trialid[:old_trialid.rfind(' ')] + ' ' + E + D + '\n' #+ I in the middle
+            print new_trialid
+            buffer[buffer_holder_index_trialid:buffer_holder_index_trialid] = new_trialid
+
+        # elif 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
+        #     question_trialid = '\n'
+
         ############################################
         ### FOLLOWUP ###############################
         ############################################
         # parsing info for the followup question
+        # separate this into new trialid
         elif 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
             # include this line
             buffer.append(line)
@@ -325,18 +374,10 @@ def main():
         elif 'MSG' in line and 'TRIAL_RESULT' in line and '0' in line:
             timestamp = str(line.split()[1])
             buffer.append('MSG ' + timestamp + ' TRIAL OK\n')
+        # keep this stuff
+        elif 'INPUT' in line and '127' in line:
+            buffer.append(line)
 
-        # revisit TRIALID for this kind of trial naming convention
-        # elif 'MSG' in line and 'TRIAL_VAR' in line and 'DirtyType' in line:
-            # print "DirtyType" # NOTE testing
-            # skip
-
-        elif 'MSG' in line and 'TRIAL_VAR' in line and 'RhymeType' in line:
-        #     # NOTE testing
-            new_trialid = 'DNEWTRIALID\n'
-            print buffer[buffer_holder_index_trialid]
-            buffer[buffer_holder_index_trialid:buffer_holder_index_trialid] = new_trialid
-            print buffer[buffer_holder_index_trialid]
 
         # stuff that gets thrown out by this script
         else:
@@ -349,7 +390,7 @@ def main():
                 'ESACC' not in line and \
                 'prepare_sequence' not in line:
                 count += 1
-                print line
+                # print line
             else:
                 lostcount += 1
 

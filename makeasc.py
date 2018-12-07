@@ -57,6 +57,8 @@ def read_ias_word(line, timestamp, ias_folder):
         timestamp += 1
         word_number += 1
 
+
+# TODO: actually letter by letter
 def read_ias_letter(line, timestamp, ias_folder):
     """
     Reads the contentes of the .ias file letter-by-letter into a buffer
@@ -148,12 +150,13 @@ def main():
     count = 0
     lostcount = 0
 
-    # # info about the trial
-    # dirtytype = 0
-    # rhymetype = 0
-    # clashtype = 0
 
     while True:
+        # reset info about the trial
+        subtypeid = 0
+        clashtype = 0
+        secondarytask = 0
+
         # get the next line
         line = infile.readline()
         # stop looping if the end of file is reached
@@ -262,7 +265,26 @@ def main():
                 if not line:
                     break
 
-            # then read in saccads, fixations, blinkings info
+            # skip the dual-task instructions screen
+            done = False
+            while not done:
+                if 'MSG' in line and 'SHOW LIMERICK' in line:
+                    done = True
+
+                # get the next line
+                line = infile.readline()
+                # stop looking if the end of the file is reached
+                if not line:
+                    break
+
+            # skip the first line after SHOW LIMERICK, which is an EFIX
+            # get the next line
+            line = infile.readline()
+            # stop looking if the end of the file is reached
+            if not line:
+                break
+
+            # then read in saccads, fixations, blinkings info for the limerick portion
             done = False
             while not done:
                 if 'SFIX' in line or \
@@ -277,7 +299,8 @@ def main():
                     buffer.append(line)
 
                 # stop looping at the sight of this
-                elif 'MSG' in line and 'end_trial' in line:
+                # elif 'MSG' in line and 'end_trial' in line:
+                elif 'MSG' in line and 'STOP SECONDARY TASK' in line:
                     timestamp = str(line.split()[1])
                     buffer.append('MSG ' + timestamp + ' DISPLAY OFF\n')
                     done = True
@@ -295,76 +318,109 @@ def main():
                     break
 
 
-        ############################################
-        ### TWEAK TRIALID ##########################
-        ############################################
-
-        # revisit TRIALID for this kind of trial naming convention
-        elif 'MSG' in line and 'TRIAL_VAR' in line and 'TrialID' in line:
-            # FIXME not sure if this actually what we want as I
-            # FIXME the TrialID line doesn't work
-            trial_id = line.split()[-1]
-            # print "ues"
-        elif 'MSG' in line and 'TRIAL_VAR' in line and 'ClashType' in line:
-        #     # NOTE testing
-            clash_type = line.split()[-1]
-        elif 'MSG' in line and 'TRIAL_VAR' in line and 'SecondaryTask' in line:
-            secondary_task = line.split()[-1]
-
-            if clash_type == 'match' and secondary_task == 'tap':
-                E = 'E1'
-                D = 'D0'
-                # print trial_id
-            elif clash_type == 'match' and secondary_task == 'this':
-                E = 'E2'
-                D = 'D0'
-            elif clash_type == 'clash' and secondary_task == 'tap':
-                E = 'E3'
-                D = 'D0'
-            elif clash_type == 'clash' and secondary_task == 'this':
-                E = 'E4'
-                D = 'D0'
-            elif clash_type == 'FILLLER':
-                # NOTE the asc does say filller with three L's
-                E = 'E5'
-                D = 'D1'
-            else:
-                print("something broken with tweaking TRIALID")
-                print clash_type + secondary_task
-                exit(-1)
-
-            # I = 'I' + trial_id
-
-            # old_trialid = buffer[buffer_holder_index_trialid -2]
-            print old_trialid
-            new_trialid = old_trialid[:old_trialid.rfind(' ')] + ' ' + E + D + '\n' #+ I in the middle
-            print new_trialid
-            buffer[buffer_holder_index_trialid:buffer_holder_index_trialid] = new_trialid
-
-        # elif 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
-        #     question_trialid = '\n'
-
-        ############################################
-        ### FOLLOWUP ###############################
-        ############################################
-        # parsing info for the followup question
-        # separate this into new trialid
-        elif 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
-            # include this line
-            buffer.append(line)
-
+            # skip the dual-task end instructions screen
             done = False
             while not done:
+                if 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
+                    done = True
+
                 # get the next line
                 line = infile.readline()
                 # stop looking if the end of the file is reached
                 if not line:
                     break
+
+
+            # skip the first line after SHOW FOLLOWUP, which is an EFIX
+            # get the next line
+            line = infile.readline()
+            # stop looking if the end of the file is reached
+            if not line:
+                break
+
+            # then read in saccads, fixations, blinkings info for the followup portion
+            done = False
+            while not done:
+                if 'SFIX' in line or \
+                        'EFIX' in line or \
+                        'SSACC' in line or \
+                        'ESACC' in line or \
+                        'SBLINK' in line or \
+                        'EBLINK' in line:
+                    buffer.append(line)
+
+                elif 'BUTTON' in line:
+                    buffer.append(line)
+
                 # stop looping at the sight of this
-                if 'END' in line and 'EVENTS' in line and 'RES' in line:
+                # elif 'MSG' in line and 'end_trial' in line:
+                elif 'END' in line and 'EVENTS' in line and 'RES' in line:
+                    timestamp = str(line.split()[1])
+                    buffer.append('MSG ' + timestamp + ' DISPLAY OFF\n')
                     done = True
-                # include the current line
-                buffer.append(line)
+
+                # insert info from .ias file into the stored buffer_holder_index_ias TODO new ias for followup
+                elif 'IAREA FILE' in line:
+                    timestamp = int(line.split()[1])
+                    ias_info = read_ias_word(line, timestamp, ias_folder)
+                    buffer[buffer_holder_index_ias:buffer_holder_index_ias] = ias_info
+
+                # get the next line
+                line = infile.readline()
+                # stop looking if the end of the file is reached
+                if not line:
+                    break
+
+
+            ############################################
+            ### TRIAL TYPE INFO ########################
+            ############################################
+            # get info about the trial
+            done = False
+            while not done:
+                if 'TRIAL_VAR' in line and 'subtypeid' in line:
+                    subtypeid = line.split()[-1]
+                elif 'TRIAL_VAR' in line and 'clashtype' in line:
+                    clashtype = line.split()[-1]
+                elif 'TRIAL_VAR' in line and 'secondarytask' in line:
+                    secondarytask = line.split()[-1]
+                elif 'TRIAL_RESULT' in line: #FIXME this line later gets converted to something else
+                    done = True
+
+                # get the next line
+                line = infile.readline()
+                # stop looking if the end of the file is reached
+                if not line:
+                    break
+
+
+            #tweak the ID
+            I = 'I' + str(subtypeid)
+            if clashtype == 'match' and secondarytask == 'tap':
+                E = 'E1'
+                D = 'D0'
+            elif clashtype == 'match' and secondarytask == 'this':
+                E = 'E2'
+                D = 'D0'
+            elif clashtype == 'clash' and secondarytask == 'tap':
+                E = 'E3'
+                D = 'D0'
+            elif clashtype == 'clash' and secondarytask == 'this':
+                E = 'E4'
+                D = 'D0'
+            elif clashtype == 'FILLLER':
+                # NOTE the asc does say filller with three L's
+                E = 'E5'
+                D = 'D1'
+            else:
+                print("something broken with tweaking TRIALID")
+                exit(-1)
+            EID = E + I + D
+
+            new_id = old_trialid.rsplit(' ', 1)[0] + ' ' + EID + '\n'
+            buffer[buffer_holder_index_trialid:buffer_holder_index_trialid] = new_id
+
+
 
         ############################################
         ### UNKNOWN STUFF, LOST INFOMORMATION ######

@@ -1,10 +1,11 @@
 import sys
 
-def write_to_outfile(new_asc, buffer):
+
+def write_to_outfile(new_asc_filename, buffer):
     """
     Writes the contentes of the buffer list into the new_asc output file
     """
-    with open(new_asc, 'w') as outfile:
+    with open(new_asc_filename, 'w') as outfile:
         for x in buffer:
             outfile.write(x)
     outfile.close()
@@ -58,7 +59,7 @@ def read_ias_word(line, timestamp, ias_folder):
         word_number += 1
 
 
-# TODO: actually letter by letter
+# TODO: actually letter by letter, and TODO: timestamps are off
 def read_ias_letter(line, timestamp, ias_folder):
     """
     Reads the contentes of the .ias file letter-by-letter into a buffer
@@ -182,7 +183,7 @@ def main():
             done = True
             buffer.append(line)
         # keep all blank lines
-        elif line == '':
+        elif line.strip() == '':
             buffer.append(line)
         # keep all comments, which begin with **
         elif line[0:2] == '**':
@@ -201,17 +202,23 @@ def main():
         if 'MSG' in line and '!CAL' in line:
             done = True
             buffer.append(line)
+        # keep all blank lines
+        elif line.strip() == '':
+            buffer.append(line)
         # keep display coords info (should be just once)
         elif 'MSG' in line and 'DISPLAY_COORDS' in line:
-            buffer.append(line.replace('DISPLAY_COORDS', 'DISPLAY COORDS'))
-        # TODO: retrace_interval versus framerarte
+            buffer.append(line)
+        # NOTE seems like FRAMERATE is not applicable here -- see pg 83 of Eyelink Programmer Guide
+        # NOTE not actually sure what retrace_interval is
         elif 'RETRACE_INTERVAL' in line:
-            pass
+            # pass
+            buffer.append(line)
         # keep any input info
         elif 'INPUT' in line:
             buffer.append(line)
 
     # get the calibration and info
+    # NOTE should we just keep the last successful calibration and validation, or keep all?
     done = False
     while not done:
         # get the next line
@@ -226,80 +233,54 @@ def main():
             # do not append here, will deal with this line in the next section (which  is trials)
         # basically keep everything else in the calibration section, until the exit state is reached
         else:
-            # buffer.append(line)
-            pass
-
-        # # keep the >>>> calibration header line
-        # if line.strip()[0:4] == '>>>>':
-            # buffer.append(line)
-
-        # # keep calibration info
-        # elif 'MSG' in line and '!CAL' in line:
-        #     buffer.append(line)
-        #     # also keep the line(s) following these
-        #     if 'eye check box' in line:
-        #         freelines += 1
-        #     elif 'href cal range' in line:
-        #         freelines += 1
-        #     elif 'Cal coeff' in line:
-        #         freelines += 2
-        #     elif 'Quadrant center' in line: # not sure why they needed new line for this
-        #         freelines += 1
-        #     elif 'Corner correction' in line:
-        #         freelines += 4
-        # # keep validation info
-        # elif 'MSG' in line and 'VALIDATE' in line:
-        #     buffer.append(line)
-        # # keep this stuff to i guess
-        # elif 'MSG' in line and 'ERROR MESSAGES LOST' in line:
-        #     buffer.append(line)
-        # # keep drift correction info
-        # elif 'MSG' in line and 'DRIFTCORRECT' in line:
-        #     buffer.append(line)
-
-    ############################################
-    ### PRACTICE TRIALS ########################
-    ############################################
-    # first deal with the abandoned TRIALID from the current line
-    current_trialid = line # TODO repair this for the first practice lim
-    buffer.append(current_trialid)
-
-    #TODO add practice ias info here
-
-    # get camera info -- TODO possibly might need some re ordering of certain lines since they don't line up exactly
-    done = False
-    while not done:
-        # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
-
-        # exit sate
-        if 'MSG' in line and 'str("START PRACTICE LIMERICK' in line:
-            done  = True
-        # basically get everything up until the actual eye movement data
-        else:
             buffer.append(line)
             # pass
 
-    # read limerick 1 -- TODO need to look into segregating the limerick from the question
-    # for now just keep all practice trial info, unparsed
-    done = False
-    while not done:
-        # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
 
-        # exit state
-        if 'MSG' in line and 'str("END PRACTICE LIMERICKS AND BEGIN REAL TRIALS")' in line:
-            done = True
-            buffer.append(line)
-        else:
-            # buffer.append(line)
-            pass
+    ############################################
+    ### PRACTICE TRIALS ########################
+    ### TODO does this really need to be implemented?
+    ############################################
+    # # first deal with the abandoned TRIALID from the current line
+    # current_trialid = line # TODO repair this for the first practice lim
+    # buffer.append(current_trialid)
+    #
+    # #TODO add practice ias info here
+    #
+    # # get camera info -- TODO possibly might need some re ordering of certain lines since they don't line up exactly
+    # done = False
+    # while not done:
+    #     # get the next line
+    #     line = infile.readline()
+    #     # stop looping if the end of file is reached
+    #     if not line:
+    #         break
+    #
+    #     # exit sate
+    #     if 'MSG' in line and 'str("START PRACTICE LIMERICK' in line:
+    #         done  = True
+    #     # basically get everything up until the actual eye movement data
+    #     else:
+    #         buffer.append(line)
+    #         # pass
+    #
+    # # read limerick 1 -- TODO need to look into segregating the limerick from the question
+    # # for now just keep all practice trial info, unparsed
+    # done = False
+    # while not done:
+    #     # get the next line
+    #     line = infile.readline()
+    #     # stop looping if the end of file is reached
+    #     if not line:
+    #         break
+    #
+    #     # exit state
+    #     if 'MSG' in line and 'str("END PRACTICE LIMERICKS AND BEGIN REAL TRIALS")' in line:
+    #         done = True
+    #         buffer.append(line)
+    #     else:
+    #         # buffer.append(line)
+    #         pass
 
     ############################################
     ### REAL TRIALS ############################
@@ -309,10 +290,19 @@ def main():
     subtypeid = ''
     clashtype = ''
     secondarytask = ''
+    dirtytype = ''
     iarea = ''
     old_trialid = ''
-    buffer_holder_index_trialid = -1
-    buffer_holder_index_ias = -1
+    buffer_holder_index_trialid_limerick = -1
+    buffer_holder_index_trialid_question = -1
+    buffer_holder_index_ias_limerick = -1
+    buffer_holder_index_ias_question = -1
+    buffer_holder_index_eventsr = -1
+    buffer_holder_index_questiona = -1
+    timestamp_end_lim = ''
+    timestamp_end_ques  = ''
+    timestamp_iarea = ''
+    events_res_line = ''
 
 
     # skip the extra trial metadata info here
@@ -327,6 +317,10 @@ def main():
         # exit state
         if 'MSG' in line and 'prepare_sequence' in line:
             done = True
+
+    #############################################
+    #### the limerick ###########################
+    #############################################
 
     # parsing info for one trial
     # trigger: prepare_sequence
@@ -343,12 +337,11 @@ def main():
         if 'MSG' in line and 'TRIALID' in line:
             done = True
             old_trialid = line
-            buffer_holder_index_trialid = len(buffer)
-            print str(old_trialid) + "dd"
-            print str(buffer_holder_index_trialid) + "AA"
+            buffer_holder_index_trialid_limerick = len(buffer)
+            buffer.append("trialid lim placeholder")
 
-        # placeholder index for the .ias stuff that will go here
-        buffer_holder_index_ias = len(buffer)
+    # placeholder index for the .ias stuff that will go here
+    buffer_holder_index_ias_limerick = len(buffer)
 
     # read in camera info
     done = False
@@ -362,9 +355,39 @@ def main():
         # exit state
         if '!MODE RECORD' in line:
             done = True
+            buffer[buffer_holder_index_moder] = line
+        elif 'RECCFG' in line:
+            buffer_holder_index_input = len(buffer)
+            # buffer.append("placeholder for INPUT")
+            buffer.append(line)
+        elif 'START' in line and 'EVENTS' in line:
+            buffer_holder_index_moder = len(buffer)
+            buffer.append("placeholder for !MODE RECORD")
+            buffer.append(line)
+        elif 'INPUT' in line and '127' in line:
+            # buffer[buffer_holder_index_input] = line
             buffer.append(line)
         else:
             buffer.append(line)
+
+    # the three-ish lines between !MODE RECORD and START SECONDARTY TASK
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit state
+        if 'MSG' in line and 'START SECONDARY TASK' in line:
+            done = True
+
+        elif 'SFIX' in line:
+            buffer.append(line)
+        elif 'DRAW_LIST' in line:
+            buffer.append(line.split(' ', 3)[0]+' DISPLAY ON\n')
+            buffer[len(buffer)-2], buffer[len(buffer)-1] = buffer[len(buffer)-1], buffer[len(buffer)-2]
 
     # skip the dual-task instructions screen
     done = False
@@ -382,6 +405,7 @@ def main():
             iarea = line
 
     # get the eye-movements for viewing the limerick
+    button_number = ''
     done = False
     while not done:
         # get the next line
@@ -393,19 +417,27 @@ def main():
         # exit state
         if 'MSG' in line and 'STOP SECONDARY TASK' in line:
             done = True
-            timestamp = str(line.split()[1])
-            buffer.append('MSG ' + timestamp + ' DISPLAY OFF\n')
+            timestamp_end_lim = str(line.split()[1])
+            # mark trial ok at the end of the limerick portion, add placeholders
+            buffer.append('MSG ' + timestamp_end_lim + ' ENDBUTTON ' + button_number + '\n') #FIXME
+            buffer.append('MSG ' + timestamp_end_lim + ' DISPLAY OFF\n')
+            buffer.append('MSG ' + timestamp_end_lim + ' TRIAL_RESULT ' + button_number +'\n') #FIXME
+            buffer.append('MSG ' + timestamp_end_lim + ' TRIAL OK\n')
+            # put this placeholder here
+            buffer_holder_index_eventsr = len(buffer)
+            buffer.append('END ' + timestamp_end_lim + ' placeholder\n')
+
         # get eye movements
         elif 'SFIX' in line or \
                 'EFIX' in line or \
                 'SSACC' in line or \
                 'ESACC' in line or \
                 'SBLINK' in line or \
-                'EBLINK' in line or \
-                'BUTTON' in line:
+                'EBLINK' in line:
             buffer.append(line)
-        else: # error?
-            print "NOT FOUND WHILE PARSING LIMERICK EYE-MOEMENTS: " + line
+        elif 'BUTTON' in line:
+            buffer.append(line)
+            button_number = line.split()[2]
 
     # skip the dual-task end instructions screen (and the other trial metadata)
     done = False
@@ -420,10 +452,25 @@ def main():
         if 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
             done = True
 
-    # make new trial for the question
-    # - add TRILID
+
+    #############################################
+    #### make new trial for the question ########
+    #############################################
+
+    # placeholder for TRIALID
+    buffer_holder_index_trialid_question = len(buffer)
+    buffer.append('MSG ' + timestamp_end_lim + ' TRIALID\n')
+
+    # placeholder index for the .ias stuff that will go here
+    buffer_holder_index_questiona = len(buffer)
+    buffer.append('MSG ' + timestamp_end_lim + ' QUESTION_ANSWER\n')
+    buffer_holder_index_ias_question = len(buffer)
+    buffer.append('MSG ' + timestamp_end_lim + ' DELAY 0 MS\n')
+
     # - add camera info
-    # add eye-movements
+
+    # get the eye-movements for viewing the question
+    button_number = ''
     done = False
     while not done:
         # get the next line
@@ -435,18 +482,31 @@ def main():
         # exit state
         if 'END' in line and 'EVENTS' in line and 'RES' in line:
             done = True
-            buffer.append(line) # amend this by converting to TRIAL OK ? TODO
+            timestamp_end_ques = str(line.split()[1])
+            # mark trial ok at the end of the limerick portion, add placeholders
+            buffer.append('MSG ' + timestamp_end_ques + ' ENDBUTTON ' + button_number + '\n') #FIXME
+            buffer.append('MSG ' + timestamp_end_ques + ' DISPLAY OFF\n')
+            buffer.append('MSG ' + timestamp_end_ques + ' TRIAL_RESULT ' + button_number +'\n') #FIXME
+            buffer.append('MSG ' + timestamp_end_ques + ' TRIAL OK\n')
+
+            buffer.append(line)
+            events_res_line = line
+
         # get eye movements
         elif 'SFIX' in line or \
                 'EFIX' in line or \
                 'SSACC' in line or \
                 'ESACC' in line or \
                 'SBLINK' in line or \
-                'EBLINK' in line or \
-                'BUTTON' in line:
+                'EBLINK' in line:
             buffer.append(line)
-        else: # error?
-            print "NOT FOUND WHILE PARSING QUESTION EYE-MOEMENTS: " + line
+        elif 'BUTTON' in line:
+            buffer.append(line)
+            button_number = line.split()[2]
+
+    ############################################
+    ### STUFF TO ADD OR TWEAK ##################
+    ############################################
 
     # parse rest for trial metadata
     done = False
@@ -461,22 +521,22 @@ def main():
         if 'TRIAL_RESULT' in line:
             done = True
         if 'TRIAL_VAR' in line and 'subtypeid' in line:
-            subtypeid = line.split()[-1]
+            subtypeid = line.split()[-1].strip()
         elif 'TRIAL_VAR' in line and 'clashtype' in line:
-            clashtype = line.split()[-1]
+            clashtype = line.split()[-1].strip()
         elif 'TRIAL_VAR' in line and 'secondarytask' in line:
-            secondarytask = line.split()[-1]
+            secondarytask = line.split()[-1].strip()
+        elif 'TRIAL_VAR' in line and 'dirtytype' in line:
+            dirtytype = line.split()[-1].strip()
+            if dirtytype == 'dirty':
+                dirtytype = '2'
+            elif dirtytype == 'clean':
+                dirtytype = '3'
+            print "found" + dirtytype
 
 
-    ############################################
-    ### STUFF TO ADD OR TWEAK ##################
-    ############################################
-    # insert info from .ias file into the stored buffer_holder_index_ias
-    timestamp = int(iarea.split()[1])
-    ias_info = read_ias_word(iarea, timestamp, ias_folder)
-    buffer[buffer_holder_index_ias:buffer_holder_index_ias] = ias_info
 
-    #tweak the ID
+    # (for limerick) tweak the ID
     I = 'I' + str(subtypeid)
     D = 'D0'
     if clashtype == 'match' and secondarytask == 'tap':
@@ -490,14 +550,35 @@ def main():
     elif clashtype == 'FILLLER':
         # NOTE the asc does indeed say filller with three L's
         E = 'E5'
-        D = 'D1'
+        I = 'I99'
     else:
         print("something broken with tweaking TRIALID")
         exit(-1)
 
     EID = E + I + D
     new_id = old_trialid.rsplit(' ', 1)[0] + ' ' + EID + '\n'
-    buffer[buffer_holder_index_trialid:buffer_holder_index_trialid] = new_id
+    buffer[buffer_holder_index_trialid_limerick] = new_id
+
+
+    # (for limerick) tweak the END EVENTS RES line
+    print buffer[buffer_holder_index_eventsr]
+    buffer[buffer_holder_index_eventsr] = 'END ' + timestamp_end_lim + events_res_line.split(' ', 1)[1]
+    print buffer[buffer_holder_index_eventsr]
+
+
+    # (for question) update the dirtytype question_answer
+    buffer[buffer_holder_index_questiona]  = buffer[buffer_holder_index_questiona].strip() + ' ' + dirtytype + '\n'
+
+    # (for question) add + tweak the TRIALID
+    EID = 'E100' + I + 'D1'
+    buffer[buffer_holder_index_trialid_question] = buffer[buffer_holder_index_trialid_question].strip() + ' ' + EID + '\n'
+
+
+    # do this last because it's inserting elements into the buffer, and not just amending existing elements
+    # (for limerick) insert info from .ias file into the stored buffer_holder_index_ias_limerick
+    timestamp = int(iarea.split()[1])
+    ias_info = read_ias_word(iarea, timestamp, ias_folder)
+    buffer[buffer_holder_index_ias_limerick:buffer_holder_index_ias_limerick] = ias_info
 
     ############################################
     ### SAVE INFO BACK TO FILE #################

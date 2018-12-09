@@ -140,6 +140,24 @@ def check_args():
 
     return (original_asc, new_asc, ias_folder)
 
+
+def getline(remaining_lines):
+    """
+    Removes the first item in the list, and returns it.
+    The first item in the list corresponds to the line that is up next.
+    remaining_lines is passed by reference
+    """
+    # get the next line
+    try:
+        next_line = remaining_lines.pop([0])
+    # stop looping if the end of file is reached
+    except IndexError:
+        print("Successfully parsed entire file.")
+        exit(-1)
+
+    # return the first item in the list of lines
+    return next_line
+
 def main():
     """
     Converts the .asc files produced by ExperimentBuilder into a format that can be
@@ -152,6 +170,7 @@ def main():
     # open the input file, if possible
     try:
         infile = open(original_asc, 'r')
+        # all_lines = infile.readlines()
     except IOError:
         print("original_asc file not found or path is incorrect")
         exit(-1)
@@ -425,7 +444,7 @@ def main():
             buffer.append('MSG ' + timestamp_end_lim + ' TRIAL OK\n')
             # put this placeholder here
             buffer_holder_index_eventsr = len(buffer)
-            buffer.append('END ' + timestamp_end_lim + ' placeholder\n')
+            buffer.append('END ' + timestamp_end_lim + '\n')
 
         # get eye movements
         elif 'SFIX' in line or \
@@ -532,8 +551,6 @@ def main():
                 dirtytype = '2'
             elif dirtytype == 'clean':
                 dirtytype = '3'
-            print "found" + dirtytype
-
 
 
     # (for limerick) tweak the ID
@@ -553,6 +570,7 @@ def main():
         I = 'I99'
     else:
         print("something broken with tweaking TRIALID")
+        print(clashtype, secondarytask)
         exit(-1)
 
     EID = E + I + D

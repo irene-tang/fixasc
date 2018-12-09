@@ -120,10 +120,10 @@ def read_ias_letter(line, timestamp, ias_folder):
             timestamp += 1
             char_number += 1
 
-def main():
+def check_args():
     """
-    Converts the .asc files produced by ExperimentBuilder into a format that can be
-    parsed by UMass Eyetracking clean-up software
+    checks for correct command-line inputs
+    returns file stuff from the command line inputs
     """
     # check for correct command-line inputs
     if len(sys.argv) != 4:
@@ -136,325 +136,376 @@ def main():
     new_asc = sys.argv[2]
     # the folder where .ias files are stored
     ias_folder = sys.argv[3]
-    # open the input file
-    infile = open(original_asc, 'r')
+
+    return (original_asc, new_asc, ias_folder)
+
+def main():
+    """
+    Converts the .asc files produced by ExperimentBuilder into a format that can be
+    parsed by UMass Eyetracking clean-up software
+    """
+
+    # check for correct command-line inputs, and initialize variables
+    (original_asc, new_asc, ias_folder) = check_args()
+
+    # open the input file, if possible
+    try:
+        infile = open(original_asc, 'r')
+    except IOError:
+        print("original_asc file not found or path is incorrect")
+        exit(-1)
 
     # temporary buffer to store lines before writing them to new_asc file at the end
     buffer = []
+
     # number of following lines to include with no questions asked
     freelines = 0
+
     # the current line that is being examined
     line = ''
 
-    # trash variables to count how many lines of unknown info we have thrown out
-    count = 0
-    lostcount = 0
+    ############################################
+    ### METADATA, CALIBRATION, AND VALIDATION ##
+    ############################################
 
-
-    while True:
-        # reset info about the trial
-        subtypeid = 0
-        clashtype = 0
-        secondarytask = 0
-
+    # get the conversion metadata
+    done = False
+    while not done:
         # get the next line
         line = infile.readline()
         # stop looping if the end of file is reached
         if not line:
             break
 
-        # lines to include without question
-        if freelines:
+        # exit state
+        if line.strip() == '**':
+            done = True
             buffer.append(line)
-            freelines -= 1
-            continue # skips remainder of this iteration
-
-        ############################################
-        ### METADATA, CALIBRATION, VALIDATION, ETC.
-        ############################################
-
         # keep all blank lines
-        if line == '':
+        elif line == '':
             buffer.append(line)
         # keep all comments, which begin with **
         elif line[0:2] == '**':
             buffer.append(line)
-        # keep the >>>> calibration header line
-        elif line[0:4] == '>>>>':
+
+    # get the few lines before calibration info
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit state
+        if 'MSG' in line and '!CAL' in line:
+            done = True
             buffer.append(line)
         # keep display coords info (should be just once)
         elif 'MSG' in line and 'DISPLAY_COORDS' in line:
             buffer.append(line.replace('DISPLAY_COORDS', 'DISPLAY COORDS'))
-        # keep calibration info
-        elif 'MSG' in line and '!CAL' in line:
-            buffer.append(line)
-            # also keep the line(s) following these
-            if 'eye check box' in line:
-                freelines += 1
-            elif 'href cal range' in line:
-                freelines += 1
-            elif 'Cal coeff' in line:
-                freelines += 2
-            elif 'Quadrant center' in line: # not sure why they needed new line for this
-                freelines += 1
-            elif 'Corner correction' in line:
-                freelines += 4
-        # keep validation info
-        elif 'MSG' in line and 'VALIDATE' in line:
-            buffer.append(line)
-        # keep this stuff to i guess
-        elif 'MSG' in line and 'ERROR MESSAGES LOST' in line:
-            buffer.append(line)
-        # keep drift correction info
-        elif 'MSG' in line and 'DRIFTCORRECT' in line:
+        # TODO: retrace_interval versus framerarte
+        elif 'RETRACE_INTERVAL' in line:
+            pass
+        # keep any input info
+        elif 'INPUT' in line:
             buffer.append(line)
 
+    # get the calibration and info
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
 
-        ############################################
-        ### TRIALS #################################
-        ############################################
-        # NOTE: ordering of !MODE RECORD and START seems to be inconsistent sometimes
-        # parsing info for one trail
-        elif 'MSG' in line and 'TRIALID' in line:
-            #include this line
-            buffer_holder_index_trialid = len(buffer)
-            old_trialid = line
-
-            # placeholder index for the .ias stuff that will go here
-            buffer_holder_index_ias = len(buffer)
-
-            # get the next line
-            line = infile.readline()
-            # stop looping if the end of file is reached
-            if not line:
-                break
-
-            # then read in camera info
-            done = False
-            while not done:
-                if 'INPUT' in line:
-                    buffer.append(line)
-                elif 'MSG' in line and (\
-                        'DRIFTCORRECT' in line or \
-                        'RECCFG' in line or \
-                        'ELCLCFG' in line or \
-                        'GAZE_COORDS' in line or \
-                        'THRESHOLDS' in line or \
-                        'ELCL_WINDOW_SIZES' in line or \
-                        'CAMERA_LENS_FOCAL_LENGTH' in line or \
-                        'PUPIL_DATA_TYPE' in line or \
-                        'ELCL_PROC' in line or \
-                        'ELCL_PCR_PARAM' in line):
-                    buffer.append(line)
-                elif 'START' in line or \
-                        'PRESCALER' in line or \
-                        'VPRESCALER' in line or \
-                        'PUPIL' in line or \
-                        ('EVENTS' in line and 'GAZE' in line):
-                    buffer.append(line)
-                elif 'MSG' in line and '!MODE RECORD' in line:
-                    buffer.append(line)
-                    done = True
-                else: # error
-                    print "ERROR IN LINE: " + line
-                    exit(-1)
-
-                # get the next line
-                line = infile.readline()
-                # stop looping if the end of file is reached
-                if not line:
-                    break
-
-            # skip the dual-task instructions screen
-            done = False
-            while not done:
-                if 'MSG' in line and 'SHOW LIMERICK' in line:
-                    done = True
-
-                # get the next line
-                line = infile.readline()
-                # stop looking if the end of the file is reached
-                if not line:
-                    break
-
-            # skip the first line after SHOW LIMERICK, which is an EFIX
-            # get the next line
-            line = infile.readline()
-            # stop looking if the end of the file is reached
-            if not line:
-                break
-
-            # then read in saccads, fixations, blinkings info for the limerick portion
-            done = False
-            while not done:
-                if 'SFIX' in line or \
-                        'EFIX' in line or \
-                        'SSACC' in line or \
-                        'ESACC' in line or \
-                        'SBLINK' in line or \
-                        'EBLINK' in line:
-                    buffer.append(line)
-
-                elif 'BUTTON' in line:
-                    buffer.append(line)
-
-                # stop looping at the sight of this
-                # elif 'MSG' in line and 'end_trial' in line:
-                elif 'MSG' in line and 'STOP SECONDARY TASK' in line:
-                    timestamp = str(line.split()[1])
-                    buffer.append('MSG ' + timestamp + ' DISPLAY OFF\n')
-                    done = True
-
-                # insert info from .ias file into the stored buffer_holder_index_ias
-                elif 'IAREA FILE' in line:
-                    timestamp = int(line.split()[1])
-                    ias_info = read_ias_word(line, timestamp, ias_folder)
-                    buffer[buffer_holder_index_ias:buffer_holder_index_ias] = ias_info
-
-                # get the next line
-                line = infile.readline()
-                # stop looking if the end of the file is reached
-                if not line:
-                    break
-
-
-            # skip the dual-task end instructions screen
-            done = False
-            while not done:
-                if 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
-                    done = True
-
-                # get the next line
-                line = infile.readline()
-                # stop looking if the end of the file is reached
-                if not line:
-                    break
-
-
-            # skip the first line after SHOW FOLLOWUP, which is an EFIX
-            # get the next line
-            line = infile.readline()
-            # stop looking if the end of the file is reached
-            if not line:
-                break
-
-            # then read in saccads, fixations, blinkings info for the followup portion
-            done = False
-            while not done:
-                if 'SFIX' in line or \
-                        'EFIX' in line or \
-                        'SSACC' in line or \
-                        'ESACC' in line or \
-                        'SBLINK' in line or \
-                        'EBLINK' in line:
-                    buffer.append(line)
-
-                elif 'BUTTON' in line:
-                    buffer.append(line)
-
-                # stop looping at the sight of this
-                # elif 'MSG' in line and 'end_trial' in line:
-                elif 'END' in line and 'EVENTS' in line and 'RES' in line:
-                    timestamp = str(line.split()[1])
-                    buffer.append('MSG ' + timestamp + ' DISPLAY OFF\n')
-                    done = True
-
-                # insert info from .ias file into the stored buffer_holder_index_ias TODO new ias for followup
-                elif 'IAREA FILE' in line:
-                    timestamp = int(line.split()[1])
-                    ias_info = read_ias_word(line, timestamp, ias_folder)
-                    buffer[buffer_holder_index_ias:buffer_holder_index_ias] = ias_info
-
-                # get the next line
-                line = infile.readline()
-                # stop looking if the end of the file is reached
-                if not line:
-                    break
-
-
-            ############################################
-            ### TRIAL TYPE INFO ########################
-            ############################################
-            # get info about the trial
-            done = False
-            while not done:
-                if 'TRIAL_VAR' in line and 'subtypeid' in line:
-                    subtypeid = line.split()[-1]
-                elif 'TRIAL_VAR' in line and 'clashtype' in line:
-                    clashtype = line.split()[-1]
-                elif 'TRIAL_VAR' in line and 'secondarytask' in line:
-                    secondarytask = line.split()[-1]
-                elif 'TRIAL_RESULT' in line: #FIXME this line later gets converted to something else
-                    done = True
-
-                # get the next line
-                line = infile.readline()
-                # stop looking if the end of the file is reached
-                if not line:
-                    break
-
-
-            #tweak the ID
-            I = 'I' + str(subtypeid)
-            if clashtype == 'match' and secondarytask == 'tap':
-                E = 'E1'
-                D = 'D0'
-            elif clashtype == 'match' and secondarytask == 'this':
-                E = 'E2'
-                D = 'D0'
-            elif clashtype == 'clash' and secondarytask == 'tap':
-                E = 'E3'
-                D = 'D0'
-            elif clashtype == 'clash' and secondarytask == 'this':
-                E = 'E4'
-                D = 'D0'
-            elif clashtype == 'FILLLER':
-                # NOTE the asc does say filller with three L's
-                E = 'E5'
-                D = 'D1'
-            else:
-                print("something broken with tweaking TRIALID")
-                exit(-1)
-            EID = E + I + D
-
-            new_id = old_trialid.rsplit(' ', 1)[0] + ' ' + EID + '\n'
-            buffer[buffer_holder_index_trialid:buffer_holder_index_trialid] = new_id
-
-
-
-        ############################################
-        ### UNKNOWN STUFF, LOST INFOMORMATION ######
-        ############################################
-
-        # convert this line to TRIAL OK
-        elif 'MSG' in line and 'TRIAL_RESULT' in line and '0' in line:
-            timestamp = str(line.split()[1])
-            buffer.append('MSG ' + timestamp + ' TRIAL OK\n')
-        # keep this stuff
-        elif 'INPUT' in line and '127' in line:
-            buffer.append(line)
-
-
-        # stuff that gets thrown out by this script
+        # exit state
+        if 'MSG' in line and 'TRIALID' in line:
+            done = True
+            # do not append here, will deal with this line in the next section (which  is trials)
+        # basically keep everything else in the calibration section, until the exit state is reached
         else:
-            if 'TRIAL_VAR' not in line and \
-                'TRIAL_RESULT' not in line and \
-                'BUTTON' not in line and \
-                'SFIX' not in line and \
-                'EFIX' not in line and \
-                'SSACC' not in line and \
-                'ESACC' not in line and \
-                'prepare_sequence' not in line:
-                count += 1
-                # print line
-            else:
-                lostcount += 1
+            # buffer.append(line)
+            pass
+
+        # # keep the >>>> calibration header line
+        # if line.strip()[0:4] == '>>>>':
+            # buffer.append(line)
+
+        # # keep calibration info
+        # elif 'MSG' in line and '!CAL' in line:
+        #     buffer.append(line)
+        #     # also keep the line(s) following these
+        #     if 'eye check box' in line:
+        #         freelines += 1
+        #     elif 'href cal range' in line:
+        #         freelines += 1
+        #     elif 'Cal coeff' in line:
+        #         freelines += 2
+        #     elif 'Quadrant center' in line: # not sure why they needed new line for this
+        #         freelines += 1
+        #     elif 'Corner correction' in line:
+        #         freelines += 4
+        # # keep validation info
+        # elif 'MSG' in line and 'VALIDATE' in line:
+        #     buffer.append(line)
+        # # keep this stuff to i guess
+        # elif 'MSG' in line and 'ERROR MESSAGES LOST' in line:
+        #     buffer.append(line)
+        # # keep drift correction info
+        # elif 'MSG' in line and 'DRIFTCORRECT' in line:
+        #     buffer.append(line)
+
+    ############################################
+    ### PRACTICE TRIALS ########################
+    ############################################
+    # first deal with the abandoned TRIALID from the current line
+    current_trialid = line # TODO repair this for the first practice lim
+    buffer.append(current_trialid)
+
+    #TODO add practice ias info here
+
+    # get camera info -- TODO possibly might need some re ordering of certain lines since they don't line up exactly
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit sate
+        if 'MSG' in line and 'str("START PRACTICE LIMERICK' in line:
+            done  = True
+        # basically get everything up until the actual eye movement data
+        else:
+            buffer.append(line)
+            # pass
+
+    # read limerick 1 -- TODO need to look into segregating the limerick from the question
+    # for now just keep all practice trial info, unparsed
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit state
+        if 'MSG' in line and 'str("END PRACTICE LIMERICKS AND BEGIN REAL TRIALS")' in line:
+            done = True
+            buffer.append(line)
+        else:
+            # buffer.append(line)
+            pass
+
+    ############################################
+    ### REAL TRIALS ############################
+    ############################################
+
+    # declare variables here for scoping
+    subtypeid = ''
+    clashtype = ''
+    secondarytask = ''
+    iarea = ''
+    old_trialid = ''
+    buffer_holder_index_trialid = -1
+    buffer_holder_index_ias = -1
+
+
+    # skip the extra trial metadata info here
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit state
+        if 'MSG' in line and 'prepare_sequence' in line:
+            done = True
+
+    # parsing info for one trial
+    # trigger: prepare_sequence
+    # skip to where it says TRIALID number -- should just be the next line
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit state
+        if 'MSG' in line and 'TRIALID' in line:
+            done = True
+            old_trialid = line
+            buffer_holder_index_trialid = len(buffer)
+            print str(old_trialid) + "dd"
+            print str(buffer_holder_index_trialid) + "AA"
+
+        # placeholder index for the .ias stuff that will go here
+        buffer_holder_index_ias = len(buffer)
+
+    # read in camera info
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit state
+        if '!MODE RECORD' in line:
+            done = True
+            buffer.append(line)
+        else:
+            buffer.append(line)
+
+    # skip the dual-task instructions screen
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit state
+        if 'MSG' in line and 'SHOW LIMERICK' in line:
+            done = True
+        elif 'IAREA FILE' in line:
+            iarea = line
+
+    # get the eye-movements for viewing the limerick
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit state
+        if 'MSG' in line and 'STOP SECONDARY TASK' in line:
+            done = True
+            timestamp = str(line.split()[1])
+            buffer.append('MSG ' + timestamp + ' DISPLAY OFF\n')
+        # get eye movements
+        elif 'SFIX' in line or \
+                'EFIX' in line or \
+                'SSACC' in line or \
+                'ESACC' in line or \
+                'SBLINK' in line or \
+                'EBLINK' in line or \
+                'BUTTON' in line:
+            buffer.append(line)
+        else: # error?
+            print "NOT FOUND WHILE PARSING LIMERICK EYE-MOEMENTS: " + line
+
+    # skip the dual-task end instructions screen (and the other trial metadata)
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit state
+        if 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
+            done = True
+
+    # make new trial for the question
+    # - add TRILID
+    # - add camera info
+    # add eye-movements
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit state
+        if 'END' in line and 'EVENTS' in line and 'RES' in line:
+            done = True
+            buffer.append(line) # amend this by converting to TRIAL OK ? TODO
+        # get eye movements
+        elif 'SFIX' in line or \
+                'EFIX' in line or \
+                'SSACC' in line or \
+                'ESACC' in line or \
+                'SBLINK' in line or \
+                'EBLINK' in line or \
+                'BUTTON' in line:
+            buffer.append(line)
+        else: # error?
+            print "NOT FOUND WHILE PARSING QUESTION EYE-MOEMENTS: " + line
+
+    # parse rest for trial metadata
+    done = False
+    while not done:
+        # get the next line
+        line = infile.readline()
+        # stop looping if the end of file is reached
+        if not line:
+            break
+
+        # exit state
+        if 'TRIAL_RESULT' in line:
+            done = True
+        if 'TRIAL_VAR' in line and 'subtypeid' in line:
+            subtypeid = line.split()[-1]
+        elif 'TRIAL_VAR' in line and 'clashtype' in line:
+            clashtype = line.split()[-1]
+        elif 'TRIAL_VAR' in line and 'secondarytask' in line:
+            secondarytask = line.split()[-1]
+
+
+    ############################################
+    ### STUFF TO ADD OR TWEAK ##################
+    ############################################
+    # insert info from .ias file into the stored buffer_holder_index_ias
+    timestamp = int(iarea.split()[1])
+    ias_info = read_ias_word(iarea, timestamp, ias_folder)
+    buffer[buffer_holder_index_ias:buffer_holder_index_ias] = ias_info
+
+    #tweak the ID
+    I = 'I' + str(subtypeid)
+    D = 'D0'
+    if clashtype == 'match' and secondarytask == 'tap':
+        E = 'E1'
+    elif clashtype == 'match' and secondarytask == 'this':
+        E = 'E2'
+    elif clashtype == 'clash' and secondarytask == 'tap':
+        E = 'E3'
+    elif clashtype == 'clash' and secondarytask == 'this':
+        E = 'E4'
+    elif clashtype == 'FILLLER':
+        # NOTE the asc does indeed say filller with three L's
+        E = 'E5'
+        D = 'D1'
+    else:
+        print("something broken with tweaking TRIALID")
+        exit(-1)
+
+    EID = E + I + D
+    new_id = old_trialid.rsplit(' ', 1)[0] + ' ' + EID + '\n'
+    buffer[buffer_holder_index_trialid:buffer_holder_index_trialid] = new_id
+
+    ############################################
+    ### SAVE INFO BACK TO FILE #################
+    ############################################
 
     # write the contents of the buffer to the output file
     write_to_outfile(new_asc, buffer)
-    # print the trash variables to count how many lines of unknow info we threw out
-    print count
-    print lostcount
+
     # close the input file
     infile.close()
 

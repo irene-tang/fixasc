@@ -149,7 +149,7 @@ def getline(remaining_lines):
     """
     # get the next line
     try:
-        next_line = remaining_lines.pop([0])
+        next_line = remaining_lines.pop(0)
     # stop looping if the end of file is reached
     except IndexError:
         print("Successfully parsed entire file.")
@@ -167,10 +167,10 @@ def main():
     # check for correct command-line inputs, and initialize variables
     (original_asc, new_asc, ias_folder) = check_args()
 
-    # open the input file, if possible
+    # open the input file, if possible, and read it into a list
     try:
         infile = open(original_asc, 'r')
-        # all_lines = infile.readlines()
+        remaining_lines = infile.readlines()
     except IOError:
         print("original_asc file not found or path is incorrect")
         exit(-1)
@@ -192,10 +192,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if line.strip() == '**':
@@ -212,10 +209,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if 'MSG' in line and '!CAL' in line:
@@ -241,10 +235,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if 'MSG' in line and 'TRIALID' in line:
@@ -269,11 +260,8 @@ def main():
     # # get camera info -- TODO possibly might need some re ordering of certain lines since they don't line up exactly
     # done = False
     # while not done:
-    #     # get the next line
-    #     line = infile.readline()
-    #     # stop looping if the end of file is reached
-    #     if not line:
-    #         break
+        # get the next line
+        # line = getline(remaining_lines)
     #
     #     # exit sate
     #     if 'MSG' in line and 'str("START PRACTICE LIMERICK' in line:
@@ -287,11 +275,8 @@ def main():
     # # for now just keep all practice trial info, unparsed
     # done = False
     # while not done:
-    #     # get the next line
-    #     line = infile.readline()
-    #     # stop looping if the end of file is reached
-    #     if not line:
-    #         break
+        # get the next line
+        # line = getline(remaining_lines)
     #
     #     # exit state
     #     if 'MSG' in line and 'str("END PRACTICE LIMERICKS AND BEGIN REAL TRIALS")' in line:
@@ -328,10 +313,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if 'MSG' in line and 'prepare_sequence' in line:
@@ -347,10 +329,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if 'MSG' in line and 'TRIALID' in line:
@@ -366,10 +345,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if '!MODE RECORD' in line:
@@ -393,10 +369,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if 'MSG' in line and 'START SECONDARY TASK' in line:
@@ -412,10 +385,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if 'MSG' in line and 'SHOW LIMERICK' in line:
@@ -428,10 +398,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if 'MSG' in line and 'STOP SECONDARY TASK' in line:
@@ -462,10 +429,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
@@ -493,10 +457,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if 'END' in line and 'EVENTS' in line and 'RES' in line:
@@ -531,10 +492,7 @@ def main():
     done = False
     while not done:
         # get the next line
-        line = infile.readline()
-        # stop looping if the end of file is reached
-        if not line:
-            break
+        line = getline(remaining_lines)
 
         # exit state
         if 'TRIAL_RESULT' in line:

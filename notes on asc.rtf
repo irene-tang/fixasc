@@ -1,0 +1,69 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf100
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww16800\viewh12340\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 RCAd \
+\
+E1 -- Is condition 1 (for Tracey's study that meant subject extracted relative clause)\
+E2 -- is condition 2 (for Tracey's study that meant object extracted relative clause)\
+You will need at least E3 and E4 as well for all four conditions\
+E100 -- Is the condition code for comprehension questions\
+\
+I5 -- means item 5\
+\
+D0 - means it's the first item in a sequence (the critical sentence for Tracey)\
+D1 - means it's the second item in a sequence (the comprehension question for Tracey) \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+\'97\'97\'97\'97\
+Limerick\
+\
+E1 - strong-weak/consistent\
+E2 - strong-weak/inconsistent\
+E3 - weak-strong/consistent\
+E4 - weak-strong/inconsistent\
+E5 - filler\
+E100 - comprehension question\
+\
+I - item number, same stimuli has same item number; this is indicated by subtypeid\
+1-40 for critical trials\
+01-040 for filler\
+\
+D0 - the limerick \
+D1 - the question\
+\
+\'97\'97\'97\'97\
+Limerick stuff to clarify \
+\
+1. Calibration - should we just keep the last successful calibration and validation, or keep all of it?\
+2. Practice trials - can these just be  skipped?\
+3. Insert IAS stuff letter per letter\
+	coordinates are not exactly accurate\
+	timing is off; it goes past the timing of the next section\
+4. Things that are missing from our new limerick asc file, but appear in the RCAd asc file:\
+	GAZE TARGET ON\
+	GAZE TARGET OFF\
+	FRAMERATE - missing but cannot artificially insert (according to Eyelink Programmar\'92s Manual p.83)\
+5. Things that are artificially inserted into our new limerick asc file, via swapping or direct hacking, to closer match RCad asc file:\
+	DISPLAY_TEXT\
+	DISPLAY ON\
+	DISPLAY OFF\
+	ENDBUTTON\
+	TRIAL_RESULT \'97 in the original all were TRIAL RESULT 0, in the modified it was switched to the button press (e.g. TRIAL RESULT 3)\
+	TRIAL_OK\
+	QUESTION_ANSWER\
+6. Things that are either thrown out or swapped to something else in our new limerick asc file:\
+	DRAW_LIST \'97 becomes DISPLAY ON\
+	START LIMERICK # \'97 thrown out\
+	end_trial \'97 thrown out\
+7. Almost always, the last eye movement recorded at the end of a trial is a SFIX or SBLINK or SSACC; so it doesn\'92t close with an end movement. This is probably our least significant issue.\
+8. Do not know where the IAS coordinates info is stored for the question\
+9. TODO: amend the data for the participants whose data got split up\
+10. TODO: run the script on all participant data\
+11. run question_acc, robodoc\
+\
+}

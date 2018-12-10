@@ -1,8 +1,33 @@
 import sys
-# from recordclass import recordclass, RecordClass
 
 
-# declare variables here
+def check_args():
+    """
+    checks for correct command-line inputs
+    returns file stuff from the command line inputs
+    """
+    # check for correct command-line inputs
+    if len(sys.argv) != 4:
+        print "usage: python makeasc.py [original_asc input] [new_asc output] [ias_folder]"
+        exit(-1)
+
+    # the original asc input file
+    original_asc = sys.argv[1]
+    # the desired asc output file
+    new_asc = sys.argv[2]
+    # the folder where .ias files are stored
+    ias_folder = sys.argv[3]
+
+    return (original_asc, new_asc, ias_folder)
+
+###################################
+#### declare global variables here
+###################################
+# temporary buffer to store lines before writing them to new_asc file at the end
+buffer = []
+# check for correct command-line inputs, and initialize variables
+(original_asc, new_asc, ias_folder) = check_args()
+# metadata about the current trial
 trial_metadatas = {
     'subtypeid' : '',
     'clashtype' : '',
@@ -20,6 +45,7 @@ trial_metadatas = {
     'timestamp_end_ques'  : '',
     'timestamp_iarea' : '',
     'events_res_line' : '',
+    'count' : 0
 }
 
 def write_to_outfile(new_asc_filename, buffer):
@@ -147,35 +173,19 @@ def getline(remaining_lines):
     The first item in the list corresponds to the line that is up next.
     remaining_lines is passed by reference
     """
-    # get the next line
+    # get the next line; return the first item in the list of lines
     try:
         next_line = remaining_lines.pop(0)
-    # stop looping if the end of file is reached
+        trial_metadatas['count'] = trial_metadatas.get('count') + 1
+        return next_line
+
+    # stop looping if the end of file is reached, write the contents of the buffer to the output file
     except IndexError:
+        print(trial_metadatas['count'])
+
+        write_to_outfile(new_asc, buffer)
         print("Successfully parsed entire file.")
         exit(-1)
-
-    # return the first item in the list of lines
-    return next_line
-
-def check_args():
-    """
-    checks for correct command-line inputs
-    returns file stuff from the command line inputs
-    """
-    # check for correct command-line inputs
-    if len(sys.argv) != 4:
-        print "usage: python makeasc.py [original_asc input] [new_asc output] [ias_folder]"
-        exit(-1)
-
-    # the original asc input file
-    original_asc = sys.argv[1]
-    # the desired asc output file
-    new_asc = sys.argv[2]
-    # the folder where .ias files are stored
-    ias_folder = sys.argv[3]
-
-    return (original_asc, new_asc, ias_folder)
 
 def open_input(original_asc):
     """
@@ -237,7 +247,7 @@ def conversion_metadata(buffer, remaining_lines):
         elif 'INPUT' in line:
             buffer.append(line)
 
-def calibration_validation(buffer, remaining_lines):
+def calibration_validation(buffer, remaining_lines, recalibration):
     """
     Processing the calibration and validation info
     """
@@ -251,8 +261,11 @@ def calibration_validation(buffer, remaining_lines):
         # exit state
         if 'MSG' in line and 'TRIALID' in line:
             done = True
-            # do not append here, will deal with this line in the next section (which  is trials)
-        # basically keep everything else in the calibration section, until the exit state is reached
+            # if not recalibration, do not append here, will deal with this line in the next section (which  is trials)?
+            if recalibration:
+                trial_metadatas['old_trialid'] = line
+                trial_metadatas['buffer_holder_index_trialid_limerick'] = len(buffer)
+                buffer.append(line)
         else:
             buffer.append(line)
             # pass
@@ -322,6 +335,9 @@ def skip_to_next_trial(buffer, remaining_lines):
             trial_metadatas['old_trialid'] = line
             trial_metadatas['buffer_holder_index_trialid_limerick'] = len(buffer)
             buffer.append(line)
+        elif 'MSG' in line and '!CAL' in line:
+            calibration_validation(buffer, remaining_lines, True)
+            break
 
 def read_camera_info(buffer, remaining_lines):
     """
@@ -553,21 +569,15 @@ def main():
     parsed by UMass Eyetracking clean-up software
     """
 
-    # check for correct command-line inputs, and initialize variables
-    (original_asc, new_asc, ias_folder) = check_args()
-
     # open the input file, if possible, and read it into a list
     remaining_lines = open_input(original_asc)
-
-    # temporary buffer to store lines before writing them to new_asc file at the end
-    buffer = []
 
     # the current line that is being examined
     line = ''
 
     # METADATA, CALIBRATION, AND VALIDATION
     conversion_metadata(buffer, remaining_lines)
-    calibration_validation(buffer, remaining_lines)
+    calibration_validation(buffer, remaining_lines, False)
 
     # PRACTICE TRIALS -- TODO does this really need to be implemented?
     practice_trials(buffer, remaining_lines)
@@ -575,49 +585,47 @@ def main():
     ############################################
     ### REAL TRIALS ############################
     ############################################
-
     #### the limerick ###########################
 
-    # parsing info for one trial
-    # trigger: prepare_sequence
-    skip_to_next_trial(buffer, remaining_lines)
+    while True:
+        # parsing info for one trial
+        # trigger: prepare_sequence
+        skip_to_next_trial(buffer, remaining_lines)
 
-    # placeholder index for the .ias stuff that will go here
-    trial_metadatas['buffer_holder_index_ias_limerick'] = len(buffer)
+        # placeholder index for the .ias stuff that will go here
+        trial_metadatas['buffer_holder_index_ias_limerick'] = len(buffer)
 
-    # read in camera info
-    read_camera_info(buffer, remaining_lines)
+        # read in camera info
+        read_camera_info(buffer, remaining_lines)
 
-    # skip the dual-task begin instructions screen
-    skip_dual_task_begin_instructions(buffer, remaining_lines)
+        # skip the dual-task begin instructions screen
+        skip_dual_task_begin_instructions(buffer, remaining_lines)
 
-    # get the eye-movements for viewing the limerick
-    eye_movements_limerick(buffer, remaining_lines)
+        # get the eye-movements for viewing the limerick
+        eye_movements_limerick(buffer, remaining_lines)
 
-    # skip the dual-task end instructions screen (and the other trial metadata)
-    skip_dual_task_end_instructions(buffer, remaining_lines)
+        # skip the dual-task end instructions screen (and the other trial metadata)
+        skip_dual_task_end_instructions(buffer, remaining_lines)
 
-    #### the question ##########################
+        #### the question ##########################
 
-    # question placeholders
-    question_placeholders(buffer, remaining_lines)
+        # question placeholders
+        question_placeholders(buffer, remaining_lines)
 
-    # - add camera info
+        # - add camera info
 
-    # get the eye-movements for viewing the question
-    eye_movements_question(buffer, remaining_lines)
+        # get the eye-movements for viewing the question
+        eye_movements_question(buffer, remaining_lines)
 
-    # parse rest for trial metadata
-    parse_trial_var_metadata(buffer, remaining_lines)
+        # parse rest for trial metadata
+        parse_trial_var_metadata(buffer, remaining_lines)
 
-    # tweak limerick and question
-    tweak_stuff(buffer, remaining_lines)
+        # tweak limerick and question
+        tweak_stuff(buffer, remaining_lines)
 
-    # insert ias stuff for limerick and question
-    insert_ias(ias_folder, buffer, remaining_lines)
+        # insert ias stuff for limerick and question
+        insert_ias(ias_folder, buffer, remaining_lines)
 
-    # write the contents of the buffer to the output file
-    write_to_outfile(new_asc, buffer)
 
 # run main()
 main()

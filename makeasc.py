@@ -141,6 +141,23 @@ def read_ias_letter(line, timestamp, ias_folder):
             timestamp += 1
             char_number += 1
 
+def getline(remaining_lines):
+    """
+    Removes the first item in the list, and returns it.
+    The first item in the list corresponds to the line that is up next.
+    remaining_lines is passed by reference
+    """
+    # get the next line
+    try:
+        next_line = remaining_lines.pop(0)
+    # stop looping if the end of file is reached
+    except IndexError:
+        print("Successfully parsed entire file.")
+        exit(-1)
+
+    # return the first item in the list of lines
+    return next_line
+
 def check_args():
     """
     checks for correct command-line inputs
@@ -160,22 +177,19 @@ def check_args():
 
     return (original_asc, new_asc, ias_folder)
 
-def getline(remaining_lines):
+def open_input(original_asc):
     """
-    Removes the first item in the list, and returns it.
-    The first item in the list corresponds to the line that is up next.
-    remaining_lines is passed by reference
+    Opens the given input file.
+    Parses it into a list, and returns that list.
     """
-    # get the next line
     try:
-        next_line = remaining_lines.pop(0)
-    # stop looping if the end of file is reached
-    except IndexError:
-        print("Successfully parsed entire file.")
+        infile = open(original_asc, 'r')
+        remaining_lines = infile.readlines()
+        infile.close()
+        return remaining_lines
+    except IOError:
+        print("original_asc file not found or path is incorrect")
         exit(-1)
-
-    # return the first item in the list of lines
-    return next_line
 
 def conversion_metadata(buffer, remaining_lines):
     """
@@ -293,54 +307,10 @@ def practice_trials(buffer, remaining_lines):
         if 'MSG' in line and 'prepare_sequence' in line:
             done = True
 
-
-def main():
+def skip_to_next_trial(buffer, remaining_lines):
     """
-    Converts the .asc files produced by ExperimentBuilder into a format that can be
-    parsed by UMass Eyetracking clean-up software
+    skip to where it says TRIALID number -- should just be the next line
     """
-
-    # check for correct command-line inputs, and initialize variables
-    (original_asc, new_asc, ias_folder) = check_args()
-
-    # open the input file, if possible, and read it into a list
-    try:
-        infile = open(original_asc, 'r')
-        remaining_lines = infile.readlines()
-    except IOError:
-        print("original_asc file not found or path is incorrect")
-        exit(-1)
-
-    # temporary buffer to store lines before writing them to new_asc file at the end
-    buffer = []
-
-    # the current line that is being examined
-    line = ''
-
-    ############################################
-    ### METADATA, CALIBRATION, AND VALIDATION ##
-    ############################################
-    conversion_metadata(buffer, remaining_lines)
-    calibration_validation(buffer, remaining_lines)
-
-    ############################################
-    ### PRACTICE TRIALS ########################
-    ### TODO does this really need to be implemented?
-    ############################################
-    practice_trials(buffer, remaining_lines)
-
-    ############################################
-    ### REAL TRIALS ############################
-    ############################################
-
-
-    #############################################
-    #### the limerick ###########################
-    #############################################
-
-    # parsing info for one trial
-    # trigger: prepare_sequence
-    # skip to where it says TRIALID number -- should just be the next line
     done = False
     while not done:
         # get the next line
@@ -353,10 +323,10 @@ def main():
             trial_metadatas['buffer_holder_index_trialid_limerick'] = len(buffer)
             buffer.append(line)
 
-    # placeholder index for the .ias stuff that will go here
-    trial_metadatas['buffer_holder_index_ias_limerick'] = len(buffer)
-
-    # read in camera info
+def read_camera_info(buffer, remaining_lines):
+    """
+    read in camera info
+    """
     done = False
     while not done:
         # get the next line
@@ -380,7 +350,8 @@ def main():
         else:
             buffer.append(line)
 
-    # the three-ish lines between !MODE RECORD and START SECONDARTY TASK
+def skip_dual_task_begin_instructions(buffer, remaining_lines):
+    # the three-ish lines between !MODE RECORD and START SECONDARY TASK
     done = False
     while not done:
         # get the next line
@@ -396,7 +367,7 @@ def main():
             buffer.append(line.split(' ', 3)[0]+' DISPLAY ON\n')
             buffer[len(buffer)-2], buffer[len(buffer)-1] = buffer[len(buffer)-1], buffer[len(buffer)-2]
 
-    # skip the dual-task instructions screen
+    # skip the dual-task begin instructions screen
     done = False
     while not done:
         # get the next line
@@ -408,7 +379,10 @@ def main():
         elif 'IAREA FILE' in line:
             trial_metadatas['iarea'] = line
 
-    # get the eye-movements for viewing the limerick
+def eye_movements_limerick(buffer, remaining_lines):
+    """
+    Parses the eye movements for viewing a single limerick
+    """
     button_number = ''
     done = False
     while not done:
@@ -440,7 +414,10 @@ def main():
             buffer.append(line)
             button_number = line.split()[2]
 
-    # skip the dual-task end instructions screen (and the other trial metadata)
+def skip_dual_task_end_instructions(buffer, remaining_lines):
+    """
+    Parses the dual-task end instructions screen (and the other trial metadata)
+    """
     done = False
     while not done:
         # get the next line
@@ -450,11 +427,11 @@ def main():
         if 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
             done = True
 
-
-    #############################################
-    #### make new trial for the question ########
-    #############################################
-
+def question_placeholders(buffer, remaining_lines):
+    """
+    Placeholders for the TRIALID and .ias info,
+    to be tweaked or inserted later
+    """
     # placeholder for TRIALID
     trial_metadatas['buffer_holder_index_trialid_question'] = len(buffer)
     buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' TRIALID\n')
@@ -465,9 +442,10 @@ def main():
     trial_metadatas['buffer_holder_index_ias_question'] = len(buffer)
     buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' DELAY 0 MS\n')
 
-    # - add camera info
-
-    # get the eye-movements for viewing the question
+def eye_movements_question(buffer, remaining_lines):
+    """
+    Parses the eye movements for viewing a single question
+    """
     button_number = ''
     done = False
     while not done:
@@ -499,11 +477,7 @@ def main():
             buffer.append(line)
             button_number = line.split()[2]
 
-    ############################################
-    ### STUFF TO ADD OR TWEAK ##################
-    ############################################
-
-    # parse rest for trial metadata
+def parse_trial_var_metadata(buffer, remaining_lines):
     done = False
     while not done:
         # get the next line
@@ -525,7 +499,11 @@ def main():
             elif trial_metadatas.get('dirtytype') == 'clean':
                 trial_metadatas['dirtytype'] = '3'
 
-
+def tweak_stuff(buffer, remaining_lines):
+    """
+    Tweak info for the limerick and question.
+    Stuff here should probably only be tweaking the buffer placeholders
+    """
     # (for limerick) tweak the ID
     I = 'I' + str(trial_metadatas.get('subtypeid'))
     D = 'D0'
@@ -561,22 +539,85 @@ def main():
     EID = 'E100' + I + 'D1'
     buffer[trial_metadatas.get('buffer_holder_index_trialid_question')] = buffer[trial_metadatas.get('buffer_holder_index_trialid_question')].strip() + ' ' + EID + '\n'
 
-
+def insert_ias(ias_folder, buffer, remaining_lines):
     # do this last because it's inserting elements into the buffer, and not just amending existing elements
     # (for limerick) insert info from .ias file into the stored buffer_holder_index_ias_limerick
     timestamp = int(trial_metadatas.get('iarea').split()[1])
     ias_info = read_ias_word(trial_metadatas.get('iarea'), timestamp, ias_folder)
     buffer[trial_metadatas.get('buffer_holder_index_ias_limerick'):trial_metadatas.get('buffer_holder_index_ias_limerick')] = ias_info
 
+
+def main():
+    """
+    Converts the .asc files produced by ExperimentBuilder into a format that can be
+    parsed by UMass Eyetracking clean-up software
+    """
+
+    # check for correct command-line inputs, and initialize variables
+    (original_asc, new_asc, ias_folder) = check_args()
+
+    # open the input file, if possible, and read it into a list
+    remaining_lines = open_input(original_asc)
+
+    # temporary buffer to store lines before writing them to new_asc file at the end
+    buffer = []
+
+    # the current line that is being examined
+    line = ''
+
+    # METADATA, CALIBRATION, AND VALIDATION
+    conversion_metadata(buffer, remaining_lines)
+    calibration_validation(buffer, remaining_lines)
+
+    # PRACTICE TRIALS -- TODO does this really need to be implemented?
+    practice_trials(buffer, remaining_lines)
+
     ############################################
-    ### SAVE INFO BACK TO FILE #################
+    ### REAL TRIALS ############################
     ############################################
+
+    #### the limerick ###########################
+
+    # parsing info for one trial
+    # trigger: prepare_sequence
+    skip_to_next_trial(buffer, remaining_lines)
+
+    # placeholder index for the .ias stuff that will go here
+    trial_metadatas['buffer_holder_index_ias_limerick'] = len(buffer)
+
+    # read in camera info
+    read_camera_info(buffer, remaining_lines)
+
+    # skip the dual-task begin instructions screen
+    skip_dual_task_begin_instructions(buffer, remaining_lines)
+
+    # get the eye-movements for viewing the limerick
+    eye_movements_limerick(buffer, remaining_lines)
+
+    # skip the dual-task end instructions screen (and the other trial metadata)
+    skip_dual_task_end_instructions(buffer, remaining_lines)
+
+    #### the question ##########################
+
+    # question placeholders
+    question_placeholders(buffer, remaining_lines)
+
+    # - add camera info
+
+    # get the eye-movements for viewing the question
+    eye_movements_question(buffer, remaining_lines)
+
+    # parse rest for trial metadata
+    parse_trial_var_metadata(buffer, remaining_lines)
+
+    # tweak limerick and question
+    tweak_stuff(buffer, remaining_lines)
+
+    # insert ias stuff for limerick and question
+    insert_ias(ias_folder, buffer, remaining_lines)
 
     # write the contents of the buffer to the output file
     write_to_outfile(new_asc, buffer)
-
-    # close the input file
-    infile.close()
 
 # run main()
 main()

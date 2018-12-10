@@ -1,5 +1,26 @@
 import sys
+# from recordclass import recordclass, RecordClass
 
+
+# declare variables here
+trial_metadatas = {
+    'subtypeid' : '',
+    'clashtype' : '',
+    'secondarytask' : '',
+    'dirtytype' : '',
+    'iarea' : '',
+    'old_trialid' : '',
+    'buffer_holder_index_trialid_limerick' : -1,
+    'buffer_holder_index_trialid_question' : -1,
+    'buffer_holder_index_ias_limerick' : -1,
+    'buffer_holder_index_ias_question' : -1,
+    'buffer_holder_index_eventsr' : -1,
+    'buffer_holder_index_questiona' : -1,
+    'timestamp_end_lim' : '',
+    'timestamp_end_ques'  : '',
+    'timestamp_iarea' : '',
+    'events_res_line' : '',
+}
 
 def write_to_outfile(new_asc_filename, buffer):
     """
@@ -57,7 +78,6 @@ def read_ias_word(line, timestamp, ias_folder):
         # increment timestamp and word_number
         timestamp += 1
         word_number += 1
-
 
 # TODO: actually letter by letter, and TODO: timestamps are off
 def read_ias_letter(line, timestamp, ias_folder):
@@ -140,7 +160,6 @@ def check_args():
 
     return (original_asc, new_asc, ias_folder)
 
-
 def getline(remaining_lines):
     """
     Removes the first item in the list, and returns it.
@@ -158,36 +177,10 @@ def getline(remaining_lines):
     # return the first item in the list of lines
     return next_line
 
-def main():
+def conversion_metadata(buffer, remaining_lines):
     """
-    Converts the .asc files produced by ExperimentBuilder into a format that can be
-    parsed by UMass Eyetracking clean-up software
+    Processing the conversion metadata
     """
-
-    # check for correct command-line inputs, and initialize variables
-    (original_asc, new_asc, ias_folder) = check_args()
-
-    # open the input file, if possible, and read it into a list
-    try:
-        infile = open(original_asc, 'r')
-        remaining_lines = infile.readlines()
-    except IOError:
-        print("original_asc file not found or path is incorrect")
-        exit(-1)
-
-    # temporary buffer to store lines before writing them to new_asc file at the end
-    buffer = []
-
-    # number of following lines to include with no questions asked
-    freelines = 0
-
-    # the current line that is being examined
-    line = ''
-
-    ############################################
-    ### METADATA, CALIBRATION, AND VALIDATION ##
-    ############################################
-
     # get the conversion metadata
     done = False
     while not done:
@@ -230,6 +223,10 @@ def main():
         elif 'INPUT' in line:
             buffer.append(line)
 
+def calibration_validation(buffer, remaining_lines):
+    """
+    Processing the calibration and validation info
+    """
     # get the calibration and info
     # NOTE should we just keep the last successful calibration and validation, or keep all?
     done = False
@@ -246,11 +243,10 @@ def main():
             buffer.append(line)
             # pass
 
-
-    ############################################
-    ### PRACTICE TRIALS ########################
-    ### TODO does this really need to be implemented?
-    ############################################
+def practice_trials(buffer, remaining_lines):
+    """
+    Process the practice trials
+    """
     # # first deal with the abandoned TRIALID from the current line
     # current_trialid = line # TODO repair this for the first practice lim
     # buffer.append(current_trialid)
@@ -286,28 +282,6 @@ def main():
     #         # buffer.append(line)
     #         pass
 
-    ############################################
-    ### REAL TRIALS ############################
-    ############################################
-
-    # declare variables here for scoping
-    subtypeid = ''
-    clashtype = ''
-    secondarytask = ''
-    dirtytype = ''
-    iarea = ''
-    old_trialid = ''
-    buffer_holder_index_trialid_limerick = -1
-    buffer_holder_index_trialid_question = -1
-    buffer_holder_index_ias_limerick = -1
-    buffer_holder_index_ias_question = -1
-    buffer_holder_index_eventsr = -1
-    buffer_holder_index_questiona = -1
-    timestamp_end_lim = ''
-    timestamp_end_ques  = ''
-    timestamp_iarea = ''
-    events_res_line = ''
-
 
     # skip the extra trial metadata info here
     done = False
@@ -318,6 +292,47 @@ def main():
         # exit state
         if 'MSG' in line and 'prepare_sequence' in line:
             done = True
+
+
+def main():
+    """
+    Converts the .asc files produced by ExperimentBuilder into a format that can be
+    parsed by UMass Eyetracking clean-up software
+    """
+
+    # check for correct command-line inputs, and initialize variables
+    (original_asc, new_asc, ias_folder) = check_args()
+
+    # open the input file, if possible, and read it into a list
+    try:
+        infile = open(original_asc, 'r')
+        remaining_lines = infile.readlines()
+    except IOError:
+        print("original_asc file not found or path is incorrect")
+        exit(-1)
+
+    # temporary buffer to store lines before writing them to new_asc file at the end
+    buffer = []
+
+    # the current line that is being examined
+    line = ''
+
+    ############################################
+    ### METADATA, CALIBRATION, AND VALIDATION ##
+    ############################################
+    conversion_metadata(buffer, remaining_lines)
+    calibration_validation(buffer, remaining_lines)
+
+    ############################################
+    ### PRACTICE TRIALS ########################
+    ### TODO does this really need to be implemented?
+    ############################################
+    practice_trials(buffer, remaining_lines)
+
+    ############################################
+    ### REAL TRIALS ############################
+    ############################################
+
 
     #############################################
     #### the limerick ###########################
@@ -334,12 +349,12 @@ def main():
         # exit state
         if 'MSG' in line and 'TRIALID' in line:
             done = True
-            old_trialid = line
-            buffer_holder_index_trialid_limerick = len(buffer)
-            buffer.append("trialid lim placeholder")
+            trial_metadatas['old_trialid'] = line
+            trial_metadatas['buffer_holder_index_trialid_limerick'] = len(buffer)
+            buffer.append(line)
 
     # placeholder index for the .ias stuff that will go here
-    buffer_holder_index_ias_limerick = len(buffer)
+    trial_metadatas['buffer_holder_index_ias_limerick'] = len(buffer)
 
     # read in camera info
     done = False
@@ -391,7 +406,7 @@ def main():
         if 'MSG' in line and 'SHOW LIMERICK' in line:
             done = True
         elif 'IAREA FILE' in line:
-            iarea = line
+            trial_metadatas['iarea'] = line
 
     # get the eye-movements for viewing the limerick
     button_number = ''
@@ -403,15 +418,15 @@ def main():
         # exit state
         if 'MSG' in line and 'STOP SECONDARY TASK' in line:
             done = True
-            timestamp_end_lim = str(line.split()[1])
+            trial_metadatas['timestamp_end_lim'] = str(line.split()[1])
             # mark trial ok at the end of the limerick portion, add placeholders
-            buffer.append('MSG ' + timestamp_end_lim + ' ENDBUTTON ' + button_number + '\n') #FIXME
-            buffer.append('MSG ' + timestamp_end_lim + ' DISPLAY OFF\n')
-            buffer.append('MSG ' + timestamp_end_lim + ' TRIAL_RESULT ' + button_number +'\n') #FIXME
-            buffer.append('MSG ' + timestamp_end_lim + ' TRIAL OK\n')
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' ENDBUTTON ' + button_number + '\n') #FIXME
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' DISPLAY OFF\n')
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' TRIAL_RESULT ' + button_number +'\n') #FIXME
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' TRIAL OK\n')
             # put this placeholder here
-            buffer_holder_index_eventsr = len(buffer)
-            buffer.append('END ' + timestamp_end_lim + '\n')
+            trial_metadatas['buffer_holder_index_eventsr'] = len(buffer)
+            buffer.append('END ' + trial_metadatas.get('timestamp_end_lim') + '\n')
 
         # get eye movements
         elif 'SFIX' in line or \
@@ -441,14 +456,14 @@ def main():
     #############################################
 
     # placeholder for TRIALID
-    buffer_holder_index_trialid_question = len(buffer)
-    buffer.append('MSG ' + timestamp_end_lim + ' TRIALID\n')
+    trial_metadatas['buffer_holder_index_trialid_question'] = len(buffer)
+    buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' TRIALID\n')
 
     # placeholder index for the .ias stuff that will go here
-    buffer_holder_index_questiona = len(buffer)
-    buffer.append('MSG ' + timestamp_end_lim + ' QUESTION_ANSWER\n')
-    buffer_holder_index_ias_question = len(buffer)
-    buffer.append('MSG ' + timestamp_end_lim + ' DELAY 0 MS\n')
+    trial_metadatas['buffer_holder_index_questiona'] = len(buffer)
+    buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' QUESTION_ANSWER\n')
+    trial_metadatas['buffer_holder_index_ias_question'] = len(buffer)
+    buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' DELAY 0 MS\n')
 
     # - add camera info
 
@@ -462,15 +477,15 @@ def main():
         # exit state
         if 'END' in line and 'EVENTS' in line and 'RES' in line:
             done = True
-            timestamp_end_ques = str(line.split()[1])
+            trial_metadatas['timestamp_end_ques'] = str(line.split()[1])
             # mark trial ok at the end of the limerick portion, add placeholders
-            buffer.append('MSG ' + timestamp_end_ques + ' ENDBUTTON ' + button_number + '\n') #FIXME
-            buffer.append('MSG ' + timestamp_end_ques + ' DISPLAY OFF\n')
-            buffer.append('MSG ' + timestamp_end_ques + ' TRIAL_RESULT ' + button_number +'\n') #FIXME
-            buffer.append('MSG ' + timestamp_end_ques + ' TRIAL OK\n')
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_ques') + ' ENDBUTTON ' + button_number + '\n') #FIXME
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_ques') + ' DISPLAY OFF\n')
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_ques') + ' TRIAL_RESULT ' + button_number +'\n') #FIXME
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_ques') + ' TRIAL OK\n')
 
             buffer.append(line)
-            events_res_line = line
+            trial_metadatas['events_res_line'] = line
 
         # get eye movements
         elif 'SFIX' in line or \
@@ -498,63 +513,60 @@ def main():
         if 'TRIAL_RESULT' in line:
             done = True
         if 'TRIAL_VAR' in line and 'subtypeid' in line:
-            subtypeid = line.split()[-1].strip()
+            trial_metadatas['subtypeid'] = line.split()[-1].strip()
         elif 'TRIAL_VAR' in line and 'clashtype' in line:
-            clashtype = line.split()[-1].strip()
+            trial_metadatas['clashtype'] = line.split()[-1].strip()
         elif 'TRIAL_VAR' in line and 'secondarytask' in line:
-            secondarytask = line.split()[-1].strip()
+            trial_metadatas['secondarytask'] = line.split()[-1].strip()
         elif 'TRIAL_VAR' in line and 'dirtytype' in line:
-            dirtytype = line.split()[-1].strip()
-            if dirtytype == 'dirty':
-                dirtytype = '2'
-            elif dirtytype == 'clean':
-                dirtytype = '3'
+            trial_metadatas['dirtytype'] = line.split()[-1].strip()
+            if trial_metadatas.get('dirtytype') == 'dirty':
+                trial_metadatas['dirtytype'] = '2'
+            elif trial_metadatas.get('dirtytype') == 'clean':
+                trial_metadatas['dirtytype'] = '3'
 
 
     # (for limerick) tweak the ID
-    I = 'I' + str(subtypeid)
+    I = 'I' + str(trial_metadatas.get('subtypeid'))
     D = 'D0'
-    if clashtype == 'match' and secondarytask == 'tap':
+    if trial_metadatas.get('clashtype') == 'match' and trial_metadatas.get('secondarytask') == 'tap':
         E = 'E1'
-    elif clashtype == 'match' and secondarytask == 'this':
+    elif trial_metadatas.get('clashtype') == 'match' and trial_metadatas.get('secondarytask') == 'this':
         E = 'E2'
-    elif clashtype == 'clash' and secondarytask == 'tap':
+    elif trial_metadatas.get('clashtype') == 'clash' and trial_metadatas.get('secondarytask') == 'tap':
         E = 'E3'
-    elif clashtype == 'clash' and secondarytask == 'this':
+    elif trial_metadatas.get('clashtype') == 'clash' and trial_metadatas.get('secondarytask') == 'this':
         E = 'E4'
-    elif clashtype == 'FILLLER':
+    elif trial_metadatas.get('clashtype') == 'FILLLER':
         # NOTE the asc does indeed say filller with three L's
         E = 'E5'
         I = 'I99'
     else:
         print("something broken with tweaking TRIALID")
-        print(clashtype, secondarytask)
+        print(trial_metadatas.get('clashtype'), trial_metadatas.get('secondarytask'))
         exit(-1)
 
     EID = E + I + D
-    new_id = old_trialid.rsplit(' ', 1)[0] + ' ' + EID + '\n'
-    buffer[buffer_holder_index_trialid_limerick] = new_id
+    new_id = trial_metadatas.get('old_trialid').rsplit(' ', 1)[0] + ' ' + EID + '\n'
+    buffer[trial_metadatas.get('buffer_holder_index_trialid_limerick')] = new_id
 
 
     # (for limerick) tweak the END EVENTS RES line
-    print buffer[buffer_holder_index_eventsr]
-    buffer[buffer_holder_index_eventsr] = 'END ' + timestamp_end_lim + events_res_line.split(' ', 1)[1]
-    print buffer[buffer_holder_index_eventsr]
-
+    buffer[trial_metadatas.get('buffer_holder_index_eventsr')] = 'END ' + trial_metadatas.get('timestamp_end_lim') + trial_metadatas.get('events_res_line').split(' ', 1)[1]
 
     # (for question) update the dirtytype question_answer
-    buffer[buffer_holder_index_questiona]  = buffer[buffer_holder_index_questiona].strip() + ' ' + dirtytype + '\n'
+    buffer[trial_metadatas.get('buffer_holder_index_questiona')]  = buffer[trial_metadatas.get('buffer_holder_index_questiona')].strip() + ' ' + trial_metadatas.get('dirtytype') + '\n'
 
     # (for question) add + tweak the TRIALID
     EID = 'E100' + I + 'D1'
-    buffer[buffer_holder_index_trialid_question] = buffer[buffer_holder_index_trialid_question].strip() + ' ' + EID + '\n'
+    buffer[trial_metadatas.get('buffer_holder_index_trialid_question')] = buffer[trial_metadatas.get('buffer_holder_index_trialid_question')].strip() + ' ' + EID + '\n'
 
 
     # do this last because it's inserting elements into the buffer, and not just amending existing elements
     # (for limerick) insert info from .ias file into the stored buffer_holder_index_ias_limerick
-    timestamp = int(iarea.split()[1])
-    ias_info = read_ias_word(iarea, timestamp, ias_folder)
-    buffer[buffer_holder_index_ias_limerick:buffer_holder_index_ias_limerick] = ias_info
+    timestamp = int(trial_metadatas.get('iarea').split()[1])
+    ias_info = read_ias_word(trial_metadatas.get('iarea'), timestamp, ias_folder)
+    buffer[trial_metadatas.get('buffer_holder_index_ias_limerick'):trial_metadatas.get('buffer_holder_index_ias_limerick')] = ias_info
 
     ############################################
     ### SAVE INFO BACK TO FILE #################

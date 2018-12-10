@@ -381,7 +381,7 @@ def skip_dual_task_begin_instructions(buffer, remaining_lines):
             buffer.append(line)
         elif 'DRAW_LIST' in line:
             buffer.append(line.split(' ', 3)[0]+' DISPLAY ON\n')
-            buffer[len(buffer)-2], buffer[len(buffer)-1] = buffer[len(buffer)-1], buffer[len(buffer)-2]
+            # buffer[len(buffer)-2], buffer[len(buffer)-1] = buffer[len(buffer)-1], buffer[len(buffer)-2]
 
     # skip the dual-task begin instructions screen
     done = False
@@ -394,6 +394,8 @@ def skip_dual_task_begin_instructions(buffer, remaining_lines):
             done = True
         elif 'IAREA FILE' in line:
             trial_metadatas['iarea'] = line
+        elif 'MSG' in line and 'SYNCTIME' in line:
+            buffer.append(line)
 
 def eye_movements_limerick(buffer, remaining_lines):
     """
@@ -410,9 +412,9 @@ def eye_movements_limerick(buffer, remaining_lines):
             done = True
             trial_metadatas['timestamp_end_lim'] = str(line.split()[1])
             # mark trial ok at the end of the limerick portion, add placeholders
-            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' ENDBUTTON ' + button_number + '\n') #FIXME
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' ENDBUTTON ' + button_number + '\n')
             buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' DISPLAY OFF\n')
-            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' TRIAL_RESULT ' + button_number +'\n') #FIXME
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' TRIAL_RESULT ' + button_number +'\n')
             buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' TRIAL OK\n')
             # put this placeholder here
             trial_metadatas['buffer_holder_index_eventsr'] = len(buffer)
@@ -473,9 +475,9 @@ def eye_movements_question(buffer, remaining_lines):
             done = True
             trial_metadatas['timestamp_end_ques'] = str(line.split()[1])
             # mark trial ok at the end of the limerick portion, add placeholders
-            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_ques') + ' ENDBUTTON ' + button_number + '\n') #FIXME
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_ques') + ' ENDBUTTON ' + button_number + '\n')
             buffer.append('MSG ' + trial_metadatas.get('timestamp_end_ques') + ' DISPLAY OFF\n')
-            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_ques') + ' TRIAL_RESULT ' + button_number +'\n') #FIXME
+            buffer.append('MSG ' + trial_metadatas.get('timestamp_end_ques') + ' TRIAL_RESULT ' + button_number +'\n')
             buffer.append('MSG ' + trial_metadatas.get('timestamp_end_ques') + ' TRIAL OK\n')
 
             buffer.append(line)
@@ -534,7 +536,7 @@ def tweak_stuff(buffer, remaining_lines):
     elif trial_metadatas.get('clashtype') == 'FILLLER':
         # NOTE the asc does indeed say filller with three L's
         E = 'E5'
-        I = 'I99'
+        I = I[:1] + '0' + I[1:]
     else:
         print("something broken with tweaking TRIALID")
         print(trial_metadatas.get('clashtype'), trial_metadatas.get('secondarytask'))
@@ -556,10 +558,14 @@ def tweak_stuff(buffer, remaining_lines):
     buffer[trial_metadatas.get('buffer_holder_index_trialid_question')] = buffer[trial_metadatas.get('buffer_holder_index_trialid_question')].strip() + ' ' + EID + '\n'
 
 def insert_ias(ias_folder, buffer, remaining_lines):
-    # do this last because it's inserting elements into the buffer, and not just amending existing elements
+    """
+    Insert IAS info about coordinates and letters display
+    Do this last because it's inserting elements into the buffer, and not just amending existing elements
+    """
     # (for limerick) insert info from .ias file into the stored buffer_holder_index_ias_limerick
-    timestamp = int(trial_metadatas.get('iarea').split()[1])
-    ias_info = read_ias_word(trial_metadatas.get('iarea'), timestamp, ias_folder)
+    timestamp = int(trial_metadatas.get('old_trialid').rsplit()[1]) + 1
+    # timestamp = int(trial_metadatas.get('iarea').split()[1])
+    ias_info = read_ias_letter(trial_metadatas.get('iarea'), timestamp, ias_folder)
     buffer[trial_metadatas.get('buffer_holder_index_ias_limerick'):trial_metadatas.get('buffer_holder_index_ias_limerick')] = ias_info
 
 

@@ -7,18 +7,13 @@ def check_args():
     returns file stuff from the command line inputs
     """
     # check for correct command-line inputs
-    if len(sys.argv) != 4:
-        print "usage: python makeasc.py [original_asc input] [new_asc output] [ias_folder]"
+    if len(sys.argv) != 2:
+        print "usage: python makeasc.py [original_asc input]"
         exit(-1)
 
     # the original asc input file
     original_asc = sys.argv[1]
-    # the desired asc output file
-    new_asc = sys.argv[2]
-    # the folder where .ias files are stored
-    ias_folder = sys.argv[3]
-
-    return (original_asc, new_asc, ias_folder)
+    return original_asc
 
 ###################################
 #### declare global variables here
@@ -26,7 +21,9 @@ def check_args():
 # temporary buffer to store lines before writing them to new_asc file at the end
 buffer = []
 # check for correct command-line inputs, and initialize variables
-(original_asc, new_asc, ias_folder) = check_args()
+original_asc = check_args()
+new_asc = original_asc.split('.')[0] + '_processed.asc'
+ias_folder = original_asc.split('.')[0] + '_aoi'
 # metadata about the current trial
 trial_metadatas = {
     'subtypeid' : '',
@@ -57,12 +54,12 @@ def write_to_outfile(new_asc_filename, buffer):
             outfile.write(x)
     outfile.close()
 
-def read_ias_word(line, timestamp, ias_folder):
+def read_ias_word(line, timestamp):
     """
     Reads the contentes of the .ias file word-by-word into a buffer
     """
     # format the path to the folder where the .ias files are stored
-    line = ias_folder + line.split('/')[-1].strip()
+    line = ias_folder + '/' + line.split('/')[-1].strip()
     iasfile = open(line, 'r')
 
     # buffer to hold the lines before they get combined into
@@ -106,13 +103,13 @@ def read_ias_word(line, timestamp, ias_folder):
         word_number += 1
 
 # TODO: actually letter by letter, and TODO: timestamps are off
-def read_ias_letter(line, timestamp, ias_folder):
+def read_ias_letter(line, timestamp):
     """
     Reads the contentes of the .ias file letter-by-letter into a buffer
     (This method is not currently being used)
     """
     # format the path to the folder where the .ias files are stored
-    line = ias_folder + line.split('/')[-1].strip()
+    line = ias_folder + '/' + line.split('/')[-1].strip()
     iasfile = open(line, 'r')
 
     # buffer to hold the lines before they get combined into
@@ -557,7 +554,7 @@ def tweak_stuff(buffer, remaining_lines):
     EID = 'E100' + I + 'D1'
     buffer[trial_metadatas.get('buffer_holder_index_trialid_question')] = buffer[trial_metadatas.get('buffer_holder_index_trialid_question')].strip() + ' ' + EID + '\n'
 
-def insert_ias(ias_folder, buffer, remaining_lines):
+def insert_ias(buffer, remaining_lines):
     """
     Insert IAS info about coordinates and letters display
     Do this last because it's inserting elements into the buffer, and not just amending existing elements
@@ -565,7 +562,7 @@ def insert_ias(ias_folder, buffer, remaining_lines):
     # (for limerick) insert info from .ias file into the stored buffer_holder_index_ias_limerick
     timestamp = int(trial_metadatas.get('old_trialid').rsplit()[1]) + 1
     # timestamp = int(trial_metadatas.get('iarea').split()[1])
-    ias_info = read_ias_letter(trial_metadatas.get('iarea'), timestamp, ias_folder)
+    ias_info = read_ias_letter(trial_metadatas.get('iarea'), timestamp)
     buffer[trial_metadatas.get('buffer_holder_index_ias_limerick'):trial_metadatas.get('buffer_holder_index_ias_limerick')] = ias_info
 
 
@@ -630,7 +627,7 @@ def main():
         tweak_stuff(buffer, remaining_lines)
 
         # insert ias stuff for limerick and question
-        insert_ias(ias_folder, buffer, remaining_lines)
+        insert_ias(buffer, remaining_lines)
 
 
 # run main()

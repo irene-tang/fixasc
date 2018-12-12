@@ -22,22 +22,16 @@ E100 - comprehension question
 
 I - item number, same stimuli has same item number; this is indicated by subtypeid
 1-40 for critical trials
-01-040 for filler
+41-100 for filler
 
 D0 - the limerick
 D1 - the question
 
 ————
-Limerick stuff to clarify
+Limerick stuff todo
 
-button press lines 671 question down differs from up
-
-	10. TODO: run the script on all participant data
-		will run into bugs, fix them
--------
-11. run question_acc, make_cnt, robodoc
-	need to make or modify the given parameters.txt file which currently doesn’t work
-12. run eyedry
-	where is this located?
-------
+11. make_cnt, robodoc, plus	need to make or modify the given parameters.txt file
+12. run eyedry - where is this located?
 13. collecting the last of participant data
+14. so need to do the writing part...
+15. documentation would be nice

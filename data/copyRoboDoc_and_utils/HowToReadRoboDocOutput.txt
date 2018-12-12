@@ -1,0 +1,16 @@
+How to read a .da1 file
+
+Col1	Trial number including questions as trials
+Col2	Condition number, for critical items SRC=1, ORC=2
+Col3	Item number
+Col4	Total time on screen
+Col5	gamepad response (5=next screen, 0=timed out, 6= left trigger, 7=right trigger)
+Col6	Number of fixations in the trial
+
+Every fixation results in four columns of data
+Col7	the number character that this fixation is on (-1 if outside the sentence)
+Col8	the line that this fixation is on (0 if on the first line)
+Col9	the ms from the beginning of the trial to the onset of this fixation
+Col10   the ms from the beginning of the trial to the end of this fixation
+
+These columns get repeated for each subsequent fixation

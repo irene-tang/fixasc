@@ -30,9 +30,9 @@ D1 - the question
 ————
 Limerick stuff to clarify
 
-	14. check for runtime errors
+button press lines 671 question down differs from up
+
 	10. TODO: run the script on all participant data
-		is there a shortcut to quickly gather the relevant files into a single folder?
 		will run into bugs, fix them
 -------
 11. run question_acc, make_cnt, robodoc

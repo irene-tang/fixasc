@@ -96,8 +96,15 @@ def open_input(original_asc):
     try:
         infile = open(original_asc, 'r')
         remaining_lines = infile.readlines()
+
+        # skip everything after TRIALID 101
+        indexes = [idx for idx, s in enumerate(remaining_lines) if 'TRIALID 101' in s]
+        if len(indexes) > 0:
+            remaining_lines = remaining_lines[:indexes[0]]
+
         infile.close()
         return remaining_lines
+        
     except IOError:
         print("original_asc file not found or path is incorrect")
         exit(-1)
@@ -597,7 +604,7 @@ def main():
     conversion_metadata(buffer, remaining_lines)
     calibration_validation(buffer, remaining_lines, False)
 
-    # PRACTICE TRIALS -- TODO does this really need to be implemented?
+    # PRACTICE TRIALS -- basically skipping them
     practice_trials(buffer, remaining_lines)
 
     ############################################

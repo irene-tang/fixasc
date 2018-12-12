@@ -260,6 +260,23 @@ def read_camera_info(buffer, remaining_lines):
         # get the next line
         line = getline(remaining_lines)
 
+        # increase timestamp for camera info, since timestamps from importing IAS overflows
+        if 'RECCFG' in line or \
+            'ELCLCFG' in line or \
+            'GAZE_COORDS' in line or \
+            'THRESHOLDS' in line or \
+            'ELCL_WINDOW_SIZES' in line or \
+            'CAMERA_LENS_FOCAL_LENGTH' in line or \
+            'PUPIL_DATA_TYPE' in line or \
+            'ELCL_PROC' in line or \
+            'ELCL_PCR_PARAM' in line or \
+            '!MODE RECORD' in line:
+            line_split = line.split(None, 2)
+            print line_split
+            timestamp = int(line_split[1])
+            print timestamp
+            line = line_split[0] + ' ' + str(timestamp + 600) + ' ' + line_split[2]
+
         # exit state
         if '!MODE RECORD' in line:
             done = True
@@ -292,7 +309,7 @@ def skip_dual_task_begin_instructions(buffer, remaining_lines):
         elif 'SFIX' in line:
             buffer.append(line)
         elif 'DRAW_LIST' in line:
-            buffer.append(line.split(' ', 3)[0]+' DISPLAY ON\n')
+            buffer.append(line.split(None, 3)[0]+' DISPLAY ON\n')
             # buffer[len(buffer)-2], buffer[len(buffer)-1] = buffer[len(buffer)-1], buffer[len(buffer)-2]
 
     # skip the dual-task begin instructions screen
@@ -455,12 +472,12 @@ def tweak_stuff(buffer, remaining_lines):
         exit(-1)
 
     EID = E + I + D
-    new_id = trial_metadatas.get('old_trialid').rsplit(' ', 1)[0] + ' ' + EID + '\n'
+    new_id = trial_metadatas.get('old_trialid').rsplit(None, 1)[0] + ' ' + EID + '\n'
     buffer[trial_metadatas.get('buffer_holder_index_trialid_limerick')] = new_id
 
 
     # (for limerick) tweak the END EVENTS RES line
-    buffer[trial_metadatas.get('buffer_holder_index_eventsr')] = 'END ' + trial_metadatas.get('timestamp_end_lim') + trial_metadatas.get('events_res_line').split(' ', 1)[1]
+    buffer[trial_metadatas.get('buffer_holder_index_eventsr')] = 'END ' + trial_metadatas.get('timestamp_end_lim') + trial_metadatas.get('events_res_line').split(None, 1)[1]
 
     # (for question) update the dirtytype question_answer
     buffer[trial_metadatas.get('buffer_holder_index_questiona')]  = buffer[trial_metadatas.get('buffer_holder_index_questiona')].strip() + ' ' + trial_metadatas.get('dirtytype') + '\n'

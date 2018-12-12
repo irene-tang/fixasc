@@ -15,7 +15,7 @@ def check_args():
     return original_asc
 
 ###################################
-#### declare global variables here
+#### declare global variables here -- probably not the most reccommended programming habit, but...
 ###################################
 # temporary buffer to store lines before writing them to new_asc file at the end
 buffer = []
@@ -34,86 +34,41 @@ trial_metadatas = {
     'buffer_holder_index_ias_limerick' : -1,
     'buffer_holder_index_ias_question' : -1,
     'buffer_holder_index_eventsr' : -1,
-    'buffer_holder_index_questiona' : -1,
+    'buffer_holder_index_questionanswer' : -1,
+    'camera_info' : [],
     'timestamp_end_lim' : '',
     'timestamp_end_ques'  : '',
     'timestamp_iarea' : '',
     'events_res_line' : '',
     'count' : 0
 }
+# ias for the questions
+fake_question_ias = [ \
+'MSG	00000001 REGION CHAR 0 1 j 254 790 260 829\n',
+'MSG	00000001 DELAY 1 MS\n', \
+'MSG	00000002 REGION CHAR 1 1 u 260 790 275 829\n', \
+'MSG	00000002 DELAY 1 MS\n', \
+'MSG	00000003 REGION CHAR 2 1 s 275 790 289 829\n', \
+'MSG	00000003 DELAY 1 MS\n', \
+'MSG	00000004 REGION CHAR 3 1 t 289 790 297 829\n', \
+'MSG	00000004 DELAY 1 MS\n', \
+'MSG	00000005 REGION CHAR 4 1   297 790 305 829\n', \
+'MSG	00000005 DELAY 1 MS\n', \
+'MSG	00000006 REGION CHAR 5 1 a 305 790 320 829\n', \
+'MSG	00000006 DELAY 1 MS\n', \
+'MSG	00000007 REGION CHAR 6 1   320 790 328 829\n', \
+'MSG	00000007 DELAY 1 MS\n', \
+'MSG	00000008 REGION CHAR 7 1 l 328 790 334 829\n', \
+'MSG	00000008 DELAY 1 MS\n', \
+'MSG	00000009 REGION CHAR 8 1 i 334 790 340 829\n', \
+'MSG	00000009 DELAY 1 MS\n', \
+'MSG	00000010 REGION CHAR 9 1 n 340 790 355 829\n', \
+'MSG	00000010 DELAY 1 MS\n', \
+'MSG	00000011 REGION CHAR 10 1 e 355 790 370 829\n', \
+'MSG	00000011 DELAY 1 MS\n'
+]
 
-def write_to_outfile(buffer):
-    """
-    Writes the contentes of the buffer list into the new_asc output file
-    """
-    new_asc_filename = original_asc.split('.')[0] + '_processed.asc'
-    with open(new_asc_filename, 'w') as outfile:
-        for x in buffer:
-            outfile.write(x)
-    outfile.close()
-
-# TODO: timestamps are off
-def read_ias_letter(line, timestamp):
-    """
-    Reads the contentes of the .ias file letter-by-letter into a buffer
-    (This method is not currently being used)
-    """
-    # format the path to the folder where the .ias files are stored
-    ias_folder = original_asc.split('.')[0] + '_aoi'
-    line = ias_folder + '/' + line.split('/')[-1].strip()
-    iasfile = open(line, 'r')
-
-    # buffer to hold the lines before they get combined into
-    buffer_slice = []
-    # position of the current character on the current line
-    char_number = 0
-    # line number that the current word appears on
-    line_number = 0
-
-    # include this for each limerick
-    buffer_slice.append('MSG ' + str(timestamp) + ' DISPLAY TEXT 1\n')
-
-    while True:
-        # get the next line
-        line = iasfile.readline()
-
-        # return the buffer when the end of the .ias file is reached
-        if not line:
-            return buffer_slice
-
-        # decompose the line
-        line = line.split()
-        word = line[-1]
-        x_start = int(line[3])
-        x_end = int(line[5])
-        y_start = int(line[4])
-        y_end = int(line[6])
-        x_step = (x_end - x_start)/(len(word) + 1)
-        sequence = int(line[2])
-
-        # increment the line number when appropriate
-        if sequence == 1:
-            line_number += 1
-            char_number = 0
-
-        # FIXME: spacing
-        # evenly slice up the given coordinates across each character
-        for i in range(len(word)+1):
-            if i == len(word):
-                c = ' '
-                x = x_end
-            else:
-                c = word[i]
-                x = x_start + x_step
-
-            # add to buffer
-            buffer_slice.append('MSG ' + str(timestamp) + ' REGION CHAR ' + str(char_number) + ' ' + str(line_number) + ' ' + c + ' ' + str(x_start) + ' ' + str(y_start) + ' ' + str(x) + ' ' + str(y_end) + '\n')
-            buffer_slice.append('MSG ' + str(timestamp) + ' DELAY 1 MS' + '\n')
-            x_start = x_start + x_step
-
-            # increment timestamp and char_number
-            timestamp += 1
-            char_number += 1
+print len(fake_question_ias)
 
 def getline(remaining_lines):
     """
@@ -255,10 +210,13 @@ def read_camera_info(buffer, remaining_lines):
     """
     read in camera info
     """
+    camera_info_copy = []
     done = False
     while not done:
         # get the next line
         line = getline(remaining_lines)
+        camera_info_copy.append(line)
+        # print line
 
         # increase timestamp for camera info, since timestamps from importing IAS overflows
         if 'RECCFG' in line or \
@@ -270,11 +228,11 @@ def read_camera_info(buffer, remaining_lines):
             'PUPIL_DATA_TYPE' in line or \
             'ELCL_PROC' in line or \
             'ELCL_PCR_PARAM' in line or \
-            '!MODE RECORD' in line:
+            '!MODE RECORD' in line or \
+            'START' in line:
             line_split = line.split(None, 2)
             print line_split
             timestamp = int(line_split[1])
-            print timestamp
             line = line_split[0] + ' ' + str(timestamp + 600) + ' ' + line_split[2]
 
         # exit state
@@ -294,6 +252,8 @@ def read_camera_info(buffer, remaining_lines):
             buffer.append(line)
         else:
             buffer.append(line)
+
+    trial_metadatas['camera_info'] = camera_info_copy
 
 def skip_dual_task_begin_instructions(buffer, remaining_lines):
     # the three-ish lines between !MODE RECORD and START SECONDARY TASK
@@ -376,7 +336,7 @@ def skip_dual_task_end_instructions(buffer, remaining_lines):
 
 def question_placeholders(buffer, remaining_lines):
     """
-    Placeholders for the TRIALID and .ias info,
+    Placeholders for the TRIALID, .ias info
     to be tweaked or inserted later
     """
     # placeholder for TRIALID
@@ -384,10 +344,46 @@ def question_placeholders(buffer, remaining_lines):
     buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' TRIALID\n')
 
     # placeholder index for the .ias stuff that will go here
-    trial_metadatas['buffer_holder_index_questiona'] = len(buffer)
+    trial_metadatas['buffer_holder_index_questionanswer'] = len(buffer)
     buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' QUESTION_ANSWER\n')
     trial_metadatas['buffer_holder_index_ias_question'] = len(buffer)
     buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' DELAY 0 MS\n')
+
+def question_cam_ias(buffer, remaining_lines):
+    """
+    insert camera info and fake ias info
+    """
+    # insert artificail aoi info, a single line at the bottom of the screen
+    for line in fake_question_ias:
+        print line
+
+        line_split = line.split(None, 2)
+        timestamp = int(line_split[1])
+        line = line_split[0] + ' ' + str(int(trial_metadatas.get('timestamp_end_lim')) + timestamp) + ' ' + line_split[2]
+        buffer.append(line)
+
+    # insert camera info, with the correct timestamp
+    for line in trial_metadatas.get('camera_info'):
+        # increase timestamp for camera info, since timestamps from importing IAS overflows
+        if 'RECCFG' in line or \
+            'ELCLCFG' in line or \
+            'GAZE_COORDS' in line or \
+            'THRESHOLDS' in line or \
+            'ELCL_WINDOW_SIZES' in line or \
+            'CAMERA_LENS_FOCAL_LENGTH' in line or \
+            'PUPIL_DATA_TYPE' in line or \
+            'ELCL_PROC' in line or \
+            'ELCL_PCR_PARAM' in line or \
+            '!MODE RECORD' in line or \
+            'START' in line:
+            line_split = line.split(None, 2)
+            timestamp = int(line_split[1])
+            line = line_split[0] + ' ' + str(int(trial_metadatas.get('timestamp_end_lim')) + 300) + ' ' + line_split[2]
+            buffer.append(line)
+        else:
+            buffer.append(line)
+
+
 
 def eye_movements_question(buffer, remaining_lines):
     """
@@ -477,14 +473,76 @@ def tweak_stuff(buffer, remaining_lines):
 
 
     # (for limerick) tweak the END EVENTS RES line
-    buffer[trial_metadatas.get('buffer_holder_index_eventsr')] = 'END ' + trial_metadatas.get('timestamp_end_lim') + trial_metadatas.get('events_res_line').split(None, 1)[1]
+    buffer[trial_metadatas.get('buffer_holder_index_eventsr')] = 'END ' + trial_metadatas.get('timestamp_end_lim') + ' ' + trial_metadatas.get('events_res_line').split(None, 2)[2]
 
     # (for question) update the dirtytype question_answer
-    buffer[trial_metadatas.get('buffer_holder_index_questiona')]  = buffer[trial_metadatas.get('buffer_holder_index_questiona')].strip() + ' ' + trial_metadatas.get('dirtytype') + '\n'
+    buffer[trial_metadatas.get('buffer_holder_index_questionanswer')]  = buffer[trial_metadatas.get('buffer_holder_index_questionanswer')].strip() + ' ' + trial_metadatas.get('dirtytype') + '\n'
 
     # (for question) add + tweak the TRIALID
     EID = 'E100' + I + 'D1'
     buffer[trial_metadatas.get('buffer_holder_index_trialid_question')] = buffer[trial_metadatas.get('buffer_holder_index_trialid_question')].strip() + ' ' + EID + '\n'
+
+def read_ias_letter(line, timestamp):
+    """
+    Reads the contentes of the .ias file letter-by-letter into a buffer
+    (This method is not currently being used)
+    """
+    # format the path to the folder where the .ias files are stored
+    ias_folder = original_asc.split('.')[0] + '_aoi'
+    line = ias_folder + '/' + line.split('/')[-1].strip()
+    iasfile = open(line, 'r')
+
+    # buffer to hold the lines before they get combined into
+    buffer_slice = []
+    # position of the current character on the current line
+    char_number = 0
+    # line number that the current word appears on
+    line_number = 0
+
+    # include this for each limerick
+    buffer_slice.append('MSG ' + str(timestamp) + ' DISPLAY TEXT 1\n')
+
+    while True:
+        # get the next line
+        line = iasfile.readline()
+
+        # return the buffer when the end of the .ias file is reached
+        if not line:
+            return buffer_slice
+
+        # decompose the line
+        line = line.split()
+        word = line[-1]
+        x_start = int(line[3])
+        x_end = int(line[5])
+        y_start = int(line[4])
+        y_end = int(line[6])
+        x_step = (x_end - x_start)/(len(word) + 1)
+        sequence = int(line[2])
+
+        # increment the line number when appropriate
+        if sequence == 1:
+            line_number += 1
+            char_number = 0
+
+        # FIXME: spacing
+        # evenly slice up the given coordinates across each character
+        for i in range(len(word)+1):
+            if i == len(word):
+                c = ' '
+                x = x_end
+            else:
+                c = word[i]
+                x = x_start + x_step
+
+            # add to buffer
+            buffer_slice.append('MSG ' + str(timestamp) + ' REGION CHAR ' + str(char_number) + ' ' + str(line_number) + ' ' + c + ' ' + str(x_start) + ' ' + str(y_start) + ' ' + str(x) + ' ' + str(y_end) + '\n')
+            buffer_slice.append('MSG ' + str(timestamp) + ' DELAY 1 MS' + '\n')
+            x_start = x_start + x_step
+
+            # increment timestamp and char_number
+            timestamp += 1
+            char_number += 1
 
 def insert_ias(buffer, remaining_lines):
     """
@@ -497,6 +555,17 @@ def insert_ias(buffer, remaining_lines):
     ias_info = read_ias_letter(trial_metadatas.get('iarea'), timestamp)
     buffer[trial_metadatas.get('buffer_holder_index_ias_limerick'):trial_metadatas.get('buffer_holder_index_ias_limerick')] = ias_info
 
+
+
+def write_to_outfile(buffer):
+    """
+    Writes the contentes of the buffer list into the new_asc output file
+    """
+    new_asc_filename = original_asc.split('.')[0] + '_processed.asc'
+    with open(new_asc_filename, 'w') as outfile:
+        for x in buffer:
+            outfile.write(x)
+    outfile.close()
 
 def main():
     """
@@ -547,7 +616,8 @@ def main():
         # question placeholders
         question_placeholders(buffer, remaining_lines)
 
-        # - add camera info
+        # - add camera info and ias info
+        question_cam_ias(buffer, remaining_lines)
 
         # get the eye-movements for viewing the question
         eye_movements_question(buffer, remaining_lines)

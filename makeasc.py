@@ -1,6 +1,5 @@
 import sys
 
-
 def check_args():
     """
     checks for correct command-line inputs
@@ -22,8 +21,6 @@ def check_args():
 buffer = []
 # check for correct command-line inputs, and initialize variables
 original_asc = check_args()
-new_asc = original_asc.split('.')[0] + '_processed.asc'
-ias_folder = original_asc.split('.')[0] + '_aoi'
 # metadata about the current trial
 trial_metadatas = {
     'subtypeid' : '',
@@ -45,62 +42,15 @@ trial_metadatas = {
     'count' : 0
 }
 
-def write_to_outfile(new_asc_filename, buffer):
+def write_to_outfile(buffer):
     """
     Writes the contentes of the buffer list into the new_asc output file
     """
+    new_asc_filename = original_asc.split('.')[0] + '_processed.asc'
     with open(new_asc_filename, 'w') as outfile:
         for x in buffer:
             outfile.write(x)
     outfile.close()
-
-def read_ias_word(line, timestamp):
-    """
-    Reads the contentes of the .ias file word-by-word into a buffer
-    """
-    # format the path to the folder where the .ias files are stored
-    line = ias_folder + '/' + line.split('/')[-1].strip()
-    iasfile = open(line, 'r')
-
-    # buffer to hold the lines before they get combined into
-    buffer_slice = []
-    # position of the current word on the current line
-    word_number = 0
-    # line number that the current word appears on
-    line_number = 0
-
-    # include this for each limerick
-    buffer_slice.append('MSG ' + str(timestamp) + ' DISPLAY TEXT 1\n')
-
-    while True:
-        # get the next line
-        line = iasfile.readline()
-
-        # return the buffer when the end of the .ias file is reached
-        if not line:
-            return buffer_slice
-
-        # decompose the line
-        line = line.split()
-        word = line[-1]
-        x_start = int(line[3])
-        x_end = int(line[5])
-        y_start = int(line[4])
-        y_end = int(line[6])
-        sequence = int(line[2])
-
-        # increment the line number when appropriate
-        if sequence == 1:
-            line_number += 1
-            word_number = 0
-
-        # add to buffer
-        buffer_slice.append('MSG ' + str(timestamp) + ' REGION CHAR ' + str(word_number) + ' ' + str(line_number) + ' ' + word + ' ' + str(x_start) + ' ' + str(y_start) + ' ' + str(x_end) + ' ' + str(y_end) + '\n')
-        buffer_slice.append('MSG ' + str(timestamp) + ' DELAY 1 MS' + '\n')
-
-        # increment timestamp and word_number
-        timestamp += 1
-        word_number += 1
 
 # TODO: actually letter by letter, and TODO: timestamps are off
 def read_ias_letter(line, timestamp):
@@ -109,6 +59,7 @@ def read_ias_letter(line, timestamp):
     (This method is not currently being used)
     """
     # format the path to the folder where the .ias files are stored
+    ias_folder = original_asc.split('.')[0] + '_aoi'
     line = ias_folder + '/' + line.split('/')[-1].strip()
     iasfile = open(line, 'r')
 
@@ -180,7 +131,7 @@ def getline(remaining_lines):
     except IndexError:
         print(trial_metadatas['count'])
 
-        write_to_outfile(new_asc, buffer)
+        write_to_outfile(buffer)
         print("Successfully parsed entire file.")
         exit(-1)
 

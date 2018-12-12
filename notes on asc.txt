@@ -1,4 +1,4 @@
-RCAd 
+RCAd
 
 E1 -- Is condition 1 (for Tracey's study that meant subject extracted relative clause)
 E2 -- is condition 2 (for Tracey's study that meant object extracted relative clause)
@@ -8,7 +8,7 @@ E100 -- Is the condition code for comprehension questions
 I5 -- means item 5
 
 D0 - means it's the first item in a sequence (the critical sentence for Tracey)
-D1 - means it's the second item in a sequence (the comprehension question for Tracey) 
+D1 - means it's the second item in a sequence (the comprehension question for Tracey)
 
 ————
 Limerick
@@ -24,42 +24,20 @@ I - item number, same stimuli has same item number; this is indicated by subtype
 1-40 for critical trials
 01-040 for filler
 
-D0 - the limerick 
+D0 - the limerick
 D1 - the question
 
 ————
-Limerick stuff to clarify 
+Limerick stuff to clarify
 
-3. Insert IAS stuff letter per letter
-	timing is off; it goes past the timing of the next section — so work backwards or something, 
-4. Things that are missing from our new limerick asc file, but appear in the RCAd asc file:
-	GAZE TARGET ON — this is the blue dot, “SHOW LIMERICK”
-	GAZE TARGET OFF — the release of the button
-	^ fix these
-	FRAMERATE - missing but cannot artificially insert (according to Eyelink Programmar’s Manual p.83)
-5. Things that are artificially inserted into our new limerick asc file, via swapping or direct hacking, to closer match RCad asc file:
-	DISPLAY_TEXT
-	DISPLAY ON — once gaze target gets triggered
-	DISPLAY OFF
-		add SYNCTIME every time DISPLAY ON (OFF?)  appears or something
-	ENDBUTTON
-	TRIAL_RESULT — in the original all were TRIAL RESULT 0, in the modified it was switched to the button press (e.g. TRIAL RESULT 3)
-	TRIAL_OK
-	QUESTION_ANSWER
-6. Things that are either thrown out or swapped to something else in our new limerick asc file:
-	DRAW_LIST — becomes DISPLAY ON
-	START LIMERICK # — thrown out
-	end_trial — thrown out
-7. Almost always, the last eye movement recorded at the end of a trial is a SFIX or SBLINK or SSACC; so it doesn’t close with an end movement. This is probably our least significant issue.
-8. Do not know where the IAS coordinates info is stored for the question — so just pretend it’s one sentece at the bottom of the screen
-8. insert camera stuff for questions
-9. TODO: amend the data for the one participant whose data got split up
-10. TODO: run the script on all participant data
-	is there a shortcut to quickly gather the relevant files into a single folder?
-	will run into bugs, fix them
+	14. check for runtime errors
+	10. TODO: run the script on all participant data
+		is there a shortcut to quickly gather the relevant files into a single folder?
+		will run into bugs, fix them
+-------
 11. run question_acc, make_cnt, robodoc
 	need to make or modify the given parameters.txt file which currently doesn’t work
 12. run eyedry
 	where is this located?
+------
 13. collecting the last of participant data
-14. check for runtime errors

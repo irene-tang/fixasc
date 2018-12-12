@@ -32,7 +32,6 @@ trial_metadatas = {
     'buffer_holder_index_trialid_limerick' : -1,
     'buffer_holder_index_trialid_question' : -1,
     'buffer_holder_index_ias_limerick' : -1,
-    'buffer_holder_index_ias_question' : -1,
     'buffer_holder_index_eventsr' : -1,
     'buffer_holder_index_questionanswer' : -1,
     'camera_info' : [],
@@ -40,7 +39,8 @@ trial_metadatas = {
     'timestamp_end_ques'  : '',
     'timestamp_iarea' : '',
     'events_res_line' : '',
-    'count' : 0
+    'count' : 0,
+    'synctime' : '0'
 }
 # ias for the questions
 fake_question_ias = [ \
@@ -67,8 +67,6 @@ fake_question_ias = [ \
 'MSG	00000011 REGION CHAR 10 1 e 355 790 370 829\n', \
 'MSG	00000011 DELAY 1 MS\n'
 ]
-
-print len(fake_question_ias)
 
 def getline(remaining_lines):
     """
@@ -231,7 +229,6 @@ def read_camera_info(buffer, remaining_lines):
             '!MODE RECORD' in line or \
             'START' in line:
             line_split = line.split(None, 2)
-            print line_split
             timestamp = int(line_split[1])
             line = line_split[0] + ' ' + str(timestamp + 600) + ' ' + line_split[2]
 
@@ -256,23 +253,25 @@ def read_camera_info(buffer, remaining_lines):
     trial_metadatas['camera_info'] = camera_info_copy
 
 def skip_dual_task_begin_instructions(buffer, remaining_lines):
-    # the three-ish lines between !MODE RECORD and START SECONDARY TASK
+    """
+    skip the dual-task begin instructions screen
+    including skip the three-ish lines between !MODE RECORD and START SECONDARY TASK
+    includes gaze target on/off, i.e. the blue dot
+    """
+
+    # gaze target portion
     done = False
     while not done:
         # get the next line
         line = getline(remaining_lines)
 
         # exit state
-        if 'MSG' in line and 'START SECONDARY TASK' in line:
+        if 'BUTTON' in line and str(line.strip().split()[-1]) == '1':
             done = True
-
-        elif 'SFIX' in line:
             buffer.append(line)
-        elif 'DRAW_LIST' in line:
-            buffer.append(line.split(None, 3)[0]+' DISPLAY ON\n')
-            # buffer[len(buffer)-2], buffer[len(buffer)-1] = buffer[len(buffer)-1], buffer[len(buffer)-2]
+            buffer.append('MSG ' + line.split(None, 3)[1] +' GAZE TARGET ON\n')
 
-    # skip the dual-task begin instructions screen
+
     done = False
     while not done:
         # get the next line
@@ -281,10 +280,25 @@ def skip_dual_task_begin_instructions(buffer, remaining_lines):
         # exit state
         if 'MSG' in line and 'SHOW LIMERICK' in line:
             done = True
+            line_split = line.split(None, 3)
+            trial_metadatas['synctime'] = line_split[1]
+            buffer.append(line_split[0] + ' ' + trial_metadatas.get('synctime') +' GAZE TARGET OFF\n')
+            buffer.append(line_split[0] + ' ' + trial_metadatas.get('synctime') +' DISPLAY ON\n')
         elif 'IAREA FILE' in line:
             trial_metadatas['iarea'] = line
         elif 'MSG' in line and 'SYNCTIME' in line:
+            line_split = line.split(None, 3)
+            buffer.append(line_split[0] + ' ' + trial_metadatas.get('synctime') +' SYNCTIME\n')
+        # collect eyetracking data, since we're still in gazetarget area
+        elif 'SFIX' in line or \
+                'EFIX' in line or \
+                'SSACC' in line or \
+                'ESACC' in line or \
+                'SBLINK' in line or \
+                'EBLINK' in line or \
+                'BUTTON' in line:
             buffer.append(line)
+
 
 def eye_movements_limerick(buffer, remaining_lines):
     """
@@ -333,6 +347,8 @@ def skip_dual_task_end_instructions(buffer, remaining_lines):
         # exit state
         if 'MSG' in line and 'SHOW FOLLOWUP QUESTION' in line:
             done = True
+        elif 'BUTTON' in line:
+            buffer.append(line)
 
 def question_placeholders(buffer, remaining_lines):
     """
@@ -346,8 +362,8 @@ def question_placeholders(buffer, remaining_lines):
     # placeholder index for the .ias stuff that will go here
     trial_metadatas['buffer_holder_index_questionanswer'] = len(buffer)
     buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' QUESTION_ANSWER\n')
-    trial_metadatas['buffer_holder_index_ias_question'] = len(buffer)
     buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' DELAY 0 MS\n')
+    buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' DISPLAY TEXT 1\n')
 
 def question_cam_ias(buffer, remaining_lines):
     """
@@ -355,8 +371,6 @@ def question_cam_ias(buffer, remaining_lines):
     """
     # insert artificail aoi info, a single line at the bottom of the screen
     for line in fake_question_ias:
-        print line
-
         line_split = line.split(None, 2)
         timestamp = int(line_split[1])
         line = line_split[0] + ' ' + str(int(trial_metadatas.get('timestamp_end_lim')) + timestamp) + ' ' + line_split[2]
@@ -383,12 +397,14 @@ def question_cam_ias(buffer, remaining_lines):
         else:
             buffer.append(line)
 
-
-
 def eye_movements_question(buffer, remaining_lines):
     """
     Parses the eye movements for viewing a single question
     """
+
+    buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' DISPLAY ON\n')
+    buffer.append('MSG ' + trial_metadatas.get('timestamp_end_lim') + ' SYNCTIME\n')
+
     button_number = ''
     done = False
     while not done:
@@ -554,8 +570,6 @@ def insert_ias(buffer, remaining_lines):
     # timestamp = int(trial_metadatas.get('iarea').split()[1])
     ias_info = read_ias_letter(trial_metadatas.get('iarea'), timestamp)
     buffer[trial_metadatas.get('buffer_holder_index_ias_limerick'):trial_metadatas.get('buffer_holder_index_ias_limerick')] = ias_info
-
-
 
 def write_to_outfile(buffer):
     """

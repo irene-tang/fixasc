@@ -1,4 +1,4 @@
-import sys
+import sys, os
 
 def check_args():
     """
@@ -104,7 +104,7 @@ def open_input(original_asc):
 
         infile.close()
         return remaining_lines
-        
+
     except IOError:
         print("original_asc file not found or path is incorrect")
         exit(-1)
@@ -306,7 +306,6 @@ def skip_dual_task_begin_instructions(buffer, remaining_lines):
                 'BUTTON' in line:
             buffer.append(line)
 
-
 def eye_movements_limerick(buffer, remaining_lines):
     """
     Parses the eye movements for viewing a single limerick
@@ -484,7 +483,7 @@ def tweak_stuff(buffer, remaining_lines):
     elif trial_metadatas.get('clashtype') == 'FILLLER':
         # NOTE the asc does indeed say filller with three L's
         E = 'E5'
-        I = I[:1] + '0' + I[1:]
+        I = 'I' + str(int(trial_metadatas.get('subtypeid')) + 40)
     else:
         print("something broken with tweaking TRIALID")
         print(trial_metadatas.get('clashtype'), trial_metadatas.get('secondarytask'))
@@ -582,7 +581,13 @@ def write_to_outfile(buffer):
     """
     Writes the contentes of the buffer list into the new_asc output file
     """
-    new_asc_filename = original_asc.split('.')[0] + '_processed.asc'
+    inpath = original_asc.split('/')
+    new_asc_filename = inpath[0] + '/processed_asc/' + inpath[2].split('.')[0] + '_processed.asc'
+    print new_asc_filename
+
+    # sorry this is broken, just create the folder by hand for now
+    # os.makedirs(os.path.dirname(new_asc_filename), exist_ok=True)
+
     with open(new_asc_filename, 'w') as outfile:
         for x in buffer:
             outfile.write(x)

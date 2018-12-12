@@ -52,7 +52,7 @@ def write_to_outfile(buffer):
             outfile.write(x)
     outfile.close()
 
-# TODO: actually letter by letter, and TODO: timestamps are off
+# TODO: timestamps are off
 def read_ias_letter(line, timestamp):
     """
     Reads the contentes of the .ias file letter-by-letter into a buffer
@@ -220,44 +220,8 @@ def calibration_validation(buffer, remaining_lines, recalibration):
 
 def practice_trials(buffer, remaining_lines):
     """
-    Process the practice trials
+    Process the practice trials by skipping them and the extra trial metadata
     """
-    # # first deal with the abandoned TRIALID from the current line
-    # current_trialid = line # TODO repair this for the first practice lim
-    # buffer.append(current_trialid)
-    #
-    # #TODO add practice ias info here
-    #
-    # # get camera info -- TODO possibly might need some re ordering of certain lines since they don't line up exactly
-    # done = False
-    # while not done:
-        # get the next line
-        # line = getline(remaining_lines)
-    #
-    #     # exit sate
-    #     if 'MSG' in line and 'str("START PRACTICE LIMERICK' in line:
-    #         done  = True
-    #     # basically get everything up until the actual eye movement data
-    #     else:
-    #         buffer.append(line)
-    #         # pass
-    #
-    # # read limerick 1 -- TODO need to look into segregating the limerick from the question
-    # # for now just keep all practice trial info, unparsed
-    # done = False
-    # while not done:
-        # get the next line
-        # line = getline(remaining_lines)
-    #
-    #     # exit state
-    #     if 'MSG' in line and 'str("END PRACTICE LIMERICKS AND BEGIN REAL TRIALS")' in line:
-    #         done = True
-    #         buffer.append(line)
-    #     else:
-    #         # buffer.append(line)
-    #         pass
-
-
     # skip the extra trial metadata info here
     done = False
     while not done:

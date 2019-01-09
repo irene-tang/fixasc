@@ -592,10 +592,12 @@ def write_to_outfile(buffer):
     """
     Writes the contentes of the buffer list into the new_asc output file
     """
-    inpath = original_asc.rsplit('/', 2)[0]
-    new_asc_filename = inpath + '/processed_asc/' + inpath[-1].split('.')[0] + '_processed.asc'
+    # print original_asc.rsplit('/', 2)
+    inpath = original_asc.rsplit('/', 2)
+    new_asc_filename = inpath[0] + '/processed_asc/' + inpath[-1].split('.')[0] + '_processed.asc'
 
-    with open(new_asc_filename, 'w') as outfile:
+    # print new_asc_filename
+    with open(new_asc_filename, 'w+') as outfile:
         for x in buffer:
             outfile.write(x)
     outfile.close()

@@ -4,13 +4,13 @@
 import sys
 
 input_file = input("What is the name of your delimited script file?")
-	
+
 output_file = input_file[:-4] + ".cnt"
 output_file = open(output_file, 'w')
 
 try:
 	dry_file = open(input_file,'r')
-	
+
 except:
 	print ("Your delimited script file could not be found.")
 	sys.exit(0)
@@ -30,13 +30,14 @@ for line in dry_file:
 		if x in line:
 			tempfile.write(line)
 			print(line)
-			
+
 tempfile.seek(0,0)
 
 cond_include = 0
-	
+
 for line in tempfile:
 	if search_strings[0] in line:
+		print(line)
 		fields = line.split()
 		trialid_split = fields[1].split('I')
 		condition = trialid_split[0]
@@ -46,7 +47,7 @@ for line in tempfile:
 		if cond_num >= lowest_cond and cond_num <= highest_cond:
 			cond_include = 1
 			#print(line)
-			
+
 	else:
 		if cond_include == 1:
 			#print(cond_num)
@@ -68,16 +69,12 @@ for line in tempfile:
 					region_sum = region_sum + cur_reg_length
 					region_counter.append(str(region_sum + (160*n)))
 				reg_counter_final.extend(region_counter)
-		
+
 			output_line = [str(item_num), str(cond_num), str(len(reg_counter_final) + 1), '0']
 			output_line = output_line + reg_counter_final
 			output_string = ' '.join(output_line)
 			output_file.write(output_string)
 			output_file.write("\n")
 			cond_include = 0
-					
+
 output_file.close()
-			
-		
-	
-	

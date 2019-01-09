@@ -7,10 +7,8 @@ Runs makeasc.py for every .asc file in the directory that is not already process
 print('\nrunning makeasc.py', end='')
 
 file_list = glob.glob('../data/original_asc/*.asc')
-# print (file_list)
 
 for asc in file_list:
-    # print asc
     p = subprocess.call(['python', 'makeasc/makeasc.py', asc])
     print('.', end='', flush=True)
 
@@ -48,3 +46,6 @@ p = subprocess.call(['python3', 'copyRoboDoc_and_utils/copy_make_cnt/copy_make_c
 """
 Runs Robodoc.py
 """
+print('\nrunning robodoc.py')
+
+p = subprocess.call(['python3', 'copyRoboDoc_and_utils/copy_Robodoc/copy_Robodoc.py', 'copyRoboDoc_and_utils/limerick_parameters.txt'])

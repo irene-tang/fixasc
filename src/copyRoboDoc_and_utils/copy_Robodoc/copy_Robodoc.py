@@ -11,14 +11,14 @@
 # > python3 Robodoc.py parameter.txt --v
 # Uses parameter.txt as parameter file; prints out information about excluded files
 
-# > python3 Robodoc.py 
+# > python3 Robodoc.py
 # Usage as before: specify parameter file as input when requested; no information about excluded files printed
 
 # History of changes
 # 6/3/2015 Modified to add display change check
 # 8/23/2015 Modified to deal with trailing spaces
 # 10/19/2015 Adrian Modified to allow fillers to be run
-# 10/19/2015 also modified now so that if there is no fixation after the blink region, 
+# 10/19/2015 also modified now so that if there is no fixation after the blink region,
 			# it sets the blink_check_end time to the end of the trial
 # 11/9/2015 Adrian modified to deal with trailing spaces
 # 11/23/15 Modified to make the default blink behavior based on first pass, not go-past.
@@ -48,6 +48,10 @@ import os
 import glob
 import csv
 import argparse
+
+
+robodoc_prefix = '../data/robodoc/'
+processed_asc_prefix = '../data/processed_asc/'
 
 	##################################################
 	# FUNCTION TO CHECK DC VALUES
@@ -91,7 +95,7 @@ parser.add_argument('--verbose', '-v', action="store_true", help="Optional argum
 args = parser.parse_args()
 if args.filename:
 	filename = args.filename
-else:	
+else:
 	filename = input("What is the name of your parameter file?")
 # ----------------------------------
 
@@ -101,11 +105,11 @@ try:
 	whole_file = parameters.read()
 	#this executes the whole thing as code
 	exec(whole_file)
-	
+
 except:
 	print ("Your parameter file could not be found.  Or, there is an error in the file.")
 	sys.exit(0)
-	
+
 if blink_reg_exclude == "y":
 	try:
 		region_file = open(region_file, 'r')
@@ -118,16 +122,16 @@ if blink_reg_exclude == "y":
 # Reads in auto_exclude argument in parameter file, looks for thesholds.
 # Will write to exclude.lst if specified.
 if auto_exclude == 1 or auto_exclude_DC == 1:
-	e = open('exclude.lst', 'w')
-	kp = open('keep.lst', 'w')
+	e = open(robodoc_prefix + 'exclude.lst', 'w')
+	kp = open(robodoc_prefix + 'keep.lst', 'w')
 	try:
 		exclude_threshold
-	except: 
+	except:
 		print ("No exclusion threshold set. Add a numerical threshold to the parameters file, or set auto_exclude to 0.")
 		sys.exit(0)
 	try:
 		abs_exclude_threshold
-	except: 
+	except:
 		print ("No absolute exclusion threshold set. Add a numerical threshold to the parameters file, or set auto_exclude to 0.")
 		sys.exit(0)
 # ------------------------------
@@ -141,15 +145,15 @@ if auto_exclude == 1 or auto_exclude_DC == 1:
 #		print("WARNING: Clash in parameters file. Not identified as a display change experiment, but set to exclude display change errors. Thresholds will be ignored.\n\n")
 #	try:
 #		exclude_threshold
-#	except: 
+#	except:
 #		print ("No exclusion threshold set for display change. Add a numerical threshold to the parameters file, or set auto_exclude to 0.")
 #		sys.exit(0)
 #	try:
 #		abs_exclude_threshold
-#	except: 
+#	except:
 #		print ("No absolute exclusion threshold set. Add a numerical threshold to the parameters file, or set auto_exclude to 0.")
 #		sys.exit(0)
-# ------------------------------	
+# ------------------------------
 
 
 
@@ -188,7 +192,7 @@ if DC == 1:
 		elif script_search_strings[1] in line and got_condition == 1:
 			fields = line.split()
 			xpos = fields[3]
-			ypos_end = fields[4]		# bottom of Y 
+			ypos_end = fields[4]		# bottom of Y
 			xpostemp = fields[5]
 			xpostemp_split = xpostemp.split(')')
 			xpos_end = xpostemp_split[0]
@@ -203,10 +207,10 @@ if DC == 1:
 #for k, v in sorted(dcregions.items()):
 #	print("Dictionary",k,v)
 # END OF SETTING UP DC DICTIONARY
-		
+
 #and make a subject summary file
-sumsub = open('sum.sub', 'w')
-	
+sumsub = open(robodoc_prefix + 'sum.sub', 'w')
+
 
 	#################################################
 	# THIS IS THE MAIN BIG LOOP THROUGH ALL THE ASC FILES
@@ -216,18 +220,19 @@ sumsub = open('sum.sub', 'w')
 # ------------------------
 # Create file list on the fly for empty file_list lists
 if not file_list:
-	file_list = glob.glob('*.asc')
+	file_list = glob.glob(processed_asc_prefix + '*.asc')
 
+# print (file_list)
 
 # Write files in file_list to lst file
-f = open('files_processed.lst', 'w')
+f = open(robodoc_prefix + 'files_processed.lst', 'w')
 for filename in file_list:
 	#strip off extension
 	output = filename[:-4]
 	#add .da1 extension to filename
 	output_da1 = output + ".da1"
 
-	#Write the name of the new file 
+	#Write the name of the new file
 	f.write(str(output_da1)+'\n')
 
 # Create set of filenames to exclude based on blink exclusion criteria
@@ -242,7 +247,7 @@ exclude_list_DC = set()
 # All filenames to exclude
 exclude_list_total = set()
 
-# Initialize empty dictionary to track trials excluded by blinks	
+# Initialize empty dictionary to track trials excluded by blinks
 submaster = {}
 
 # Initialize empty dictionary to track trials excluded by DC errors
@@ -265,36 +270,36 @@ for filename in file_list:
 # set up to keep record of actual position in sequence
 	trial_sequence = []
 	#strip off extension
-	output = filename[:-4]
+	output = filename.rsplit('/', 1)[-1][:-4]
 	#add .da1 extension to filename
 	output_da1 = output + ".da1"
 
 #open the new file
-	os.makedirs('da1_files', exist_ok=True) 
-	output_da1 = open('da1_files/'+output_da1, 'w')
-	
+	os.makedirs(robodoc_prefix + 'da1_files', exist_ok=True)
+	output_da1 = open(robodoc_prefix + 'da1_files/'+output_da1, 'w')
+
 	#do the same things to make a blink file
 	output_bli = output + ".bli"
-	os.makedirs('blink_files', exist_ok=True)	
-	output_bli = open('blink_files/'+output_bli, 'w')
+	os.makedirs(robodoc_prefix + 'blink_files', exist_ok=True)
+	output_bli = open(robodoc_prefix + 'blink_files/'+output_bli, 'w')
 
 # and if display change, a display change file
 	if DC == 1:
 		output_DC = output + ".dc"
-		os.makedirs('DC_files', exist_ok=True)	
-		output_DC = open('DC_files/'+output_DC, 'w')
+		os.makedirs(robodoc_prefix + 'DC_files', exist_ok=True)
+		output_DC = open(file+prefix + 'DC_files/'+output_DC, 'w')
 
-	
+
 #define var to hold trial exclusions on blinks
 	num_exclusions = 0
-	
+
 #define var to hold trial exclusions on DC errors
 
 # --------------------------------
 # Initalize cond_count dictionary for keeping track of exclusions
 	cond_count = {}
 	cond_count_DC ={}
-	cond_count_total ={}	
+	cond_count_total ={}
 # Create dictionary from conditions listed in parameters file
 	for i in range(lowest_cond, highest_cond+1):
 		# Key: cond_num
@@ -314,7 +319,7 @@ for filename in file_list:
 	copy_it = 0
 	search_strings = ['TRIALID', 'SYNCTIME', 'EFIX','EBLINK', 'TRIAL_RESULT','REGION','COMPLETED','ESACC']
 # SEARCH STRINGS: 0 trialid, 1 trial start, 2 = efix, 3= eblink, 4 trial end, 5 character line, 6 display change, 7 end of saccade
-	tempfile = open('tempfile','w+')
+	tempfile = open(robodoc_prefix + 'tempfile','w+')
 	for line in input_asc:
 		for entry in search_strings:
 			if entry in line:
@@ -330,7 +335,7 @@ for filename in file_list:
 					second_split = first_split[1].split('D')#split into item and dependent
 					item_num = second_split[0]
 					#print(trialid, "before")
-					if int(cond_num) >= lowest_cond and int(cond_num) <= highest_cond: 
+					if int(cond_num) >= lowest_cond and int(cond_num) <= highest_cond:
 						#print(trialid, "after")
 #This is taken out now, to allow fillers to be run
 #and condition[0] == "E":
@@ -340,10 +345,10 @@ for filename in file_list:
 				if copy_it  == 1:
 					tempfile.write(line)
 				if search_strings[4] in fields:
-					copy_it = 0							
+					copy_it = 0
 # END OF TRIAL
 	tempfile.close()
-		
+
 	#################################################
 	# NOW GO THROUGH TEMPFILE - THE TRIALS TO BE DOCTORED
 	#################################################
@@ -351,7 +356,7 @@ for filename in file_list:
 	output_string_trial = []	# sequence, condition, item
 	trial_seq = 0
 # fields is the array of values on a given line of a trial
-	tempfile = open('tempfile', 'r')
+	tempfile = open(robodoc_prefix + 'tempfile', 'r')
 	for line in tempfile:
 		row = line
 		fields = row.split()			#break line into list
@@ -438,7 +443,7 @@ for filename in file_list:
 				top_left_y = int(first_line_y - (line_sep_y/2))
 				temp_ypos = int((int(fields[-3]) - top_left_y)/line_sep_y)
 # XPOS, YPOS are lists of raw pixel positions of the top left of characters
-			if len(XPOS) == 0 or temp_xpos > XPOS[-1] or multi_line == "y":				
+			if len(XPOS) == 0 or temp_xpos > XPOS[-1] or multi_line == "y":
 				XPOS = XPOS + [temp_xpos]
 				XPOS_R = XPOS_R + [temp_xpos_R]
 				YPOS = YPOS + [temp_ypos]
@@ -461,7 +466,7 @@ for filename in file_list:
 
 # modified things to keep track of each esacc data, set a flag (in_fix = 1) when a fixation is in progress
 # and if is is when a DC happens, use the last ESACC data rather than looking for the next esacc
-#  
+#
 
 		elif (trial_start_time > 0) and (DC == 1) and (DC_DONE == 0) and (search_strings[7] in fields):		# ESACC, toggle in_fix, save values from ESACC
 			in_fix = 1
@@ -509,7 +514,7 @@ for filename in file_list:
 				cond_count_DC[int(cond_num)] += 1
 				cond_count_total[int(cond_num)] += 1
 				if args.verbose:
-					print("\t Display change problem on cond: " + cond_num + ", item: " + item_num)	
+					print("\t Display change problem on cond: " + cond_num + ", item: " + item_num)
 
 
 		elif (trial_start_time > 0) and (DC == 1) and (DC_DONE == 0) and (search_strings[6] in fields):		# found DC COMPLETED
@@ -528,11 +533,11 @@ for filename in file_list:
 				cond_count_DC[int(cond_num)] += 1
 				cond_count_total[int(cond_num)] += 1
 				if args.verbose:
-					print("\t Display change problem on cond: " + cond_num + ", item: " + item_num)	
-				
+					print("\t Display change problem on cond: " + cond_num + ", item: " + item_num)
 
 
-	
+
+
 	#################################################
 	# END OF CHECK FOR DISPLAY CHANGE PROBLEM
 	#################################################
@@ -595,7 +600,7 @@ for filename in file_list:
 				elif(yi >= 0):
 					while(x_coord_pix > float(XPOS_R[yi])):
 						xi = xi + 1		# xi starts at 0, is position in array relative to start of current line
-						yi = yi + 1 		# yi is the position in the array of characters               
+						yi = yi + 1 		# yi is the position in the array of characters
 			x_coord_char = xi
 			numfix += 1
 			temp_eye_data = [str(x_coord_char), str(y_coord_char), str(start_time_adj), str(end_time_adj)]
@@ -620,7 +625,7 @@ for filename in file_list:
 					newdur = int(output_string_fix[-2]) - previous_dur
 					output_string_fix[-2] = str(newdur)
 					numfix = numfix - 1
-					
+
 	#################################################
 	#this checks if you've crossed into the critical region yet
 	#if you have, gets the end time of the penultimate fixation
@@ -647,7 +652,7 @@ for filename in file_list:
 										print("\t Violated the saccade duration limit on cond: " + cond_num + ", item: " + item_num)
 									cond_count[int(cond_num)] += 1
 									cond_count_total[int(cond_num)] += 1
-						
+
 	#################################################
 	#this checks if you've crossed out of the region
 	#if you have, gets the start time of the current fix
@@ -675,7 +680,7 @@ for filename in file_list:
 									cond_count_total[int(cond_num)] += 1
 							crossed_outof_crit = 1
 #							print("item, blink_check_end, fix-2, fix-5, exclude",item_num,blink_check_end,int(output_string_fix[-2]),int(output_string_fix[-5]),trial_exclude)
-							
+
 #and this sets the blink end time if the fixation is *before* the critical region, and you've
 #already been in the critical region
 #does this only if blink_gopast == 0
@@ -700,8 +705,8 @@ for filename in file_list:
 										cond_count[int(cond_num)] += 1
 										cond_count_total[int(cond_num)] += 1
 								crossed_outof_crit = 1
-	
-			
+
+
 	#################################################
 	#this is for blink lines:
 	#################################################
@@ -724,7 +729,7 @@ for filename in file_list:
 #this saves the blink end time in a string
 #for later checking against critical times
 			blink_end_times.append(str(b_end_time_adj))
-			temp_blink_data = [str(b_start_time_adj), str(b_end_time_adj)]			
+			temp_blink_data = [str(b_start_time_adj), str(b_end_time_adj)]
 			output_string_blink = output_string_blink + temp_blink_data
 
 #this checks if the number of blinks is too many
@@ -733,12 +738,12 @@ for filename in file_list:
 					trial_exclude = 1
 					# For verbose flag
 					if args.verbose:
-						print("\t Too many blinks on cond: " + cond_num + ", item: " + item_num)	
+						print("\t Too many blinks on cond: " + cond_num + ", item: " + item_num)
 					# Update count_cond dictionary with exclusion
-					cond_count[int(cond_num)] += 1					
+					cond_count[int(cond_num)] += 1
 					cond_count_total[int(cond_num)] += 1
 
-	
+
 	#################################################
 	# this is for trial_result lines
 	# END OF TRIAL HAS BEEN REACHED
@@ -769,34 +774,34 @@ for filename in file_list:
 						cond_count_total[int(cond_num)] += 1
 
 	#################################################
-	#this is to output excluded subjects to the  exclude.lst file 
-	#################################################			
-			
+	#this is to output excluded subjects to the  exclude.lst file
+	#################################################
+
 			if auto_exclude == 1 and auto_exclude_DC == 0:
 # Test to see if any value in cond_count dictionary is above threshold
 				for k,v in cond_count.items():		# Search through key, value pairs
 					if int(v) >= exclude_threshold:	# Test for values at or above threshold
-						exclude_list.add(filename[:-4]+".da1")	
+						exclude_list.add(filename[:-4]+".da1")
 # Test to see if sum of all values in cond_count dictionary are above absolute threshold
 				for k,v in cond_count.items():		# Search through key, value pairs
 					if sum(cond_count.values()) >= abs_exclude_threshold:	# Test for values at or above threshold
-						exclude_list.add(filename[:-4]+".da1")			
-# Add to submaster			
+						exclude_list.add(filename[:-4]+".da1")
+# Add to submaster
 			submaster[filename] = cond_count
 
-	
+
 # Same as above, but for DC experiments
-			
+
 			if auto_exclude_DC == 1 and auto_exclude == 0:
 # Test to see if any value in cond_count dictionary is above threshold
 				for k,v in cond_count_DC.items():		# Search through key, value pairs
 					if int(v) >= exclude_threshold:	# Test for values at or above threshold
-						exclude_list_DC.add(filename[:-4]+".da1")	
+						exclude_list_DC.add(filename[:-4]+".da1")
 # Test to see if sum of all values in cond_count dictionary are above absolute threshold
 				for k,v in cond_count_DC.items():		# Search through key, value pairs
 					if sum(cond_count_DC.values()) >= abs_exclude_threshold:	# Test for values at or above threshold
-						exclude_list_DC.add(filename[:-4]+".da1")			
-# Add to submaster_DC			
+						exclude_list_DC.add(filename[:-4]+".da1")
+# Add to submaster_DC
 			submaster_DC[filename] = cond_count_DC
 
 
@@ -804,14 +809,14 @@ for filename in file_list:
 	# Test to see if any value in cond_count dictionary is above threshold
 				for k,v in cond_count_total.items():		# Search through key, value pairs
 					if int(v) >= exclude_threshold:	# Test for values at or above threshold
-						exclude_list_total.add(filename[:-4]+".da1")	
+						exclude_list_total.add(filename[:-4]+".da1")
 	# Test to see if sum of all values in cond_count dictionary are above absolute threshold
 				for k,v in cond_count_total.items():		# Search through key, value pairs
 					if sum(cond_count_total.values()) >= abs_exclude_threshold:	# Test for values at or above threshold
-						exclude_list_total.add(filename[:-4]+".da1")			
-	# Add to submaster_DC			
+						exclude_list_total.add(filename[:-4]+".da1")
+	# Add to submaster_DC
 			submaster_total[filename] = cond_count_total
-			
+
 
 	#################################################
 	#this is to output the line to the .da1 file and blink file
@@ -822,13 +827,13 @@ for filename in file_list:
 				joined_da1 = ' '.join(output_string_da1)
 				output_da1.write(joined_da1)
 				output_da1.write("\n")
-			
+
 #this is to output the line to the blink file
 				output_bli.write("accept: ")
 				joined_blink = ' '.join(output_string_bli)
 				output_bli.write(joined_blink)
 				output_bli.write("\n")
-				
+
 			if int(cond_num) >= lowest_cond and int(cond_num) <= highest_cond and trial_exclude == 1:
 				num_exclusions += 1
 				output_bli.write("rej BL: ")
@@ -846,7 +851,7 @@ for filename in file_list:
 					output_DC.write(output_string_DC)
 					output_DC.write("\n")
 
-	tempfile.close()		
+	tempfile.close()
 
 	#################################################
 	# END OF LOOP THROUGH TEMPFILE - END OF THE SUBJECT
@@ -855,7 +860,7 @@ for filename in file_list:
 
 	#this is to write out some stuff for each subject to a summary file
 	sumsub.write('%r %d \n' %(filename, num_exclusions))
-	
+
 	output_da1.close()
 	output_bli.close()
 	if DC:
@@ -884,14 +889,14 @@ if auto_exclude == 1 and auto_exclude_DC == 0 & args.verbose:
 	print("\n")
 #	print("Number of subjects excluded: " + str(len(exclude_list.union(exclude_list_DC))))
 	print("Number of subjects excluded: " + str(len(exclude_list)))
-	
+
 if auto_exclude == 0 and auto_exclude_DC == 1 & args.verbose:
 	print("\n")
 	print("========================================")
 	print("\n")
 #	print("Number of subjects excluded: " + str(len(exclude_list.union(exclude_list_DC))))
 	print("Number of subjects excluded: " + str(len(exclude_list_DC)))
-	
+
 if auto_exclude == 1 and auto_exclude_DC == 1 & args.verbose:
 	print("\n")
 	print("========================================")
@@ -902,26 +907,26 @@ if auto_exclude == 1 and auto_exclude_DC == 1 & args.verbose:
 # Create list of da1 files
 file_list_da1 = set()
 for filename in file_list:
-	file_list_da1.add(filename[:-4]+".da1")		
+	file_list_da1.add(filename[:-4]+".da1")
 
 # Write exclude_list to lst file for EyeDry
 
 # Auto exclude for blinks only
 if blink_reg_exclude == 'y' and auto_exclude == 1 and auto_exclude_DC == 0: #JH Feb 17
 	# Write list of files to keep
-	keep = file_list_da1 - exclude_list 
+	keep = file_list_da1 - exclude_list
 	for i in sorted(keep):
 		kp.write(i)
 		kp.write("\n")
 	kp.close
-	
+
 	# Write list of file to exclude
 	for i in sorted(exclude_list):
 		e.write(i)
 		e.write("\n")
 	e.close()
-	
-# Auto exclude on DC only	
+
+# Auto exclude on DC only
 if auto_exclude == 0 and auto_exclude_DC == 1:
 	# Write list of files to keep
 	keep = file_list_da1 - exclude_list_DC # check on this!
@@ -935,8 +940,8 @@ if auto_exclude == 0 and auto_exclude_DC == 1:
 		e.write(i)
 		e.write("\n")
 	e.close()
-	
-# Auto exclude on blinks and DC 	
+
+# Auto exclude on blinks and DC
 if blink_reg_exclude == 'y' and auto_exclude == 1 and auto_exclude_DC == 1: #JH Feb 17
 	# Write list of files to keep
 	keep = file_list_da1 - exclude_list_total
@@ -956,7 +961,7 @@ if blink_reg_exclude == 'y' and auto_exclude == 1 and auto_exclude_DC == 1: #JH 
 if  blink_reg_exclude == 'y': # JH Feb 17
 
 	# Open csv file
-	with open('Blinks-summary.csv', 'w', newline='') as f:
+	with open(robodoc_prefix + 'Blinks-summary.csv', 'w', newline='') as f:
 		w = csv.writer(f)
 		# Create headers
 		headers = list(range(lowest_cond, highest_cond+1))
@@ -1011,4 +1016,3 @@ if DC == 1:
 
 
 sumsub.close()
-

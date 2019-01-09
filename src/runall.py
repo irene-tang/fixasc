@@ -19,7 +19,7 @@ Runs question_acc.py
 """
 print('\nrunning question_acc.py')
 
-# p = subprocess.call(['python3', 'copyRoboDoc_and_utils/copy_question_acc/copy_question_acc_copy.py', 'copyRoboDoc_and_utils/'])
+p = subprocess.call(['python3', 'copyRoboDoc_and_utils/copy_question_acc/copy_question_acc.py', 'copyRoboDoc_and_utils/limerick_parameters.txt'])
 
 """
 Runs scripter.pl

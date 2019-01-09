@@ -11,28 +11,28 @@ parser.add_argument('--verbose', '-v', action="store_true", help="Optional argum
 args = parser.parse_args()
 if args.filename:
 	filename = args.filename
-else:	
+else:
 	filename = input("What is the name of your parameter file?")
-	
+
 try:
 	parameters = open(filename,'r')
 	#this reads the file as text
 	whole_file = parameters.read()
 	#this executes the whole thing as code
 	exec(whole_file)
-	
+
 except:
 	print("Your parameter file could not be found. Or, there is an error in the file.")
 	sys.exit(0)
-	
+
 # Allows empty file_list variable in parameters file. If not specified, uses all asc files in directory.
 if not file_list:
-	file_list = glob.glob('*.asc')
+	file_list = glob.glob('../data/processed_asc/*.asc')
 
 #and make a subject summary file
 subj_sum = []
-subj_quest_file = open('subj_quest.txt', 'w')
-summary_file = open('QuestSum.txt','w')
+subj_quest_file = open('../data/question_acc_results/subj_quest.txt', 'w+')
+summary_file = open('../data/question_acc_results/QuestSum.txt','w+')
 summary_file.write('Subj Nques Cans Pcorr\n')
 for file in file_list:
 
@@ -44,21 +44,21 @@ for file in file_list:
 
 	if args.verbose:
 		print(file)
-		
+
 	search_strings = ['TRIALID', 'QUESTION_ANSWER', 'TRIAL_RESULT']
-	temp_quest_file = open('temp_quest_file','w+')
+	temp_quest_file = open('../data/question_acc_results/temp_quest_file','w+')
 	for line in filename:
 		for entry in search_strings:
 			if entry in line:
 				temp_quest_file.write(line)
-				
+
 	temp_quest_file.seek(0,0)
 	qcount = 0		# count of questions
 	acount = 0		# count of accurate answers
 	for line in temp_quest_file:
 		if search_strings[0] in line:
 			correct = 'none'
-		
+
 			fields = line.split()
 			start_time = int(fields[1])
 			trialid = fields[3]
@@ -67,16 +67,16 @@ for file in file_list:
 			cond_num = condition[1:] #strip off the letter from the beginning of condition
 			second_split = first_split[1].split('D')#split into item and dependent
 			item_num = second_split[0]
-		
+
 		elif search_strings[1] in line:
 			fields = line.split()
 			correct = fields[3]
-			
+
 		else:
 			fields = line.split()
 			end_time = int(fields[1])
 			answer = fields[3]
-			
+
 			#write out line, if the item had a question
 			if correct != 'none':
 				#print("foo")
@@ -89,10 +89,10 @@ for file in file_list:
 					acount = acount + 1
 
 	temp_quest_file.close()
-	
+
 	if args.verbose:
 		print(file,qcount,acount,float(acount/qcount))
-		
+
 	subj_sum = [file, str(qcount), str(acount),str(float(acount/qcount))]
 	subj_sum_join = ' '.join(subj_sum)
 	summary_file.write(subj_sum_join)

@@ -37,7 +37,7 @@ cond_include = 0
 
 for line in tempfile:
 	if search_strings[0] in line and len(line) < 15:
-		print(line)
+		# print(line)
 		fields = line.split()
 		trialid_split = fields[1].split('I')
 		# print(trialid_split)

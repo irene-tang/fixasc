@@ -3,6 +3,9 @@
 
 import sys
 
+cnt_prefix = '../data/scripter/'
+
+
 input_file = input("What is the name of your delimited script file?")
 
 output_file = input_file.rsplit('.', 1)[0] + ".cnt"
@@ -24,7 +27,7 @@ highest_cond = int(input("What is the highest condition number to be analyzed?")
 #have to include the space after 'trial', otherwise you get the trialtype line
 search_strings = ['trial ','inline']
 
-tempfile = open('tempfile','w+')
+tempfile = open(cnt_prefix + 'tempfile','w+')
 
 for line in dry_file:
 	for x in search_strings:

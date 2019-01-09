@@ -112,7 +112,7 @@ blink_reg_exclude = "y"
 #if the answer to that is yes, you'll need to give a region file (i.e., a .cnt file)
 #and identify the critical region
 
-region_file = "../data/scripter_and_cnt_outputs/output_from_scripter.cnt"
+region_file = "../data/scripter/output_from_scripter.cnt"
 
 blink_region = 3
 
@@ -141,4 +141,4 @@ short_crit = 1
 # If you are using IDLE or another interpreter that doesn't allow specification of command line arguments, you may specify the following optional verbose argument here instead:
 
 # Display print out of excluded trials during runtime:
-args.verbose = 1
+args.verbose = 0

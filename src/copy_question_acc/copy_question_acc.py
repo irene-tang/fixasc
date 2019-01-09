@@ -31,8 +31,8 @@ if not file_list:
 
 #and make a subject summary file
 subj_sum = []
-subj_quest_file = open('../data/question_acc_results/subj_quest.txt', 'w+')
-summary_file = open('../data/question_acc_results/QuestSum.txt','w+')
+subj_quest_file = open('../data/question_acc/subj_quest.txt', 'w+')
+summary_file = open('../data/question_acc/QuestSum.txt','w+')
 summary_file.write('Subj Nques Cans Pcorr\n')
 for file in file_list:
 
@@ -46,7 +46,7 @@ for file in file_list:
 		print(file)
 
 	search_strings = ['TRIALID', 'QUESTION_ANSWER', 'TRIAL_RESULT']
-	temp_quest_file = open('../data/question_acc_results/temp_quest_file','w+')
+	temp_quest_file = open('../data/question_acc/temp_quest_file','w+')
 	for line in filename:
 		for entry in search_strings:
 			if entry in line:

@@ -1,14 +1,10 @@
 # fixasc
 
-
 TODO:
 documentation (update README)
-run scripter, make_cnt, robodoc
-update runall.py
-organize data
-lit review
-methods writeup
-data analysis
+lit review and methods writeup
+data analysis -- eyedry and write-up
 
-
+---
 scripter -- secondary task? questions?
+check data uploads, question_acc, scripter, make_cnt, robodoc

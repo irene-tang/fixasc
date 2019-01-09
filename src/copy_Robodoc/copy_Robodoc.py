@@ -259,7 +259,7 @@ submaster_total = {}
 
 # ------------------------
 for filename in file_list:
-	print(filename)
+	# print(filename)
 	counter = 0			# count for sequence in experiment
 	try:
 		input_asc = open(filename, 'r')

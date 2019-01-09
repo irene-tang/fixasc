@@ -5,7 +5,7 @@ import sys
 
 input_file = input("What is the name of your delimited script file?")
 
-output_file = input_file[:-4] + ".cnt"
+output_file = input_file.split('.')[0] + ".cnt"
 output_file = open(output_file, 'w')
 
 try:

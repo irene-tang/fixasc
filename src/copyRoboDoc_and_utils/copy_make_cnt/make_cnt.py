@@ -36,11 +36,13 @@ tempfile.seek(0,0)
 cond_include = 0
 
 for line in tempfile:
-	if search_strings[0] in line:
+	if search_strings[0] in line and len(line) < 15:
 		print(line)
 		fields = line.split()
 		trialid_split = fields[1].split('I')
+		# print(trialid_split)
 		condition = trialid_split[0]
+		# print (condition)
 		cond_num = int(condition[1:])
 		second_split = trialid_split[1].split('D')
 		item_num = int(second_split[0])

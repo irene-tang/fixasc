@@ -1,10 +1,16 @@
-# fixasc
+# limerick1 workspace
 
-TODO:
-documentation (update README)
-lit review and methods writeup
-data analysis -- eyedry and write-up
 
----
-scripter -- secondary task? questions?
-check data uploads, question_acc, scripter, make_cnt, robodoc
+workflow -- todo: documentation
+=======
+1. makeasc - reformats our data files into something that's compatible with the UMASS software
+	install python/python3
+	todo: python3 consistency
+2. question_acc
+3. scripter2
+4. make_cnt
+5. robodoc
+6. fix_align
+	install R and RStudio
+7. dataanal
+	these programs can't be used with any modern compilers

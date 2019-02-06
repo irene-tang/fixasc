@@ -1,80 +1,160 @@
-1	1	0	sentence		15000	I know of an old man named Herbert,^\nWho's known around town as a ^pervert.^\nHe searches the shops,^\nFor girls in tight tops,^\nAnd stands there just too close for comfort.^\n
-2	1	0	sentence		15000	I know of an old man named Herbert^\nWho always the truth tries to ^pervert.^\nI know when he lies,^\nIt's all in the eyes.^\nAt hiding it he is no expert.^\n
+1	1	0	sentence		15000	"I know of an old man named Herbert,^\nWho's known around town as a ^pervert.^\nHe searches the shops,^\nFor girls in tight tops,^\nAnd stands there just too close for comfort.^\n"
+2	1	0	sentence		15000	"I know of an old man named Herbert,^\nWho's known around town as a ^pervert.^\nHe searches the shops,^\nFor girls in tight tops,^\nAnd stands there just too close for comfort.^\n"
+3	1	0	sentence		15000	"I know of an old man named Herbert^\nWho always the truth tries to ^pervert.^\nI know when he lies,^\nIt's all in the eyes.^\nAt hiding it he is no expert.^\n"
+4	1	0	sentence		15000	"I know of an old man named Herbert^\nWho always the truth tries to ^pervert.^\nI know when he lies,^\nIt's all in the eyes.^\nAt hiding it he is no expert.^\n"
 1	2	0	sentence		15000	The crew worked so hard for their paychecks^\nThey thought they'd develop a ^complex^\nThey went out for beer^\nIn a bar by the pier^\nThen home to their wives in the projects.^\n
-2	2	0	sentence		15000	The crew worked so hard for their paychecks^\nTheir work was so terribly ^complex^\nThey went out for beer^\nIn a bar by the pier^\nThen home to their wives in the projects.^\n
-1	3	0	sentence		15000	That man applies way too much hair grease.^\nA friend should suggest a big ^decrease.^\nIf he's at the beach,^\nThe oil will leach.^\nHe soon will be hearing from Greenpeace.^\n
-2	3	0	sentence		15000	That man applies way too much hair grease.^\nI think the amount he should ^decrease.^\nIf he's at the beach,^\nthe oil will leach.^\nHe soon will be hearing from Greenpeace.^\n
+2	2	0	sentence		15000	The crew worked so hard for their paychecks^\nThey thought they'd develop a ^complex^\nThey went out for beer^\nIn a bar by the pier^\nThen home to their wives in the projects.^\n
+3	2	0	sentence		15000	The crew worked so hard for their paychecks^\nTheir work was so terribly ^complex^\nThey went out for beer^\nIn a bar by the pier^\nThen home to their wives in the projects.^\n
+4	2	0	sentence		15000	The crew worked so hard for their paychecks^\nTheir work was so terribly ^complex^\nThey went out for beer^\nIn a bar by the pier^\nThen home to their wives in the projects.^\n
+1	3	0	sentence		15000	"That man applies way too much hair grease.^\nA friend should suggest a big ^decrease.^\nIf he's at the beach,^\nThe oil will leach.^\nHe soon will be hearing from Greenpeace.^\n"
+2	3	0	sentence		15000	"That man applies way too much hair grease.^\nA friend should suggest a big ^decrease.^\nIf he's at the beach,^\nThe oil will leach.^\nHe soon will be hearing from Greenpeace.^\n"
+3	3	0	sentence		15000	"That man applies way too much hair grease.^\nI think the amount he should ^decrease.^\nIf he's at the beach,^\nthe oil will leach.^\nHe soon will be hearing from Greenpeace.^\n"
+4	3	0	sentence		15000	"That man applies way too much hair grease.^\nI think the amount he should ^decrease.^\nIf he's at the beach,^\nthe oil will leach.^\nHe soon will be hearing from Greenpeace.^\n"
 1	4	0	sentence		15000	The Soviet spy is a suspect.^\nThe case has but one major ^defect.^\nHis girlfriend will swear^\nThat he was not there.^\nBut other than that it is perfect.^\n
-2	4	0	sentence		15000	The Soviet spy is a suspect.^\nI heard that he's planning to ^defect.^\nHe closed his accounts,^\nWithdrew large amounts,^\nAdopting a mistrustful affect.^\n
-1	5	0	sentence		15000	We once had a tiresome house guest,^\nWho loved to read Birdwatcher's ^Digest.^\nWe teased and we joked,^\nHe was not provoked.^\nHe still thinks that birds are the greatest.^\n
-2	5	0	sentence		15000	We once had a tiresome house guest,^\nWhose humor was painful to ^digest.^\nHe thinks he's a riot^\nBut we have kept quiet^\nHe still thinks his jokes are the greatest.^\n
-1	6	0	sentence		15000	The gymnast requested a recount^\nHer score, she thought, rated no ^discount.^\nThe Austrian judge,^\nHe refused to budge.^\nHe said she had bungled her dismount.^\n
-2	6	0	sentence		15000	The gymnast requested a recount^\nShe thought it was wrongful to ^discount^\nHer score, but the judge,^\nHe refused to budge.^\nHe said she had bungled her dismount.^\n
-1	7	0	sentence		15000	He tried not to get badly sidetracked.^\nHe needed some raspberry ^extract.^\nBut in the big shop,^\nTwas nary a drop.^\nHis fancy dessert plans were highjacked.^\n
-2	7	0	sentence		15000	He tried not to get badly sidetracked^\nSome essence he wanted to ^extract^\nBut try as he might,^\nNo tactic worked right^\nHis fancy dessert plans were highjacked.^\n
-1	8	0	sentence		15000	The city must safeguard the seaports,^\nTo save us from dangerous ^imports.^\nWith so many ships,^\nThere can be no slips.^\nThe tankers will all now need escorts.^\n
-2	8	0	sentence		15000	The city must safeguard the seaports,^\nBecause of how much it now ^imports.^\nWith so many ships,^\nThere can be no slips.^\nThe tankers will all now need escorts.^\n
-1	9	0	sentence		15000	The man who asked you for a consult^\nWas given a horrible ^insult.^\nSo this is the end,^\nHe won't ask again,^\nIt seems that you can't be an adult.^\n
-2	9	0	sentence		15000	The man who asked you for a consult^\nIs no-one you wanted to ^insult.^\nSo this is the end,^\nHe won't ask again,^\nIt seems that you can't be an adult.^\n
-1	10	0	sentence		15000	The teacher assigned them a project^\nTo find an unusual ^object.^\nThe parents said "Wait,^\nshe's not thinking straight."^\nThe children think she is just perfect.^\n
-2	10	0	sentence		15000	The teacher assigned them a project^\nthat forced many parents to ^object.^\nThe parents said Wait,^\nshe's not thinking straight.^\nthe children think she is just perfect.^\n
-1	11	0	sentence		15000	There once was an old man named Kermit,^\nWho hunted without any ^permit.^\nHe wouldn't obey,^\nThey sent him away.^\nNow he lives alone as a hermit.^\n
-2	11	0	sentence		15000	There once was an old man named Kermit^\nWhose gambling his wife would not ^permit.^\nHe wouldn't obey,^\nShe sent him away.^\nNow he lives alone as a hermit.^\n
-1	12	0	sentence		15000	He couldn't hide all of his misdeeds,^\nBut made off with all of the ^proceeds.^\nFrom charity giving,^\nHe has made a living.^\nSome jail time is what this guy needs.^\n
-2	12	0	sentence		15000	He couldn't hide all of his misdeeds^\nOn Monday his retrial ^proceeds.^\nI hope that the jury^\nConvicts in a hurry.^\nAnd I'd like to give him a nosebleed.^\n
-1	13	0	sentence		15000	There once was a young man named Ernest,^\nWho sponsored a violent ^protest.^\nWhen they asked him why,^\nHe said, with a sigh,^\nI wanted to open a wasp's nest.^\n
-2	13	0	sentence		15000	There once was a young man named Ernest,^\nWho rounded up people to ^protest.^\nWhen they asked him why,^\nHe said, with a sigh,^\nI wanted to open a wasp's nest.^\n
-1	14	0	sentence		15000	That basketball star's like a bloodhound.^\nHe seeks out and catches each ^rebound.^\nHe always plays tough,^\nBut never too rough,^\nAlthough it's just hoops on the playground.^\n
-2	14	0	sentence		15000	That basketball star's like a bloodhound.^\nhe waits for each jumpshot to ^rebound.^\nHe always plays tough,^\nBut never too rough,^\nAlthough it's just hoops on the playground.^\n
-1	15	0	sentence		15000	I met an old friend who played baseball,^\nWho warned of a new safety ^recall.^\nWith all of the noise^\nAbout lead in toys,^\nWe're all better off playing stickball.^\n
-2	15	0	sentence		15000	I met an old friend who played baseball,^\nBut what his name was I can't ^recall.^\nHe told me "No worry,"^\nAnd left in hurry.^\nHe said he was late for a phone call.^\n
-1	16	0	sentence		15000	Last year I created a stock fund.^\nAnd managed to get a big ^refund.^\nBut now there's no question,^\nWe're in a recession.^\nInvestors are all being cautioned.^\n
-2	16	0	sentence		15000	Last year I created a stock fund.^\nThe fees they would happily ^refund^\nBut now there's no question,^\nWe're in a recession^\nInvestors are all being cautioned.^\n
-1	17	0	sentence		15000	I read an unusual essay^\n'Bout how they conducted a ^survey.^\nThe polsters, how rude,^\nShowed up in the nude.^\nI burned it right up in the ashtray.^\n
-2	17	0	sentence		15000	I read an unusual essay^\nDescribing how folks tried to ^survey.^\nThe polsters, how rude,^\nShowed up in the nude.^\nI burned it right up in the ashtray.^\n
+2	4	0	sentence		15000	The Soviet spy is a suspect.^\nThe case has but one major ^defect.^\nHis girlfriend will swear^\nThat he was not there.^\nBut other than that it is perfect.^\n
+3	4	0	sentence		15000	"The Soviet spy is a suspect.^\nI heard that he's planning to ^defect.^\nHe closed his accounts,^\nWithdrew large amounts,^\nAdopting a mistrustful affect.^\n"
+4	4	0	sentence		15000	"The Soviet spy is a suspect.^\nI heard that he's planning to ^defect.^\nHe closed his accounts,^\nWithdrew large amounts,^\nAdopting a mistrustful affect.^\n"
+1	5	0	sentence		15000	"We once had a tiresome house guest,^\nWho loved to read Birdwatcher's ^Digest.^\nWe teased and we joked,^\nHe was not provoked.^\nHe still thinks that birds are the greatest.^\n"
+2	5	0	sentence		15000	"We once had a tiresome house guest,^\nWho loved to read Birdwatcher's ^Digest.^\nWe teased and we joked,^\nHe was not provoked.^\nHe still thinks that birds are the greatest.^\n"
+3	5	0	sentence		15000	"We once had a tiresome house guest,^\nWhose humor was painful to ^digest.^\nHe thinks he's a riot^\nBut we have kept quiet^\nHe still thinks his jokes are the greatest.^\n"
+4	5	0	sentence		15000	"We once had a tiresome house guest,^\nWhose humor was painful to ^digest.^\nHe thinks he's a riot^\nBut we have kept quiet^\nHe still thinks his jokes are the greatest.^\n"
+1	6	0	sentence		15000	"The gymnast requested a recount^\nHer score, she thought, rated no ^discount.^\nThe Austrian judge,^\nHe refused to budge.^\nHe said she had bungled her dismount.^\n"
+2	6	0	sentence		15000	"The gymnast requested a recount^\nHer score, she thought, rated no ^discount.^\nThe Austrian judge,^\nHe refused to budge.^\nHe said she had bungled her dismount.^\n"
+3	6	0	sentence		15000	"The gymnast requested a recount^\nShe thought it was wrongful to ^discount^\nHer score, but the judge,^\nHe refused to budge.^\nHe said she had bungled her dismount.^\n"
+4	6	0	sentence		15000	"The gymnast requested a recount^\nShe thought it was wrongful to ^discount^\nHer score, but the judge,^\nHe refused to budge.^\nHe said she had bungled her dismount.^\n"
+1	7	0	sentence		15000	"He tried not to get badly sidetracked.^\nHe needed some raspberry ^extract.^\nBut in the big shop,^\nTwas nary a drop.^\nHis fancy dessert plans were highjacked.^\n"
+2	7	0	sentence		15000	"He tried not to get badly sidetracked.^\nHe needed some raspberry ^extract.^\nBut in the big shop,^\nTwas nary a drop.^\nHis fancy dessert plans were highjacked.^\n"
+3	7	0	sentence		15000	"He tried not to get badly sidetracked^\nSome essence he wanted to ^extract^\nBut try as he might,^\nNo tactic worked right^\nHis fancy dessert plans were highjacked.^\n"
+4	7	0	sentence		15000	"He tried not to get badly sidetracked^\nSome essence he wanted to ^extract^\nBut try as he might,^\nNo tactic worked right^\nHis fancy dessert plans were highjacked.^\n"
+1	8	0	sentence		15000	"The city must safeguard the seaports,^\nTo save us from dangerous ^imports.^\nWith so many ships,^\nThere can be no slips.^\nThe tankers will all now need escorts.^\n"
+2	8	0	sentence		15000	"The city must safeguard the seaports,^\nTo save us from dangerous ^imports.^\nWith so many ships,^\nThere can be no slips.^\nThe tankers will all now need escorts.^\n"
+3	8	0	sentence		15000	"The city must safeguard the seaports,^\nBecause of how much it now ^imports.^\nWith so many ships,^\nThere can be no slips.^\nThe tankers will all now need escorts.^\n"
+4	8	0	sentence		15000	"The city must safeguard the seaports,^\nBecause of how much it now ^imports.^\nWith so many ships,^\nThere can be no slips.^\nThe tankers will all now need escorts.^\n"
+1	9	0	sentence		15000	"The man who asked you for a consult^\nWas given a horrible ^insult.^\nSo this is the end,^\nHe won't ask again,^\nIt seems that you can't be an adult.^\n"
+2	9	0	sentence		15000	"The man who asked you for a consult^\nWas given a horrible ^insult.^\nSo this is the end,^\nHe won't ask again,^\nIt seems that you can't be an adult.^\n"
+3	9	0	sentence		15000	"The man who asked you for a consult^\nIs no-one you wanted to ^insult.^\nSo this is the end,^\nHe won't ask again,^\nIt seems that you can't be an adult.^\n"
+4	9	0	sentence		15000	"The man who asked you for a consult^\nIs no-one you wanted to ^insult.^\nSo this is the end,^\nHe won't ask again,^\nIt seems that you can't be an adult.^\n"
+1	10	0	sentence		15000	"The teacher assigned them a project^\nTo find an unusual ^object.^\nThe parents said ""Wait,^\nshe's not thinking straight.""^\nThe children think she is just perfect.^\n"
+2	10	0	sentence		15000	"The teacher assigned them a project^\nTo find an unusual ^object.^\nThe parents said ""Wait,^\nshe's not thinking straight.""^\nThe children think she is just perfect.^\n"
+3	10	0	sentence		15000	"The teacher assigned them a project^\nthat forced many parents to ^object.^\nThe parents said Wait,^\nshe's not thinking straight.^\nthe children think she is just perfect.^\n"
+4	10	0	sentence		15000	"The teacher assigned them a project^\nthat forced many parents to ^object.^\nThe parents said Wait,^\nshe's not thinking straight.^\nthe children think she is just perfect.^\n"
+1	11	0	sentence		15000	"There once was an old man named Kermit,^\nWho hunted without any ^permit.^\nHe wouldn't obey,^\nThey sent him away.^\nNow he lives alone as a hermit.^\n"
+2	11	0	sentence		15000	"There once was an old man named Kermit,^\nWho hunted without any ^permit.^\nHe wouldn't obey,^\nThey sent him away.^\nNow he lives alone as a hermit.^\n"
+3	11	0	sentence		15000	"There once was an old man named Kermit^\nWhose gambling his wife would not ^permit.^\nHe wouldn't obey,^\nShe sent him away.^\nNow he lives alone as a hermit.^\n"
+4	11	0	sentence		15000	"There once was an old man named Kermit^\nWhose gambling his wife would not ^permit.^\nHe wouldn't obey,^\nShe sent him away.^\nNow he lives alone as a hermit.^\n"
+1	12	0	sentence		15000	"He couldn't hide all of his misdeeds,^\nBut made off with all of the ^proceeds.^\nFrom charity giving,^\nHe has made a living.^\nSome jail time is what this guy needs.^\n"
+2	12	0	sentence		15000	"He couldn't hide all of his misdeeds,^\nBut made off with all of the ^proceeds.^\nFrom charity giving,^\nHe has made a living.^\nSome jail time is what this guy needs.^\n"
+3	12	0	sentence		15000	He couldn't hide all of his misdeeds^\nOn Monday his retrial ^proceeds.^\nI hope that the jury^\nConvicts in a hurry.^\nAnd I'd like to give him a nosebleed.^\n
+4	12	0	sentence		15000	He couldn't hide all of his misdeeds^\nOn Monday his retrial ^proceeds.^\nI hope that the jury^\nConvicts in a hurry.^\nAnd I'd like to give him a nosebleed.^\n
+1	13	0	sentence		15000	"There once was a young man named Ernest,^\nWho sponsored a violent ^protest.^\nWhen they asked him why,^\nHe said, with a sigh,^\nI wanted to open a wasp's nest.^\n"
+2	13	0	sentence		15000	"There once was a young man named Ernest,^\nWho sponsored a violent ^protest.^\nWhen they asked him why,^\nHe said, with a sigh,^\nI wanted to open a wasp's nest.^\n"
+3	13	0	sentence		15000	"There once was a young man named Ernest,^\nWho rounded up people to ^protest.^\nWhen they asked him why,^\nHe said, with a sigh,^\nI wanted to open a wasp's nest.^\n"
+4	13	0	sentence		15000	"There once was a young man named Ernest,^\nWho rounded up people to ^protest.^\nWhen they asked him why,^\nHe said, with a sigh,^\nI wanted to open a wasp's nest.^\n"
+1	14	0	sentence		15000	"That basketball star's like a bloodhound.^\nHe seeks out and catches each ^rebound.^\nHe always plays tough,^\nBut never too rough,^\nAlthough it's just hoops on the playground.^\n"
+2	14	0	sentence		15000	"That basketball star's like a bloodhound.^\nHe seeks out and catches each ^rebound.^\nHe always plays tough,^\nBut never too rough,^\nAlthough it's just hoops on the playground.^\n"
+3	14	0	sentence		15000	"That basketball star's like a bloodhound.^\nhe waits for each jumpshot to ^rebound.^\nHe always plays tough,^\nBut never too rough,^\nAlthough it's just hoops on the playground.^\n"
+4	14	0	sentence		15000	"That basketball star's like a bloodhound.^\nhe waits for each jumpshot to ^rebound.^\nHe always plays tough,^\nBut never too rough,^\nAlthough it's just hoops on the playground.^\n"
+1	15	0	sentence		15000	"I met an old friend who played baseball,^\nWho warned of a new safety ^recall.^\nWith all of the noise^\nAbout lead in toys,^\nWe're all better off playing stickball.^\n"
+2	15	0	sentence		15000	"I met an old friend who played baseball,^\nWho warned of a new safety ^recall.^\nWith all of the noise^\nAbout lead in toys,^\nWe're all better off playing stickball.^\n"
+3	15	0	sentence		15000	"I met an old friend who played baseball,^\nBut what his name was I can't ^recall.^\nHe told me ""No worry,""^\nAnd left in hurry.^\nHe said he was late for a phone call.^\n"
+4	15	0	sentence		15000	"I met an old friend who played baseball,^\nBut what his name was I can't ^recall.^\nHe told me ""No worry,""^\nAnd left in hurry.^\nHe said he was late for a phone call.^\n"
+1	16	0	sentence		15000	"Last year I created a stock fund.^\nAnd managed to get a big ^refund.^\nBut now there's no question,^\nWe're in a recession.^\nInvestors are all being cautioned.^\n"
+2	16	0	sentence		15000	"Last year I created a stock fund.^\nAnd managed to get a big ^refund.^\nBut now there's no question,^\nWe're in a recession.^\nInvestors are all being cautioned.^\n"
+3	16	0	sentence		15000	"Last year I created a stock fund.^\nThe fees they would happily ^refund^\nBut now there's no question,^\nWe're in a recession^\nInvestors are all being cautioned.^\n"
+4	16	0	sentence		15000	"Last year I created a stock fund.^\nThe fees they would happily ^refund^\nBut now there's no question,^\nWe're in a recession^\nInvestors are all being cautioned.^\n"
+1	17	0	sentence		15000	"I read an unusual essay^\n'Bout how they conducted a ^survey.^\nThe polsters, how rude,^\nShowed up in the nude.^\nI burned it right up in the ashtray.^\n"
+2	17	0	sentence		15000	"I read an unusual essay^\n'Bout how they conducted a ^survey.^\nThe polsters, how rude,^\nShowed up in the nude.^\nI burned it right up in the ashtray.^\n"
+3	17	0	sentence		15000	"I read an unusual essay^\nDescribing how folks tried to ^survey.^\nThe polsters, how rude,^\nShowed up in the nude.^\nI burned it right up in the ashtray.^\n"
+4	17	0	sentence		15000	"I read an unusual essay^\nDescribing how folks tried to ^survey.^\nThe polsters, how rude,^\nShowed up in the nude.^\nI burned it right up in the ashtray.^\n"
 1	18	0	sentence		15000	The cops have a negative affect^\nConcerning their most recent ^suspect.^\nStay out of their hair!^\nThey won't treat you fair.^\nTheir treatment may well leave you abject.^\n
-2	18	0	sentence		15000	The cops have a negative affect^\nToward people they manage to ^suspect.^\nStay out of their hair!^\nThey won't treat you fair.^\nTheir treatment may well leave you abject.^\n
-1	19	0	sentence		15000	A striking young woman named Rembrandt,^\nFrom Portugal, she was a ^transplant.^\nShe hated our food,^\nAnd found us quite rude.^\nHer choice to live here she did recant.^\n
-2	19	0	sentence		15000	A striking young woman named Rembrandt^\nHad roses she wanted to ^transplant.^\nThey withered and died.^\nShe cried, and she cried.^\nCome back to me, my little houseplant.^\n
-1	20	0	sentence		15000	To get to the local gym's squash court,^\nYou must take municipal ^transport^\nIt will take some time,^\nAnd is hard to find.^\nI'm happy to serve as your escort.^\n
-2	20	0	sentence		15000	To get to the local gym's squash court,^\nYour gear should be ready to ^transport.^\nIt will take some time,^\nAnd is hard to find.^\nI'm happy to serve as your escort.^\n
-1	21	0	sentence		15000	You must hear my story, your highness.^\nI have the young princess's ^address.^\nArrive there at two,^\nShe's waiting for you.^\nJust be sure to treat her with kindness.^\n
-2	21	0	sentence		15000	You must hear my story, your highness.^\nYour habits I find I must ^address.^\nIt's not a good thing,^\nWhen our future king,^\nBehaves like a kiddie at recess.^\n
-1	22	0	sentence		15000	The guy who got lost on a flyby^\nDropped all of his bombs on an ^ally.^\nFor him it was tragic,^\nAnd not the least magic.^\nThe enemy cheered at the bull's eye.^\n
-2	22	0	sentence		15000	The guy who got lost on a flyby^\nKilled folks with whom we want to ^ally.^\nFor them it was tragic,^\nAnd not the least magic.^\nOur friends shouldn't be in the bull's eye.^\n
-1	23	0	sentence		15000	I just saw a dog and a tomcat,^\nEngaged in some furious ^combat,^\nBut I was surprised,^\nAnd then hypnotized,^\nWhen into the fray walked a wombat.^\n
-2	23	0	sentence		15000	I just saw a dog and a tomcat,^\nThat we must be ready to ^combat,^\nOr else they will bite,^\nWith all of their might,^\nOur sweet little domestic wombat.^\n
-1	24	0	sentence		15000	I heard someone say through the grapevine:^\nThe farmer is driving his ^combine^\nTo harvest the yields^\nOf all of his fields,^\nAnd have them all shipped on the rail line.^\n
-2	24	0	sentence		15000	I heard someone say through the grapevine:^\nThat farmer is hoping to ^combine^\nHis own garden's yields,^\nWith those from my fields,^\nAnd have them all shipped on the rail line.^\n
-1	25	0	sentence		15000	I processed some prints in the darkroom^\nOf people I'd met on a ^commune.^\nThey pray to the sun,^\nAnd have lots of fun,^\nAnd frolic like kids on the sand dunes.^\n
-2	25	0	sentence		15000	I processed some prints in the darkroom^\nOf folks who just wanted to ^commune^\nOn clothing-free seashores,^\nThe Caymans, or Azores,^\nAnd frolic like kids on the sand dunes.^\n
-1	26	0	sentence		15000	If out in the mountains you backpack,^\nYour team must agree to this ^compact:^\nDon't cut down the trees,^\nOr bother the bees.^\nYou don't want to make a big impact.^\n
-2	26	0	sentence		15000	If out in the mountains you backpack,^\nYour gear must be basic and ^compact.^\nDon't cut down the trees,^\nOr bother the bees.^\nYou don't want to make a big impact.^\n
-1	27	0	sentence		15000	We stayed in the wooods at a campground,^\nWhich wasn't too far from a ^compound^\nWhere there was a crowd^\nThat drank and was loud.^\nTheir rudeness our party did dumbfound.^\n
-2	27	0	sentence		15000	We got that old dog at the pound^\nOur sadness will surely ^compound^\nFor now he is sick,^\nCan do no more tricks,^\nAnd soon will be put in the ground.^\n
-1	28	0	sentence		15000	There was a young heroin addict,^\nWho ended up causing a ^conflict.^\nHis auto was stopped,^\nAnd he shot a cop,^\nAnd now he's a federal convict.^\n
-2	28	0	sentence		15000	There was a young heroin addict,^\nWhose habits and others did ^conflict.^\nHis auto was stopped,^\nAnd he shot a cop,^\nAnd now he's a federal convict.^\n
-1	29	0	sentence		15000	The athlete who just failed a drugtest,^\nWill soon face a challenging ^contest.^\nHis one last resort,^\nTo take it to court,^\nBy filing a certified protest.^\n
-2	29	0	sentence		15000	The athlete who just failed a drugtest,^\nIs planning the charges to ^contest.^\nHis one last resort,^\nTo take it to court,^\nBy filing a certified protest.^\n
-1	30	0	sentence		15000	Although that young man is an addict,^\nHe really should not be a ^convict.^\nHe needs some support,^\nIt's better than court,^\nAnd jail time will cause too much conflict.^\n
-2	30	0	sentence		15000	Although that young man is an addict,^\nI think that the judge shouldn't ^convict.^\nHe needs some support,^\nIt's better than court,^\nAnd jail time will cause too much conflict.^\n
-1	31	0	sentence		15000	In nothing but jeans and a t-shirt,^\nThat man took a trip 'cross the ^desert.^\nHe soon was quite beat,^\nSuccumbed to the heat,^\nHe wasn't a survival expert.^\n
-2	31	0	sentence		15000	In nothing but jeans and a t-shirt,^\nA soldier his squad chose to ^desert.^\nHe soon was quite beat,^\nSuccumbed to the heat,^\nHe wasn't a survival expert.^\n
+2	18	0	sentence		15000	The cops have a negative affect^\nConcerning their most recent ^suspect.^\nStay out of their hair!^\nThey won't treat you fair.^\nTheir treatment may well leave you abject.^\n
+3	18	0	sentence		15000	The cops have a negative affect^\nToward people they manage to ^suspect.^\nStay out of their hair!^\nThey won't treat you fair.^\nTheir treatment may well leave you abject.^\n
+4	18	0	sentence		15000	The cops have a negative affect^\nToward people they manage to ^suspect.^\nStay out of their hair!^\nThey won't treat you fair.^\nTheir treatment may well leave you abject.^\n
+1	19	0	sentence		15000	"A striking young woman named Rembrandt,^\nFrom Portugal, she was a ^transplant.^\nShe hated our food,^\nAnd found us quite rude.^\nHer choice to live here she did recant.^\n"
+2	19	0	sentence		15000	"A striking young woman named Rembrandt,^\nFrom Portugal, she was a ^transplant.^\nShe hated our food,^\nAnd found us quite rude.^\nHer choice to live here she did recant.^\n"
+3	19	0	sentence		15000	"A striking young woman named Rembrandt^\nHad roses she wanted to ^transplant.^\nThey withered and died.^\nShe cried, and she cried.^\nCome back to me, my little houseplant.^\n"
+4	19	0	sentence		15000	"A striking young woman named Rembrandt^\nHad roses she wanted to ^transplant.^\nThey withered and died.^\nShe cried, and she cried.^\nCome back to me, my little houseplant.^\n"
+1	20	0	sentence		15000	"To get to the local gym's squash court,^\nYou must take municipal ^transport^\nIt will take some time,^\nAnd is hard to find.^\nI'm happy to serve as your escort.^\n"
+2	20	0	sentence		15000	"To get to the local gym's squash court,^\nYou must take municipal ^transport^\nIt will take some time,^\nAnd is hard to find.^\nI'm happy to serve as your escort.^\n"
+3	20	0	sentence		15000	"To get to the local gym's squash court,^\nYour gear should be ready to ^transport.^\nIt will take some time,^\nAnd is hard to find.^\nI'm happy to serve as your escort.^\n"
+4	20	0	sentence		15000	"To get to the local gym's squash court,^\nYour gear should be ready to ^transport.^\nIt will take some time,^\nAnd is hard to find.^\nI'm happy to serve as your escort.^\n"
+1	21	0	sentence		15000	"You must hear my story, your highness.^\nI have the young princess's ^address.^\nArrive there at two,^\nShe's waiting for you.^\nJust be sure to treat her with kindness.^\n"
+2	21	0	sentence		15000	"You must hear my story, your highness.^\nI have the young princess's ^address.^\nArrive there at two,^\nShe's waiting for you.^\nJust be sure to treat her with kindness.^\n"
+3	21	0	sentence		15000	"You must hear my story, your highness.^\nYour habits I find I must ^address.^\nIt's not a good thing,^\nWhen our future king,^\nBehaves like a kiddie at recess.^\n"
+4	21	0	sentence		15000	"You must hear my story, your highness.^\nYour habits I find I must ^address.^\nIt's not a good thing,^\nWhen our future king,^\nBehaves like a kiddie at recess.^\n"
+1	22	0	sentence		15000	"The guy who got lost on a flyby^\nDropped all of his bombs on an ^ally.^\nFor him it was tragic,^\nAnd not the least magic.^\nThe enemy cheered at the bull's eye.^\n"
+2	22	0	sentence		15000	"The guy who got lost on a flyby^\nDropped all of his bombs on an ^ally.^\nFor him it was tragic,^\nAnd not the least magic.^\nThe enemy cheered at the bull's eye.^\n"
+3	22	0	sentence		15000	"The guy who got lost on a flyby^\nKilled folks with whom we want to ^ally.^\nFor them it was tragic,^\nAnd not the least magic.^\nOur friends shouldn't be in the bull's eye.^\n"
+4	22	0	sentence		15000	"The guy who got lost on a flyby^\nKilled folks with whom we want to ^ally.^\nFor them it was tragic,^\nAnd not the least magic.^\nOur friends shouldn't be in the bull's eye.^\n"
+1	23	0	sentence		15000	"I just saw a dog and a tomcat,^\nEngaged in some furious ^combat,^\nBut I was surprised,^\nAnd then hypnotized,^\nWhen into the fray walked a wombat.^\n"
+2	23	0	sentence		15000	"I just saw a dog and a tomcat,^\nEngaged in some furious ^combat,^\nBut I was surprised,^\nAnd then hypnotized,^\nWhen into the fray walked a wombat.^\n"
+3	23	0	sentence		15000	"I just saw a dog and a tomcat,^\nThat we must be ready to ^combat,^\nOr else they will bite,^\nWith all of their might,^\nOur sweet little domestic wombat.^\n"
+4	23	0	sentence		15000	"I just saw a dog and a tomcat,^\nThat we must be ready to ^combat,^\nOr else they will bite,^\nWith all of their might,^\nOur sweet little domestic wombat.^\n"
+1	24	0	sentence		15000	"I heard someone say through the grapevine:^\nThe farmer is driving his ^combine^\nTo harvest the yields^\nOf all of his fields,^\nAnd have them all shipped on the rail line.^\n"
+2	24	0	sentence		15000	"I heard someone say through the grapevine:^\nThe farmer is driving his ^combine^\nTo harvest the yields^\nOf all of his fields,^\nAnd have them all shipped on the rail line.^\n"
+3	24	0	sentence		15000	"I heard someone say through the grapevine:^\nThat farmer is hoping to ^combine^\nHis own garden's yields,^\nWith those from my fields,^\nAnd have them all shipped on the rail line.^\n"
+4	24	0	sentence		15000	"I heard someone say through the grapevine:^\nThat farmer is hoping to ^combine^\nHis own garden's yields,^\nWith those from my fields,^\nAnd have them all shipped on the rail line.^\n"
+1	25	0	sentence		15000	"I processed some prints in the darkroom^\nOf people I'd met on a ^commune.^\nThey pray to the sun,^\nAnd have lots of fun,^\nAnd frolic like kids on the sand dunes.^\n"
+2	25	0	sentence		15000	"I processed some prints in the darkroom^\nOf people I'd met on a ^commune.^\nThey pray to the sun,^\nAnd have lots of fun,^\nAnd frolic like kids on the sand dunes.^\n"
+3	25	0	sentence		15000	"I processed some prints in the darkroom^\nOf folks who just wanted to ^commune^\nOn clothing-free seashores,^\nThe Caymans, or Azores,^\nAnd frolic like kids on the sand dunes.^\n"
+4	25	0	sentence		15000	"I processed some prints in the darkroom^\nOf folks who just wanted to ^commune^\nOn clothing-free seashores,^\nThe Caymans, or Azores,^\nAnd frolic like kids on the sand dunes.^\n"
+1	26	0	sentence		15000	"If out in the mountains you backpack,^\nYour team must agree to this ^compact:^\nDon't cut down the trees,^\nOr bother the bees.^\nYou don't want to make a big impact.^\n"
+2	26	0	sentence		15000	"If out in the mountains you backpack,^\nYour team must agree to this ^compact:^\nDon't cut down the trees,^\nOr bother the bees.^\nYou don't want to make a big impact.^\n"
+3	26	0	sentence		15000	"If out in the mountains you backpack,^\nYour gear must be basic and ^compact.^\nDon't cut down the trees,^\nOr bother the bees.^\nYou don't want to make a big impact.^\n"
+4	26	0	sentence		15000	"If out in the mountains you backpack,^\nYour gear must be basic and ^compact.^\nDon't cut down the trees,^\nOr bother the bees.^\nYou don't want to make a big impact.^\n"
+1	27	0	sentence		15000	"We stayed in the wooods at a campground,^\nWhich wasn't too far from a ^compound^\nWhere there was a crowd^\nThat drank and was loud.^\nTheir rudeness our party did dumbfound.^\n"
+2	27	0	sentence		15000	"We stayed in the wooods at a campground,^\nWhich wasn't too far from a ^compound^\nWhere there was a crowd^\nThat drank and was loud.^\nTheir rudeness our party did dumbfound.^\n"
+3	27	0	sentence		15000	"We got that old dog at the pound^\nOur sadness will surely ^compound^\nFor now he is sick,^\nCan do no more tricks,^\nAnd soon will be put in the ground.^\n"
+4	27	0	sentence		15000	"We got that old dog at the pound^\nOur sadness will surely ^compound^\nFor now he is sick,^\nCan do no more tricks,^\nAnd soon will be put in the ground.^\n"
+1	28	0	sentence		15000	"There was a young heroin addict,^\nWho ended up causing a ^conflict.^\nHis auto was stopped,^\nAnd he shot a cop,^\nAnd now he's a federal convict.^\n"
+2	28	0	sentence		15000	"There was a young heroin addict,^\nWho ended up causing a ^conflict.^\nHis auto was stopped,^\nAnd he shot a cop,^\nAnd now he's a federal convict.^\n"
+3	28	0	sentence		15000	"There was a young heroin addict,^\nWhose habits and others did ^conflict.^\nHis auto was stopped,^\nAnd he shot a cop,^\nAnd now he's a federal convict.^\n"
+4	28	0	sentence		15000	"There was a young heroin addict,^\nWhose habits and others did ^conflict.^\nHis auto was stopped,^\nAnd he shot a cop,^\nAnd now he's a federal convict.^\n"
+1	29	0	sentence		15000	"The athlete who just failed a drugtest,^\nWill soon face a challenging ^contest.^\nHis one last resort,^\nTo take it to court,^\nBy filing a certified protest.^\n"
+2	29	0	sentence		15000	"The athlete who just failed a drugtest,^\nWill soon face a challenging ^contest.^\nHis one last resort,^\nTo take it to court,^\nBy filing a certified protest.^\n"
+3	29	0	sentence		15000	"The athlete who just failed a drugtest,^\nIs planning the charges to ^contest.^\nHis one last resort,^\nTo take it to court,^\nBy filing a certified protest.^\n"
+4	29	0	sentence		15000	"The athlete who just failed a drugtest,^\nIs planning the charges to ^contest.^\nHis one last resort,^\nTo take it to court,^\nBy filing a certified protest.^\n"
+1	30	0	sentence		15000	"Although that young man is an addict,^\nHe really should not be a ^convict.^\nHe needs some support,^\nIt's better than court,^\nAnd jail time will cause too much conflict.^\n"
+2	30	0	sentence		15000	"Although that young man is an addict,^\nHe really should not be a ^convict.^\nHe needs some support,^\nIt's better than court,^\nAnd jail time will cause too much conflict.^\n"
+3	30	0	sentence		15000	"Although that young man is an addict,^\nI think that the judge shouldn't ^convict.^\nHe needs some support,^\nIt's better than court,^\nAnd jail time will cause too much conflict.^\n"
+4	30	0	sentence		15000	"Although that young man is an addict,^\nI think that the judge shouldn't ^convict.^\nHe needs some support,^\nIt's better than court,^\nAnd jail time will cause too much conflict.^\n"
+1	31	0	sentence		15000	"In nothing but jeans and a t-shirt,^\nThat man took a trip 'cross the ^desert.^\nHe soon was quite beat,^\nSuccumbed to the heat,^\nHe wasn't a survival expert.^\n"
+2	31	0	sentence		15000	"In nothing but jeans and a t-shirt,^\nThat man took a trip 'cross the ^desert.^\nHe soon was quite beat,^\nSuccumbed to the heat,^\nHe wasn't a survival expert.^\n"
+3	31	0	sentence		15000	"In nothing but jeans and a t-shirt,^\nA soldier his squad chose to ^desert.^\nHe soon was quite beat,^\nSuccumbed to the heat,^\nHe wasn't a survival expert.^\n"
+4	31	0	sentence		15000	"In nothing but jeans and a t-shirt,^\nA soldier his squad chose to ^desert.^\nHe soon was quite beat,^\nSuccumbed to the heat,^\nHe wasn't a survival expert.^\n"
 1	32	0	sentence		15000	I know of an elegant female^\nHer outfits lack no fashion ^detail.^\nShe gave me advice:^\nI don't pay full price.^\nI buy all my clothing at wholesale.^\n
-2	32	0	sentence		15000	There once was a woman named Gail^\nWho wanted her car to ^detail.^\nA nice guy said he^\nWould do it for free,^\nAnd later they went out for ale.^\n
-1	33	0	sentence		15000	There was a young woman whose nude dance^\nMade everyone flock to the ^entrance.^\nThe men it drove wild,^\nWhenever she smiled,^\nBut she says she's not seeking romance.^\n
-2	33	0	sentence		15000	There was a young woman whose nude dance^\nWould always the gentlemen ^entrance.^\nShe drove them just wild,^\nWhenever she smiled,^\nBut she says she's not seeking romance.^\n
-1	34	0	sentence		15000	There once was a penniless peasant,^\nWho couldn't afford a nice ^present.^\nFor so little yield,^\nHe worked in the field,^\nAnd work there was really unpleasant.^\n
-2	34	0	sentence		15000	There once was a penniless peasant,^\nWho went to his master to ^present^\nHis gripes and complaints.^\nHe showed no restraint.^\nThe outcome was rather unpleasant.^\n
-1	35	0	sentence		15000	There once was a crusty old recluse,^\nWho grew the most wonderful ^produce.^\nHis lemons and limes^\nWere truly sublime,^\nAnd made the most wonderful fruit juice.^\n
-2	35	0	sentence		15000	There once was a crusty old recluse,^\nWhose garden great harvests would ^produce.^\nHis lemons and limes^\nWere truly sublime,^\nAnd made the most wonderful fruit juice.^\n
-1	36	0	sentence		15000	With all of their time spent at recess,^\nThe children make no forward ^progress.^\nThey won't be succeeding,^\nIn writing and reading,^\nWhile working on physical fitness.^\n
-2	36	0	sentence		15000	With all of their time spent at recess,^\nThe children will soon fail to ^progress.^\nThey won't be succeeding,^\nIn writing and reading,^\nWhile working on physical fitness.^\n
-1	37	0	sentence		15000	I noticed a ruinous defect^\nIn one of the candidate's ^projects.^\nIf he can't explain,^\nHe'll garner disdain.^\nThe voters will find the man suspect.^\n
-2	37	0	sentence		15000	I noticed a ruinous defect^\nIn what that new candidate ^projects.^\nHe oftens looks dour,^\nAnd out-and-out sour.^\nThe voters are finding him suspect.^\n
-1	38	0	sentence		15000	In a voice that was piercing and treble,^\nThe serfs were inspired by a ^rebel.^\nThen facing the troops,^\nIn small tight-knit groups,^\nThey let fly a volley of pebbles.^\n
-2	38	0	sentence		15000	In a voice that was piercing and treble,^\nThe leader urged peasants to ^rebel.^\nThen facing the troops,^\nIn small tight-knit groups,^\nThey let fly a volley of pebbles.^\n
-1	39	0	sentence		15000	There once was a young man named Eckerd^\nWho broke an old pole-vaulting ^record.^\nHis star rose so fast,^\nBut fame would not last.^\nIt turned out his past was quite checkered.^\n
-2	39	0	sentence		15000	There once was a young man named Eckerd^\nWhose pole-vaulting feats they did ^record^\nHis star rose so fast,^\nBut fame would not last.^\nIt turned out his past was quite checkered.^\n
-1	40	0	sentence		15000	The judges must all watch the replay^\nTo find out which team won the ^relay.^\nTo my unskilled eye,^\nIt looked like a tie.^\nThe runners all wait on the raceway.^\n
-2	40	0	sentence		15000	The judges must all watch the replay.^\nResults to the coach they will ^relay^\nTo my unskilled eye,^\nIt looked like a tie.^\nThe runners all wait on the raceway.^\n
+2	32	0	sentence		15000	I know of an elegant female^\nHer outfits lack no fashion ^detail.^\nShe gave me advice:^\nI don't pay full price.^\nI buy all my clothing at wholesale.^\n
+3	32	0	sentence		15000	"There once was a woman named Gail^\nWho wanted her car to ^detail.^\nA nice guy said he^\nWould do it for free,^\nAnd later they went out for ale.^\n"
+4	32	0	sentence		15000	"There once was a woman named Gail^\nWho wanted her car to ^detail.^\nA nice guy said he^\nWould do it for free,^\nAnd later they went out for ale.^\n"
+1	33	0	sentence		15000	"There was a young woman whose nude dance^\nMade everyone flock to the ^entrance.^\nThe men it drove wild,^\nWhenever she smiled,^\nBut she says she's not seeking romance.^\n"
+2	33	0	sentence		15000	"There was a young woman whose nude dance^\nMade everyone flock to the ^entrance.^\nThe men it drove wild,^\nWhenever she smiled,^\nBut she says she's not seeking romance.^\n"
+3	33	0	sentence		15000	"There was a young woman whose nude dance^\nWould always the gentlemen ^entrance.^\nShe drove them just wild,^\nWhenever she smiled,^\nBut she says she's not seeking romance.^\n"
+4	33	0	sentence		15000	"There was a young woman whose nude dance^\nWould always the gentlemen ^entrance.^\nShe drove them just wild,^\nWhenever she smiled,^\nBut she says she's not seeking romance.^\n"
+1	34	0	sentence		15000	"There once was a penniless peasant,^\nWho couldn't afford a nice ^present.^\nFor so little yield,^\nHe worked in the field,^\nAnd work there was really unpleasant.^\n"
+2	34	0	sentence		15000	"There once was a penniless peasant,^\nWho couldn't afford a nice ^present.^\nFor so little yield,^\nHe worked in the field,^\nAnd work there was really unpleasant.^\n"
+3	34	0	sentence		15000	"There once was a penniless peasant,^\nWho went to his master to ^present^\nHis gripes and complaints.^\nHe showed no restraint.^\nThe outcome was rather unpleasant.^\n"
+4	34	0	sentence		15000	"There once was a penniless peasant,^\nWho went to his master to ^present^\nHis gripes and complaints.^\nHe showed no restraint.^\nThe outcome was rather unpleasant.^\n"
+1	35	0	sentence		15000	"There once was a crusty old recluse,^\nWho grew the most wonderful ^produce.^\nHis lemons and limes^\nWere truly sublime,^\nAnd made the most wonderful fruit juice.^\n"
+2	35	0	sentence		15000	"There once was a crusty old recluse,^\nWho grew the most wonderful ^produce.^\nHis lemons and limes^\nWere truly sublime,^\nAnd made the most wonderful fruit juice.^\n"
+3	35	0	sentence		15000	"There once was a crusty old recluse,^\nWhose garden great harvests would ^produce.^\nHis lemons and limes^\nWere truly sublime,^\nAnd made the most wonderful fruit juice.^\n"
+4	35	0	sentence		15000	"There once was a crusty old recluse,^\nWhose garden great harvests would ^produce.^\nHis lemons and limes^\nWere truly sublime,^\nAnd made the most wonderful fruit juice.^\n"
+1	36	0	sentence		15000	"With all of their time spent at recess,^\nThe children make no forward ^progress.^\nThey won't be succeeding,^\nIn writing and reading,^\nWhile working on physical fitness.^\n"
+2	36	0	sentence		15000	"With all of their time spent at recess,^\nThe children make no forward ^progress.^\nThey won't be succeeding,^\nIn writing and reading,^\nWhile working on physical fitness.^\n"
+3	36	0	sentence		15000	"With all of their time spent at recess,^\nThe children will soon fail to ^progress.^\nThey won't be succeeding,^\nIn writing and reading,^\nWhile working on physical fitness.^\n"
+4	36	0	sentence		15000	"With all of their time spent at recess,^\nThe children will soon fail to ^progress.^\nThey won't be succeeding,^\nIn writing and reading,^\nWhile working on physical fitness.^\n"
+1	37	0	sentence		15000	"I noticed a ruinous defect^\nIn one of the candidate's ^projects.^\nIf he can't explain,^\nHe'll garner disdain.^\nThe voters will find the man suspect.^\n"
+2	37	0	sentence		15000	"I noticed a ruinous defect^\nIn one of the candidate's ^projects.^\nIf he can't explain,^\nHe'll garner disdain.^\nThe voters will find the man suspect.^\n"
+3	37	0	sentence		15000	"I noticed a ruinous defect^\nIn what that new candidate ^projects.^\nHe oftens looks dour,^\nAnd out-and-out sour.^\nThe voters are finding him suspect.^\n"
+4	37	0	sentence		15000	"I noticed a ruinous defect^\nIn what that new candidate ^projects.^\nHe oftens looks dour,^\nAnd out-and-out sour.^\nThe voters are finding him suspect.^\n"
+1	38	0	sentence		15000	"In a voice that was piercing and treble,^\nThe serfs were inspired by a ^rebel.^\nThen facing the troops,^\nIn small tight-knit groups,^\nThey let fly a volley of pebbles.^\n"
+2	38	0	sentence		15000	"In a voice that was piercing and treble,^\nThe serfs were inspired by a ^rebel.^\nThen facing the troops,^\nIn small tight-knit groups,^\nThey let fly a volley of pebbles.^\n"
+3	38	0	sentence		15000	"In a voice that was piercing and treble,^\nThe leader urged peasants to ^rebel.^\nThen facing the troops,^\nIn small tight-knit groups,^\nThey let fly a volley of pebbles.^\n"
+4	38	0	sentence		15000	"In a voice that was piercing and treble,^\nThe leader urged peasants to ^rebel.^\nThen facing the troops,^\nIn small tight-knit groups,^\nThey let fly a volley of pebbles.^\n"
+1	39	0	sentence		15000	"There once was a young man named Eckerd^\nWho broke an old pole-vaulting ^record.^\nHis star rose so fast,^\nBut fame would not last.^\nIt turned out his past was quite checkered.^\n"
+2	39	0	sentence		15000	"There once was a young man named Eckerd^\nWho broke an old pole-vaulting ^record.^\nHis star rose so fast,^\nBut fame would not last.^\nIt turned out his past was quite checkered.^\n"
+3	39	0	sentence		15000	"There once was a young man named Eckerd^\nWhose pole-vaulting feats they did ^record^\nHis star rose so fast,^\nBut fame would not last.^\nIt turned out his past was quite checkered.^\n"
+4	39	0	sentence		15000	"There once was a young man named Eckerd^\nWhose pole-vaulting feats they did ^record^\nHis star rose so fast,^\nBut fame would not last.^\nIt turned out his past was quite checkered.^\n"
+1	40	0	sentence		15000	"The judges must all watch the replay^\nTo find out which team won the ^relay.^\nTo my unskilled eye,^\nIt looked like a tie.^\nThe runners all wait on the raceway.^\n"
+2	40	0	sentence		15000	"The judges must all watch the replay^\nTo find out which team won the ^relay.^\nTo my unskilled eye,^\nIt looked like a tie.^\nThe runners all wait on the raceway.^\n"
+3	40	0	sentence		15000	"The judges must all watch the replay.^\nResults to the coach they will ^relay^\nTo my unskilled eye,^\nIt looked like a tie.^\nThe runners all wait on the raceway.^\n"
+4	40	0	sentence		15000	"The judges must all watch the replay.^\nResults to the coach they will ^relay^\nTo my unskilled eye,^\nIt looked like a tie.^\nThe runners all wait on the raceway.^\n"

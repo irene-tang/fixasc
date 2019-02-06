@@ -43,7 +43,7 @@ p = subprocess.call(['python3', 'copy_make_cnt/copy_make_cnt.py'])
 # ../data/scripter/output_from_scripter.script
 # ^
 # 1
-# 2
+# 4
 
 """
 Runs Robodoc.py

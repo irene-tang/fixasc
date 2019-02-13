@@ -51,7 +51,7 @@ import argparse
 
 
 robodoc_prefix = '../data/robodoc/'
-processed_asc_prefix = '../data/processed_asc/'
+processed_asc_prefix = '../data/FA_Dir/'
 
 	##################################################
 	# FUNCTION TO CHECK DC VALUES

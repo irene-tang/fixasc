@@ -918,7 +918,7 @@ if blink_reg_exclude == 'y' and auto_exclude == 1 and auto_exclude_DC == 0: #JH 
 	for i in sorted(keep):
 		kp.write(i)
 		kp.write("\n")
-	kp.close
+	kp.close()
 
 	# Write list of file to exclude
 	for i in sorted(exclude_list):
@@ -933,7 +933,7 @@ if auto_exclude == 0 and auto_exclude_DC == 1:
 	for i in sorted(keep):
 		kp.write(i)
 		kp.write("\n")
-	kp.close
+	kp.close()
 
 	# Write list of file to exclude
 	for i in sorted(exclude_list_DC):
@@ -948,7 +948,7 @@ if blink_reg_exclude == 'y' and auto_exclude == 1 and auto_exclude_DC == 1: #JH 
 	for i in sorted(keep):
 		kp.write(i)
 		kp.write("\n")
-	kp.close
+	kp.close()
 
 	# Write list of file to exclude
 	for i in sorted(exclude_list_total):

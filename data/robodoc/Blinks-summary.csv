@@ -44,4 +44,5 @@ Filename,Excluded?,1,2,3,4
 ../data/FA_Dir/subj13_processed_fa.da1,,0,1,1,0
 ../data/FA_Dir/subj14_processed_fa.da1,,1,2,2,3
 ../data/FA_Dir/subj16_processed_fa.da1,,2,0,1,0
-../data/FA_Dir/subj6_processed_fa.da1,,3,1,0,2
+../data/FA_Dir/subject1_processed_fa.da1,,1,1,2,2
+../data/FA_Dir/subject7_processed_fa.da1,,0,0,0,0

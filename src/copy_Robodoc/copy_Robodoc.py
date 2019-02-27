@@ -1016,3 +1016,19 @@ if DC == 1:
 
 
 sumsub.close()
+
+# repair exclude.lst, keep.lst, files_processed.lst
+for robo_file in ["../data/robodoc/exclude.lst", "../data/robodoc/keep.lst", "../data/robodoc/files_processed.lst"]:
+	new_file = []
+
+	f = open(robo_file, "r")
+	for line in f:
+		new_line = '../data/robodoc/da1_files/' + line.rsplit('/')[-1].strip()
+		print(new_line)
+		new_file.append(new_line)
+	f.close()
+
+	with open(robo_file, "w") as f:
+		for i in new_file:
+			f.write(i+"\n")
+	f.close()

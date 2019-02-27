@@ -594,7 +594,7 @@ def write_to_outfile(buffer):
     """
     # print original_asc.rsplit('/', 2)
     inpath = original_asc.rsplit('/', 2)
-    new_asc_filename = inpath[0] + '/processed_asc/' + inpath[-1].split('.')[0] + '_processed.asc'
+    new_asc_filename = inpath[0] + '/new_asc/' + inpath[-1].split('.')[0] + '_new.asc'
 
     # print new_asc_filename
     with open(new_asc_filename, 'w+') as outfile:

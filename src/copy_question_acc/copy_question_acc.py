@@ -5,10 +5,16 @@ import glob
 import csv
 import argparse
 
+###### FOLDER LOCATIONS #######
+INPUT_FOLDER = '../data/processed_asc/'
+OUTPUT_FOLDER = '../data/question_acc/'
+###############################
+
 parser = argparse.ArgumentParser()
 parser.add_argument('filename', nargs = "?", help="Optional argument to provide the parameter file.")
 parser.add_argument('--verbose', '-v', action="store_true", help="Optional argument to print information about question accuracy.")
 args = parser.parse_args()
+
 if args.filename:
 	filename = args.filename
 else:
@@ -27,15 +33,14 @@ except:
 
 # Allows empty file_list variable in parameters file. If not specified, uses all asc files in directory.
 if not file_list:
-	file_list = glob.glob('../data/processed_asc/*.asc')
+	file_list = glob.glob(INPUT_FOLDER + '*.asc')
 
 #and make a subject summary file
 subj_sum = []
-subj_quest_file = open('../data/question_acc/subj_quest.txt', 'w+')
-summary_file = open('../data/question_acc/QuestSum.txt','w+')
+subj_quest_file = open(OUTPUT_FOLDER + 'subj_quest.txt', 'w+')
+summary_file = open(OUTPUT_FOLDER + 'QuestSum.txt','w+')
 summary_file.write('Subj Nques Cans Pcorr\n')
 for file in file_list:
-
 	try:
 		filename = open(file, 'r')
 	except:

@@ -27,37 +27,44 @@
 
 
 
-print("Enter the name of your sentence file: ");
-$inputfile = <STDIN>;
+# print("Enter the name of your sentence file: ");
+# $inputfile = <STDIN>;
+$inputfile = "copy_Scripter2/input_to_scripter.txt";
 chomp($inputfile);
 
 
-print("What is your x offset, in pixels?\n");
-print("(If you don't have any display change trials, just hit return.) ");
-	$xoff= <STDIN>;
+# print("What is your x offset, in pixels?\n");
+# print("(If you don't have any display change trials, just hit return.) ");
+	# $xoff= <STDIN>;
+	$xoff= "\n";
 	chomp($xoff);
-	
-print("What is your y offset, in pixels?\n");
-print("(If you don't have any display change trials, just hit return.) ");
-	$yoff= <STDIN>;
+
+# print("What is your y offset, in pixels?\n");
+# print("(If you don't have any display change trials, just hit return.) ");
+	# $yoff= <STDIN>;
+	$yoff= "\n";
 	chomp($yoff);
-	
-print("How many horizontal pixels per character (make sure to check with your font and your monitor)?\n");
-print("(If you don't have any display change trials, just hit return.) ");
-	$pixchar= <STDIN>;
+
+# print("How many horizontal pixels per character (make sure to check with your font and your monitor)?\n");
+# print("(If you don't have any display change trials, just hit return.) ");
+	# $pixchar= <STDIN>;
+	$pixchar= "\n";
 	chomp($pixchar);
-	
-print("How many vertical pixels per row(make sure to check with your font and your monitor)?\n");
-print("(If you don't have any display change trials, just hit return.) ");
-	$pixrow= <STDIN>;
+
+# print("How many vertical pixels per row(make sure to check with your font and your monitor)?\n");
+# print("(If you don't have any display change trials, just hit return.) ");
+	# $pixrow= <STDIN>;
+	$pixrow= "\n";
 	chomp($pixrow);
 
-print("Do you want to automatically generate sequences?y or n:");
-$sequence = <STDIN>;
+# print("Do you want to automatically generate sequences?y or n:");
+# $sequence = <STDIN>;
+$sequence = "\n";
 chomp($sequence);
 
-print("Enter the name of your output file: ");
-$outputfile = <STDIN>;
+# print("Enter the name of your output file: ");
+# $outputfile = <STDIN>;
+$outputfile = "../data/scripter/output_from_scripter.script";
 chomp($outputfile);
 
 open(inputfile, $inputfile) or die("can't open file\n");
@@ -78,7 +85,7 @@ while ($line = <inputfile>) {
 	$response = $entries[4];
 	$timeout = $entries[5];
 	$sentence1 = $entries[6];
-	
+
 #this next bit checks if there's a sentence 2,#
 #and if there is, divides it at the delimiters#
 #and uses the pixel info to assign x and y  coords#
@@ -95,7 +102,7 @@ while ($line = <inputfile>) {
 		}
 		#this starts a counter for the display change regions
 		$k = 1;
-		
+
 		#this part goes through the lines one at a time#
 		#and finds the display change regions#
 		#it assumes that the first region of any line is NOT#
@@ -135,12 +142,10 @@ while ($line = <inputfile>) {
 			#this indexes the row counter#
 			$i++;
 		}
-			
-		
-#this just gets rid of the delimiters for output in the script
+
+		#this just gets rid of the delimiters for output in the script
 		$sentence2=~s/%//g;
 	}
-	
 
 	print(outputfile "trial E$condition","I$item","D$dependent\n");
 	if ($trialtype eq "question") {
@@ -162,10 +167,10 @@ while ($line = <inputfile>) {
 		}
 	print(outputfile "\n");
 	}
-		
+
 	print(outputfile "  trial_type =\t\t$trialtype\n");
 	print(outputfile "end E$condition","I$item","D$dependent\n\n");
-	
+
 }
 
 close(inputfile);
@@ -198,7 +203,7 @@ open(outputfile, ">>$outputfile") or die("can't write to file\n");
 						$trialtype2 = @entries[3];
 						if ($trialtype2 ne "question" and $item2 eq $item) {
 							print(outputfile "sequence SE$condition2","I$item2\n");
-							print(outputfile "  E$condition2","I$item2","D$dependent2\n"); 
+							print(outputfile "  E$condition2","I$item2","D$dependent2\n");
 							print(outputfile "  E$condition","I$item","D$dependent\n");
 							print(outputfile "end SE$condition2","I$item2\n\n");
 						}
@@ -206,9 +211,7 @@ open(outputfile, ">>$outputfile") or die("can't write to file\n");
 					close(secondfile);
 				}
 		}
-					
+
 	}
 close(inputfile);
 close(outputfile);
-
-	

@@ -3,13 +3,14 @@
 
 import sys
 
-cnt_prefix = '../data/scripter/'
+OUTPUT_FOLDER = '../data/scripter/'
 
 
-input_file = input("What is the name of your delimited script file?")
+# input_file = input("What is the name of your delimited script file?")
+input_file = "../data/scripter/output_from_scripter.script"
 
 output_file = input_file.rsplit('.', 1)[0] + ".cnt"
-print (output_file)
+# print (output_file)
 output_file = open(output_file, 'w+')
 
 try:
@@ -19,15 +20,19 @@ except:
 	print ("Your delimited script file could not be found.")
 	sys.exit(0)
 
-delim_char = input("What character do you use as your region delimiter?")
+# delim_char = input("What character do you use as your region delimiter?")
+delim_char = "^"
 
-lowest_cond = int(input("What is the lowest condition number to be analyzed?"))
-highest_cond = int(input("What is the highest condition number to be analyzed?"))
+# lowest_cond = int(input("What is the lowest condition number to be analyzed?"))
+lowest_cond = 1
+
+# highest_cond = int(input("What is the highest condition number to be analyzed?"))
+highest_cond = 4
 
 #have to include the space after 'trial', otherwise you get the trialtype line
 search_strings = ['trial ','inline']
 
-tempfile = open(cnt_prefix + 'tempfile','w+')
+tempfile = open(OUTPUT_FOLDER + 'tempfile','w+')
 
 for line in dry_file:
 	for x in search_strings:

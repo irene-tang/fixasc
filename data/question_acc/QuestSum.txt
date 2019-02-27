@@ -1,11 +1,8 @@
 Subj Nques Cans Pcorr
-../data/processed_asc/5t_processed.asc 100 95 0.95
 ../data/processed_asc/f181069_processed.asc 100 83 0.83
-../data/processed_asc/2t_processed.asc 100 77 0.77
 ../data/processed_asc/f181060t_processed.asc 100 96 0.96
 ../data/processed_asc/f181054_processed.asc 100 94 0.94
 ../data/processed_asc/f181053_processed.asc 100 94 0.94
-../data/processed_asc/subj6_processed.asc 100 88 0.88
 ../data/processed_asc/f181079_processed.asc 100 91 0.91
 ../data/processed_asc/f181057_processed.asc 100 72 0.72
 ../data/processed_asc/subject7_processed.asc 100 68 0.68
@@ -17,7 +14,6 @@ Subj Nques Cans Pcorr
 ../data/processed_asc/f181087b_processed.asc 100 95 0.95
 ../data/processed_asc/f181073_processed.asc 100 89 0.89
 ../data/processed_asc/f181064_processed.asc 100 90 0.9
-../data/processed_asc/subj8_processed.asc 100 87 0.87
 ../data/processed_asc/f181070b_processed.asc 100 69 0.69
 ../data/processed_asc/f181077_processed.asc 100 62 0.62
 ../data/processed_asc/f181059_processed.asc 100 90 0.9
@@ -39,7 +35,6 @@ Subj Nques Cans Pcorr
 ../data/processed_asc/f181086_processed.asc 100 92 0.92
 ../data/processed_asc/subj14_processed.asc 100 87 0.87
 ../data/processed_asc/f181076_processed.asc 100 80 0.8
-../data/processed_asc/subj9_processed.asc 100 94 0.94
 ../data/processed_asc/f181061_processed.asc 100 54 0.54
 ../data/processed_asc/f181065_processed.asc 100 80 0.8
 ../data/processed_asc/f181072_processed.asc 100 87 0.87

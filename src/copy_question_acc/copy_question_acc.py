@@ -6,7 +6,7 @@ import csv
 import argparse
 
 ###### FOLDER LOCATIONS #######
-INPUT_FOLDER = '../data/processed_asc/'
+INPUT_FOLDER = '../data/new_asc/'
 OUTPUT_FOLDER = '../data/question_acc/'
 ###############################
 

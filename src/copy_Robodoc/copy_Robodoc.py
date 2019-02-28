@@ -49,9 +49,10 @@ import glob
 import csv
 import argparse
 
-
-robodoc_prefix = '../data/robodoc/'
-processed_asc_prefix = '../data/FA_Dir/'
+###### FOLDER LOCATIONS #######
+OUTPUT_FOLDER = '../data/robodoc/'
+INPUT_FOLDER = '../data/FA_Dir/'
+###############################
 
 	##################################################
 	# FUNCTION TO CHECK DC VALUES
@@ -122,8 +123,8 @@ if blink_reg_exclude == "y":
 # Reads in auto_exclude argument in parameter file, looks for thesholds.
 # Will write to exclude.lst if specified.
 if auto_exclude == 1 or auto_exclude_DC == 1:
-	e = open(robodoc_prefix + 'exclude.lst', 'w')
-	kp = open(robodoc_prefix + 'keep.lst', 'w')
+	e = open(OUTPUT_FOLDER + 'exclude.lst', 'w')
+	kp = open(OUTPUT_FOLDER + 'keep.lst', 'w')
 	try:
 		exclude_threshold
 	except:
@@ -209,7 +210,7 @@ if DC == 1:
 # END OF SETTING UP DC DICTIONARY
 
 #and make a subject summary file
-sumsub = open(robodoc_prefix + 'sum.sub', 'w')
+sumsub = open(OUTPUT_FOLDER + 'sum.sub', 'w')
 
 
 	#################################################
@@ -220,12 +221,12 @@ sumsub = open(robodoc_prefix + 'sum.sub', 'w')
 # ------------------------
 # Create file list on the fly for empty file_list lists
 if not file_list:
-	file_list = glob.glob(processed_asc_prefix + '*.asc')
+	file_list = glob.glob(INPUT_FOLDER + '*.asc')
 
 # print (file_list)
 
 # Write files in file_list to lst file
-f = open(robodoc_prefix + 'files_processed.lst', 'w')
+f = open(OUTPUT_FOLDER + 'files_processed.lst', 'w')
 for filename in file_list:
 	#strip off extension
 	output = filename[:-4]
@@ -275,18 +276,18 @@ for filename in file_list:
 	output_da1 = output + ".da1"
 
 #open the new file
-	os.makedirs(robodoc_prefix + 'da1_files', exist_ok=True)
-	output_da1 = open(robodoc_prefix + 'da1_files/'+output_da1, 'w')
+	os.makedirs(OUTPUT_FOLDER + 'da1_files', exist_ok=True)
+	output_da1 = open(OUTPUT_FOLDER + 'da1_files/'+output_da1, 'w')
 
 	#do the same things to make a blink file
 	output_bli = output + ".bli"
-	os.makedirs(robodoc_prefix + 'blink_files', exist_ok=True)
-	output_bli = open(robodoc_prefix + 'blink_files/'+output_bli, 'w')
+	os.makedirs(OUTPUT_FOLDER + 'blink_files', exist_ok=True)
+	output_bli = open(OUTPUT_FOLDER + 'blink_files/'+output_bli, 'w')
 
 # and if display change, a display change file
 	if DC == 1:
 		output_DC = output + ".dc"
-		os.makedirs(robodoc_prefix + 'DC_files', exist_ok=True)
+		os.makedirs(OUTPUT_FOLDER + 'DC_files', exist_ok=True)
 		output_DC = open(file+prefix + 'DC_files/'+output_DC, 'w')
 
 
@@ -319,7 +320,7 @@ for filename in file_list:
 	copy_it = 0
 	search_strings = ['TRIALID', 'SYNCTIME', 'EFIX','EBLINK', 'TRIAL_RESULT','REGION','COMPLETED','ESACC']
 # SEARCH STRINGS: 0 trialid, 1 trial start, 2 = efix, 3= eblink, 4 trial end, 5 character line, 6 display change, 7 end of saccade
-	tempfile = open(robodoc_prefix + 'tempfile','w+')
+	tempfile = open(OUTPUT_FOLDER + 'tempfile','w+')
 	for line in input_asc:
 		for entry in search_strings:
 			if entry in line:
@@ -356,7 +357,7 @@ for filename in file_list:
 	output_string_trial = []	# sequence, condition, item
 	trial_seq = 0
 # fields is the array of values on a given line of a trial
-	tempfile = open(robodoc_prefix + 'tempfile', 'r')
+	tempfile = open(OUTPUT_FOLDER + 'tempfile', 'r')
 	for line in tempfile:
 		row = line
 		fields = row.split()			#break line into list
@@ -961,7 +962,7 @@ if blink_reg_exclude == 'y' and auto_exclude == 1 and auto_exclude_DC == 1: #JH 
 if  blink_reg_exclude == 'y': # JH Feb 17
 
 	# Open csv file
-	with open(robodoc_prefix + 'Blinks-summary.csv', 'w', newline='') as f:
+	with open(OUTPUT_FOLDER + 'Blinks-summary.csv', 'w', newline='') as f:
 		w = csv.writer(f)
 		# Create headers
 		headers = list(range(lowest_cond, highest_cond+1))
@@ -1018,13 +1019,13 @@ if DC == 1:
 sumsub.close()
 
 # repair exclude.lst, keep.lst, files_processed.lst
-for robo_file in ["../data/robodoc/exclude.lst", "../data/robodoc/keep.lst", "../data/robodoc/files_processed.lst"]:
+for robo_file in [OUTPUT_FOLDER + "exclude.lst", OUTPUT_FOLDER + "keep.lst", OUTPUT_FOLDER + "files_processed.lst"]:
 	new_file = []
 
 	f = open(robo_file, "r")
 	for line in f:
-		new_line = '../data/robodoc/da1_files/' + line.rsplit('/')[-1].strip()
-		print(new_line)
+		new_line = OUTPUT_FOLDER + 'da1_files/' + line.rsplit('/')[-1].strip()
+		# print(new_line)
 		new_file.append(new_line)
 	f.close()
 

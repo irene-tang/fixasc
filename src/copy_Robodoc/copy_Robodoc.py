@@ -1030,6 +1030,7 @@ for robo_file in [OUTPUT_FOLDER + "exclude.lst", OUTPUT_FOLDER + "keep.lst", OUT
 	f.close()
 
 	with open(robo_file, "w") as f:
+		f.write("\n")
 		for i in new_file:
 			f.write(i+"\n")
 	f.close()

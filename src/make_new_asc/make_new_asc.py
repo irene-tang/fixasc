@@ -8,7 +8,7 @@ def check_args():
     """
     # check for correct command-line inputs
     if len(sys.argv) != 2:
-        print "usage: python makeasc.py [original_asc input]"
+        print ("usage: python makeasc.py [original_asc input]")
         exit(-1)
 
     # the original asc input file
@@ -519,7 +519,7 @@ def read_ias_letter(line, timestamp):
             ias_folder = original_asc.rsplit('/', 1)[0] + '/' + list + '_aoi'
             break
     if ias_folder == '':
-        print 'unable to determine list'
+        print ('unable to determine list')
         exit(-1)
 
     line = ias_folder + '/' + line.split('/')[-1].strip()
@@ -550,7 +550,7 @@ def read_ias_letter(line, timestamp):
         x_end = int(line[5])
         y_start = int(line[4])
         y_end = int(line[6])
-        x_step = (x_end - x_start)/(len(word) + 1)
+        x_step = int((x_end - x_start)/(len(word) + 1))
         sequence = int(line[2])
 
         # increment the line number when appropriate

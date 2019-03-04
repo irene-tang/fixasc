@@ -35,7 +35,7 @@ print('\n==========\nrunning make_new_asc\n==========\n', end='')
 file_list = glob.glob('../data/original_asc/*.asc')
 
 for asc in file_list:
-    p = subprocess.call(['python', 'make_new_asc/make_new_asc.py', asc])
+    p = subprocess.call(['python3', 'make_new_asc/make_new_asc.py', asc])
     print('.', end='', flush=True)
 
 print()

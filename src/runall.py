@@ -1,10 +1,36 @@
+import os
 import glob
 import subprocess
+import shutil
+
+"""
+Delete all of the subfolders (and their contents) in data/ that are not data/original_asc/,
+Then re-create them as empty folders
+"""
+
+paths = ["../data/eyedry", "../data/FA_Dir", "../data/new_asc", "../data/question_acc", "../data/robodoc", "../data/scripter"]
+
+for path in paths:
+    try:
+        shutil.rmtree(path)
+    except OSError:
+        print ("Deletion of the directory %s failed" % path)
+    else:
+        print ("Successfully deleted the directory %s " % path)
+
+for path in paths:
+    try:
+        os.mkdir(path)
+    except OSError:
+        print ("Creation of the directory %s failed" % path)
+    else:
+        print ("Successfully created the directory %s " % path)
+
 
 """
 Runs make_new_asc.py
 """
-print('==========\nrunning make_new_asc\n==========\n', end='')
+print('\n==========\nrunning make_new_asc\n==========\n', end='')
 
 file_list = glob.glob('../data/original_asc/*.asc')
 
@@ -20,6 +46,13 @@ Runs question_acc.py
 print('\n==========\nrunning question_acc\n==========')
 
 p = subprocess.call(['python3', 'copy_question_acc/copy_question_acc.py', 'copy_Robodoc/limerick_parameters.txt'])
+
+"""
+Runs remove_participants.py
+"""
+print('\n==========\nrunning remove_participants\n==========')
+
+p = subprocess.call(['python3', 'copy_question_acc/remove_participants.py'])
 
 """
 Runs scripter2.pl

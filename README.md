@@ -89,7 +89,7 @@ Key words: implicit prosody, inner voice, inner speech, subvocalization, silent 
 		* Non-variable stuff that I changed from the original script:
 			* The two or three instances of `kp.close` chaged to `kp.close()` (it was probably a typo)
 			* At the end (begining from line 1021), added a loop to fix the mis-pathed entries in files_processed.lst, exclude.lst, and keep.lst (i broke the given script by switching it to INPUT/OUTPUT from outside the current directory)
-				* Also append a newline before  each of these files, since eyedry seemed to be skipping the first line (probably assumed there was a header there--but there isnt')
+				<!-- * Also append a newline before  each of these files, since eyedry seemed to be skipping the first line (probably assumed there was a header there--but there isnt') -->
 	* `copy_dataanal_714` - contains a bunch of analysis software.
 		* Created by the UMass-Amherst Eyetracking Lab. See the actual instructions and documentation in this subfolder for details.
 			* ANALASC.doc seems to be the README equivalent for the folder

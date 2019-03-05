@@ -4,7 +4,7 @@ import subprocess
 import shutil
 
 """
-Delete all of the subfolders (and their contents) in data/ that are not data/original_asc/,
+Delete all of the subfolders (and their contents) in data/ that are not data/original_asc/ or data/eyedry/,
 Then re-create them as empty folders
 """
 
@@ -48,11 +48,11 @@ print('\n==========\nrunning question_acc\n==========')
 p = subprocess.call(['python3', 'copy_question_acc/copy_question_acc.py', 'copy_Robodoc/limerick_parameters.txt'])
 
 """
-Runs remove_participants.py
+Runs remove_participants_question_acc.py
 """
 print('\n==========\nrunning remove_participants\n==========')
 
-p = subprocess.call(['python3', 'copy_question_acc/remove_participants.py'])
+p = subprocess.call(['python3', 'copy_question_acc/remove_participants_question_acc.py'])
 
 """
 Runs scripter2.pl

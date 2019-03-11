@@ -1,0 +1,157 @@
+This is a mild porting, by Doug Rohde, of Gary Perlman's UNIX|STAT 5.2 suite
+of analysis tools.  Changes have been made to prevent buffer overflows and
+reduce compiler warnings.
+
+There are versions of these binaries for Linux, Windows (using Cygwin), and
+Mac OS X.  Make sure you have the right one.
+
+If you want to compile your own version, download the source distribution, go
+to the src/ directory, and run "make".  You may need to edit the settings in
+the Makefile for your system.
+
+To install the programs, log in as root and copy the programs in the bin/
+directory to your favorite location.  Possible choices are:
+
+/usr/bin
+/usr/local/bin
+/home/$USER/bin
+
+Alternatively, you can add the bin directory to your PATH environment 
+variable.
+
+   --------------------------------------------------------------------------
+
+                               UNIX|STAT 5.2
+
+                               Gary Perlman
+
+                   DATA MANIPULATION & ANALYSIS PROGRAMS
+                            FOR UNIX and MSDOS
+
+     UNIX|STAT is a set of over 20 data manipulation and analysis  programs
+developed  at  the  University  of  California,  San  Diego and at the Wang
+Institute of Graduate Studies by Gary Perlman.  The programs  are  designed
+with  the  UNIX  philosophy  that individual programs should be designed as
+tools that do one task well and produce output suitable for input via pipes
+to  other  programs.   Interactive  use  is  supported  in the command line
+interpreter  which  also  provides  a  programming  language  for   complex
+analyses.   Typical  usage  involves  a pipeline of transformations of data
+followed by input to an analysis program, summarized schematically by:
+
+            INPUT DATA | TRANSFORM | ANALYSIS | OUTPUT RESULTS
+
+Functions built into many statistical packages (e.g., graphics and editing)
+are  not  re-invented  in  UNIX|STAT which delegates such responsibility to
+standard tools.
+
+DATA MANIPULATION PROGRAMS:
+
+     abut      join data files
+     colex     column extraction
+     dm        column oriented data manipulator
+     dsort     multiple key data sorting filter
+     maketrix  create matrix type file from free-form file
+     perm      permute line order
+     probdist  probability distribution functions
+     ranksort  rank order columns
+     repeat    repeat a pattern or file
+     reverse   reverse lines, columns, and characters
+     series    generate a series of numbers
+     transpose transpose matrix type file
+     validata  verify data file consistency
+
+DATA ANALYSIS PROGRAMS:
+
+     anova     multi-factor analysis of variance
+     calc      interactive algebraic modeling calculator
+     contab    contingency tables and chi-square
+     desc      descriptions histograms, frequency tables
+     dprime    signal detection d' and beta calculations
+     oneway    one-way anova and t-test with error-bar plots
+     pair      paired data statistics, regression, plots
+     regress   multivariate linear regression and correlation
+     stats     report summary statistics
+     ts        time series analysis and plots
+
+FEATURES:
+
+     easy to use programs (negligible training period)
+     simple input formats (free format field oriented)
+     used in pipelines with other utilities (sort, print)
+     flexible data manipulation
+     several simple lineprinter plotting options
+     data validation (range and type checking)
+     documentation includes online manual entries, Handbook
+     consistent option conventions with online help
+     runs on any UNIX System (V6, V7, 2.8BSD, 4BSD, System V, etc.)
+     runs on MSDOS 2.0 and 3.0 with 96K (IBM, Wang, AT&T, etc.)
+     usually less than a few seconds per analysis
+     liberal copyright (but can't be distributed for gain)
+     in use at hundreds of MSDOS and UNIX sites since 1980
+
+WARRANTY AND DISTRIBUTION CONDITIONS:
+
+     Carefully read the following warranty and conditions.  If you  do  not
+find them acceptable, you should not order or use UNIX|STAT.
+     Warranty.  UNIX|STAT is provided ``as is'' and  without  any  warranty
+expressed  or  implied.  There is no claim that UNIX|STAT is suited to your
+needs,  nor  that  it  will  run  on  your   particular   hardware/software
+configuration.   The  availability  of and programs in UNIX|STAT may change
+without notice.
+     Copyright Conditions.  You may make copies of any  tangible  forms  of
+UNIX|STAT,  provided  that there is no material gain involved, and provided
+that the information in this flyer accompanies every  copy.   You  may  not
+modify  the source code for any purposes other than getting the programs to
+work on your system.  You may not distribute any modified  source  code  to
+any sites other than your own.  Any costs in compiling or porting UNIX|STAT
+to your system are your's alone, and not any other parties.
+     Use At Your Own Risk.  All risk of loss of any  kind  due  to  use  of
+UNIX|STAT is with you, the user.  You are responsible for all mishaps, even
+if the programs prove to be defective.  You must be trained at your expense
+to  learn  to  use  the programs.  In particular, you are hereby given fair
+warning that data analysis programs make many assumptions about data, These
+assumptions  affect  the  validity of conclusions you may make based on the
+programs.  References to appropriate statistical sources are  made  in  the
+UNIX|STAT Handbook and in the manual entries for specific programs.
+
+ORDERING INFORMATION:
+
+     Carefully read the instructions below.  Orders not following them  may
+be  be  returned or even discarded.  All prices include delivery and should
+be prepaid to G. Perlman.  Checks must be in US funds, drawn on a US  bank.
+Orders that include any terms or conditions other than those in this notice
+may be returned or discarded.  Company purchase orders should be avoided in
+favor  of a personal check, with a request for a receipt if needed.  Orders
+must include a delivery mailing label acceptable to the  post  office,  and
+international  orders  must  include the country name on the label.  Orders
+without mailing labels may not be deliverable or returnable.
+
+UNIX Version of UNIX|STAT:
+     Price:    $20
+     Contents: Program (C language) & Manual (troff) Source Files
+     Space:    450K bytes for source and manuals, 450K bytes for binaries
+     Format:   600 foot half inch 9 track mag tape, 1600 bpi tar format
+MSDOS Version of UNIX|STAT:
+     Price:    $15
+     Contents: Preformatted Manuals and Executables
+     Space:    700K for binaries and online manuals
+     Format:   2S/2D MSDOS 5.25 inch floppy diskettes
+Handbook:
+     Price:    $10
+     Contents: Examples, Reference Materials, CALC & DM Manuals, Manuals
+     Format:   Typeset Manual (~100 pages)
+
+CONTACT:
+
+     Gary Perlman
+     Wang Institute of Graduate Studies
+     Tyng Road
+     Tyngsboro, MA 01879 USA
+     UUCP: decvax!wanginst!perlman  CSNET: perlman@wanginst
+
+NOTES:
+
+     UNIX is a trademark of AT&T Bell Laboratories.
+     MSDOS is a trademark of MicroSoft.
+     UNIX|STAT is NOT a product of any company or organization.
+

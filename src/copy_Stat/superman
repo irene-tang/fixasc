@@ -1,0 +1,23 @@
+#!/bin/sh
+
+if [ $# -eq 2 ]; then
+   m=`man -w $1 $2` || exit
+   PAGE=`basename $m`
+   PDF=/tmp/$PAGE.pdf
+   if [ ! -e $PDF ]; then
+      c=`grog $m`
+      $c | ps2pdf - $PDF
+   fi
+   open $PDF
+else
+   m=`man -w $1` || exit
+   for x in $m; do
+      PAGE=`basename $x`
+      PDF=/tmp/$PAGE.pdf
+      if [ ! -e $PDF ]; then
+         c=`grog $x`
+         $c | ps2pdf - $PDF
+      fi
+      open $PDF
+   done
+fi

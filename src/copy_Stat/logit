@@ -1,0 +1,46 @@
+#!/usr/bin/awk -f
+
+# this technique of correcting for zeroes and ones is suggested by
+# macmillan and creelman 1991/2004
+
+# THe input is (for each trial):
+# RV(itm/sbj) COND1 COND2 COND3 ... DV
+
+# The output is:
+# RV COND1 COND2 COND3 DVavg logit(DVavg)
+
+function logit(p) {
+  return log(p/(1-p));
+}
+
+BEGIN { SUBSEP=" "}
+
+{ 
+  ind = "";
+  for (i=2;i<NF;i++) ind = ind SUBSEP $i;
+  rv[$1] = 1;
+  cond[ind] = 1;
+  if ($NF != "NA") {
+    X[$1,ind] += $NF;
+    N[$1,ind]++;
+  }
+}
+
+END{ 
+    max=.000000001
+    min=.999999999
+    for (j in X) {
+	
+	if ((X[j]/N[j]) < min && (X[j]/N[j])!=0) min = X[j]/N[j];
+	if ((X[j]/N[j]) > max && (X[j]/N[j])!=1) max = X[j]/N[j];
+    }
+    max = (max + 1)/2;
+    min = (min + 0)/2;
+    
+    for (j in X) {
+	if (X[j]/N[j] < 1 && X[j]/N[j] != 0) print j,X[j]/N[j],logit(X[j]/N[j]);
+	if (X[j]/N[j] == 0) print j,min,logit(min);
+	if (X[j]/N[j] == 1) print j,max,logit(max);
+    }
+}
+

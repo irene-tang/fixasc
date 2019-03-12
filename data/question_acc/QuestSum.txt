@@ -1,5 +1,6 @@
 Subj Nques Cans Pcorr
 ../data/new_asc/subj14_new.asc 100 87 0.87
+../data/new_asc/subj6_new.asc 100 88 0.88
 ../data/new_asc/f181066_new.asc 100 90 0.9
 ../data/new_asc/f181076_new.asc 100 80 0.8
 ../data/new_asc/f181059_new.asc 100 90 0.9
@@ -19,6 +20,7 @@ Subj Nques Cans Pcorr
 ../data/new_asc/f181053_new.asc 100 94 0.94
 ../data/new_asc/f181088_new.asc 100 83 0.83
 ../data/new_asc/subj16_new.asc 100 94 0.94
+../data/new_asc/5t_new.asc 100 95 0.95
 ../data/new_asc/f181052_new.asc 100 79 0.79
 ../data/new_asc/f181089_new.asc 100 69 0.69
 ../data/new_asc/f181074_new.asc 100 95 0.95

@@ -1019,17 +1019,20 @@ if DC == 1:
 sumsub.close()
 
 # repair exclude.lst, keep.lst, files_processed.lst
-for robo_file in [OUTPUT_FOLDER + "exclude.lst", OUTPUT_FOLDER + "keep.lst", OUTPUT_FOLDER + "files_processed.lst"]:
+# for robo_file in [OUTPUT_FOLDER + "exclude.lst", OUTPUT_FOLDER + "keep.lst", OUTPUT_FOLDER + "files_processed.lst"]:
+for robo_file in [OUTPUT_FOLDER + "files_processed.lst"]:
 	new_file = []
 
-	f = open(robo_file, "r")
-	for line in f:
-		new_line = OUTPUT_FOLDER + 'da1_files/' + line.rsplit('/')[-1].strip()
-		# print(new_line)
-		new_file.append(new_line)
-	f.close()
-
-	with open(robo_file, "w") as f:
-		for i in new_file:
-			f.write(i+"\n")
-	f.close()
+	try:
+		f = open(robo_file, "r")
+		for line in f:
+			new_line = OUTPUT_FOLDER + 'da1_files/' + line.rsplit('/')[-1].strip()
+			# print(new_line)
+			new_file.append(new_line)
+		f.close()
+		with open(robo_file, "w") as f:
+			for i in new_file:
+				f.write(i+"\n")
+		f.close()
+	except:
+		print("File does not exist: " +  robo_file)

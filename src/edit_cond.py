@@ -20,6 +20,7 @@ FILES_TO_PROCESS = [
 # inputFilename = sys.argv[1]
 
 for inputFilename in FILES_TO_PROCESS:
+    print(inputFilename)
     # enter data as list
     with open(inputFilename, newline='') as readFile:
         data = list(csv.reader(readFile))
@@ -30,8 +31,8 @@ for inputFilename in FILES_TO_PROCESS:
     # perform our conversions
     num_rows = len(data)
     num_cols = len(data[0])
-    for i,row in enumerate(data):
-        for j, col in enumerate(row):
+    for i in range(len(data)):
+        for j in range(len(data[0])):
             # replace missing values with 0
             if data[i][j] == '':
                 data[i][j] = '0'
@@ -46,8 +47,8 @@ for inputFilename in FILES_TO_PROCESS:
                 data[i][j] = 'clash_this'
             # if condition value is zero but sequence value is non-zero,
             # replace the sequence value with 0
-            elif j == 3 and data[i][j] == '0' and data[i][0] != 0:
-                data[i][0] = 0
+            # elif j == 3 and data[i][j] == '0' and data[i][0] != 0:
+            #     del data[i]
 
     # save it to the output file
     outputFilename = OUTPUT_PATH + inputFilename.rsplit('/',1)[-1] + '_edited'

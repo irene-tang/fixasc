@@ -41,6 +41,7 @@ subj_quest_file = open(OUTPUT_FOLDER + 'subj_quest.txt', 'w+')
 summary_file = open(OUTPUT_FOLDER + 'QuestSum.txt','w+')
 summary_file.write('Subj Nques Cans Pcorr\n')
 for file in file_list:
+	print(file)
 	try:
 		filename = open(file, 'r')
 	except:

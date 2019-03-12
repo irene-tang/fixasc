@@ -46,9 +46,9 @@ script_file_name = '../../../data/scripter_and_cnt_outputs/output_from_scripter.
 # exclude_threshold is the max number of rejected trials in any one condition due to exclusion by a blink.
 # abs_exclude_threshold is the max number of rejected trials overall for blinks.
 
-auto_exclude = 1
-exclude_threshold = 4
-abs_exclude_threshold = 9
+auto_exclude = 0
+#exclude_threshold = 4
+#abs_exclude_threshold = 9
 
 
 # There is a similar option for display change experiments. Set auto_exclude_DC to 1 to automatically drop subjects who had too many display change errors. The trials for exclusion are tallied along with exclude_threshold and abs_exclude_threshold above.

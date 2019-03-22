@@ -1,0 +1,18 @@
+	match		clash
+tap	match_tap	clash_tap
+this	match_this	clash_this
+
+
+ANOVA crash course
+
+sst - sums of square total
+sst = n x variance
+
+anova - analysis of variance
+
+ssm - model sums of squares (how much the model explains)
+sse - error sums of squares (how much the model doesn't explain)
+
+an f test is a type of "omnibus test", a test that contains many items or groups
+f tests can show that there is significance somewhere, but it can't tell you where
+so t tests pair off two conditions at a time

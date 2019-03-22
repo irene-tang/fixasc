@@ -29,6 +29,7 @@ for inputFilename in FILES_TO_PROCESS:
     # data = np.asarray(data)
 
     # perform our conversions
+    count = 0
     num_rows = len(data)
     num_cols = len(data[0])
     for i in range(len(data)):
@@ -47,8 +48,11 @@ for inputFilename in FILES_TO_PROCESS:
                 data[i][j] = 'clash_this'
             # if condition value is zero but sequence value is non-zero,
             # replace the sequence value with 0
-            # elif j == 3 and data[i][j] == '0' and data[i][0] != 0:
-            #     del data[i]
+            elif j == 3 and data[i][j] == '0' and data[i][0] != 0:
+                data[i][0] = 0
+                count+=1
+    print(count)
+
 
     # save it to the output file
     outputFilename = OUTPUT_PATH + inputFilename.rsplit('/',1)[-1] + '_edited'

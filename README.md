@@ -319,7 +319,7 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 | Type an identifying string to print out | Go-past time | This doesn't affect functionality. |
 | Throw away zero fixation values? | y | |
 | Do you want to CULMINATE or AVERAGE multiple fixations in a region? | c | |
-| RAW times, MS/char, or DEVIATION from regression | r | |
+| Do you want to keep RAW times or convert to MSEC/CHAR?| r | |
 | Which analysis | 1 | There are three options here. We want sum of all time from first entering region to first going past. |
 | File of item X subject combinations | `goPastIXS` | We will base our analysis on this file. |
 | Do you want ALL trials written, or just trials with Observations? | a | |
@@ -333,16 +333,12 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 
 [Back to top](#limerick1-workspace)
 
-#### **4.2.C. Probability of fixating a region** FIXME
+#### **4.2.C. Probability of fixating a region**
 | Question | Answer | Explanation and Comments |
 |----:|:----:|----|
 | Which analysis? | 6 | |
 | Type an identifying string to print out | Probability of fixating in a region | This doesn't affect functionality. |
-| Which analysis: | 1 | Prob of one or more fixations |
-| Throw away zero fixation values? | y | |
-| Do you want to CULMINATE or AVERAGE multiple fixations in a region? | c | |
-| RAW times, MS/char, or DEVIATION from regression | r | |
-| Which analysis | 1 | There are three options here. We want prob of one or more fixations. |
+| Which analysis: | 1 | Probability of one or more fixations |
 | Conditionalize on position of last fixation before each region? | n | |
 | File of item X subject combinations | `probFixationIXS` | We will base our analysis on this file. |
 | Do you want ALL trials written, or just trials with Observations? | a | |
@@ -356,15 +352,11 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 
 [Back to top](#limerick1-workspace)
 
-#### **4.2.D. Probability of regressing out of a region**  FIXME
+#### **4.2.D. Probability of regressing out of a region**
 | Question | Answer | Explanation and Comments |
 |----:|:----:|----|
 | Which analysis? | 4 | |
 | Type an identifying string to print out | Probability of regresing out of a region | This doesn't affect functionality. |
-| Throw away zero fixation values? | y | |
-| Do you want to CULMINATE or AVERAGE multiple fixations in a region? | c | |
-| RAW times, MS/char, or DEVIATION from regression | r | |
-| Conditionalize on position of last fixation before each region? | n | |
 | File of item X subject combinations | `probRegressionIXS` | We will base our analysis on this file. |
 | Do you want ALL trials written, or just trials with Observations? | a | |
 | Do you want Wide output (all regions in one row) or Narrow (one row per region)? | w | |
@@ -377,21 +369,22 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 
 [Back to top](#limerick1-workspace)
 
-#### **4.2.E. First fixation duration in region 3** FIXME
+#### **4.2.E. First fixation duration in region 3**
 | Question | Answer | Explanation and Comments |
 |----:|:----:|----|
 | Which analysis? | 1 | |
-| Type an identifying string to print out | First fixation duration in region 3 | This doesn't affect functionality. |
-| Throw away zero fixation values? | y | |
-| Do you want to CULMINATE or AVERAGE multiple fixations in a region? | c | |
-| RAW times, MS/char, or DEVIATION from regression | r | |
+| Type an identifying string to print out | First fixation duration in Region 3 | This doesn't affect functionality. |
+| Which analysis: | 3 | Initial one of multiple fixations |
+| Do you want to keep RAW times or convert to MSEC/CHAR? | r | |
+| Conditionalize on presence/absense of regression in critical region? | n | |
+| Conditionalize on presence/absense of fixation in critical region? | n | |
 | Conditionalize on position of last fixation before each region? | n | |
-| File of item X subject combinations | `firstFixationReg3IXS` | We will base our analysis on this file. |
+| File of item X subject combinations | `firstFixationIXS` | We will base our analysis on this file. |
 | Do you want ALL trials written, or just trials with Observations? | a | |
 | Do you want Wide output (all regions in one row) or Narrow (one row per region)? | w | |
-| Subject by subject file, one condition per line (not systat) | `firstFixationReg3SXS` | We won't base our analysis on this file, but we might as well save it. |
+| Subject by subject file, one condition per line (not systat) | `firstFixationSXS` | We won't base our analysis on this file, but we might as well save it. |
 | Subject by subject file, formatted for Systat | [press return] | We don't want this file |
-| Item by item file, one condition per line (not systat) | `firstFixationReg3IXI` | We won't base our analysis on this file, but we might as well save it. |
+| Item by item file, one condition per line (not systat) | `firstFixationIXI` | We won't base our analysis on this file, but we might as well save it. |
 | Item by item file, formatted for Systat | [press return] | We don't want this file |
 | Do you want information about long and short times printed? | n | WARNING: "y" is a possible source of segfault. |
 | Do you want a typeout of the item-by-item data? | n | WARNING: "y" is a possible source of segfault. |
@@ -404,7 +397,7 @@ Press 0 to Quit.
 
 Move all of those generated files into `../data/eyedry/originals/`.
 
-NOTE: the trace file (`../data/eyedry/trace_limerick1.txt`) contains a record of everything we performed with EyeDry.
+NOTE: the trace file (e.g. `../data/eyedry/trace_limerick1.txt`) contains a record of everything that was performed with EyeDry just now.
 
 
 [Back to top](#limerick1-workspace)
@@ -435,6 +428,8 @@ python3 edit_cond.py
 This replaces missing values with 0 and replaces condition numbers with their word descriptions (e.g. 1 => match_tap) for each of five IXS measures files.
 
 It also repairs the unexplainable error where some random lines in the measures files contained a zero condition value but a non-zero sequence value; for these, it replaces the sequence value wtih 0.
+
+The edited files become stored into `data/eyedry/edited_originals` per the script.
 
 ## Step 6: Statistical Analysis
 IN PROGRESS
@@ -470,7 +465,6 @@ This project was created for non-monetary educational purposes only (please don'
 
 # TODO
 * run the statistics
-* finish the readme for the rest of the drive folder
 * still writing the actual paper
-* will there be a part 2
+* when will there be a part 2
 * (unrelated) make progress on the other scalar judgement loading study replication

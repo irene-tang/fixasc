@@ -1,0 +1,336 @@
+Last login: Fri Mar 15 01:15:09 on ttys001
+irene@dhcp-130-58-97-110:[~]$ls
+Applications/ Downloads/    Movies/       Public/
+Desktop/      Dropbox/      Music/        itang1@swat/
+Documents/    Library/      Pictures/     itang1swat/
+irene@dhcp-130-58-97-110:[~]$cd itang1\@swat/PSYC180/
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180]$ls
+Icon?
+Limerick1 Draft.docx
+Limerick1 Participants - Fall 2018.gsheet
+Luck ERP chapters/
+Outline.gdoc
+Relavent literature/
+Worklog.gdoc
+annotated bibliography.gdoc
+do not delete.txt
+draft of limerick1 re-preregistration.gdoc
+limerick1_workspace/
+misc. ling stuff/
+sample theses collection/
+~$merick1 Draft.docx
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180]$cd limerick1_workspace/
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace]$ls
+LICENSE                 screen_mar6.log         test/
+README.md               src/
+data/                   stats crash course.txt
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace]$cd data/
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data]$ls
+FA_Dir/       new_asc/      question_acc/ scripter/
+eyedry/       original_asc/ robodoc/
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data]$cd eyedry/
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry]$ls
+edited_originals/              trace_limerick1.txt
+originals/                     working_copy.xls
+trace_1.txt                    working_copy_probFixation.txt
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry]$cd edited_originals/
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$clear
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$ls
+firstFixationReg3IXS_edited  probFixationIXS_edited
+firstPassIXS_edited          probRegressionIXS_edited
+goPastIXS_edited
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$open .
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' | tr "_" " "| ../anova
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+^[[A^C../anova: ...interrupted...removing tempfile.
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' firstFixationReg3IXS_edited| tr "_" " "| ../anova
+SOURCE: grand mean
+A       B        n    N       MEAN         SD         SE
+                1765  192    18.8662    28.7524     2.0750
+
+SOURCE: A 
+A       B        n    N       MEAN         SD         SE
+match           885   96    21.3129    32.0953     3.2757
+clash           880   96    16.4195    24.8977     2.5411
+
+SOURCE: B 
+A       B        n    N       MEAN         SD         SE
+        this    917   96    17.5088    30.3951     3.1022
+        tap     848   96    20.2236    27.1019     2.7661
+
+SOURCE: A B 
+A       B        n    N       MEAN         SD         SE
+match   this    440   48    23.4548    38.0282     5.4889
+match   tap     445   48    19.1710    25.0322     3.6131
+clash   this    477   48    11.5628    18.6820     2.6965
+clash   tap     403   48    21.2762    29.2538     4.2224
+
+FACTOR  :     RANDOM          A          B       DATA 
+LEVELS  :         48          2          2        192 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	      68339.1908      1     68339.1908    39.414  0.000 ***
+R/	      81491.5437     47      1733.8626
+
+A      	       1149.3722      1      1149.3722     2.570  0.116 
+AR/	      21019.0645     47       447.2141
+
+B      	        353.7733      1       353.7733     0.643  0.427 
+BR/	      25855.6671     47       550.1206
+
+AB	       2351.0961      1      2351.0961     4.303  0.044 *
+ABR/	      25678.8179     47       546.3578
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' firstFixationReg3IXS_edited| tr "_" " "| head
+1 match this 0
+1 clash this 0
+1 match tap 0
+1 clash tap 0
+1 match this 0
+1 clash this 0
+1 match tap 0
+1 clash tap 0
+1 match this 0
+1 clash this 0
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' firstFixationReg3IXS_edited| tr "_" " "| ../anova
+SOURCE: grand mean
+A       B        n    N       MEAN         SD         SE
+                1765  192    18.8662    28.7524     2.0750
+
+SOURCE: A 
+A       B        n    N       MEAN         SD         SE
+match           885   96    21.3129    32.0953     3.2757
+clash           880   96    16.4195    24.8977     2.5411
+
+SOURCE: B 
+A       B        n    N       MEAN         SD         SE
+        this    917   96    17.5088    30.3951     3.1022
+        tap     848   96    20.2236    27.1019     2.7661
+
+SOURCE: A B 
+A       B        n    N       MEAN         SD         SE
+match   this    440   48    23.4548    38.0282     5.4889
+match   tap     445   48    19.1710    25.0322     3.6131
+clash   this    477   48    11.5628    18.6820     2.6965
+clash   tap     403   48    21.2762    29.2538     4.2224
+
+FACTOR  :     RANDOM          A          B       DATA 
+LEVELS  :         48          2          2        192 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	      68339.1908      1     68339.1908    39.414  0.000 ***
+R/	      81491.5437     47      1733.8626
+
+A      	       1149.3722      1      1149.3722     2.570  0.116 
+AR/	      21019.0645     47       447.2141
+
+B      	        353.7733      1       353.7733     0.643  0.427 
+BR/	      25855.6671     47       550.1206
+
+AB	       2351.0961      1      2351.0961     4.303  0.044 *
+ABR/	      25678.8179     47       546.3578
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' firstFixationReg3IXS_edited| tr "_" " "| ../anova cl 2nd
+SOURCE: grand mean
+2nd     B        n    N       MEAN         SD         SE
+                1765  192    18.8662    28.7524     2.0750
+
+SOURCE: 2nd 
+2nd     B        n    N       MEAN         SD         SE
+match           885   96    21.3129    32.0953     3.2757
+clash           880   96    16.4195    24.8977     2.5411
+
+SOURCE: B 
+2nd     B        n    N       MEAN         SD         SE
+        this    917   96    17.5088    30.3951     3.1022
+        tap     848   96    20.2236    27.1019     2.7661
+
+SOURCE: 2nd B 
+2nd     B        n    N       MEAN         SD         SE
+match   this    440   48    23.4548    38.0282     5.4889
+match   tap     445   48    19.1710    25.0322     3.6131
+clash   this    477   48    11.5628    18.6820     2.6965
+clash   tap     403   48    21.2762    29.2538     4.2224
+
+FACTOR  :         cl        2nd          B       DATA 
+LEVELS  :         48          2          2        192 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	      68339.1908      1     68339.1908    39.414  0.000 ***
+c/	      81491.5437     47      1733.8626
+
+2nd    	       1149.3722      1      1149.3722     2.570  0.116 
+2c/	      21019.0645     47       447.2141
+
+B      	        353.7733      1       353.7733     0.643  0.427 
+Bc/	      25855.6671     47       550.1206
+
+2B	       2351.0961      1      2351.0961     4.303  0.044 *
+2Bc/	      25678.8179     47       546.3578
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' firstFixationReg3IXS_edited| tr "_" " "| ../anova cl secnon
+SOURCE: grand mean
+secnon  B        n    N       MEAN         SD         SE
+                1765  192    18.8662    28.7524     2.0750
+
+SOURCE: secnon 
+secnon  B        n    N       MEAN         SD         SE
+match           885   96    21.3129    32.0953     3.2757
+clash           880   96    16.4195    24.8977     2.5411
+
+SOURCE: B 
+secnon  B        n    N       MEAN         SD         SE
+        this    917   96    17.5088    30.3951     3.1022
+        tap     848   96    20.2236    27.1019     2.7661
+
+SOURCE: secnon B 
+secnon  B        n    N       MEAN         SD         SE
+match   this    440   48    23.4548    38.0282     5.4889
+match   tap     445   48    19.1710    25.0322     3.6131
+clash   this    477   48    11.5628    18.6820     2.6965
+clash   tap     403   48    21.2762    29.2538     4.2224
+
+FACTOR  :         cl     secnon          B       DATA 
+LEVELS  :         48          2          2        192 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	      68339.1908      1     68339.1908    39.414  0.000 ***
+c/	      81491.5437     47      1733.8626
+
+secnon 	       1149.3722      1      1149.3722     2.570  0.116 
+sc/	      21019.0645     47       447.2141
+
+B      	        353.7733      1       353.7733     0.643  0.427 
+Bc/	      25855.6671     47       550.1206
+
+sB	       2351.0961      1      2351.0961     4.303  0.044 *
+sBc/	      25678.8179     47       546.3578
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' firstFixationReg3IXS_edited| tr "_" " "| ../anova cl second
+SOURCE: grand mean
+second  B        n    N       MEAN         SD         SE
+                1765  192    18.8662    28.7524     2.0750
+
+SOURCE: second 
+second  B        n    N       MEAN         SD         SE
+match           885   96    21.3129    32.0953     3.2757
+clash           880   96    16.4195    24.8977     2.5411
+
+SOURCE: B 
+second  B        n    N       MEAN         SD         SE
+        this    917   96    17.5088    30.3951     3.1022
+        tap     848   96    20.2236    27.1019     2.7661
+
+SOURCE: second B 
+second  B        n    N       MEAN         SD         SE
+match   this    440   48    23.4548    38.0282     5.4889
+match   tap     445   48    19.1710    25.0322     3.6131
+clash   this    477   48    11.5628    18.6820     2.6965
+clash   tap     403   48    21.2762    29.2538     4.2224
+
+FACTOR  :         cl     second          B       DATA 
+LEVELS  :         48          2          2        192 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	      68339.1908      1     68339.1908    39.414  0.000 ***
+c/	      81491.5437     47      1733.8626
+
+second 	       1149.3722      1      1149.3722     2.570  0.116 
+sc/	      21019.0645     47       447.2141
+
+B      	        353.7733      1       353.7733     0.643  0.427 
+Bc/	      25855.6671     47       550.1206
+
+sB	       2351.0961      1      2351.0961     4.303  0.044 *
+sBc/	      25678.8179     47       546.3578
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' firstFixationReg3IXS_edited| tr "_" " "| ../anova subj cl second time
+SOURCE: grand mean
+cl      second   n    N       MEAN         SD         SE
+                1765  192    18.8662    28.7524     2.0750
+
+SOURCE: cl 
+cl      second   n    N       MEAN         SD         SE
+match           885   96    21.3129    32.0953     3.2757
+clash           880   96    16.4195    24.8977     2.5411
+
+SOURCE: second 
+cl      second   n    N       MEAN         SD         SE
+        this    917   96    17.5088    30.3951     3.1022
+        tap     848   96    20.2236    27.1019     2.7661
+
+SOURCE: cl second 
+cl      second   n    N       MEAN         SD         SE
+match   this    440   48    23.4548    38.0282     5.4889
+match   tap     445   48    19.1710    25.0322     3.6131
+clash   this    477   48    11.5628    18.6820     2.6965
+clash   tap     403   48    21.2762    29.2538     4.2224
+
+FACTOR  :       subj         cl     second       time 
+LEVELS  :         48          2          2        192 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	      68339.1908      1     68339.1908    39.414  0.000 ***
+s/	      81491.5437     47      1733.8626
+
+cl     	       1149.3722      1      1149.3722     2.570  0.116 
+cs/	      21019.0645     47       447.2141
+
+second 	        353.7733      1       353.7733     0.643  0.427 
+ss/	      25855.6671     47       550.1206
+
+cs	       2351.0961      1      2351.0961     4.303  0.044 *
+css/	      25678.8179     47       546.3578
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/ && $7!=0 {print $2,$4,$7}' firstFixationReg3IXS_edited| tr "_" " "| ../anova subj cl second time
+SOURCE: grand mean
+cl      second   n    N       MEAN         SD         SE
+                137   87   235.4866    70.1900     7.5252
+
+SOURCE: cl 
+cl      second   n    N       MEAN         SD         SE
+match           79   48   230.5764    74.0869    10.6935
+clash           58   39   241.5299    65.5207    10.4917
+
+SOURCE: second 
+cl      second   n    N       MEAN         SD         SE
+        tap     70   46   243.2355    71.2002    10.4979
+        this    67   41   226.7927    68.8665    10.7551
+
+SOURCE: cl second 
+cl      second   n    N       MEAN         SD         SE
+match   tap     38   23   225.8116    68.1651    14.2134
+match   this    41   25   234.9600    80.2994    16.0599
+clash   tap     32   23   260.6594    71.3309    14.8735
+clash   this    26   16   214.0312    45.2244    11.3061
+
+../anova: Unequal cell design did not have proportional cell sizes.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/ && $7!=0 {print $2,$4,$7}' firstFixationReg3IXS_edited| tr "_" " "| ../anova subj cl second time
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$

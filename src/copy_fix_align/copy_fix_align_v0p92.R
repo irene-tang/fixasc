@@ -3,9 +3,9 @@ fix_align <- function(start_pts=rbind(c(490,290), c(490, 340), c(490, 390), c(49
 											xy_bounds=NULL,
 											keep_y_var=FALSE,
 											use_run_rule=TRUE,
-											trial_plots=FALSE,
+											trial_plots=TRUE,
 											save_trial_plots=FALSE,
-											summary_file=FALSE,
+											summary_file=TRUE,
 											show_image=FALSE,
 											fa_dir='../data/FA_Dir',
 											start_flag='TRIALID',
@@ -20,7 +20,7 @@ fix_align <- function(start_pts=rbind(c(490,290), c(490, 340), c(490, 390), c(49
 	# xy_bounds: c(x_min, x_max, y_min, y_max) or
 	#		N (number trials) x 4 (x_min, x_max, y_min, y_max) matrix
 	#		for which points to keep, if NULL, no bounds.
-	#	keep_y_var: Keep variability in y around the line
+	# keep_y_var: Keep variability in y around the line
 	# use_run_rule: If a series of ambiguous pts are bounded by points in the same
 	#		category, classify the ambiguous points into that category.
 	# trial_plots: Show trial-by-trial plots.

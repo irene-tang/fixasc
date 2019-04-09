@@ -3,14 +3,17 @@ import csv
 import numpy as np
 
 # declare output path
-OUTPUT_PATH = "../data/eyedry/edited_originals/"
-FILES_TO_PROCESS = [
-    "../data/eyedry/originals/firstPassIXS",
-    "../data/eyedry/originals/goPastIXS",
-    "../data/eyedry/originals/probFixationIXS",
-    "../data/eyedry/originals/probRegressionIXS",
-    "../data/eyedry/originals/firstFixationReg3IXS",
-]
+OUTPUT_FOLDER = "../data/eyedry/edited_originals/"
+INPUT_FOLDER =  "../data/eyedry/originals/"
+# FILES_TO_PROCESS = [
+#     "../data/eyedry/originals/firstPassIXS",
+#     "../data/eyedry/originals/goPastIXS",
+#     "../data/eyedry/originals/probFixationIXS",
+#     "../data/eyedry/originals/probRegressionIXS",
+#     "../data/eyedry/originals/firstFixationIXS",
+# ]
+
+FILES_TO_PROCESS = os.listdir(INPUT_FOLDER)
 
 # check for correct commandline args
 # if len(sys.argv) != 2:
@@ -20,7 +23,6 @@ FILES_TO_PROCESS = [
 # inputFilename = sys.argv[1]
 
 for inputFilename in FILES_TO_PROCESS:
-    print(inputFilename)
     # enter data as list
     with open(inputFilename, newline='') as readFile:
         data = list(csv.reader(readFile))
@@ -51,11 +53,12 @@ for inputFilename in FILES_TO_PROCESS:
             elif j == 3 and data[i][j] == '0' and data[i][0] != 0:
                 data[i][0] = 0
                 count+=1
-    print(count)
-
 
     # save it to the output file
-    outputFilename = OUTPUT_PATH + inputFilename.rsplit('/',1)[-1] + '_edited'
+    if not os.path.exists(OUTPUT_FOLDER):
+        os.makedirs(OUTPUT_FOLDER)
+
+    outputFilename = OUTPUT_FOLDER + inputFilename.rsplit('/',1)[-1] + '_edited'
     print(outputFilename)
 
     with open(outputFilename, 'w+') as writeFile:

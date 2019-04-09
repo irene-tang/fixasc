@@ -38,7 +38,7 @@ Key words: inner speech, silent reading, working memory, phonological loop, arti
 * `test/` - testing stuff, everything in here is archived stuff to be ignored
 * a mountain of technical difficulties
 
-See respective directories for more details.
+See [project wiki](https://github.com/itang1/limerick1/wiki) for more details about contents.
 
 [Back to top](#limerick1-workspace)
 
@@ -209,7 +209,7 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 | RAW times, MS/char, or DEVIATION from regression | r | |
 | Conditionalize on presence/absence of regression in critical region? | n | |
 | Conditionalize on presence/absence of fixation in critical region? | n | |
-| What is the upper summed cutoff for first pass time? | [press return] | Use default |
+| What is the upper summed cutoff for first pass time? | [press return] | Use default 2000 |
 | Conditionalize on position of last fixation before each region? | n | |
 | File of item X subject combinations | `firstPassIXS` | We will base our analysis on this file. |
 | Do you want ALL trials written, or just trials with Observations? | a | |
@@ -322,11 +322,12 @@ To match the participants' measures in the analyses files back together with the
 	```
 	dataviewer_trialid = (sequence_number + 1) / 2 + 1
 	```
-	* I had to do math to discover this relationship.
+	* Math was done to discover this relationship.
 	* NOTE: The TRIALID from the original .asc file and the TRIALID from the DataViewer for the same limerick trial are apparently off-by-one. The .asc file starts counting at 0, while Dataviewer starts counting at 1.
 
 * Double-check: The item number (third column) in each of the IXS measures files (e.g. `firstPassIXS` should correspond exactly with the TRIALID number in the original .asc file. Check the limerick from the .asc for that trial against the one for that sequence in `src/scripter/input_to_scripter`; they should be the same limerick.
 * Triple-check: The condition number should match against the original .asc.
+* Can also take a look at RPlots.pdf
 
 [Back to top](#limerick1-workspace)
 
@@ -343,6 +344,30 @@ It also repairs the unexplainable error where some random lines in the measures 
 The edited files become stored into `data/eyedry/edited_originals` per the script.
 
 ## Step 6: Statistical Analysis
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$6}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+
+### Run through Stat
+From within `data/eyedry/edited_originals`, run:
+
+FOR REGION 2
+```
+awk -F"," '$4~/_/{print $2,$4,$6}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+```
+
+FOR REGION 3
+```
+awk -F"," '$4~/_/{print $2,$4,$7}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+```
+
+etc. for each of the five measures
+* firstPassIXS_edited
+* etc. TODO
+
+### Graphs
+Copy measures from terminal into excel (perhaps with the aid of a text-to-TSV converter such as https://www.browserling.com/tools/text-to-tsv)
+
+Make graphs
+
 IN PROGRESS
 
 # Support and Contributing

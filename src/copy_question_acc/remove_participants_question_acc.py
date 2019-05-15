@@ -26,7 +26,13 @@ median_acc = statistics.median(percent_accuracies_list)
 stdev = statistics.stdev(percent_accuracies_list)
 
 # remove participants who scored 2.5+ stdev's below the median
-for participant, score in question_acc_dict.items():
-    if score < median_acc - stdev * MIN_DEV:
-        os.remove(participant)
-        print("Excluded " + participant + " from analysis based on question accuracy score")
+#for participant, score in question_acc_dict.items():
+#    if score < median_acc - stdev * MIN_DEV:
+#        os.remove(participant)
+#        print("Excluded " + participant + " from analysis based on question accuracy score")
+
+# print the mean score (excludeing the exclusions)
+percent_accuracies_list = question_acc_dict.values()
+mean_acc = statistics.mean(percent_accuracies_list)
+median_acc =  statistics.median(percent_accuracies_list)
+print("mean, median:", mean_acc, median_acc)

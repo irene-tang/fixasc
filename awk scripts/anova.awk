@@ -1,0 +1,1 @@
+awk -F"," '$4~/_/ && $7!=0{print $2,$4,$7}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time

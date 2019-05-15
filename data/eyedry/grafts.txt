@@ -1,0 +1,40 @@
+graphs 1: 4/11/19
+used fix_align with params k_bounds=c(-.1, .1), o_bounds=c(-50, 50), s_bounds=c(1, 20).
+did not exclude zero-fixations during ./anova for the reading times measures, hence the lower averages
+
+we have tried using different sets of params, but ultimately decided that the defaults worked best
+	have tried adjusting k_bounds:
+		k_bounds=c(-1,1), o_bounds=c(-50, 50), s_bounds=c(1, 20)
+		k_bounds=c(-.5, .5), o_bounds=c(-50, 50), s_bounds=c(1, 20)
+		decided that 1 and 0.5 were unnecessarily lenient
+	have also tried adjusting o_bouds:
+		k_bounds=c(-.1, .1), o_bounds=c(-25, 25), s_bounds=c(1, 20)
+		saw that limiting the o_bounds here caused a bunch of trials to increase magnitude of slope to the max 0.1, taken as a sign that adjustments weren't doing well
+
+
+==========
+graphs 2: 4/18/19
+used fix_align with same params as above (i.e. used same robodoc & eyedry outputs).
+excluded zero-fixations during ./anova for the reading times measures, hence averages are more comparable with B&C(2011)
+
+===
+graphs 3: 4/18/19
+used fix_align with same params as above (i.e. used same robodoc & eyedry outputs).
+excluded zero-fixations during ./anova for the reading times measures, hence averages are more comparable with B&C(2011)
+
+same as graphs2 except balanced the participants so that the anova could generate the comparisons chart; for firstPast, goPast in the edited_originals folder, removed the participant(s) who was making the R3 grid unbalanced
+
+====
+graphs 4: 4/18/19
+did not use fix_align
+excluded zero-fixations during ./anova for the reading times measures
+
+
+=====================
+graphs 5: 5/2/19
+we are needing  to do "exploratory research" because something is very wrong with our study
+
+- ran with all  48 participants, excluding everyone who didn't fixate at least 50% of the time
+- forget about the zero-fixations, just leave them in there. B&C evidently didn't have any problems with zero fixations because their subjects were fixating 90% of the time.
+- forget about  firstFix
+- this is the set used for analyses in the paper

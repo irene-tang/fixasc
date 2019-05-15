@@ -9,6 +9,8 @@ Then re-create them as empty folders
 """
 
 paths = ["../data/FA_Dir", "../data/new_asc", "../data/question_acc", "../data/robodoc", "../data/scripter"]
+# paths = ["../data/FA_Dir", "../data/robodoc"]
+# paths = ["../data/robodoc"]
 
 for path in paths:
     try:

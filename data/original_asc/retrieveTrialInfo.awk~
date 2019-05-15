@@ -1,0 +1,10 @@
+$0~/START LIMERICK/ {
+    print subj,item,clash,second,list,target;
+    subj=FILENAME;
+    item=$NF;
+}
+$(NF-1)=="List" {list=$NF;}
+$(NF-1)=="ClashType" {clash=$NF;}
+$(NF-1)=="SecondaryTask" {second=$NF;}
+$(NF-1)=="Line2Target" {target=$NF;}
+

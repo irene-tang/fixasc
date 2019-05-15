@@ -108,6 +108,7 @@ All input variables are already written into the respective scripts (but see abo
 ```
 gcc eyedry.c -o eyedry
 ```
+ NOTE: this only needs to be done once, ever
 
 2. From within `src/`, run the executable that we just created: (ignore any warnings)
 ```
@@ -193,7 +194,7 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 * [4.2.B. Go-past time](#42b-go-past-time)
 * [4.2.C. Probability of fixating a region](#42c-probability-of-fixating-a-region)
 * [4.2.D. Probability of regressing out of a region](#42d-probability-of-regressing-out-of-a-region)
-* [4.2.E. First fixation duration in region 3](#42e-first-fixation-duration-in-region-3)
+* [4.2.E. First fixation duration](#42e-first-fixation-duration)
 * [4.2.F. Fin.](#42f-fin)
 
 [Back to top](#limerick1-workspace)
@@ -204,7 +205,7 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 |----:|:----:|----|
 | Which analysis? | 2 | |
 | Type an identifying string to print out | First pass time | This doesn't affect functionality. |
-| Throw away zero fixation values? | y | |
+| Throw away zero fixation values? | n | We will take care of  zero-fixations through the awk script |
 | Do you want to CULMINATE or AVERAGE multiple fixations in a region? | c | |
 | RAW times, MS/char, or DEVIATION from regression | r | |
 | Conditionalize on presence/absence of regression in critical region? | n | |
@@ -280,11 +281,11 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 
 [Back to top](#limerick1-workspace)
 
-#### **4.2.E. First fixation duration in region 3**
+#### **4.2.E. First fixation duration**
 | Question | Answer | Explanation and Comments |
 |----:|:----:|----|
 | Which analysis? | 1 | |
-| Type an identifying string to print out | First fixation duration in Region 3 | This doesn't affect functionality. |
+| Type an identifying string to print out | First fixation duration | This doesn't affect functionality. |
 | Which analysis: | 3 | Initial one of multiple fixations |
 | Do you want to keep RAW times or convert to MSEC/CHAR? | r | |
 | Conditionalize on presence/absense of regression in critical region? | n | |
@@ -344,9 +345,9 @@ It also repairs the unexplainable error where some random lines in the measures 
 The edited files become stored into `data/eyedry/edited_originals` per the script.
 
 ## Step 6: Statistical Analysis
-irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$6}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
 
 ### Run through Stat
+#### NOT EXCLUDING ZERO FIXATIONS:
 From within `data/eyedry/edited_originals`, run:
 
 FOR REGION 2
@@ -359,16 +360,30 @@ FOR REGION 3
 awk -F"," '$4~/_/{print $2,$4,$7}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
 ```
 
-etc. for each of the five measures
+etc. for each of the measures:
 * firstPassIXS_edited
-* etc. TODO
+* firstFixIXS_edited
+* goPastIXS_edited
+* probRegression
+* probFixation
+
+#### EXCLUDING ZERO FIXATIONS:
+FOR REGION 2
+```
+awk -F"," '$4~/_/ && $7!=0{print $2,$4,$7}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+```
+
+FOR REGION 3
+```
+awk -F"," '$4~/_/ && $7!=0{print $2,$4,$7}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+```
+
+#### UNBALANCED GRID DUE TO EXCLUDING ZERO FIXATIONS:
 
 ### Graphs
 Copy measures from terminal into excel (perhaps with the aid of a text-to-TSV converter such as https://www.browserling.com/tools/text-to-tsv)
 
 Make graphs
-
-IN PROGRESS
 
 # Support and Contributing
 
@@ -377,11 +392,11 @@ IN PROGRESS
 * Help I lost a data file.
 	* Copies of every .edf should be stored on the Source computer.
 * Help my participant is looking at the blue dot but it's not triggering.
-	* Recalibration can be performed between blocks at each break point, but unfortunately we are not able to perform mid-block recalibration. In the meantime just guide the participant's gaze to find the trigger point, and remind them again to refrain from moving. Some damage repair can hopefully be absolved when we run `fixAlign.R` on the ascii files.
+	* Recalibration can be performed between blocks at each break point, but unfortunately we are not able to perform mid-block recalibration :( In the meantime just guide the participant's gaze to find the trigger point, and remind them again to refrain from moving. Some damage repair can hopefully be absolved when we run `fixAlign.R` on the ascii files.
 
 ## Additional support
 * If anything is buggy or unclear, please open an issue or pull request, or contact ~~itang1@swarthmore.edu~~ itang1@alumni.swarthmore.edu.
-* This repo is no longer actively being maintained as of May 2019.
+* This repo is no longer actively being maintained as of June 2019.
 
 [Back to top](#limerick1-workspace)
 

@@ -1,0 +1,990 @@
+
+Version EYEDRY VERSION OF 1/25/2013 (compiled with mingw-GCC)
+
+Recrunching the data 5/2 9am, only exclusion criteria  are unrepairable eyetracking  difficulties and quesiton accuracy
+
+60 fixations max on one item
+Starting .CRN file = eyedry/limerick1.ctl
+0: debug level   =       0		1  qskip   =       1
+   (iff qskip = 1, interpret lookahead as corr. resp. to question
+   and if lookahead is nonzero, make the following 2 values nonzero)
+2:   lookahead        =       0
+3:   minimum question =       0
+4:   maximum question =       0
+5: smallest item      =       1
+6: largest item       =       40
+7: maximum regions    =       7
+8: smallest condition =       1
+9: largest condition  =       4
+10: number of subconds=       4
+11:position of cond # =       2
+12:position of item # =       3
+13:position of #fix   =       6
+14:data start position=       7
+15:longcutoff         =       800
+16:shorttime          =       80
+  (next 2 zero unless rejecting on basis of questions)
+17:  pos. of ques #   =       0
+18:  pos. of ques resp=       0
+19:screen width (char)=       160
+20:max lines of text  =       5
+21: region wrap around end? 0 = no, 1 = yes:   0
+
+22: doublespace? 0 = no, 1 = yes:   0
+
+23: first_seq         =       0
+24: last_seq         =        0
+25: max_in_cond   =           0.CRN file = 
+datalst = ../data/robodoc/files_processed.lst
+Control (.CNT) file ../data/scripter/output_from_scripter.cnt
+control file length 160
+***********************************************************
+
+type of analysis 2
+
+*****
+First pass time
+*****
+cumulating multiple phrases in a region
+Subj X Items file firstPassIXS
+
+Subjects file firstPassSXS
+Items file firstPassIXI
+
+S# 1, ****../data/robodoc/da1_files/subj16_new_fa.da1****
+longcount 8 shortcount 18
+S# 2, ****../data/robodoc/da1_files/f181084_new_fa.da1****
+ Long gaze duration 2162: item 24 cond 2 region 5
+longcount 7 shortcount 3
+S# 3, ****../data/robodoc/da1_files/f181067_new_fa.da1****
+ Long gaze duration 2237: item 22 cond 4 region 6
+ Long gaze duration 2064: item 2 cond 3 region 1
+ Long gaze duration 2100: item 2 cond 3 region 6
+ Long gaze duration 2089: item 34 cond 4 region 6
+ Long gaze duration 2164: item 28 cond 3 region 2
+ Long gaze duration 2139: item 28 cond 3 region 6
+ Long gaze duration 2190: item 13 cond 2 region 4
+ Long gaze duration 2062: item 13 cond 2 region 6
+ Long gaze duration 2029: item 31 cond 2 region 2
+ Long gaze duration 2034: item 5 cond 1 region 1
+ Long gaze duration 2079: item 14 cond 3 region 1
+ Long gaze duration 2188: item 1 cond 1 region 1
+ Long gaze duration 2174: item 39 cond 1 region 1
+ Long gaze duration 2041: item 26 cond 3 region 6
+ Long gaze duration 2134: item 40 cond 3 region 6
+ Long gaze duration 2251: item 23 cond 1 region 1
+ Long gaze duration 2269: item 10 cond 4 region 1
+longcount 11 shortcount 1
+S# 4, ****../data/robodoc/da1_files/f181076_new_fa.da1****
+ Long gaze duration 2115: item 1 cond 3 region 2
+ Long gaze duration 2308: item 33 cond 3 region 6
+ Long gaze duration 2001: item 23 cond 4 region 2
+ Long gaze duration 2300: item 22 cond 1 region 6
+ Long gaze duration 2125: item 35 cond 4 region 1
+ Long gaze duration 2077: item 6 cond 1 region 6
+ Long gaze duration 2044: item 12 cond 2 region 6
+longcount 12 shortcount 16
+S# 5, ****../data/robodoc/da1_files/f181089_new_fa.da1****
+ Long gaze duration 2164: item 3 cond 4 region 4
+ Long gaze duration 2139: item 34 cond 1 region 6
+ Long gaze duration 2065: item 24 cond 2 region 4
+ Long gaze duration 2205: item 37 cond 3 region 2
+ Long gaze duration 2298: item 4 cond 2 region 6
+ Long gaze duration 2366: item 40 cond 2 region 2
+longcount 6 shortcount 12
+S# 6, ****../data/robodoc/da1_files/f181073_new_fa.da1****
+ Long gaze duration 2026: item 23 cond 1 region 6
+longcount 6 shortcount 14
+S# 7, ****../data/robodoc/da1_files/f181090_new_fa.da1****
+ Long gaze duration 2059: item 33 cond 2 region 6
+ Long gaze duration 2059: item 23 cond 1 region 6
+ Long gaze duration 2172: item 8 cond 3 region 6
+ Long gaze duration 2306: item 35 cond 1 region 1
+ Long gaze duration 2193: item 26 cond 4 region 1
+ Long gaze duration 2035: item 20 cond 3 region 6
+ Long gaze duration 2265: item 25 cond 2 region 6
+ Long gaze duration 2102: item 7 cond 1 region 6
+ Long gaze duration 2337: item 34 cond 4 region 5
+longcount 12 shortcount 8
+S# 8, ****../data/robodoc/da1_files/subj13_new_fa.da1****
+ Long gaze duration 2058: item 32 cond 1 region 6
+ Long gaze duration 2028: item 7 cond 3 region 5
+ Long gaze duration 2099: item 9 cond 4 region 6
+longcount 15 shortcount 11
+S# 9, ****../data/robodoc/da1_files/subj6_new_fa.da1****
+ Long gaze duration 2108: item 27 cond 1 region 6
+ Long gaze duration 2024: item 30 cond 3 region 6
+ Long gaze duration 2041: item 10 cond 4 region 1
+ Long gaze duration 2106: item 6 cond 3 region 1
+ Long gaze duration 2136: item 1 cond 1 region 6
+ Long gaze duration 2191: item 5 cond 1 region 2
+ Long gaze duration 2039: item 7 cond 2 region 1
+ Long gaze duration 2049: item 22 cond 4 region 4
+longcount 2 shortcount 13
+S# 10, ****../data/robodoc/da1_files/f181081_new_fa.da1****
+ Long gaze duration 2067: item 10 cond 4 region 5
+ Long gaze duration 2111: item 40 cond 3 region 1
+ Long gaze duration 2113: item 31 cond 1 region 6
+longcount 1 shortcount 27
+S# 11, ****../data/robodoc/da1_files/f181055_new_fa.da1****
+ Long gaze duration 2128: item 20 cond 2 region 1
+ Long gaze duration 2176: item 5 cond 3 region 1
+ Long gaze duration 2012: item 36 cond 2 region 6
+ Long gaze duration 2152: item 38 cond 1 region 6
+ Long gaze duration 2124: item 10 cond 1 region 6
+ Long gaze duration 2068: item 32 cond 2 region 6
+ Long gaze duration 2136: item 16 cond 2 region 6
+longcount 4 shortcount 9
+S# 12, ****../data/robodoc/da1_files/f181062_new_fa.da1****
+ Long gaze duration 2003: item 14 cond 2 region 6
+ Long gaze duration 2193: item 22 cond 2 region 6
+ Long gaze duration 2028: item 10 cond 2 region 6
+ Long gaze duration 2179: item 30 cond 2 region 6
+ Long gaze duration 2158: item 6 cond 2 region 6
+ Long gaze duration 2027: item 5 cond 4 region 2
+ Long gaze duration 2263: item 5 cond 4 region 6
+ Long gaze duration 2080: item 18 cond 2 region 5
+longcount 4 shortcount 6
+S# 13, ****../data/robodoc/da1_files/f181050_all_new_fa.da1****WARNING!!!: 75 fixations on trial 2 for subject 13
+
+ Long gaze duration 2049: item 2 cond 3 region 6
+longcount 1 shortcount 22
+S# 14, ****../data/robodoc/da1_files/f181052_new_fa.da1****
+ Long gaze duration 2056: item 22 cond 4 region 1
+ Long gaze duration 2110: item 24 cond 3 region 6
+ Long gaze duration 2082: item 7 cond 1 region 6
+ Long gaze duration 2055: item 20 cond 3 region 1
+ Long gaze duration 2080: item 17 cond 2 region 6
+ Long gaze duration 2004: item 33 cond 2 region 1
+longcount 1 shortcount 15
+S# 15, ****../data/robodoc/da1_files/f181065_new_fa.da1****
+ Long gaze duration 2218: item 27 cond 1 region 6
+ Long gaze duration 2367: item 33 cond 2 region 6
+ Long gaze duration 2044: item 38 cond 4 region 6
+ Long gaze duration 2578: item 28 cond 3 region 1
+longcount 2 shortcount 2
+S# 16, ****../data/robodoc/da1_files/subj14_new_fa.da1****
+ Long gaze duration 2154: item 25 cond 2 region 1
+ Long gaze duration 2029: item 29 cond 1 region 1
+ Long gaze duration 2068: item 24 cond 4 region 5
+longcount 2 shortcount 12
+S# 17, ****../data/robodoc/da1_files/f181086_new_fa.da1****
+ Long gaze duration 2238: item 22 cond 4 region 6
+ Long gaze duration 2146: item 2 cond 4 region 4
+ Long gaze duration 2101: item 2 cond 4 region 6
+ Long gaze duration 2103: item 34 cond 4 region 4
+ Long gaze duration 2089: item 34 cond 4 region 6
+ Long gaze duration 2060: item 31 cond 1 region 6
+ Long gaze duration 2015: item 7 cond 1 region 6
+ Long gaze duration 2127: item 32 cond 3 region 6
+ Long gaze duration 2202: item 5 cond 2 region 6
+ Long gaze duration 2470: item 14 cond 4 region 6
+ Long gaze duration 2313: item 1 cond 2 region 6
+ Long gaze duration 2450: item 39 cond 1 region 1
+ Long gaze duration 2284: item 19 cond 1 region 6
+ Long gaze duration 2090: item 8 cond 3 region 1
+ Long gaze duration 2142: item 8 cond 3 region 6
+ Long gaze duration 2250: item 30 cond 4 region 1
+ Long gaze duration 2078: item 30 cond 4 region 6
+longcount 3 shortcount 7
+S# 18, ****../data/robodoc/da1_files/f181079_new_fa.da1****
+ Long gaze duration 2053: item 26 cond 3 region 1
+ Long gaze duration 2068: item 39 cond 1 region 5
+ Long gaze duration 2083: item 39 cond 1 region 6
+ Long gaze duration 2191: item 25 cond 2 region 6
+ Long gaze duration 2119: item 29 cond 1 region 6
+ Long gaze duration 2077: item 7 cond 2 region 6
+ Long gaze duration 2101: item 2 cond 3 region 1
+longcount 8 shortcount 14
+S# 19, ****../data/robodoc/da1_files/f181071b_new_fa.da1****
+ Long gaze duration 2173: item 27 cond 1 region 1
+ Long gaze duration 2314: item 30 cond 3 region 1
+ Long gaze duration 2001: item 4 cond 4 region 6
+ Long gaze duration 2174: item 40 cond 3 region 6
+ Long gaze duration 2149: item 39 cond 1 region 6
+ Long gaze duration 2030: item 37 cond 2 region 6
+ Long gaze duration 2065: item 34 cond 4 region 6
+ Long gaze duration 2161: item 22 cond 4 region 6
+ Long gaze duration 2270: item 15 cond 1 region 1
+ Long gaze duration 2324: item 12 cond 4 region 6
+longcount 6 shortcount 4
+S# 20, ****../data/robodoc/da1_files/f181074_new_fa.da1****
+ Long gaze duration 2165: item 29 cond 4 region 6
+ Long gaze duration 2097: item 9 cond 4 region 6
+ Long gaze duration 2211: item 34 cond 2 region 6
+ Long gaze duration 2108: item 37 cond 4 region 2
+ Long gaze duration 2332: item 12 cond 1 region 6
+ Long gaze duration 2043: item 7 cond 3 region 6
+ Long gaze duration 2151: item 19 cond 3 region 1
+ Long gaze duration 2015: item 2 cond 2 region 1
+ Long gaze duration 2325: item 2 cond 2 region 6
+ Long gaze duration 2033: item 35 cond 3 region 1
+ Long gaze duration 2057: item 10 cond 2 region 6
+ Long gaze duration 2222: item 14 cond 2 region 1
+ Long gaze duration 2095: item 14 cond 2 region 6
+ Long gaze duration 2018: item 27 cond 3 region 4
+longcount 7 shortcount 1
+S# 21, ****../data/robodoc/da1_files/subject7_new_fa.da1****
+ Long gaze duration 2140: item 28 cond 2 region 6
+ Long gaze duration 2160: item 29 cond 3 region 6
+ Long gaze duration 2038: item 9 cond 3 region 6
+ Long gaze duration 2003: item 15 cond 4 region 6
+ Long gaze duration 2257: item 20 cond 2 region 6
+ Long gaze duration 2120: item 36 cond 2 region 6
+ Long gaze duration 2056: item 25 cond 3 region 6
+ Long gaze duration 2077: item 4 cond 2 region 6
+ Long gaze duration 2138: item 40 cond 2 region 6
+ Long gaze duration 2058: item 38 cond 1 region 6
+ Long gaze duration 2080: item 2 cond 1 region 6
+ Long gaze duration 2126: item 31 cond 4 region 6
+ Long gaze duration 2266: item 22 cond 1 region 6
+ Long gaze duration 2063: item 11 cond 4 region 6
+longcount 4 shortcount 1
+S# 22, ****../data/robodoc/da1_files/f181068b_new_fa.da1****
+ Long gaze duration 2141: item 16 cond 2 region 4
+ Long gaze duration 2052: item 23 cond 4 region 6
+ Long gaze duration 2199: item 6 cond 1 region 6
+ Long gaze duration 2444: item 18 cond 1 region 6
+ Long gaze duration 2001: item 37 cond 3 region 6
+ Long gaze duration 2131: item 15 cond 4 region 6
+longcount 11 shortcount 3
+S# 23, ****../data/robodoc/da1_files/f181057_new_fa.da1****
+ Long gaze duration 2030: item 9 cond 4 region 6
+ Long gaze duration 2013: item 24 cond 1 region 1
+ Long gaze duration 2209: item 24 cond 1 region 6
+ Long gaze duration 2039: item 37 cond 4 region 6
+ Long gaze duration 2087: item 7 cond 3 region 6
+ Long gaze duration 2094: item 20 cond 1 region 6
+ Long gaze duration 2005: item 36 cond 1 region 6
+ Long gaze duration 2225: item 2 cond 2 region 6
+ Long gaze duration 2048: item 31 cond 3 region 6
+ Long gaze duration 2040: item 8 cond 1 region 6
+ Long gaze duration 2059: item 22 cond 2 region 6
+ Long gaze duration 2020: item 21 cond 4 region 1
+longcount 11 shortcount 24
+S# 24, ****../data/robodoc/da1_files/f181083_new_fa.da1****
+ Long gaze duration 2033: item 2 cond 3 region 6
+ Long gaze duration 2148: item 18 cond 4 region 1
+ Long gaze duration 2391: item 18 cond 4 region 6
+ Long gaze duration 2042: item 5 cond 1 region 2
+ Long gaze duration 2067: item 25 cond 2 region 1
+ Long gaze duration 2018: item 3 cond 2 region 6
+ Long gaze duration 2076: item 35 cond 2 region 1
+ Long gaze duration 2353: item 35 cond 2 region 6
+ Long gaze duration 2052: item 30 cond 3 region 6
+longcount 4 shortcount 1
+S# 25, ****../data/robodoc/da1_files/f181072_new_fa.da1****
+ Long gaze duration 2199: item 12 cond 2 region 6
+ Long gaze duration 2059: item 8 cond 2 region 6
+ Long gaze duration 2422: item 22 cond 1 region 6
+longcount 5 shortcount 17
+S# 26, ****../data/robodoc/da1_files/f181059_new_fa.da1****
+ Long gaze duration 2037: item 18 cond 4 region 1
+ Long gaze duration 2142: item 7 cond 2 region 6
+ Long gaze duration 2082: item 29 cond 1 region 6
+ Long gaze duration 2125: item 20 cond 4 region 6
+ Long gaze duration 2010: item 40 cond 3 region 6
+ Long gaze duration 2017: item 8 cond 4 region 1
+ Long gaze duration 2022: item 38 cond 4 region 6
+ Long gaze duration 2395: item 23 cond 1 region 6
+longcount 6 shortcount 5
+S# 27, ****../data/robodoc/da1_files/f181087b_new_fa.da1****
+ Long gaze duration 2056: item 8 cond 1 region 6
+longcount 0 shortcount 13
+S# 28, ****../data/robodoc/da1_files/f181091_new_fa.da1****
+ Long gaze duration 2271: item 10 cond 2 region 6
+ Long gaze duration 2176: item 23 cond 3 region 6
+ Long gaze duration 2190: item 14 cond 2 region 6
+longcount 1 shortcount 16
+S# 29, ****../data/robodoc/da1_files/subj12_new_fa.da1****
+ Long gaze duration 2156: item 22 cond 4 region 6
+ Long gaze duration 2137: item 2 cond 4 region 6
+ Long gaze duration 2092: item 7 cond 1 region 6
+ Long gaze duration 2323: item 32 cond 3 region 6
+ Long gaze duration 2171: item 3 cond 1 region 6
+ Long gaze duration 2235: item 17 cond 2 region 6
+ Long gaze duration 2135: item 10 cond 4 region 6
+longcount 1 shortcount 5
+S# 30, ****../data/robodoc/da1_files/f181080_new_fa.da1****WARNING!!!: 78 fixations on trial 29 for subject 30
+
+ Long gaze duration 2009: item 29 cond 3 region 1WARNING!!!: 71 fixations on trial 24 for subject 30
+
+ Long gaze duration 2324: item 25 cond 3 region 1
+ Long gaze duration 2331: item 2 cond 1 region 6
+ Long gaze duration 2281: item 35 cond 4 region 1WARNING!!!: 75 fixations on trial 10 for subject 30
+
+ Long gaze duration 2138: item 22 cond 1 region 5
+ Long gaze duration 2047: item 32 cond 2 region 1
+ Long gaze duration 2232: item 23 cond 4 region 2
+ Long gaze duration 2039: item 23 cond 4 region 6WARNING!!!: 68 fixations on trial 14 for subject 30
+
+ Long gaze duration 2595: item 14 cond 1 region 6
+ Long gaze duration 2046: item 33 cond 3 region 6
+ Long gaze duration 2032: item 21 cond 3 region 6
+longcount 8 shortcount 6
+S# 31, ****../data/robodoc/da1_files/5t_new_fa.da1****
+ Long gaze duration 2253: item 23 cond 3 region 1
+longcount 2 shortcount 41
+S# 32, ****../data/robodoc/da1_files/f181054_new_fa.da1****
+ Long gaze duration 2069: item 6 cond 3 region 2
+longcount 12 shortcount 10
+S# 33, ****../data/robodoc/da1_files/f181063_new_fa.da1****
+ Long gaze duration 2013: item 19 cond 2 region 1
+ Long gaze duration 2064: item 6 cond 3 region 6
+longcount 1 shortcount 44
+S# 34, ****../data/robodoc/da1_files/f181066_new_fa.da1****
+ Long gaze duration 2017: item 24 cond 1 region 6
+ Long gaze duration 2061: item 18 cond 2 region 2
+ Long gaze duration 2095: item 25 cond 4 region 1
+longcount 3 shortcount 10
+S# 35, ****../data/robodoc/da1_files/f181051_new_fa.da1****
+ Long gaze duration 2139: item 17 cond 3 region 6
+ Long gaze duration 2004: item 14 cond 1 region 6
+ Long gaze duration 2381: item 23 cond 4 region 6
+ Long gaze duration 2313: item 22 cond 1 region 1
+ Long gaze duration 2086: item 22 cond 1 region 6
+ Long gaze duration 2153: item 26 cond 1 region 6
+ Long gaze duration 2035: item 2 cond 1 region 1
+ Long gaze duration 2180: item 2 cond 1 region 6
+ Long gaze duration 2063: item 19 cond 4 region 6
+ Long gaze duration 2030: item 4 cond 2 region 6
+ Long gaze duration 2102: item 7 cond 4 region 6
+ Long gaze duration 2037: item 37 cond 3 region 6
+ Long gaze duration 2066: item 9 cond 3 region 1
+ Long gaze duration 2276: item 9 cond 3 region 6
+ Long gaze duration 2340: item 3 cond 4 region 6
+longcount 11 shortcount 15
+S# 36, ****../data/robodoc/da1_files/f181088_new_fa.da1****
+ Long gaze duration 2096: item 27 cond 1 region 6
+ Long gaze duration 2371: item 30 cond 3 region 6
+ Long gaze duration 2273: item 23 cond 1 region 6
+ Long gaze duration 2241: item 8 cond 4 region 6
+ Long gaze duration 2113: item 19 cond 2 region 6
+ Long gaze duration 2006: item 3 cond 2 region 1
+ Long gaze duration 2615: item 20 cond 4 region 1
+ Long gaze duration 2075: item 14 cond 3 region 1
+ Long gaze duration 2075: item 14 cond 3 region 2
+ Long gaze duration 2440: item 14 cond 3 region 6
+ Long gaze duration 2074: item 5 cond 1 region 6
+ Long gaze duration 2096: item 29 cond 1 region 1
+ Long gaze duration 2263: item 29 cond 1 region 6
+ Long gaze duration 2359: item 32 cond 4 region 6
+ Long gaze duration 2200: item 7 cond 2 region 6
+ Long gaze duration 2144: item 13 cond 2 region 6
+ Long gaze duration 2272: item 2 cond 3 region 6
+ Long gaze duration 2074: item 22 cond 4 region 1
+ Long gaze duration 2173: item 12 cond 4 region 6
+longcount 1 shortcount 7
+S# 37, ****../data/robodoc/da1_files/subject1_new_fa.da1****
+ Long gaze duration 2126: item 22 cond 4 region 1
+ Long gaze duration 2158: item 29 cond 1 region 6
+longcount 0 shortcount 1
+S# 38, ****../data/robodoc/da1_files/f181056_new_fa.da1****
+longcount 5 shortcount 5
+S# 39, ****../data/robodoc/da1_files/subj10_new_fa.da1****
+ Long gaze duration 2136: item 12 cond 4 region 1
+ Long gaze duration 2097: item 8 cond 4 region 1
+longcount 4 shortcount 6
+S# 40, ****../data/robodoc/da1_files/f181082_new_fa.da1****
+ Long gaze duration 2099: item 16 cond 1 region 2
+longcount 7 shortcount 26
+S# 41, ****../data/robodoc/da1_files/f181053_new_fa.da1****WARNING!!!: 63 fixations on trial 10 for subject 41
+
+longcount 3 shortcount 65
+S# 42, ****../data/robodoc/da1_files/f181064_new_fa.da1****
+ Long gaze duration 2030: item 4 cond 2 region 5
+ Long gaze duration 2019: item 2 cond 1 region 6
+ Long gaze duration 2053: item 6 cond 1 region 6
+ Long gaze duration 2014: item 8 cond 2 region 6
+longcount 8 shortcount 1
+S# 43, ****../data/robodoc/da1_files/f181070b_new_fa.da1****
+ Long gaze duration 2129: item 23 cond 3 region 1
+ Long gaze duration 2019: item 8 cond 1 region 1
+ Long gaze duration 2371: item 35 cond 3 region 1
+ Long gaze duration 2252: item 26 cond 2 region 1
+ Long gaze duration 2274: item 25 cond 4 region 1
+ Long gaze duration 2064: item 12 cond 1 region 6
+longcount 5 shortcount 8
+S# 44, ****../data/robodoc/da1_files/f181060t_new_fa.da1****
+ Long gaze duration 2206: item 16 cond 2 region 2
+ Long gaze duration 2435: item 33 cond 3 region 1
+ Long gaze duration 2030: item 6 cond 1 region 1
+ Long gaze duration 2192: item 26 cond 1 region 6
+ Long gaze duration 2030: item 38 cond 1 region 6
+ Long gaze duration 2380: item 40 cond 2 region 1
+ Long gaze duration 2047: item 39 cond 4 region 1
+ Long gaze duration 2027: item 39 cond 4 region 2
+ Long gaze duration 2153: item 39 cond 4 region 6
+ Long gaze duration 2382: item 18 cond 1 region 6
+ Long gaze duration 2229: item 7 cond 4 region 1
+ Long gaze duration 2272: item 12 cond 2 region 1
+ Long gaze duration 2084: item 24 cond 2 region 6
+ Long gaze duration 2041: item 34 cond 1 region 6
+ Long gaze duration 2059: item 9 cond 3 region 1
+longcount 10 shortcount 7
+S# 45, ****../data/robodoc/da1_files/f181078_new_fa.da1****
+ Long gaze duration 2134: item 22 cond 2 region 1
+ Long gaze duration 2212: item 8 cond 1 region 6
+ Long gaze duration 2174: item 30 cond 2 region 6
+ Long gaze duration 2072: item 15 cond 3 region 2
+longcount 5 shortcount 5
+S# 46, ****../data/robodoc/da1_files/f181069_new_fa.da1****
+ Long gaze duration 2016: item 24 cond 3 region 6
+ Long gaze duration 2102: item 7 cond 1 region 1
+ Long gaze duration 2166: item 33 cond 2 region 1
+longcount 3 shortcount 7
+S# 47, ****../data/robodoc/da1_files/f181075_new_fa.da1****
+ Long gaze duration 2073: item 22 cond 4 region 1
+ Long gaze duration 2181: item 8 cond 4 region 6
+longcount 12 shortcount 4
+
+***** OUTPUT *****
+First pass time
+*****
+
+First pass time (gaze duration if one-word regions)
+Upper cutoff for gaze duration 2000
+
+KEEPING trials with no fixations (count as 0 duration).
+
+AVERAGED OVER ITEMS AND SUBJECTS, BY CONDITIONS
+
+Means where each subject gets equal weight
+COND  1   653 (47)  644 (47)  148 (47)  583 (47)  566 (47)  952 (47)    2 (47)
+COND  2   594 (47)  592 (47)  153 (47)  540 (47)  554 (47)  899 (47)    4 (47)
+COND  3   604 (47)  678 (47)  143 (47)  584 (47)  553 (47)  920 (47)    2 (47)
+COND  4   572 (47)  589 (47)  131 (47)  539 (47)  534 (47)  946 (47)    4 (47)
+
+Means where each response receives equal weight; under test - report problems please
+COND  1   669 (435)  641 (435)  149 (435)  587 (435)  567 (435)  950 (435)    2 (435)
+COND  2   600 (431)  592 (431)  154 (431)  538 (431)  555 (431)  900 (431)    4 (431)
+COND  3   601 (394)  678 (394)  147 (394)  588 (394)  557 (394)  915 (394)    2 (394)
+COND  4   573 (467)  590 (467)  130 (467)  537 (467)  531 (467)  941 (467)    4 (467)
+type of analysis 13
+
+*****
+Go-past time
+*****
+cumulating multiple phrases in a region
+Subj X Items file goPastIXS
+
+Subjects file goPastSXS
+Items file goPastIXI
+
+ S# 1
+longcount 8 shortcount 23
+ S# 2
+longcount 7 shortcount 6
+ S# 3
+longcount 11 shortcount 3
+ S# 4
+longcount 13 shortcount 28
+ S# 5
+longcount 6 shortcount 21
+ S# 6
+longcount 6 shortcount 18
+ S# 7
+longcount 12 shortcount 8
+ S# 8
+longcount 15 shortcount 16
+ S# 9
+longcount 2 shortcount 23
+ S# 10
+longcount 1 shortcount 43
+ S# 11
+longcount 4 shortcount 10
+ S# 12
+longcount 4 shortcount 8
+ S# 13WARNING!!!: 75 fixations on trial 2 for subject 13
+
+longcount 1 shortcount 32
+ S# 14
+longcount 1 shortcount 20
+ S# 15
+longcount 2 shortcount 3
+ S# 16
+longcount 2 shortcount 20
+ S# 17
+longcount 4 shortcount 8
+ S# 18
+longcount 8 shortcount 18
+ S# 19
+longcount 13 shortcount 10
+ S# 20
+longcount 7 shortcount 2
+ S# 21
+longcount 5 shortcount 10
+ S# 22
+longcount 13 shortcount 4
+ S# 23
+longcount 11 shortcount 60
+ S# 24
+longcount 5 shortcount 6
+ S# 25
+longcount 5 shortcount 23
+ S# 26
+longcount 6 shortcount 9
+ S# 27
+longcount 0 shortcount 22
+ S# 28
+longcount 1 shortcount 28
+ S# 29
+longcount 1 shortcount 13
+ S# 30WARNING!!!: 78 fixations on trial 29 for subject 30
+WARNING!!!: 71 fixations on trial 24 for subject 30
+WARNING!!!: 75 fixations on trial 10 for subject 30
+WARNING!!!: 68 fixations on trial 14 for subject 30
+
+longcount 11 shortcount 13
+ S# 31
+longcount 2 shortcount 51
+ S# 32
+longcount 12 shortcount 19
+ S# 33
+longcount 1 shortcount 49
+ S# 34
+longcount 3 shortcount 14
+ S# 35
+longcount 11 shortcount 21
+ S# 36
+longcount 3 shortcount 22
+ S# 37
+longcount 0 shortcount 2
+ S# 38
+longcount 5 shortcount 6
+ S# 39
+longcount 4 shortcount 14
+ S# 40
+longcount 8 shortcount 30
+ S# 41WARNING!!!: 63 fixations on trial 10 for subject 41
+
+longcount 3 shortcount 117
+ S# 42
+longcount 8 shortcount 1
+ S# 43
+longcount 5 shortcount 13
+ S# 44
+longcount 12 shortcount 7
+ S# 45
+longcount 6 shortcount 5
+ S# 46
+longcount 3 shortcount 8
+ S# 47
+longcount 11 shortcount 5
+
+***** OUTPUT *****
+1
+*****
+
+Time from entering region to first going past it (quasi-first-pass time).
+  Sum of ALL time since entering, including time outside region.
+
+THROWING AWAY trials with no fixations.
+
+AVERAGED OVER ITEMS AND SUBJECTS, BY CONDITIONS
+
+Means where each subject gets equal weight
+COND  1  1054 (47)  875 (47)  523 (47)  837 (47)  669 (47) 1803 (47)  366 ( 4)
+COND  2  1029 (47)  867 (47)  502 (47)  789 (47)  679 (47) 1773 (47)  440 ( 4)
+COND  3  1123 (46)  911 (47)  511 (47)  891 (47)  652 (47) 1705 (47) 1213 ( 4)
+COND  4  1038 (47)  890 (47)  503 (46)  868 (47)  688 (47) 1868 (47)  464 ( 8)
+
+Means where each response receives equal weight; under test - report problems please
+COND  1  1060 (314)  873 (378)  466 (260)  818 (416)  671 (416) 1798 (419)  378 ( 5)
+COND  2  1058 (285)  865 (371)  501 (256)  779 (409)  672 (419) 1750 (415)  446 ( 6)
+COND  3  1097 (269)  914 (345)  551 (234)  905 (384)  649 (382) 1692 (375) 1190 ( 5)
+COND  4  1044 (314)  874 (391)  487 (266)  851 (434)  683 (450) 1892 (454)  473 ( 9)
+type of analysis 6
+
+*****
+Probability of fixating in a region
+*****
+Subj X Items file probFixationIXS
+
+Subjects file probFixationSXS
+Items file probFixationIXI
+
+ S# 1
+longcount 8 shortcount 8
+ S# 2
+longcount 6 shortcount 2
+ S# 3
+longcount 10 shortcount 0
+ S# 4
+longcount 10 shortcount 7
+ S# 5
+longcount 5 shortcount 4
+ S# 6
+longcount 6 shortcount 6
+ S# 7
+longcount 4 shortcount 5
+ S# 8
+longcount 15 shortcount 2
+ S# 9
+longcount 2 shortcount 5
+ S# 10
+longcount 1 shortcount 15
+ S# 11
+longcount 4 shortcount 6
+ S# 12
+longcount 3 shortcount 4
+ S# 13WARNING!!!: 75 fixations on trial 2 for subject 13
+
+longcount 1 shortcount 8
+ S# 14
+longcount 1 shortcount 5
+ S# 15
+longcount 2 shortcount 0
+ S# 16
+longcount 2 shortcount 5
+ S# 17
+longcount 3 shortcount 1
+ S# 18
+longcount 8 shortcount 3
+ S# 19
+longcount 3 shortcount 1
+ S# 20
+longcount 7 shortcount 1
+ S# 21
+longcount 4 shortcount 1
+ S# 22
+longcount 2 shortcount 1
+ S# 23
+longcount 10 shortcount 12
+ S# 24
+longcount 3 shortcount 2
+ S# 25
+longcount 3 shortcount 12
+ S# 26
+longcount 5 shortcount 0
+ S# 27
+longcount 0 shortcount 5
+ S# 28
+longcount 1 shortcount 8
+ S# 29
+longcount 1 shortcount 4
+ S# 30WARNING!!!: 78 fixations on trial 29 for subject 30
+WARNING!!!: 71 fixations on trial 24 for subject 30
+WARNING!!!: 75 fixations on trial 10 for subject 30
+WARNING!!!: 68 fixations on trial 14 for subject 30
+
+longcount 6 shortcount 5
+ S# 31
+longcount 2 shortcount 21
+ S# 32
+longcount 12 shortcount 3
+ S# 33
+longcount 1 shortcount 13
+ S# 34
+longcount 3 shortcount 5
+ S# 35
+longcount 10 shortcount 4
+ S# 36
+longcount 1 shortcount 2
+ S# 37
+longcount 0 shortcount 0
+ S# 38
+longcount 5 shortcount 3
+ S# 39
+longcount 3 shortcount 3
+ S# 40
+longcount 2 shortcount 16
+ S# 41WARNING!!!: 63 fixations on trial 10 for subject 41
+
+longcount 3 shortcount 47
+ S# 42
+longcount 8 shortcount 0
+ S# 43
+longcount 4 shortcount 5
+ S# 44
+longcount 5 shortcount 3
+ S# 45
+longcount 2 shortcount 1
+ S# 46
+longcount 3 shortcount 2
+ S# 47
+longcount 11 shortcount 2
+
+***** OUTPUT *****
+1
+*****
+
+Percentage of trials on which a nonregressive fixation was madein a region
+
+
+AVERAGED OVER ITEMS AND SUBJECTS, BY CONDITIONS
+
+Means where each subject gets equal weight
+COND  1    77 (47)   90 (47)   60 (47)   96 (47)   97 (47)   99 (47)    1 (47)
+COND  2    74 (47)   89 (47)   59 (47)   95 (47)   98 (47)   99 (47)    1 (47)
+COND  3    77 (47)   91 (47)   58 (47)   97 (47)   97 (47)   99 (47)    1 (47)
+COND  4    74 (47)   88 (47)   56 (47)   94 (47)   96 (47)   99 (47)    2 (47)
+
+Means where each response receives equal weight; under test - report problems please
+COND  1    79 (434)   91 (424)   61 (424)   97 (424)   97 (424)   99 (424)    1 (424)
+COND  2    74 (431)   90 (431)   59 (431)   95 (431)   98 (431)   99 (431)    1 (431)
+COND  3    77 (394)   91 (394)   59 (394)   98 (394)   97 (394)   99 (394)    1 (394)
+COND  4    74 (466)   88 (466)   56 (466)   94 (466)   96 (466)   99 (466)    1 (466)
+type of analysis 4
+
+*****
+Probability of regressing out of a region
+*****
+Subj X Items file probRegressionIXS
+
+Subjects file probRegressionSXS
+Items file probRegressionIXI
+
+ S# 1
+longcount 8 shortcount 18
+ S# 2
+longcount 7 shortcount 4
+ S# 3
+longcount 11 shortcount 3
+ S# 4
+longcount 12 shortcount 18
+ S# 5
+longcount 6 shortcount 14
+ S# 6
+longcount 6 shortcount 17
+ S# 7
+longcount 10 shortcount 8
+ S# 8
+longcount 15 shortcount 15
+ S# 9
+longcount 2 shortcount 16
+ S# 10
+longcount 1 shortcount 31
+ S# 11
+longcount 4 shortcount 9
+ S# 12
+longcount 4 shortcount 6
+ S# 13WARNING!!!: 75 fixations on trial 2 for subject 13
+
+longcount 1 shortcount 22
+ S# 14
+longcount 1 shortcount 15
+ S# 15
+longcount 2 shortcount 2
+ S# 16
+longcount 2 shortcount 12
+ S# 17
+longcount 3 shortcount 7
+ S# 18
+longcount 8 shortcount 14
+ S# 19
+longcount 8 shortcount 5
+ S# 20
+longcount 8 shortcount 2
+ S# 21
+longcount 4 shortcount 5
+ S# 22
+longcount 7 shortcount 3
+ S# 23
+longcount 11 shortcount 30
+ S# 24
+longcount 6 shortcount 2
+ S# 25
+longcount 4 shortcount 17
+ S# 26
+longcount 6 shortcount 5
+ S# 27
+longcount 0 shortcount 15
+ S# 28
+longcount 1 shortcount 19
+ S# 29
+longcount 1 shortcount 9
+ S# 30WARNING!!!: 78 fixations on trial 29 for subject 30
+WARNING!!!: 71 fixations on trial 24 for subject 30
+WARNING!!!: 75 fixations on trial 10 for subject 30
+WARNING!!!: 68 fixations on trial 14 for subject 30
+
+longcount 10 shortcount 8
+ S# 31
+longcount 2 shortcount 42
+ S# 32
+longcount 12 shortcount 10
+ S# 33
+longcount 1 shortcount 45
+ S# 34
+longcount 3 shortcount 8
+ S# 35
+longcount 11 shortcount 18
+ S# 36
+longcount 2 shortcount 13
+ S# 37
+longcount 0 shortcount 1
+ S# 38
+longcount 5 shortcount 6
+ S# 39
+longcount 4 shortcount 11
+ S# 40
+longcount 6 shortcount 27
+ S# 41WARNING!!!: 63 fixations on trial 10 for subject 41
+
+longcount 3 shortcount 79
+ S# 42
+longcount 8 shortcount 1
+ S# 43
+longcount 5 shortcount 8
+ S# 44
+longcount 8 shortcount 7
+ S# 45
+longcount 2 shortcount 5
+ S# 46
+longcount 3 shortcount 6
+ S# 47
+longcount 11 shortcount 4
+
+***** OUTPUT *****
+Probability of regressing out of a region
+*****
+
+Percentage of trials where one or more legal first pass fixations in region
+were followed by a legal fixation to earlier point in the sentence.
+
+AVERAGED OVER ITEMS AND SUBJECTS, BY CONDITIONS
+
+Means where each subject gets equal weight
+COND  1     0 (47)    9 (47)   44 (47)   29 (47)    9 (47)   32 (47)  100 ( 3)
+COND  2     0 (47)   13 (47)   47 (47)   26 (47)   11 (47)   35 (47)  100 ( 2)
+COND  3     0 (46)    9 (47)   40 (47)   31 (47)    9 (47)   26 (47)  100 ( 3)
+COND  4     0 (47)   13 (47)   43 (46)   29 (47)   12 (47)   33 (47)  100 ( 3)
+
+Means where each response receives equal weight; under test - report problems please
+COND  1     0 (342)    9 (386)   39 (260)   28 (412)    8 (413)   31 (421)  100 ( 3)
+COND  2     0 (322)   13 (388)   46 (256)   26 (413)   10 (423)   35 (426)  100 ( 2)
+COND  3     0 (305)    9 (359)   44 (234)   32 (387)    8 (383)   26 (390)  100 ( 3)
+COND  4     0 (346)   13 (413)   44 (265)   28 (440)   11 (451)   35 (464)  100 ( 4)
+type of analysis 1
+
+*****
+First fixation duration in Region 3
+*****
+Subj X Items file firstFixationIXS
+
+Subjects file firstFixationSXS
+Items file firstFixationIXI
+
+ S# 1
+longcount 8 shortcount 8
+ S# 2
+longcount 6 shortcount 2
+ S# 3
+longcount 10 shortcount 0
+ S# 4
+longcount 10 shortcount 7
+ S# 5
+longcount 5 shortcount 4
+ S# 6
+longcount 6 shortcount 6
+ S# 7
+longcount 4 shortcount 5
+ S# 8
+longcount 15 shortcount 2
+ S# 9
+longcount 2 shortcount 5
+ S# 10
+longcount 1 shortcount 14
+ S# 11
+longcount 4 shortcount 6
+ S# 12
+longcount 3 shortcount 4
+ S# 13WARNING!!!: 75 fixations on trial 2 for subject 13
+
+longcount 1 shortcount 8
+ S# 14
+longcount 1 shortcount 5
+ S# 15
+longcount 2 shortcount 0
+ S# 16
+longcount 2 shortcount 5
+ S# 17
+longcount 3 shortcount 1
+ S# 18
+longcount 8 shortcount 3
+ S# 19
+longcount 1 shortcount 1
+ S# 20
+longcount 6 shortcount 1
+ S# 21
+longcount 4 shortcount 0
+ S# 22
+longcount 2 shortcount 1
+ S# 23
+longcount 10 shortcount 11
+ S# 24
+longcount 3 shortcount 1
+ S# 25
+longcount 3 shortcount 12
+ S# 26
+longcount 5 shortcount 0
+ S# 27
+longcount 0 shortcount 5
+ S# 28
+longcount 1 shortcount 8
+ S# 29
+longcount 1 shortcount 2
+ S# 30WARNING!!!: 78 fixations on trial 29 for subject 30
+WARNING!!!: 71 fixations on trial 24 for subject 30
+WARNING!!!: 75 fixations on trial 10 for subject 30
+WARNING!!!: 68 fixations on trial 14 for subject 30
+
+longcount 6 shortcount 4
+ S# 31
+longcount 2 shortcount 20
+ S# 32
+longcount 12 shortcount 1
+ S# 33
+longcount 1 shortcount 13
+ S# 34
+longcount 3 shortcount 5
+ S# 35
+longcount 10 shortcount 4
+ S# 36
+longcount 1 shortcount 2
+ S# 37
+longcount 0 shortcount 0
+ S# 38
+longcount 5 shortcount 2
+ S# 39
+longcount 3 shortcount 2
+ S# 40
+longcount 2 shortcount 16
+ S# 41WARNING!!!: 63 fixations on trial 10 for subject 41
+
+longcount 3 shortcount 44
+ S# 42
+longcount 8 shortcount 0
+ S# 43
+longcount 4 shortcount 5
+ S# 44
+longcount 4 shortcount 3
+ S# 45
+longcount 2 shortcount 1
+ S# 46
+longcount 3 shortcount 2
+ S# 47
+longcount 11 shortcount 2
+
+***** OUTPUT *****
+3
+*****
+
+First of multiple fixations
+
+THROWING AWAY trials with no fixations.
+
+AVERAGED OVER ITEMS AND SUBJECTS, BY CONDITIONS
+
+Means where each subject gets equal weight
+COND  1   335 (46)  256 (47)  225 (23)  232 (47)  245 (47)  242 (47)  152 ( 2)
+COND  2   334 (45)  260 (47)  234 (25)  235 (47)  232 (47)  217 (47)  439 ( 3)
+COND  3   370 (46)  241 (47)  260 (23)  237 (47)  240 (46)  237 (47)  188 ( 1)
+COND  4   358 (45)  250 (47)  213 (16)  240 (47)  235 (47)  233 (47)  267 ( 5)
+
+Means where each response receives equal weight; under test - report problems please
+COND  1   343 (270)  256 (333)  225 (38)  234 (319)  246 (330)  241 (406)  152 ( 2)
+COND  2   340 (246)  260 (318)  249 (41)  236 (303)  235 (334)  216 (404)  398 ( 4)
+COND  3   373 (230)  239 (310)  264 (32)  236 (304)  240 (305)  237 (370)  188 ( 1)
+COND  4   352 (269)  247 (333)  208 (26)  239 (350)  237 (333)  231 (443)  267 ( 5)

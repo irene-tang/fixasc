@@ -1,0 +1,35 @@
+#!/usr/bin/awk -f
+
+# AGresti 1990, 2002 suggests this is a less biased estimate of the logit
+
+# THe input is (for each trial):
+# RV(itm/sbj) COND1 COND2 COND3 ... DV
+
+# The output is:
+# RV COND1 COND2 COND3 DVavg logit(DVavg)
+
+function elogit(x,n) {
+    return log((x+.5)/((n-x+.5)));
+}
+
+BEGIN { SUBSEP=" "}
+
+{ 
+  ind = "";
+  for (i=2;i<NF;i++) ind = ind SUBSEP $i;
+  rv[$1] = 1;
+  cond[ind] = 1;
+  if ($NF != "NA") {
+    X[$1,ind] += $NF;
+    N[$1,ind]++;
+  }
+}
+
+END{ 
+    for (j in X) {
+	if (X[j]/N[j] > 1) print j,X[j]/N[j],elogit(N[j],N[j]);
+	else print j,X[j]/N[j],elogit(X[j],N[j]);
+    }
+	
+}
+

@@ -1,10 +1,10 @@
-import sys, os
+import sys, os, glob
 import csv
 import numpy as np
 
 # declare output path
 OUTPUT_FOLDER = "../data/eyedry/edited_originals/"
-INPUT_FOLDER =  "../data/eyedry/originals/"
+INPUT_FOLDER =  "../data/eyedry/originals/*IXS"
 # FILES_TO_PROCESS = [
 #     "../data/eyedry/originals/firstPassIXS",
 #     "../data/eyedry/originals/goPastIXS",
@@ -13,11 +13,11 @@ INPUT_FOLDER =  "../data/eyedry/originals/"
 #     "../data/eyedry/originals/firstFixationIXS",
 # ]
 
-FILES_TO_PROCESS = os.listdir(INPUT_FOLDER)
+FILES_TO_PROCESS = [f for f in glob.glob(INPUT_FOLDER)]
 
 # check for correct commandline args
 # if len(sys.argv) != 2:
-#     print('incorrect usage: python3 dataanal.py [file]')
+#     print('incorrect usage: python3 dataanal.p y[file]')
 
 # get name of file
 # inputFilename = sys.argv[1]

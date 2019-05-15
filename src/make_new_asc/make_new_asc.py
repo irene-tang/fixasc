@@ -16,7 +16,7 @@ def check_args():
     return original_asc
 
 ###################################
-#### declare global variables here -- probably not the most reccommended programming habit, but...
+#### global variables here ########
 ###################################
 # temporary buffer to store lines before writing them to new_asc file at the end
 buffer = []
@@ -624,9 +624,11 @@ def main():
     ############################################
     ### REAL TRIALS ############################
     ############################################
-    #### the limerick ###########################
 
     while True:
+
+        #### the limerick ###########################
+
         # parsing info for one trial
         # trigger: prepare_sequence
         skip_to_next_trial(buffer, remaining_lines)

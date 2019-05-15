@@ -1,0 +1,5851 @@
+Last login: Mon Apr 29 15:09:58 on console
+irene@dhcp-130-58-97-110:[~]$cd itang1\@swat/PSYC180/limerick1_workspace/
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace]$ls
+LICENSE                 data/                   test/
+README.md               src/
+awk scripts/            stats crash course.txt
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace]$cd src/
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/src]$python3 runall.py 
+Successfully deleted the directory ../data/robodoc 
+Successfully created the directory ../data/robodoc 
+
+==========
+running robodoc.py
+==========
+
+
+========================================
+
+
+Number of subjects excluded: 0
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/src]$python3 runall.py 
+Successfully deleted the directory ../data/robodoc 
+Successfully created the directory ../data/robodoc 
+
+==========
+running make_new_asc
+==========
+..................................^CTraceback (most recent call last):
+  File "make_new_asc/make_new_asc.py", line 673, in <module>
+    main()
+  File "make_new_asc/make_new_asc.py", line 669, in main
+    insert_ias(buffer, remaining_lines)
+  File "make_new_asc/make_new_asc.py", line 588, in insert_ias
+    ias_info = read_ias_letter(trial_metadatas.get('iarea'), timestamp)
+  File "make_new_asc/make_new_asc.py", line 547, in read_ias_letter
+    line = line.split()
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "runall.py", line 40, in <module>
+    p = subprocess.call(['python3', 'make_new_asc/make_new_asc.py', asc])
+  File "/usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/subprocess.py", line 325, in call
+    return p.wait(timeout=timeout)
+  File "/usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/subprocess.py", line 990, in wait
+    return self._wait(timeout=timeout)
+  File "/usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/subprocess.py", line 1624, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/subprocess.py", line 1582, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/src]$python3 runall.py 
+Successfully deleted the directory ../data/FA_Dir 
+Successfully deleted the directory ../data/new_asc 
+Successfully deleted the directory ../data/question_acc 
+Successfully deleted the directory ../data/robodoc 
+Successfully deleted the directory ../data/scripter 
+Successfully created the directory ../data/FA_Dir 
+Successfully created the directory ../data/new_asc 
+Successfully created the directory ../data/question_acc 
+Successfully created the directory ../data/robodoc 
+Successfully created the directory ../data/scripter 
+
+==========
+running make_new_asc
+==========
+...............................................
+
+==========
+running question_acc
+==========
+../data/new_asc/subj14_new.asc
+../data/new_asc/subj6_new.asc
+../data/new_asc/f181066_new.asc
+../data/new_asc/f181076_new.asc
+../data/new_asc/f181059_new.asc
+../data/new_asc/f181082_new.asc
+../data/new_asc/f181067_new.asc
+../data/new_asc/f181071b_new.asc
+../data/new_asc/f181070b_new.asc
+../data/new_asc/f181083_new.asc
+../data/new_asc/f181060t_new.asc
+../data/new_asc/f181051_new.asc
+../data/new_asc/f181065_new.asc
+../data/new_asc/f181075_new.asc
+../data/new_asc/subject1_new.asc
+../data/new_asc/f181081_new.asc
+../data/new_asc/f181091_new.asc
+../data/new_asc/f181053_new.asc
+../data/new_asc/f181088_new.asc
+../data/new_asc/subj16_new.asc
+../data/new_asc/5t_new.asc
+../data/new_asc/f181052_new.asc
+../data/new_asc/f181089_new.asc
+../data/new_asc/f181074_new.asc
+../data/new_asc/f181064_new.asc
+../data/new_asc/f181090_new.asc
+../data/new_asc/f181080_new.asc
+../data/new_asc/f181057_new.asc
+../data/new_asc/f181078_new.asc
+../data/new_asc/subj13_new.asc
+../data/new_asc/f181056_new.asc
+../data/new_asc/subj12_new.asc
+../data/new_asc/f181069_new.asc
+../data/new_asc/f181079_new.asc
+../data/new_asc/f181084_new.asc
+../data/new_asc/f181054_new.asc
+../data/new_asc/subj10_new.asc
+../data/new_asc/f181068b_new.asc
+../data/new_asc/f181086_new.asc
+../data/new_asc/f181087b_new.asc
+../data/new_asc/f181050_all_new.asc
+../data/new_asc/f181062_new.asc
+../data/new_asc/f181072_new.asc
+../data/new_asc/f181073_new.asc
+../data/new_asc/subject7_new.asc
+../data/new_asc/f181063_new.asc
+../data/new_asc/f181055_new.asc
+
+==========
+running remove_participants
+==========
+mean, median: 87.55319148936171 89
+
+==========
+running scripter2
+==========
+
+==========
+running make_cnt
+==========
+
+==========
+running fix_align
+==========
+[1] "Processing: ../data/new_asc/5t_new.asc"
+[1] "Processing: ../data/new_asc/f181050_all_new.asc"
+[1] "Processing: ../data/new_asc/f181051_new.asc"
+[1] "Processing: ../data/new_asc/f181052_new.asc"
+[1] "Processing: ../data/new_asc/f181053_new.asc"
+[1] "Processing: ../data/new_asc/f181054_new.asc"
+[1] "Processing: ../data/new_asc/f181055_new.asc"
+[1] "Processing: ../data/new_asc/f181056_new.asc"
+[1] "Processing: ../data/new_asc/f181057_new.asc"
+[1] "Processing: ../data/new_asc/f181059_new.asc"
+[1] "Processing: ../data/new_asc/f181060t_new.asc"
+[1] "Processing: ../data/new_asc/f181062_new.asc"
+[1] "Processing: ../data/new_asc/f181063_new.asc"
+[1] "Processing: ../data/new_asc/f181064_new.asc"
+[1] "Processing: ../data/new_asc/f181065_new.asc"
+[1] "Processing: ../data/new_asc/f181066_new.asc"
+[1] "Processing: ../data/new_asc/f181067_new.asc"
+[1] "Processing: ../data/new_asc/f181068b_new.asc"
+[1] "Processing: ../data/new_asc/f181069_new.asc"
+[1] "Processing: ../data/new_asc/f181070b_new.asc"
+[1] "Processing: ../data/new_asc/f181071b_new.asc"
+[1] "Processing: ../data/new_asc/f181072_new.asc"
+[1] "Processing: ../data/new_asc/f181073_new.asc"
+[1] "Processing: ../data/new_asc/f181074_new.asc"
+[1] "Processing: ../data/new_asc/f181075_new.asc"
+[1] "Processing: ../data/new_asc/f181076_new.asc"
+[1] "Processing: ../data/new_asc/f181078_new.asc"
+[1] "Processing: ../data/new_asc/f181079_new.asc"
+[1] "Processing: ../data/new_asc/f181080_new.asc"
+[1] "Processing: ../data/new_asc/f181081_new.asc"
+[1] "Processing: ../data/new_asc/f181082_new.asc"
+[1] "Processing: ../data/new_asc/f181083_new.asc"
+[1] "Processing: ../data/new_asc/f181084_new.asc"
+[1] "Processing: ../data/new_asc/f181086_new.asc"
+[1] "Processing: ../data/new_asc/f181087b_new.asc"
+[1] "Processing: ../data/new_asc/f181088_new.asc"
+[1] "Processing: ../data/new_asc/f181089_new.asc"
+[1] "Processing: ../data/new_asc/f181090_new.asc"
+[1] "Processing: ../data/new_asc/f181091_new.asc"
+[1] "Processing: ../data/new_asc/subj10_new.asc"
+[1] "Processing: ../data/new_asc/subj12_new.asc"
+[1] "Processing: ../data/new_asc/subj13_new.asc"
+[1] "Processing: ../data/new_asc/subj14_new.asc"
+[1] "Processing: ../data/new_asc/subj16_new.asc"
+[1] "Processing: ../data/new_asc/subj6_new.asc"
+[1] "Processing: ../data/new_asc/subject1_new.asc"
+[1] "Processing: ../data/new_asc/subject7_new.asc"
+
+==========
+running robodoc.py
+==========
+
+
+========================================
+
+
+Number of subjects excluded: 0
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/src]$cd eyedry/
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/src/eyedry]$cd ..
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/src]$./eyedry/eyedry 
+
+EYEDRY Version EYEDRY VERSION OF 1/25/2013 (compiled with mingw-GCC)
+
+warning: this program uses gets(), which is unsafe.
+What is output trace file name? ../data/eyedry/trace_050219.txt
+
+Writing output on file ../data/eyedry/trace_050219.txt
+This version is for normal and eyetracker data on same line
+and optionally permits question data to be discarded after each trial.
+This version permits an EXCEPTIONS FILE of item-condition adjustment
+pairs.
+
+Type an identifying string to print out
+Recrunching the data 5/2 9am, only exclusion criteria are unrepairable eyetracking  difficulties and quesiton accuracy                     
+
+What is the maximum number of fixations on an item
+(60 is assumed if you type a return): 
+
+If 60 is too big for the number of items and conditions you have
+the program will generate a memory allocation error message and halt.
+If it is too small for some subject, the program will fuss but keep going.
+
+Type name of file containing control info (CR if none). eyedry/limerick1.ctl
+
+ Type a number to change a control parameter, or CR to quit.
+0: debug level        =      0
+  qskip = 2 means that questions have same conditions as items
+  lookahead = 1 means that you are eliminating on basis of errors
+  in which case min and max question to examine must be set to nonzero
+1: qskip              =       1     2: lookahead          =     0
+3: min ques           =       0     4: max ques           =     0
+5: smallest item      =       1     6: largest item       =     40
+7: maximum regions    =       7
+8: smallest condition =       1     9: largest condition  =     4
+10: number of subconds=       4
+11: position of cond #=       2    12: position of item # =     3
+13: position of #fix  =       6    14: data start position=     7
+15: longcutoff        =       800  16: shorttime          =     80
+  (next 2 zero unless rejecting on basis of questions)
+17: pos. of ques #    =       0    18: pos. of ques resp  =     0
+19: screen width (char)=      160
+20: max lines of text =       5
+21: region wrap around end? 0 = no, 1 = y;      0   ---  ?
+22: double_space? 0 = no, 1 = y;      0
+analyze part: 23: first_seq = 0    24: last_seq           =     0
+25: max trials in condition = 0  ---  ? 0
+
+New value? 0
+
+ Type a number to change a control parameter, or CR to quit.
+0: debug level        =      0
+  qskip = 2 means that questions have same conditions as items
+  lookahead = 1 means that you are eliminating on basis of errors
+  in which case min and max question to examine must be set to nonzero
+1: qskip              =       1     2: lookahead          =     0
+3: min ques           =       0     4: max ques           =     0
+5: smallest item      =       1     6: largest item       =     40
+7: maximum regions    =       7
+8: smallest condition =       1     9: largest condition  =     4
+10: number of subconds=       4
+11: position of cond #=       2    12: position of item # =     3
+13: position of #fix  =       6    14: data start position=     7
+15: longcutoff        =       800  16: shorttime          =     80
+  (next 2 zero unless rejecting on basis of questions)
+17: pos. of ques #    =       0    18: pos. of ques resp  =     0
+19: screen width (char)=      160
+20: max lines of text =       5
+21: region wrap around end? 0 = no, 1 = y;      0   ---  ?
+22: double_space? 0 = no, 1 = y;      0
+analyze part: 23: first_seq = 0    24: last_seq           =     0
+25: max trials in condition = 0  ---  ? 
+
+What file name do you want to save these values as (CR if none)? 
+What is the name of the file that lists data files? ../data/robodoc/files_processed.lst
+
+47 subjects
+Any exceptions file? y or n: n
+
+Assuming y offset is 0.
+
+ Control (.CNT) file name? - ../data/scripter/output_from_scripter.cnt
+
+160 lines in control file
+Which analysis?
+  1 = first (or second) fixation
+  2 = first pass time
+  3 = total time
+  4 = first pass regressions out
+  5 = regressions in
+  6 = prob of first-pass fixation (or duration of fix before or after skip or land)
+  7 = number of fixations
+  8 = second pass times
+  9 = eyepoke
+ 10 = eyegaze
+ 11 = landing position or launch site
+ 12 = position as function of time
+ 13 = time from entering region to first going PAST it
+ 14 = first fixation or saccade after LEAVING region (spillover)
+ 15 = saccade matrix (from region to region)
+ 16 = total gaze
+ 17 = Landing/launch position
+ 18 = inhibition of return stuff
+ 19 = vector of entering and leaving
+ 20 = file of region lengths
+ 0 TO QUIT: 2
+
+Type an identifying string to print out
+First pass time
+
+Throw away zero fixation values? y or n: n
+
+Throwaway_zero 0 (0 is keep zeros, 1 is throw them away)
+Do you want to CUMULATE or AVERAGE multiple fixations in a region? c or a- c
+RAW times, MS/char, or DEVIATION from regression: r, m, or d: r
+Conditionalize on presence/absence of regression in critical region? y or n: n
+Conditionalize on presence/absence of fixation in critical region? y or n: n
+What is the upper summed cutoff for first pass time? 2000 is default: 
+Conditionalize on position of last fixation before each region? y or n: n
+
+Type in names of the output files you want. Just hit ENTER for no.
+
+File of item X subject combinations: firstPassIXS
+Do you want All trials written, or just trials with Observations?
+  Type a or o: a
+Do you want Wide ouput (all regions in one row) or Narrow (one row per region)?
+  Type w or n: w
+Subject by subject file, one condition per line (not systat): firstPassSXS
+Subject by subject file, formatted for Systat: 
+Item by item file, one condition per line (not systat): firstPassIXI
+Item by item file, formatted for Systat: 
+Do you want information about long and short times printed? y or n -n
+
+WARNING: 75 fixations on trial 2 for subject 13
+WARNING: 78 fixations on trial 29 for subject 30
+WARNING: 71 fixations on trial 24 for subject 30
+WARNING: 75 fixations on trial 10 for subject 30
+WARNING: 68 fixations on trial 14 for subject 30
+WARNING: 63 fixations on trial 10 for subject 41
+
+AVERAGED OVER ITEMS AND SUBJECTS, BY CONDITIONS
+
+COND  1   653 (47)  644 (47)  148 (47)  583 (47)  566 (47)  952 (47)    2 (47)
+COND  2   594 (47)  592 (47)  153 (47)  540 (47)  554 (47)  899 (47)    4 (47)
+COND  3   604 (47)  678 (47)  143 (47)  584 (47)  553 (47)  920 (47)    2 (47)
+COND  4   572 (47)  589 (47)  131 (47)  539 (47)  534 (47)  946 (47)    4 (47)
+Do you want a typeout of the item-by-item data? y or n: n
+
+Which analysis?
+  1 = first (or second) fixation
+  2 = first pass time
+  3 = total time
+  4 = first pass regressions out
+  5 = regressions in
+  6 = prob of first-pass fixation (or duration of fix before or after skip or land)
+  7 = number of fixations
+  8 = second pass times
+  9 = eyepoke
+ 10 = eyegaze
+ 11 = landing position or launch site
+ 12 = position as function of time
+ 13 = time from entering region to first going PAST it
+ 14 = first fixation or saccade after LEAVING region (spillover)
+ 15 = saccade matrix (from region to region)
+ 16 = total gaze
+ 17 = Landing/launch position
+ 18 = inhibition of return stuff
+ 19 = vector of entering and leaving
+ 20 = file of region lengths
+ 0 TO QUIT: 13
+
+Type an identifying string to print out
+Go-past time
+
+Throw away zero fixation values? y or n: y
+
+Throwaway_zero 1 (0 is keep zeros, 1 is throw them away)
+Do you want to CUMULATE or AVERAGE multiple fixations in a region? c or a- c
+Do you want to keep RAW times or convert to MSEC/CHAR? r or m: r
+Which analysis:
+ 1 = All from first entering region to first going past
+ 2 = Time spent in region from first entering to first going past
+ 3 = Time spent outside of region after entering to first going past: 1
+
+Type in names of the output files you want. Just hit ENTER for no.
+
+File of item X subject combinations: goPastIXS
+Do you want All trials written, or just trials with Observations?
+  Type a or o: a
+Do you want Wide ouput (all regions in one row) or Narrow (one row per region)?
+  Type w or n: w
+Subject by subject file, one condition per line (not systat): goPastSXS
+Subject by subject file, formatted for Systat: 
+Item by item file, one condition per line (not systat): goPastIXI
+Item by item file, formatted for Systat: 
+Do you want information about long and short times printed? y or n -n
+
+WARNING: 75 fixations on trial 2 for subject 13
+WARNING: 78 fixations on trial 29 for subject 30
+WARNING: 71 fixations on trial 24 for subject 30
+WARNING: 75 fixations on trial 10 for subject 30
+WARNING: 68 fixations on trial 14 for subject 30
+WARNING: 63 fixations on trial 10 for subject 41
+
+AVERAGED OVER ITEMS AND SUBJECTS, BY CONDITIONS
+
+COND  1  1054 (47)  875 (47)  523 (47)  837 (47)  669 (47) 1803 (47)  366 ( 4)
+COND  2  1029 (47)  867 (47)  502 (47)  789 (47)  679 (47) 1773 (47)  440 ( 4)
+COND  3  1123 (46)  911 (47)  511 (47)  891 (47)  652 (47) 1705 (47) 1213 ( 4)
+COND  4  1038 (47)  890 (47)  503 (46)  868 (47)  688 (47) 1868 (47)  464 ( 8)
+Do you want a typeout of the item-by-item data? y or n: n
+
+Which analysis?
+  1 = first (or second) fixation
+  2 = first pass time
+  3 = total time
+  4 = first pass regressions out
+  5 = regressions in
+  6 = prob of first-pass fixation (or duration of fix before or after skip or land)
+  7 = number of fixations
+  8 = second pass times
+  9 = eyepoke
+ 10 = eyegaze
+ 11 = landing position or launch site
+ 12 = position as function of time
+ 13 = time from entering region to first going PAST it
+ 14 = first fixation or saccade after LEAVING region (spillover)
+ 15 = saccade matrix (from region to region)
+ 16 = total gaze
+ 17 = Landing/launch position
+ 18 = inhibition of return stuff
+ 19 = vector of entering and leaving
+ 20 = file of region lengths
+ 0 TO QUIT: 6
+
+Type an identifying string to print out
+Probability of fixating in a region
+
+Throwaway_zero 2 (0 is keep zeros, 1 is throw them away)
+Which analysis:
+1 = prob of one or more fixations
+2 = prob of exactly one fixation
+3 = duration of fixation immediately before skip
+4 = duration of fixation immediately after skip
+5 = duration of fixation immediately before landing
+6 = duration of fixation immediately after landing
+Type 1, 2, 3, 4, 5, or 6: 1
+Conditionalize on position of last fixation before each region? y or n: n
+
+Type in names of the output files you want. Just hit ENTER for no.
+
+File of item X subject combinations: probFixationIXS
+Do you want All trials written, or just trials with Observations?
+  Type a or o: a
+Do you want Wide ouput (all regions in one row) or Narrow (one row per region)?
+  Type w or n: w
+Subject by subject file, one condition per line (not systat): probFixationSXS
+Subject by subject file, formatted for Systat: 
+Item by item file, one condition per line (not systat): probFixationIXI
+Item by item file, formatted for Systat: 
+Do you want information about long and short times printed? y or n -n
+
+WARNING: 75 fixations on trial 2 for subject 13
+WARNING: 78 fixations on trial 29 for subject 30
+WARNING: 71 fixations on trial 24 for subject 30
+WARNING: 75 fixations on trial 10 for subject 30
+WARNING: 68 fixations on trial 14 for subject 30
+WARNING: 63 fixations on trial 10 for subject 41
+
+AVERAGED OVER ITEMS AND SUBJECTS, BY CONDITIONS
+
+COND  1    77 (47)   90 (47)   60 (47)   96 (47)   97 (47)   99 (47)    1 (47)
+COND  2    74 (47)   89 (47)   59 (47)   95 (47)   98 (47)   99 (47)    1 (47)
+COND  3    77 (47)   91 (47)   58 (47)   97 (47)   97 (47)   99 (47)    1 (47)
+COND  4    74 (47)   88 (47)   56 (47)   94 (47)   96 (47)   99 (47)    2 (47)
+Do you want a typeout of the item-by-item data? y or n: n
+
+Which analysis?
+  1 = first (or second) fixation
+  2 = first pass time
+  3 = total time
+  4 = first pass regressions out
+  5 = regressions in
+  6 = prob of first-pass fixation (or duration of fix before or after skip or land)
+  7 = number of fixations
+  8 = second pass times
+  9 = eyepoke
+ 10 = eyegaze
+ 11 = landing position or launch site
+ 12 = position as function of time
+ 13 = time from entering region to first going PAST it
+ 14 = first fixation or saccade after LEAVING region (spillover)
+ 15 = saccade matrix (from region to region)
+ 16 = total gaze
+ 17 = Landing/launch position
+ 18 = inhibition of return stuff
+ 19 = vector of entering and leaving
+ 20 = file of region lengths
+ 0 TO QUIT: 4
+
+Type an identifying string to print out
+Probability of regressing out of a region
+
+Throwaway_zero 2 (0 is keep zeros, 1 is throw them away)
+
+Type in names of the output files you want. Just hit ENTER for no.
+
+File of item X subject combinations: probRegressionIXS
+Do you want All trials written, or just trials with Observations?
+  Type a or o: a
+Do you want Wide ouput (all regions in one row) or Narrow (one row per region)?
+  Type w or n: w
+Subject by subject file, one condition per line (not systat): probRegressionSXS
+Subject by subject file, formatted for Systat: 
+Item by item file, one condition per line (not systat): probRegressionIXI
+Item by item file, formatted for Systat: 
+Do you want information about long and short times printed? y or n -n
+
+WARNING: 75 fixations on trial 2 for subject 13
+WARNING: 78 fixations on trial 29 for subject 30
+WARNING: 71 fixations on trial 24 for subject 30
+WARNING: 75 fixations on trial 10 for subject 30
+WARNING: 68 fixations on trial 14 for subject 30
+WARNING: 63 fixations on trial 10 for subject 41
+
+AVERAGED OVER ITEMS AND SUBJECTS, BY CONDITIONS
+
+COND  1     0 (47)    9 (47)   44 (47)   29 (47)    9 (47)   32 (47)  100 ( 3)
+COND  2     0 (47)   13 (47)   47 (47)   26 (47)   11 (47)   35 (47)  100 ( 2)
+COND  3     0 (46)    9 (47)   40 (47)   31 (47)    9 (47)   26 (47)  100 ( 3)
+COND  4     0 (47)   13 (47)   43 (46)   29 (47)   12 (47)   33 (47)  100 ( 3)
+Do you want a typeout of the item-by-item data? y or n: n
+
+Which analysis?
+  1 = first (or second) fixation
+  2 = first pass time
+  3 = total time
+  4 = first pass regressions out
+  5 = regressions in
+  6 = prob of first-pass fixation (or duration of fix before or after skip or land)
+  7 = number of fixations
+  8 = second pass times
+  9 = eyepoke
+ 10 = eyegaze
+ 11 = landing position or launch site
+ 12 = position as function of time
+ 13 = time from entering region to first going PAST it
+ 14 = first fixation or saccade after LEAVING region (spillover)
+ 15 = saccade matrix (from region to region)
+ 16 = total gaze
+ 17 = Landing/launch position
+ 18 = inhibition of return stuff
+ 19 = vector of entering and leaving
+ 20 = file of region lengths
+ 0 TO QUIT: 1
+
+Type an identifying string to print out
+First fixation duration in Region 3
+
+Throwaway_zero 1 (0 is keep zeros, 1 is throw them away)
+Which analysis:
+1 = all initial fixations
+2 = exactly one fixation
+3 = initial one of multiple fixations
+4 = second of more than one fixation
+5 = last fixation prior to entering region:
+6 = conditionalize on presence/absence of fixation in specified region	type 1, 2, 3, 4, or 5: 3
+Do you want to keep RAW times or convert to MSEC/CHAR? r or m: r
+Conditionalize on presence/absence of regression in critical region? y or n: n
+Conditionalize on presence/absence of fixation in critical region? y or n: n
+Conditionalize on position of last fixation before each region? y or n: n
+
+Type in names of the output files you want. Just hit ENTER for no.
+
+File of item X subject combinations: firstFixationIXS
+Do you want All trials written, or just trials with Observations?
+  Type a or o: a
+Do you want Wide ouput (all regions in one row) or Narrow (one row per region)?
+  Type w or n: w
+Subject by subject file, one condition per line (not systat): firstFixationSXS
+Subject by subject file, formatted for Systat: 
+Item by item file, one condition per line (not systat): firstFixationIXI
+Item by item file, formatted for Systat: 
+Do you want information about long and short times printed? y or n -n
+
+WARNING: 75 fixations on trial 2 for subject 13
+WARNING: 78 fixations on trial 29 for subject 30
+WARNING: 71 fixations on trial 24 for subject 30
+WARNING: 75 fixations on trial 10 for subject 30
+WARNING: 68 fixations on trial 14 for subject 30
+WARNING: 63 fixations on trial 10 for subject 41
+
+AVERAGED OVER ITEMS AND SUBJECTS, BY CONDITIONS
+
+COND  1   335 (46)  256 (47)  225 (23)  232 (47)  245 (47)  242 (47)  152 ( 2)
+COND  2   334 (45)  260 (47)  234 (25)  235 (47)  232 (47)  217 (47)  439 ( 3)
+COND  3   370 (46)  241 (47)  260 (23)  237 (47)  240 (46)  237 (47)  188 ( 1)
+COND  4   358 (45)  250 (47)  213 (16)  240 (47)  235 (47)  233 (47)  267 ( 5)
+Do you want a typeout of the item-by-item data? y or n: 
+
+Which analysis?
+  1 = first (or second) fixation
+  2 = first pass time
+  3 = total time
+  4 = first pass regressions out
+  5 = regressions in
+  6 = prob of first-pass fixation (or duration of fix before or after skip or land)
+  7 = number of fixations
+  8 = second pass times
+  9 = eyepoke
+ 10 = eyegaze
+ 11 = landing position or launch site
+ 12 = position as function of time
+ 13 = time from entering region to first going PAST it
+ 14 = first fixation or saccade after LEAVING region (spillover)
+ 15 = saccade matrix (from region to region)
+ 16 = total gaze
+ 17 = Landing/launch position
+ 18 = inhibition of return stuff
+ 19 = vector of entering and leaving
+ 20 = file of region lengths
+ 0 TO QUIT: 0
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/src]$python3 edit_cond.py 
+../data/eyedry/edited_originals/probFixationIXS_edited
+../data/eyedry/edited_originals/firstPassIXS_edited
+../data/eyedry/edited_originals/probRegressionIXS_edited
+../data/eyedry/edited_originals/firstFixationIXS_edited
+../data/eyedry/edited_originals/goPastIXS_edited
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/src]$cd ..
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace]$cd data/eyedry/edited_originals/
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$6}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1727  188   626.6669   216.4344    15.7851
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           866   94   619.3300   223.5235    23.0547
+clash           861   94   634.0037   210.0472    21.6647
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        this    898   94   591.4547   205.0024    21.1444
+        tap     829   94   661.8790   222.8429    22.9845
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   this    431   47   593.3984   215.7854    31.4755
+match   tap     435   47   645.2615   230.3784    33.6041
+clash   this    467   47   589.5110   195.9452    28.5816
+clash   tap     394   47   678.4965   216.2382    31.5416
+
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	   73829735.4886      1  73829735.4886   635.575  0.000 ***
+s/	    5343461.1618     46    116162.1992
+
+clashty	      10120.0119      1     10120.0119     0.436  0.512 
+cs/	    1068359.4903     46     23225.2063
+
+secondt	     233100.0213      1    233100.0213     9.462  0.004 **
+ss/	    1133260.6532     46     24636.1012
+
+cs	      16192.2924      1     16192.2924     0.780  0.382 
+css/	     955306.8203     46     20767.5396
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$6}' firstFixationIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1727  188   189.8617    65.0497     4.7442
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           866   94   196.2541    69.0840     7.1255
+clash           861   94   183.4693    60.4419     6.2341
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        this    898   94   185.4322    68.0178     7.0155
+        tap     829   94   194.2912    61.9867     6.3934
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   this    431   47   194.5933    72.7275    10.6084
+match   tap     435   47   197.9149    65.9851     9.6249
+clash   this    467   47   176.2710    62.3909     9.1006
+clash   tap     394   47   190.6675    58.2011     8.4895
+
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	    6776922.2164      1   6776922.2164   666.090  0.000 ***
+s/	     468012.7827     46     10174.1909
+
+clashty	       7682.2194      1      7682.2194     2.945  0.093 
+cs/	     119985.6559     46      2608.3838
+
+secondt	       3688.6735      1      3688.6735     1.763  0.191 
+ss/	      96230.4104     46      2091.9654
+
+cs	       1441.1725      1      1441.1725     0.703  0.406 
+css/	      94243.3807     46      2048.7691
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$6}' goPastIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1727  188   761.5394   275.8904    20.1214
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           866   94   756.5373   293.0963    30.2306
+clash           861   94   766.5415   259.0241    26.7163
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        this    898   94   740.1152   295.6959    30.4987
+        tap     829   94   782.9636   254.3335    26.2325
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   this    431   47   749.3547   324.9652    47.4011
+match   tap     435   47   763.7198   260.7116    38.0287
+clash   this    467   47   730.8758   266.4509    38.8659
+clash   tap     394   47   802.2073   249.0984    36.3347
+
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	  109029143.1035      1 109029143.1035   649.385  0.000 ***
+s/	    7723212.9858     46    167895.9345
+
+clashty	       4704.0090      1      4704.0090     0.121  0.729 
+cs/	    1783138.7963     46     38763.8869
+
+secondt	      86291.0215      1     86291.0215     1.897  0.175 
+ss/	    2092087.9809     46     45480.1735
+
+cs	      38130.6824      1     38130.6824     0.700  0.407 
+css/	    2506037.0364     46     54479.0660
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$6}' probFixationIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1727  188    89.5668    12.0743     0.8806
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           866   94    89.2249    13.1276     1.3540
+clash           861   94    89.9087    10.9805     1.1326
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        this    898   94    89.0809    13.0199     1.3429
+        tap     829   94    90.0528    11.0972     1.1446
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   this    431   47    89.9493    14.1847     2.0690
+match   tap     435   47    88.5005    12.0887     1.7633
+clash   this    467   47    88.2124    11.8310     1.7257
+clash   tap     394   47    91.6050     9.8951     1.4433
+
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	    1508176.2820      1   1508176.2820  5170.215  0.000 ***
+s/	      13418.4177     46       291.7047
+
+clashty	         21.9752      1        21.9752     0.334  0.566 
+cs/	       3027.8775     46        65.8234
+
+secondt	         44.3965      1        44.3965     0.566  0.456 
+ss/	       3611.2501     46        78.5054
+
+cs	        275.4201      1       275.4201     1.846  0.181 
+css/	       6862.9603     46       149.1948
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' probFixationIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1727  188    58.5655    22.2583     1.6234
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           866   94    59.4314    20.2884     2.0926
+clash           861   94    57.6996    24.1466     2.4905
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        this    898   94    58.1636    21.0690     2.1731
+        tap     829   94    58.9674    23.4940     2.4232
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   this    431   47    59.2849    18.6832     2.7252
+match   tap     435   47    59.5778    21.9791     3.2060
+clash   this    467   47    57.0423    23.3629     3.4078
+clash   tap     394   47    58.3570    25.1413     3.6672
+
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	     644824.5243      1    644824.5243   483.462  0.000 ***
+s/	      61353.1365     46      1333.7638
+
+clashty	        140.9456      1       140.9456     0.731  0.397 
+cs/	       8863.6790     46       192.6887
+
+secondt	         30.3680      1        30.3680     0.114  0.737 
+ss/	      12280.3491     46       266.9641
+
+cs	         12.2653      1        12.2653     0.057  0.813 
+css/	       9965.3108     46       216.6372
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' probRegressionIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1727  188     0.2584     0.1751     0.0128
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           866   94     0.2611     0.1633     0.0168
+clash           861   94     0.2557     0.1870     0.0193
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        this    898   94     0.2733     0.1862     0.0192
+        tap     829   94     0.2434     0.1628     0.0168
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   this    431   47     0.2866     0.1873     0.0273
+match   tap     435   47     0.2356     0.1324     0.0193
+clash   this    467   47     0.2601     0.1863     0.0272
+clash   tap     394   47     0.2513     0.1897     0.0277
+
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	         12.5517      1        12.5517   207.396  0.000 ***
+s/	          2.7839     46         0.0605
+
+clashty	          0.0014      1         0.0014     0.074  0.786 
+cs/	          0.8504     46         0.0185
+
+secondt	          0.0420      1         0.0420     2.176  0.147 
+ss/	          0.8878     46         0.0193
+
+cs	          0.0208      1         0.0208     0.835  0.366 
+css/	          1.1480     46         0.0250
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' firstFixationIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1727  188    19.2676    28.9241     2.1095
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           866   94    21.7664    32.2844     3.3299
+clash           861   94    16.7689    25.0460     2.5833
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        this    898   94    17.8813    30.6104     3.1572
+        tap     829   94    20.6539    27.2273     2.8083
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   this    431   47    23.9538    38.2802     5.5837
+match   tap     435   47    19.5789    25.1410     3.6672
+clash   this    467   47    11.8088    18.8052     2.7430
+clash   tap     394   47    21.7289    29.3996     4.2884
+
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	      69793.2161      1     69793.2161    40.112  0.000 ***
+s/	      80037.5184     46      1739.9461
+
+clashty	       1173.8270      1      1173.8270     2.572  0.116 
+cs/	      20994.6097     46       456.4046
+
+secondt	        361.3004      1       361.3004     0.643  0.427 
+ss/	      25848.1400     46       561.9161
+
+cs	       2401.1194      1      2401.1194     4.310  0.044 *
+css/	      25628.7946     46       557.1477
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1727  188   144.6870    77.0436     5.6190
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           866   94   151.3652    80.0205     8.2535
+clash           861   94   138.0088    73.7687     7.6087
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        this    898   94   143.0361    74.3815     7.6719
+        tap     829   94   146.3379    79.9821     8.2495
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   this    431   47   154.1243    82.2512    11.9976
+match   tap     435   47   148.6062    78.5172    11.4529
+clash   this    467   47   131.9479    64.5678     9.4182
+clash   tap     394   47   144.0697    82.2064    11.9910
+
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	    3935654.6721      1   3935654.6721   225.936  0.000 ***
+s/	     801289.0837     46     17419.3279
+
+clashty	       8384.5033      1      8384.5033     5.151  0.028 *
+cs/	      74869.6547     46      1627.6012
+
+secondt	        512.4065      1       512.4065     0.190  0.665 
+ss/	     123905.8351     46      2693.6051
+
+cs	       3656.2242      1      3656.2242     1.727  0.195 
+css/	      97361.6000     46      2116.5565
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/{print $2,$4,$7}' goPastIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1727  188   297.1589   179.3974    13.0839
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           866   94   293.1907   164.8212    17.0000
+clash           861   94   301.1270   193.6881    19.9774
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        this    898   94   296.7659   172.0069    17.7412
+        tap     829   94   297.5519   187.4200    19.3309
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   this    431   47   306.8432   186.2369    27.1654
+match   tap     435   47   279.5383   140.9168    20.5548
+clash   this    467   47   286.6886   157.8740    23.0283
+clash   tap     394   47   315.5655   224.7120    32.7776
+
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	   16601040.2133      1  16601040.2133   197.871  0.000 ***
+s/	    3859313.5921     46     83898.1216
+
+clashty	       2960.2886      1      2960.2886     0.167  0.684 
+cs/	     813780.7850     46     17690.8866
+
+secondt	         29.0386      1        29.0386     0.002  0.964 
+ss/	     665188.7793     46     14460.6256
+
+cs	      37087.6127      1     37087.6127     2.666  0.109 
+css/	     639941.9604     46     13911.7817
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/ && $7!=0{print $2,$4,$7}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1016  187   241.3406    74.4890     5.4472
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           518   94   247.2322    79.0382     8.1522
+clash           498   93   235.3856    69.5096     7.2078
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        tap     497   94   238.4486    74.4140     7.6752
+        this    519   93   244.2636    74.8533     7.7619
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   tap     263   47   239.0228    70.9916    10.3552
+match   this    255   47   255.4415    86.3270    12.5921
+clash   tap     234   47   237.8744    78.4525    11.4435
+clash   this    264   46   232.8427    59.7768     8.8136
+
+../anova: Unbalanced factor.
+../anova: Unbalanced factor.
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+../anova: No F table due to previous fatal error.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/ && $7!=0{print $2,$4,$7}' firstFixationIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                137   87   235.4866    70.1900     7.5252
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           79   48   230.5764    74.0869    10.6935
+clash           58   39   241.5299    65.5207    10.4917
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        tap     70   46   243.2355    71.2002    10.4979
+        this    67   41   226.7927    68.8665    10.7551
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   tap     38   23   225.8116    68.1651    14.2134
+match   this    41   25   234.9600    80.2994    16.0599
+clash   tap     32   23   260.6594    71.3309    14.8735
+clash   this    26   16   214.0312    45.2244    11.3061
+
+../anova: Unequal cell design did not have proportional cell sizes.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/ && $7!=0{print $2,$4,$7}' goPastIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1016  187   510.7052   300.6661    21.9869
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           516   94   513.3722   325.6184    33.5850
+clash           500   93   508.0095   274.9018    28.5060
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        tap     494   94   517.8501   358.5288    36.9794
+        this    522   93   503.4835   229.6095    23.8094
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   tap     260   47   523.8441   401.8090    58.6099
+match   this    256   47   502.9004   229.5323    33.4807
+clash   tap     234   47   511.8561   313.6180    45.7459
+clash   this    266   46   504.0794   232.2231    34.2394
+
+../anova: Unbalanced factor.
+../anova: Unbalanced factor.
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+../anova: No F table due to previous fatal error.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/ && $7!=0{print $2,$4,$6}' goPastIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1016  187   682.5199   316.5737    23.1502
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           516   94   669.6850   313.9749    32.3840
+clash           500   93   695.4928   320.3533    33.2191
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        tap     494   94   716.7380   316.1352    32.6069
+        this    522   93   647.9339   314.9336    32.6571
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   tap     260   47   681.3371   312.4394    45.5740
+match   this    256   47   658.0329   318.4458    46.4501
+clash   tap     234   47   752.1388   319.1807    46.5573
+clash   this    266   46   637.6153   314.4803    46.3676
+
+../anova: Unbalanced factor.
+../anova: Unbalanced factor.
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+../anova: No F table due to previous fatal error.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/ && $7!=0{print $2,$4,$6}' firstFixationIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                137   87   204.6245   132.7248    14.2296
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           79   48   210.7743   150.1330    21.6698
+clash           58   39   197.0556   109.0073    17.4551
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        tap     70   46   206.9022   127.1006    18.7400
+        this    67   41   202.0691   140.3124    21.9131
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   tap     38   23   220.1087   144.0979    30.0465
+match   this    41   25   202.1867   157.9446    31.5889
+clash   tap     32   23   193.6957   109.1536    22.7601
+clash   this    26   16   201.8854   112.1863    28.0466
+
+../anova: Unequal cell design did not have proportional cell sizes.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -F"," '$4~/_/ && $7!=0{print $2,$4,$6}' firstPassIXS_edited | tr "_" " "| ../anova subj clashtype secondtask time
+SOURCE: grand mean
+clashty secondt  n    N       MEAN         SD         SE
+                1016  187   578.4854   234.8624    17.1748
+
+SOURCE: clashtype 
+clashty secondt  n    N       MEAN         SD         SE
+match           518   94   575.7652   249.8453    25.7696
+clash           498   93   581.2348   220.0079    22.8138
+
+SOURCE: secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+        tap     497   94   614.2376   250.5112    25.8383
+        this    519   93   542.3487   213.2036    22.1082
+
+SOURCE: clashtype secondtask 
+clashty secondt  n    N       MEAN         SD         SE
+match   tap     263   47   605.7524   268.8365    39.2138
+match   this    255   47   545.7780   228.2361    33.2917
+clash   tap     234   47   622.7227   233.3576    34.0387
+clash   this    264   46   538.8449   199.1424    29.3619
+
+../anova: Unbalanced factor.
+../anova: Unbalanced factor.
+FACTOR  :       subj  clashtype secondtask       time 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+../anova: No F table due to previous fatal error.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$open .
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cat probFixationIXS_edited | awk -F"," '$4~/_/ {print "foo",$2,$7}' | ../anova 
+SOURCE: grand mean
+A        n    N       MEAN         SD         SE
+        1727   47    58.7476    18.1677     2.6500
+
+SOURCE: A 
+A        n    N       MEAN         SD         SE
+1       37    1    27.0270 
+2       37    1    81.0811 
+3       25    1    80.0000 
+4       37    1    67.5676 
+5       31    1    77.4194 
+6       36    1    72.2222 
+7       40    1    77.5000 
+8       38    1    76.3158 
+9       34    1    50.0000 
+10      34    1    70.5882 
+11      33    1    57.5758 
+12      25    1    64.0000 
+13      40    1    50.0000 
+14      39    1    92.3077 
+15      37    1    29.7297 
+16      32    1    34.3750 
+17      37    1    72.9730 
+18      37    1    86.4865 
+19      36    1    36.1111 
+20      39    1    71.7949 
+21      40    1    65.0000 
+22      40    1    77.5000 
+23      36    1    63.8889 
+24      40    1    62.5000 
+25      39    1    64.1026 
+26      38    1    39.4737 
+27      38    1    65.7895 
+28      36    1    66.6667 
+29      32    1    18.7500 
+30      40    1    67.5000 
+31      40    1    70.0000 
+32      38    1    23.6842 
+33      38    1    65.7895 
+34      40    1    52.5000 
+35      37    1    78.3784 
+36      37    1    45.9459 
+37      34    1    38.2353 
+38      36    1    47.2222 
+39      29    1    51.7241 
+40      39    1    43.5897 
+41      39    1    23.0769 
+42      40    1    67.5000 
+43      39    1    58.9744 
+44      39    1    71.7949 
+45      40    1    60.0000 
+46      39    1    58.9744 
+47      40    1    37.5000 
+
+../anova: Too few levels of factor RANDOM.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cat probFixationIXS_edited | awk -F"," '$4~/_/ {print "foo",$2,$7}' | ../anova | sort -k4,4n 
+../anova: Too few levels of factor RANDOM.
+
+
+A        n    N       MEAN         SD         SE
+A        n    N       MEAN         SD         SE
+SOURCE: A 
+SOURCE: grand mean
+        1727   47    58.7476    18.1677     2.6500
+29      32    1    18.7500 
+41      39    1    23.0769 
+32      38    1    23.6842 
+1       37    1    27.0270 
+15      37    1    29.7297 
+16      32    1    34.3750 
+19      36    1    36.1111 
+47      40    1    37.5000 
+37      34    1    38.2353 
+26      38    1    39.4737 
+40      39    1    43.5897 
+36      37    1    45.9459 
+38      36    1    47.2222 
+13      40    1    50.0000 
+9       34    1    50.0000 
+39      29    1    51.7241 
+34      40    1    52.5000 
+11      33    1    57.5758 
+43      39    1    58.9744 
+46      39    1    58.9744 
+45      40    1    60.0000 
+24      40    1    62.5000 
+23      36    1    63.8889 
+12      25    1    64.0000 
+25      39    1    64.1026 
+21      40    1    65.0000 
+27      38    1    65.7895 
+33      38    1    65.7895 
+28      36    1    66.6667 
+30      40    1    67.5000 
+42      40    1    67.5000 
+4       37    1    67.5676 
+31      40    1    70.0000 
+10      34    1    70.5882 
+20      39    1    71.7949 
+44      39    1    71.7949 
+6       36    1    72.2222 
+17      37    1    72.9730 
+8       38    1    76.3158 
+5       31    1    77.4194 
+22      40    1    77.5000 
+7       40    1    77.5000 
+35      37    1    78.3784 
+3       25    1    80.0000 
+2       37    1    81.0811 
+18      37    1    86.4865 
+14      39    1    92.3077 
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$emacs badsubs
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$emacs removebadsubs.awk
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$emacs badsubs 
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -f removebadsubs.awk probFixationIXS_edited | awk -F"," '$4~/_/ {print $2,$4,$7}' | tr "_" " "| ../anova 
+SOURCE: grand mean
+A       B        n    N       MEAN         SD         SE
+                1727  188    58.5655    22.2583     1.6234
+
+SOURCE: A 
+A       B        n    N       MEAN         SD         SE
+match           866   94    59.4314    20.2884     2.0926
+clash           861   94    57.6996    24.1466     2.4905
+
+SOURCE: B 
+A       B        n    N       MEAN         SD         SE
+        this    898   94    58.1636    21.0690     2.1731
+        tap     829   94    58.9674    23.4940     2.4232
+
+SOURCE: A B 
+A       B        n    N       MEAN         SD         SE
+match   this    431   47    59.2849    18.6832     2.7252
+match   tap     435   47    59.5778    21.9791     3.2060
+clash   this    467   47    57.0423    23.3629     3.4078
+clash   tap     394   47    58.3570    25.1413     3.6672
+
+FACTOR  :     RANDOM          A          B       DATA 
+LEVELS  :         47          2          2        188 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	     644824.5243      1    644824.5243   483.462  0.000 ***
+R/	      61353.1365     46      1333.7638
+
+A      	        140.9456      1       140.9456     0.731  0.397 
+AR/	       8863.6790     46       192.6887
+
+B      	         30.3680      1        30.3680     0.114  0.737 
+BR/	      12280.3491     46       266.9641
+
+AB	         12.2653      1        12.2653     0.057  0.813 
+ABR/	       9965.3108     46       216.6372
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -f removebadsubs.awk probFixationIXS_edited | awk -F"," '$4~/_/ {print $2,$4,$7}' | tr "_" " "| awk -f removebadsubs.awk| ../anova 
+SOURCE: grand mean
+A       B        n    N       MEAN         SD         SE
+                1178  128    69.2274    15.8899     1.4045
+
+SOURCE: A 
+A       B        n    N       MEAN         SD         SE
+clash           584   64    69.8221    15.9467     1.9933
+match           594   64    68.6328    15.9365     1.9921
+
+SOURCE: B 
+A       B        n    N       MEAN         SD         SE
+        tap     582   64    71.1229    16.1661     2.0208
+        this    596   64    67.3320    15.5031     1.9379
+
+SOURCE: A B 
+A       B        n    N       MEAN         SD         SE
+clash   tap     280   32    72.6711    14.6772     2.5946
+clash   this    304   32    66.9730    16.8706     2.9823
+match   tap     302   32    69.5747    17.6280     3.1162
+match   this    292   32    67.6910    14.2674     2.5221
+
+FACTOR  :     RANDOM          A          B       DATA 
+LEVELS  :         32          2          2        128 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	     613432.2192      1    613432.2192  1836.567  0.000 ***
+R/	      10354.3156     31       334.0102
+
+A      	         45.2593      1        45.2593     0.265  0.610 
+AR/	       5289.0285     31       170.6138
+
+B      	        459.8676      1       459.8676     1.747  0.196 
+BR/	       8158.9427     31       263.1917
+
+AB	        116.3986      1       116.3986     0.472  0.497 
+ABR/	       7642.3925     31       246.5288
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$fg
+-bash: fg: current: no such job
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$emacs badsubs
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -f removebadsubs.awk probFixationIXS_edited | awk -F"," '$4~/_/ {print $2,$4,$7}' | tr "_" " "| awk -f removebadsubs.awk| ../anova 
+SOURCE: grand mean
+A       B        n    N       MEAN         SD         SE
+                1544  168    62.6547    19.3038     1.4893
+
+SOURCE: A 
+A       B        n    N       MEAN         SD         SE
+clash           769   84    62.6256    20.3662     2.2221
+match           775   84    62.6838    18.3025     1.9970
+
+SOURCE: B 
+A       B        n    N       MEAN         SD         SE
+        tap     741   84    62.8397    21.2352     2.3170
+        this    803   84    62.4697    17.2847     1.8859
+
+SOURCE: A B 
+A       B        n    N       MEAN         SD         SE
+clash   tap     351   42    63.1425    22.0760     3.4064
+clash   this    418   42    62.1087    18.7560     2.8941
+match   tap     390   42    62.5368    20.6235     3.1823
+match   this    385   42    62.8307    15.8984     2.4532
+
+FACTOR  :     RANDOM          A          B       DATA 
+LEVELS  :         42          2          2        168 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	     659502.1223      1    659502.1223   779.256  0.000 ***
+R/	      34699.2226     41       846.3225
+
+A      	          0.1422      1         0.1422     0.001  0.977 
+AR/	       6995.4823     41       170.6215
+
+B      	          5.7493      1         5.7493     0.020  0.887 
+BR/	      11499.9361     41       280.4862
+
+AB	         18.5078      1        18.5078     0.084  0.773 
+ABR/	       9011.5402     41       219.7937
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$fg
+-bash: fg: current: no such job
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$emacs badsubs
+
+[1]+  Stopped                 emacs badsubs
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$awk -f removebadsubs.awk probFixationIXS_edited | awk -F"," '$4~/_/ {print $2,$4,$7}' | tr "_" " "| awk -f removebadsubs.awk| ../anova 
+SOURCE: grand mean
+A       B        n    N       MEAN         SD         SE
+                1364  148    66.1827    17.4670     1.4358
+
+SOURCE: A 
+A       B        n    N       MEAN         SD         SE
+clash           679   74    66.5872    18.1574     2.1108
+match           685   74    65.7781    16.8626     1.9602
+
+SOURCE: B 
+A       B        n    N       MEAN         SD         SE
+        tap     665   74    66.9664    18.8368     2.1897
+        this    699   74    65.3989    16.0718     1.8683
+
+SOURCE: A B 
+A       B        n    N       MEAN         SD         SE
+clash   tap     320   37    67.7370    19.1616     3.1501
+clash   this    359   37    65.4375    17.2817     2.8411
+match   tap     345   37    66.1958    18.7381     3.0805
+match   this    340   37    65.3604    15.0039     2.4666
+
+FACTOR  :     RANDOM          A          B       DATA 
+LEVELS  :         37          2          2        148 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	     648261.6607      1    648261.6607  1215.800  0.000 ***
+R/	      19195.1201     36       533.1978
+
+A      	         24.2247      1        24.2247     0.138  0.712 
+AR/	       6298.0345     36       174.9454
+
+B      	         90.9125      1        90.9125     0.313  0.579 
+BR/	      10463.0713     36       290.6409
+
+AB	         19.8274      1        19.8274     0.082  0.777 
+ABR/	       8757.8673     36       243.2741
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cat goPastIXS_edited | awk -F"," '$4~/_/ {print $2,$4,$7}' | tr "_" " "| awk -f removebadsubs.awk| ../anova 
+SOURCE: grand mean
+A       B        n    N       MEAN         SD         SE
+                1364  148   340.7910   171.2793    14.0791
+
+SOURCE: A 
+A       B        n    N       MEAN         SD         SE
+clash           679   74   358.8702   175.9191    20.4502
+match           685   74   322.7118   165.7252    19.2652
+
+SOURCE: B 
+A       B        n    N       MEAN         SD         SE
+        tap     665   74   341.7725   181.0987    21.0523
+        this    699   74   339.8095   162.0999    18.8437
+
+SOURCE: A B 
+A       B        n    N       MEAN         SD         SE
+clash   tap     320   37   377.3954   211.8437    34.8269
+clash   this    359   37   340.3451   131.0401    21.5429
+match   tap     345   37   306.1496   137.9065    22.6717
+match   this    340   37   339.2739   190.0278    31.2404
+
+FACTOR  :     RANDOM          A          B       DATA 
+LEVELS  :         37          2          2        148 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+
+SOURCE                SS     df             MS         F      p
+===============================================================
+mean	   17188498.5917      1  17188498.5917   259.945  0.000 ***
+R/	    2380447.0858     36     66123.5302
+
+A      	      48375.1596      1     48375.1596     2.900  0.097 
+AR/	     600526.3752     36     16681.2882
+
+B      	        142.5788      1       142.5788     0.008  0.928 
+BR/	     625118.4983     36     17364.4027
+
+AB	      45551.4922      1     45551.4922     2.678  0.110 
+ABR/	     612317.8140     36     17008.8282
+
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cat goPastIXS_edited | awk -F"," '$4~/_/ {print $3,$4,$7}' | tr "_" " "| awk -f removebadsubs.awk| ../anova 
+SOURCE: grand mean
+A       B        n    N       MEAN         SD         SE
+                1374  113   303.3027   160.2952    15.0793
+
+SOURCE: A 
+A       B        n    N       MEAN         SD         SE
+clash           685   57   296.3765   155.1186    20.5460
+match           689   56   310.3525   166.5048    22.2501
+
+SOURCE: B 
+A       B        n    N       MEAN         SD         SE
+        this    722   58   306.0176   170.6731    22.4105
+        tap     652   55   300.4397   150.0950    20.2388
+
+SOURCE: A B 
+A       B        n    N       MEAN         SD         SE
+clash   this    378   30   290.4776   158.4146    28.9224
+clash   tap     307   27   302.9309   154.1098    29.6584
+match   this    344   28   322.6677   184.3510    34.8391
+match   tap     345   28   298.0374   148.9114    28.1416
+
+../anova: Unbalanced factor.
+../anova: Unbalanced factor.
+FACTOR  :     RANDOM          A          B       DATA 
+LEVELS  :         32          2          2        128 
+TYPE    :     RANDOM     WITHIN     WITHIN       DATA 
+../anova: No F table due to previous fatal error.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cat goPastIXS_edited | awk -F"," '$4~/_/ {print $3,$4}' | sort | uniq -c
+  11 1 clash_tap
+  11 1 clash_this
+  14 1 match_tap
+  10 1 match_this
+  20 10 clash_this
+  11 10 match_tap
+  12 10 match_this
+  12 11 clash_tap
+  10 11 clash_this
+  24 11 match_tap
+   7 12 clash_tap
+  12 12 clash_this
+  11 12 match_tap
+  11 12 match_this
+  10 13 clash_tap
+  12 13 clash_this
+  21 13 match_this
+  11 14 clash_tap
+   7 14 clash_this
+  11 14 match_tap
+  11 14 match_this
+  12 15 clash_tap
+  10 15 clash_this
+  22 15 match_tap
+   9 16 clash_tap
+  12 16 clash_this
+  10 16 match_tap
+  10 16 match_this
+  11 17 clash_tap
+  12 17 clash_this
+  21 17 match_this
+  22 18 clash_this
+   9 18 match_tap
+  12 18 match_this
+  12 19 clash_tap
+  11 19 clash_this
+  10 19 match_tap
+  14 19 match_this
+  13 2 clash_tap
+  10 2 clash_this
+  10 2 match_tap
+  11 2 match_this
+   8 20 clash_tap
+  13 20 clash_this
+  11 20 match_tap
+  10 20 match_this
+  11 21 clash_tap
+  10 21 clash_this
+  13 21 match_tap
+   7 21 match_this
+  23 22 clash_this
+  11 22 match_tap
+  12 22 match_this
+  10 23 clash_tap
+  10 23 clash_this
+  22 23 match_tap
+   9 24 clash_tap
+  10 24 clash_this
+  12 24 match_tap
+  10 24 match_this
+   9 25 clash_tap
+  12 25 clash_this
+  22 25 match_this
+  13 26 clash_tap
+   9 26 clash_this
+  11 26 match_tap
+  10 26 match_this
+  10 27 clash_tap
+   8 27 clash_this
+  17 27 match_tap
+  24 28 clash_tap
+  10 28 match_tap
+  11 28 match_this
+  10 29 clash_tap
+  12 29 clash_this
+  13 29 match_tap
+   9 29 match_this
+  12 3 clash_tap
+  11 3 clash_this
+  10 3 match_tap
+  13 3 match_this
+  11 30 clash_tap
+  10 30 clash_this
+  11 30 match_tap
+  12 30 match_this
+  11 31 clash_tap
+  11 31 clash_this
+  10 31 match_tap
+  13 31 match_this
+  10 32 clash_tap
+  12 32 clash_this
+  10 32 match_tap
+  11 32 match_this
+  10 33 clash_tap
+  10 33 clash_this
+  21 33 match_this
+  23 34 clash_this
+  11 34 match_tap
+  12 34 match_this
+  11 35 clash_tap
+  11 35 clash_this
+   9 35 match_tap
+  12 35 match_this
+  10 36 clash_tap
+  12 36 clash_this
+  12 36 match_tap
+   9 36 match_this
+  10 37 clash_tap
+  12 37 clash_this
+  23 37 match_this
+  22 38 clash_this
+  11 38 match_tap
+  11 38 match_this
+  10 39 clash_tap
+  10 39 clash_this
+  21 39 match_tap
+   9 4 clash_tap
+  14 4 clash_this
+  12 4 match_tap
+  11 4 match_this
+  23 40 clash_tap
+  11 40 match_tap
+  11 40 match_this
+  11 5 clash_tap
+  12 5 clash_this
+  13 5 match_tap
+   9 5 match_this
+  14 6 clash_tap
+   8 6 clash_this
+  11 6 match_tap
+  10 6 match_this
+  11 7 clash_tap
+  10 7 clash_this
+  10 7 match_tap
+  12 7 match_this
+   9 8 clash_tap
+  11 8 clash_this
+  11 8 match_tap
+   7 8 match_this
+  10 9 clash_tap
+  12 9 clash_this
+  10 9 match_tap
+  10 9 match_this
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cat goPastIXS_edited | awk -F"," '$4~/_/ {print $3,$4}' | sort -n | uniq -c
+  11 1 clash_tap
+  11 1 clash_this
+  14 1 match_tap
+  10 1 match_this
+  13 2 clash_tap
+  10 2 clash_this
+  10 2 match_tap
+  11 2 match_this
+  12 3 clash_tap
+  11 3 clash_this
+  10 3 match_tap
+  13 3 match_this
+   9 4 clash_tap
+  14 4 clash_this
+  12 4 match_tap
+  11 4 match_this
+  11 5 clash_tap
+  12 5 clash_this
+  13 5 match_tap
+   9 5 match_this
+  14 6 clash_tap
+   8 6 clash_this
+  11 6 match_tap
+  10 6 match_this
+  11 7 clash_tap
+  10 7 clash_this
+  10 7 match_tap
+  12 7 match_this
+   9 8 clash_tap
+  11 8 clash_this
+  11 8 match_tap
+   7 8 match_this
+  10 9 clash_tap
+  12 9 clash_this
+  10 9 match_tap
+  10 9 match_this
+  20 10 clash_this
+  11 10 match_tap
+  12 10 match_this
+  12 11 clash_tap
+  10 11 clash_this
+  24 11 match_tap
+   7 12 clash_tap
+  12 12 clash_this
+  11 12 match_tap
+  11 12 match_this
+  10 13 clash_tap
+  12 13 clash_this
+  21 13 match_this
+  11 14 clash_tap
+   7 14 clash_this
+  11 14 match_tap
+  11 14 match_this
+  12 15 clash_tap
+  10 15 clash_this
+  22 15 match_tap
+   9 16 clash_tap
+  12 16 clash_this
+  10 16 match_tap
+  10 16 match_this
+  11 17 clash_tap
+  12 17 clash_this
+  21 17 match_this
+  22 18 clash_this
+   9 18 match_tap
+  12 18 match_this
+  12 19 clash_tap
+  11 19 clash_this
+  10 19 match_tap
+  14 19 match_this
+   8 20 clash_tap
+  13 20 clash_this
+  11 20 match_tap
+  10 20 match_this
+  11 21 clash_tap
+  10 21 clash_this
+  13 21 match_tap
+   7 21 match_this
+  23 22 clash_this
+  11 22 match_tap
+  12 22 match_this
+  10 23 clash_tap
+  10 23 clash_this
+  22 23 match_tap
+   9 24 clash_tap
+  10 24 clash_this
+  12 24 match_tap
+  10 24 match_this
+   9 25 clash_tap
+  12 25 clash_this
+  22 25 match_this
+  13 26 clash_tap
+   9 26 clash_this
+  11 26 match_tap
+  10 26 match_this
+  10 27 clash_tap
+   8 27 clash_this
+  17 27 match_tap
+  24 28 clash_tap
+  10 28 match_tap
+  11 28 match_this
+  10 29 clash_tap
+  12 29 clash_this
+  13 29 match_tap
+   9 29 match_this
+  11 30 clash_tap
+  10 30 clash_this
+  11 30 match_tap
+  12 30 match_this
+  11 31 clash_tap
+  11 31 clash_this
+  10 31 match_tap
+  13 31 match_this
+  10 32 clash_tap
+  12 32 clash_this
+  10 32 match_tap
+  11 32 match_this
+  10 33 clash_tap
+  10 33 clash_this
+  21 33 match_this
+  23 34 clash_this
+  11 34 match_tap
+  12 34 match_this
+  11 35 clash_tap
+  11 35 clash_this
+   9 35 match_tap
+  12 35 match_this
+  10 36 clash_tap
+  12 36 clash_this
+  12 36 match_tap
+   9 36 match_this
+  10 37 clash_tap
+  12 37 clash_this
+  23 37 match_this
+  22 38 clash_this
+  11 38 match_tap
+  11 38 match_this
+  10 39 clash_tap
+  10 39 clash_this
+  21 39 match_tap
+  23 40 clash_tap
+  11 40 match_tap
+  11 40 match_this
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cat goPastIXS_edited | awk -F"," '$4~/_/ {print $3,$4}' | sort -n | uniq | colex 1 | uniq -c
+-bash: colex: command not found
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cat goPastIXS_edited | awk -F"," '$4~/_/ {print $3,$4}' | sort -n | uniq | awk '{print $1}'| uniq -c
+   4 1
+   4 2
+   4 3
+   4 4
+   4 5
+   4 6
+   4 7
+   4 8
+   4 9
+   3 10
+   3 11
+   4 12
+   3 13
+   4 14
+   3 15
+   4 16
+   3 17
+   3 18
+   4 19
+   4 20
+   4 21
+   3 22
+   3 23
+   4 24
+   3 25
+   4 26
+   3 27
+   3 28
+   4 29
+   4 30
+   4 31
+   4 32
+   3 33
+   3 34
+   4 35
+   4 36
+   3 37
+   3 38
+   3 39
+   3 40
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cat goPastIXS_edited | awk -F"," '$4~/_/ {print $3,$4}' | sort -n | uniq | awk '{print $1}'| uniq -c | sort -n
+   3 10
+   3 11
+   3 13
+   3 15
+   3 17
+   3 18
+   3 22
+   3 23
+   3 25
+   3 27
+   3 28
+   3 33
+   3 34
+   3 37
+   3 38
+   3 39
+   3 40
+   4 1
+   4 12
+   4 14
+   4 16
+   4 19
+   4 2
+   4 20
+   4 21
+   4 24
+   4 26
+   4 29
+   4 3
+   4 30
+   4 31
+   4 32
+   4 35
+   4 36
+   4 4
+   4 5
+   4 6
+   4 7
+   4 8
+   4 9
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cat goPastIXS_edited | awk -F"," '$4~/_/ {print $3,$4}' | sort -n | uniq | awk '{print $1}'| uniq -c | awk '$1==3' | wc -l
+      17
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cat goPastIXS_edited | awk -F"," '$4~/_/ {print $3,$4}' | sort -n | uniq | awk '{print $1}'| uniq -c | awk '$1==4' | wc -l
+      23
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/eyedry/edited_originals]$cd /Users/irene/itang1@swat/PSYC180/limerick1_workspace/data/original_asc 
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$emacs retrieveTrialInfo.awk
+
+[2]+  Stopped                 emacs retrieveTrialInfo.awk
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | more
+     
+5t.asc 161^M FILLLER^M tap^M D^M FILLLER
+5t.asc 131^M clash^M tap^M D^M permit.
+5t.asc 162^M FILLLER^M this^M D^M FILLLER
+5t.asc 163^M FILLLER^M tap^M D^M FILLLER
+5t.asc 16^M match^M tap^M D^M refund.
+5t.asc 164^M FILLLER^M this^M D^M FILLLER
+5t.asc 165^M FILLLER^M tap^M D^M FILLLER
+5t.asc 141^M clash^M this^M D^M address.
+5t.asc 121^M clash^M this^M D^M pervert.
+5t.asc 166^M FILLLER^M this^M D^M FILLLER
+5t.asc 167^M FILLLER^M tap^M D^M FILLLER
+5t.asc 153^M clash^M this^M D^M entrance.
+5t.asc 168^M FILLLER^M this^M D^M FILLLER
+5t.asc 137^M clash^M this^M D^M survey.
+5t.asc 169^M FILLLER^M tap^M D^M FILLLER
+5t.asc 170^M FILLLER^M this^M D^M FILLLER
+5t.asc 147^M clash^M tap^M D^M compound
+5t.asc 171^M FILLLER^M tap^M D^M FILLLER
+5t.asc 172^M FILLLER^M this^M D^M FILLLER
+5t.asc 14^M match^M this^M D^M rebound.
+5t.asc 173^M FILLLER^M tap^M D^M FILLLER
+5t.asc 143^M clash^M tap^M D^M combat,
+5t.asc 174^M FILLLER^M this^M D^M FILLLER
+5t.asc 32^M match^M tap^M D^M detail.
+5t.asc 175^M FILLLER^M tap^M D^M FILLLER
+5t.asc 176^M FILLLER^M this^M D^M FILLLER
+5t.asc 22^M match^M this^M D^M ally.
+5t.asc 177^M FILLLER^M tap^M D^M FILLLER
+5t.asc 178^M FILLLER^M this^M D^M FILLLER
+5t.asc 8^M match^M tap^M D^M imports.
+5t.asc 10^M match^M this^M D^M object.
+5t.asc 179^M FILLLER^M tap^M D^M FILLLER
+5t.asc 180^M FILLLER^M this^M D^M FILLLER
+5t.asc 151^M clash^M tap^M D^M desert.
+5t.asc 181^M FILLLER^M tap^M D^M FILLLER
+5t.asc 182^M FILLLER^M this^M D^M FILLLER
+5t.asc 30^M match^M this^M D^M convict.
+5t.asc 183^M FILLLER^M tap^M D^M FILLLER
+5t.asc 184^M FILLLER^M this^M D^M FILLLER
+5t.asc 155^M clash^M tap^M D^M produce.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\012" | more
+     5t.asc 161^M FILLLER^M tap^M D^M FILLLER^M5t.asc 131^M clash^M tap^M D^M permit.^M5t.asc 162^M FILLLER^M this^M D^M FILLLER^M5t.asc 163^M FILLLER^M tap^M D^M FILLLER^M5t.asc 16^M match^M tap^M D^M refund.^M5t.asc 164^M FILLLER^M this^M D^M FILLLER^M5t.asc 165^M FILLLER^M^M tap^M D^M FILLLER^M5t.asc 141^M clash^M this^M D^M address.^M5t.asc 121^M clash^M this^M D^M pervert.^M5t.asc 166^M FILLLER^M this^M D^M FILLLER^M5t.asc 167^M FILLLER^M tap^M D^M FILLLER^M5t.asc 153^M clash^M this^M D^M entrance.^M5t.asc 168^M FILLLER^M this^M D^M FILLLER
+^M5t.asc 137^M clash^M this^M D^M survey.^M5t.asc 169^M FILLLER^M tap^M D^M FILLLER^M5t.asc 170^M FILLLER^M this^M D^M FILLLER^M5t.asc 147^M clash^M tap^M D^M compound^M5t.asc 171^M FILLLER^M tap^M D^M FILLLER^M5t.asc 172^M FILLLER^M this^M D^M FILLLER^M5t.asc 14^M match^M this^M D^M rebound.^M5t.asc 173^M FILLLER^M tap^M D^M FILLLER^M5t.asc 143^M clash^M tap^M D^M combat,^M5t.asc 174^M FILLLER^M this^M D^M FILLLER^M5t.asc 32^M match^M tap^M D^M detail.^M5t.asc 175^M FILLLER^M tap^M D^M FILLLER^M5t.asc 176^M FILLLER^M this^M D^M FILLLER^M5t.asc 22^M match^M this^M D^M ally.^M5t.asc 177^M FILLLER^M tap^M D^M FILLLER^M5t.asc 178^M FILLLER^M this^M D^M FILLLER^M5t.asc 8^M match^M tap^M D^M imports.^M5t.asc 10^M match^M this^M D^M^M object.^M5t.asc 179^M FILLLER^M tap^M D^M FILLLER^M5t.asc 180^M FILLLER^M this^M D^M FILLLER^M5t.asc 151^M clash^M tap^M D^M desert.^M5t.asc 181^M FILLLER^M tap^M D^M FILLLER^M5t.asc 182^M FILLLER^M this^M D^M FILLLER^M5t.asc 30^M match^M this^M D^M convict.^M5t.asc 183^M FILLLER^M tap^M D^M FILLLER^M5t.asc 184^M FILLLER^M this^M D^M FILLLER^M5t.asc 155^M clash^M^M tap^M D^M produce.^M5t.asc 6^M match^M this^M D^M discount.^M5t.asc 185^M FILLLER^M tap^M^M D^M FILLLER^M5t.asc 186^M FILLLER^M this^M D^M FILLLER^M5t.asc 26^M match^M this^M D^M compact:^M5t.asc 187^M FILLLER^M tap^M D^M FILLLER^M5t.asc 188^M FILLLER^M this^M D^M FILLLER
+^M5t.asc 133^M clash^M this^M D^M protest.^M5t.asc 189^M FILLLER^M tap^M D^M FILLLER^M5t.asc 2^M match^M this^M D^M complex^M5t.asc 190^M FILLLER^M this^M D^M FILLLER^M5t.asc 191^M FILLLER^M tap^M D^M FILLLER^M5t.asc 38^M match^M this^M D^M rebel.^M5t.asc 192^M FILLLER^M this^M D^M FILLLER^M5t.asc 139^M clash^M tap^M D^M transplant.^M5t.asc 193^M FILLLER^M tap^M D^M^M FILLLER^M5t.asc 194^M FILLLER^M this^M D^M FILLLER^M5t.asc 40^M match^M tap^M D^M relay.
+^M5t.asc 195^M FILLLER^M tap^M D^M FILLLER^M5t.asc 196^M FILLLER^M this^M D^M FILLLER^M5t.asc 4^M match^M tap^M D^M defect.^M5t.asc 145^M clash^M this^M D^M commune^M5t.asc 197^M FILLLER^M tap^M D^M FILLLER^M5t.asc 198^M FILLLER^M this^M D^M FILLLER^M5t.asc 36^M match^M tap^M^M D^M progress.^M5t.asc 199^M FILLLER^M tap^M D^M FILLLER^M5t.asc 200^M FILLLER^M this^M D
+^M FILLLER^M5t.asc 125^M clash^M this^M D^M digest.^M5t.asc 201^M FILLLER^M tap^M D^M FILLLER^M5t.asc 159^M clash^M tap^M D^M record^M5t.asc 202^M FILLLER^M this^M D^M FILLLER^M5t.asc 203^M FILLLER^M tap^M D^M FILLLER^M5t.asc 18^M match^M this^M D^M suspect.^M5t.asc 204^M FILLLER^M this^M D^M FILLLER^M5t.asc 20^M match^M tap^M D^M transport^M5t.asc 205^M FILLLER^M tap^M D^M FILLLER^M5t.asc 127^M clash^M tap^M D^M extract^M5t.asc 206^M FILLLER^M this^M D^M FILLLER^M5t.asc 207^M FILLLER^M tap^M D^M FILLLER^M5t.asc 12^M match^M tap^M D^M proceeds.^M^M5t.asc 208^M FILLLER^M this^M D^M FILLLER^M5t.asc 209^M FILLLER^M tap^M D^M FILLLER^M5t.asc 157^M clash^M this^M D^M projects.^M5t.asc 210^M FILLLER^M this^M D^M FILLLER^M5t.asc 135
+^M clash^M tap^M D^M recall.^M5t.asc 211^M FILLLER^M tap^M D^M FILLLER^M5t.asc 212^M FILLLER^M this^M D^M FILLLER^M5t.asc 24^M match^M tap^M D^M combine^M5t.asc 213^M FILLLER^M tap^M D^M FILLLER^M5t.asc 214^M FILLLER^M this^M D^M FILLLER^M5t.asc 34^M match^M this^M D^M presenirene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | more
+     
+5t.asc 161 FILLLER tap D FILLLER
+5t.asc 131 clash tap D permit.
+5t.asc 162 FILLLER this D FILLLER
+5t.asc 163 FILLLER tap D FILLLER
+5t.asc 16 match tap D refund.
+5t.asc 164 FILLLER this D FILLLER
+5t.asc 165 FILLLER tap D FILLLER
+5t.asc 141 clash this D address.
+5t.asc 121 clash this D pervert.
+5t.asc 166 FILLLER this D FILLLER
+5t.asc 167 FILLLER tap D FILLLER
+5t.asc 153 clash this D entrance.
+5t.asc 168 FILLLER this D FILLLER
+5t.asc 137 clash this D survey.
+5t.asc 169 FILLLER tap D FILLLER
+5t.asc 170 FILLLER this D FILLLER
+5t.asc 147 clash tap D compound
+5t.asc 171 FILLLER tap D FILLLER
+5t.asc 172 FILLLER this D FILLLER
+5t.asc 14 match this D rebound.
+5t.asc 173 FILLLER tap D FILLLER
+5t.asc 143 clash tap D combat,
+5t.asc 174 FILLLER this D FILLLER
+5t.asc 32 match tap D detail.
+5t.asc 175 FILLLER tap D FILLLER
+5t.asc 176 FILLLER this D FILLLER
+5t.asc 22 match this D ally.
+5t.asc 177 FILLLER tap D FILLLER
+5t.asc 178 FILLLER this D FILLLER
+5t.asc 8 match tap D imports.
+5t.asc 10 match this D object.
+5t.asc 179 FILLLER tap D FILLLER
+5t.asc 180 FILLLER this D FILLLER
+5t.asc 151 clash tap D desert.
+5t.asc 181 FILLLER tap D FILLLER
+5t.asc 182 FILLLER this D FILLLER
+5t.asc 30 match this D convict.
+5t.asc 183 FILLLER tap D FILLLER
+5t.asc 184 FILLLER this D FILLLER
+5t.asc 155 clash tap D produce.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $1,$2}' | sort | uniq -c
+   1  
+   1 5t.asc 10
+   1 5t.asc 12
+   1 5t.asc 121
+   1 5t.asc 123
+   1 5t.asc 125
+   1 5t.asc 127
+   1 5t.asc 129
+   1 5t.asc 131
+   1 5t.asc 133
+   1 5t.asc 135
+   1 5t.asc 137
+   1 5t.asc 139
+   1 5t.asc 14
+   1 5t.asc 141
+   1 5t.asc 143
+   1 5t.asc 145
+   1 5t.asc 147
+   1 5t.asc 149
+   1 5t.asc 151
+   1 5t.asc 153
+   1 5t.asc 155
+   1 5t.asc 157
+   1 5t.asc 159
+   1 5t.asc 16
+   1 5t.asc 18
+   1 5t.asc 2
+   1 5t.asc 20
+   1 5t.asc 22
+   1 5t.asc 24
+   1 5t.asc 26
+   1 5t.asc 28
+   1 5t.asc 30
+   1 5t.asc 32
+   1 5t.asc 34
+   1 5t.asc 36
+   1 5t.asc 38
+   1 5t.asc 4
+   1 5t.asc 40
+   1 5t.asc 6
+   1 5t.asc 8
+   1 f181050_all.asc 1
+   1 f181050_all.asc 11
+   1 f181050_all.asc 122
+   1 f181050_all.asc 124
+   1 f181050_all.asc 126
+   1 f181050_all.asc 128
+   1 f181050_all.asc 13
+   1 f181050_all.asc 130
+   1 f181050_all.asc 132
+   1 f181050_all.asc 134
+   1 f181050_all.asc 136
+   1 f181050_all.asc 138
+   1 f181050_all.asc 140
+   1 f181050_all.asc 142
+   1 f181050_all.asc 144
+   1 f181050_all.asc 146
+   1 f181050_all.asc 148
+   1 f181050_all.asc 15
+   1 f181050_all.asc 150
+   1 f181050_all.asc 152
+   1 f181050_all.asc 154
+   1 f181050_all.asc 156
+   1 f181050_all.asc 158
+   1 f181050_all.asc 160
+   1 f181050_all.asc 17
+   1 f181050_all.asc 19
+   1 f181050_all.asc 21
+   1 f181050_all.asc 23
+   1 f181050_all.asc 25
+   1 f181050_all.asc 27
+   1 f181050_all.asc 29
+   1 f181050_all.asc 3
+   1 f181050_all.asc 31
+   1 f181050_all.asc 33
+   1 f181050_all.asc 35
+   1 f181050_all.asc 37
+   1 f181050_all.asc 39
+   1 f181050_all.asc 5
+   1 f181050_all.asc 7
+   1 f181050_all.asc 9
+   1 f181051.asc 10
+   1 f181051.asc 12
+   1 f181051.asc 121
+   1 f181051.asc 123
+   1 f181051.asc 125
+   1 f181051.asc 127
+   1 f181051.asc 129
+   1 f181051.asc 131
+   1 f181051.asc 133
+   1 f181051.asc 135
+   1 f181051.asc 137
+   1 f181051.asc 139
+   1 f181051.asc 14
+   1 f181051.asc 141
+   1 f181051.asc 143
+   1 f181051.asc 145
+   1 f181051.asc 147
+   1 f181051.asc 149
+   1 f181051.asc 151
+   1 f181051.asc 153
+   1 f181051.asc 155
+   1 f181051.asc 157
+   1 f181051.asc 159
+   1 f181051.asc 16
+   1 f181051.asc 18
+   1 f181051.asc 2
+   1 f181051.asc 20
+   1 f181051.asc 22
+   1 f181051.asc 24
+   1 f181051.asc 26
+   1 f181051.asc 28
+   1 f181051.asc 30
+   1 f181051.asc 32
+   1 f181051.asc 34
+   1 f181051.asc 36
+   1 f181051.asc 38
+   1 f181051.asc 4
+   1 f181051.asc 40
+   1 f181051.asc 6
+   1 f181051.asc 8
+   1 f181052.asc 1
+   1 f181052.asc 11
+   1 f181052.asc 122
+   1 f181052.asc 124
+   1 f181052.asc 126
+   1 f181052.asc 128
+   1 f181052.asc 13
+   1 f181052.asc 130
+   2 f181052.asc 132
+   1 f181052.asc 134
+   1 f181052.asc 136
+   1 f181052.asc 138
+   1 f181052.asc 140
+   1 f181052.asc 142
+   1 f181052.asc 144
+   1 f181052.asc 146
+   1 f181052.asc 148
+   1 f181052.asc 15
+   1 f181052.asc 150
+   1 f181052.asc 152
+   1 f181052.asc 154
+   1 f181052.asc 156
+   1 f181052.asc 158
+   1 f181052.asc 160
+   1 f181052.asc 162
+   1 f181052.asc 17
+   1 f181052.asc 19
+   1 f181052.asc 21
+   1 f181052.asc 23
+   1 f181052.asc 25
+   1 f181052.asc 27
+   1 f181052.asc 29
+   1 f181052.asc 3
+   1 f181052.asc 31
+   1 f181052.asc 33
+   1 f181052.asc 35
+   1 f181052.asc 37
+   1 f181052.asc 39
+   1 f181052.asc 5
+   1 f181052.asc 7
+   1 f181052.asc 9
+   1 f181053.asc 10
+   1 f181053.asc 12
+   1 f181053.asc 121
+   1 f181053.asc 123
+   1 f181053.asc 125
+   1 f181053.asc 127
+   1 f181053.asc 129
+   2 f181053.asc 131
+   1 f181053.asc 133
+   1 f181053.asc 135
+   1 f181053.asc 137
+   1 f181053.asc 139
+   1 f181053.asc 14
+   1 f181053.asc 141
+   1 f181053.asc 143
+   1 f181053.asc 145
+   1 f181053.asc 147
+   1 f181053.asc 149
+   1 f181053.asc 151
+   1 f181053.asc 153
+   1 f181053.asc 155
+   1 f181053.asc 157
+   1 f181053.asc 159
+   1 f181053.asc 16
+   1 f181053.asc 162
+   1 f181053.asc 18
+   1 f181053.asc 2
+   1 f181053.asc 20
+   1 f181053.asc 22
+   1 f181053.asc 24
+   1 f181053.asc 26
+   1 f181053.asc 28
+   1 f181053.asc 30
+   1 f181053.asc 32
+   1 f181053.asc 34
+   1 f181053.asc 36
+   1 f181053.asc 38
+   1 f181053.asc 4
+   1 f181053.asc 40
+   1 f181053.asc 6
+   1 f181053.asc 8
+   1 f181054.asc 1
+   1 f181054.asc 11
+   1 f181054.asc 122
+   1 f181054.asc 124
+   1 f181054.asc 126
+   1 f181054.asc 128
+   1 f181054.asc 13
+   1 f181054.asc 130
+   1 f181054.asc 132
+   1 f181054.asc 134
+   1 f181054.asc 136
+   1 f181054.asc 138
+   1 f181054.asc 140
+   1 f181054.asc 142
+   1 f181054.asc 144
+   1 f181054.asc 146
+   1 f181054.asc 148
+   1 f181054.asc 15
+   1 f181054.asc 150
+   1 f181054.asc 152
+   1 f181054.asc 154
+   1 f181054.asc 156
+   1 f181054.asc 158
+   1 f181054.asc 160
+   1 f181054.asc 17
+   1 f181054.asc 19
+   1 f181054.asc 21
+   1 f181054.asc 23
+   1 f181054.asc 25
+   1 f181054.asc 27
+   1 f181054.asc 29
+   1 f181054.asc 3
+   1 f181054.asc 31
+   1 f181054.asc 33
+   1 f181054.asc 35
+   1 f181054.asc 37
+   1 f181054.asc 39
+   1 f181054.asc 5
+   1 f181054.asc 7
+   1 f181054.asc 9
+   1 f181055.asc 10
+   1 f181055.asc 12
+   1 f181055.asc 121
+   1 f181055.asc 123
+   1 f181055.asc 125
+   1 f181055.asc 127
+   1 f181055.asc 129
+   1 f181055.asc 131
+   1 f181055.asc 133
+   1 f181055.asc 135
+   1 f181055.asc 137
+   1 f181055.asc 139
+   1 f181055.asc 14
+   1 f181055.asc 141
+   1 f181055.asc 143
+   1 f181055.asc 145
+   1 f181055.asc 147
+   1 f181055.asc 149
+   1 f181055.asc 151
+   1 f181055.asc 153
+   1 f181055.asc 155
+   1 f181055.asc 157
+   1 f181055.asc 159
+   1 f181055.asc 16
+   1 f181055.asc 18
+   1 f181055.asc 2
+   1 f181055.asc 20
+   1 f181055.asc 22
+   1 f181055.asc 24
+   1 f181055.asc 26
+   1 f181055.asc 28
+   1 f181055.asc 30
+   1 f181055.asc 32
+   1 f181055.asc 34
+   1 f181055.asc 36
+   1 f181055.asc 38
+   1 f181055.asc 4
+   1 f181055.asc 40
+   1 f181055.asc 6
+   1 f181055.asc 8
+   1 f181056.asc 1
+   1 f181056.asc 11
+   1 f181056.asc 122
+   1 f181056.asc 124
+   1 f181056.asc 126
+   1 f181056.asc 128
+   1 f181056.asc 13
+   1 f181056.asc 130
+   1 f181056.asc 132
+   1 f181056.asc 134
+   1 f181056.asc 136
+   1 f181056.asc 138
+   1 f181056.asc 140
+   1 f181056.asc 142
+   1 f181056.asc 144
+   1 f181056.asc 146
+   1 f181056.asc 148
+   1 f181056.asc 15
+   1 f181056.asc 150
+   1 f181056.asc 152
+   1 f181056.asc 154
+   1 f181056.asc 156
+   1 f181056.asc 158
+   1 f181056.asc 160
+   1 f181056.asc 17
+   1 f181056.asc 19
+   1 f181056.asc 21
+   1 f181056.asc 23
+   1 f181056.asc 25
+   1 f181056.asc 27
+   1 f181056.asc 29
+   1 f181056.asc 3
+   1 f181056.asc 31
+   1 f181056.asc 33
+   1 f181056.asc 35
+   1 f181056.asc 37
+   1 f181056.asc 39
+   1 f181056.asc 5
+   1 f181056.asc 7
+   1 f181056.asc 9
+   1 f181057.asc 10
+   1 f181057.asc 12
+   1 f181057.asc 121
+   1 f181057.asc 123
+   1 f181057.asc 125
+   1 f181057.asc 127
+   1 f181057.asc 129
+   1 f181057.asc 131
+   1 f181057.asc 133
+   1 f181057.asc 135
+   1 f181057.asc 137
+   1 f181057.asc 139
+   1 f181057.asc 14
+   1 f181057.asc 141
+   1 f181057.asc 143
+   1 f181057.asc 145
+   1 f181057.asc 147
+   1 f181057.asc 149
+   1 f181057.asc 151
+   1 f181057.asc 153
+   1 f181057.asc 155
+   1 f181057.asc 157
+   1 f181057.asc 159
+   1 f181057.asc 16
+   1 f181057.asc 18
+   1 f181057.asc 2
+   1 f181057.asc 20
+   1 f181057.asc 22
+   1 f181057.asc 24
+   1 f181057.asc 26
+   1 f181057.asc 28
+   1 f181057.asc 30
+   1 f181057.asc 32
+   1 f181057.asc 34
+   1 f181057.asc 36
+   1 f181057.asc 38
+   1 f181057.asc 4
+   1 f181057.asc 40
+   1 f181057.asc 6
+   1 f181057.asc 8
+   1 f181059.asc 1
+   1 f181059.asc 11
+   1 f181059.asc 122
+   1 f181059.asc 124
+   1 f181059.asc 126
+   1 f181059.asc 128
+   1 f181059.asc 13
+   1 f181059.asc 130
+   1 f181059.asc 132
+   1 f181059.asc 134
+   1 f181059.asc 136
+   1 f181059.asc 138
+   1 f181059.asc 140
+   1 f181059.asc 142
+   1 f181059.asc 144
+   1 f181059.asc 146
+   1 f181059.asc 148
+   1 f181059.asc 15
+   1 f181059.asc 150
+   1 f181059.asc 152
+   1 f181059.asc 154
+   1 f181059.asc 156
+   1 f181059.asc 158
+   1 f181059.asc 160
+   1 f181059.asc 17
+   1 f181059.asc 19
+   1 f181059.asc 21
+   1 f181059.asc 23
+   1 f181059.asc 25
+   1 f181059.asc 27
+   1 f181059.asc 29
+   1 f181059.asc 3
+   1 f181059.asc 31
+   1 f181059.asc 33
+   1 f181059.asc 35
+   1 f181059.asc 37
+   1 f181059.asc 39
+   1 f181059.asc 5
+   1 f181059.asc 7
+   1 f181059.asc 9
+   1 f181060t.asc 10
+   1 f181060t.asc 12
+   1 f181060t.asc 121
+   1 f181060t.asc 123
+   1 f181060t.asc 125
+   1 f181060t.asc 127
+   1 f181060t.asc 129
+   1 f181060t.asc 131
+   1 f181060t.asc 133
+   1 f181060t.asc 135
+   1 f181060t.asc 137
+   1 f181060t.asc 139
+   1 f181060t.asc 14
+   1 f181060t.asc 141
+   1 f181060t.asc 143
+   1 f181060t.asc 145
+   1 f181060t.asc 147
+   1 f181060t.asc 149
+   1 f181060t.asc 151
+   1 f181060t.asc 153
+   1 f181060t.asc 155
+   1 f181060t.asc 157
+   1 f181060t.asc 159
+   1 f181060t.asc 16
+   1 f181060t.asc 18
+   1 f181060t.asc 2
+   1 f181060t.asc 20
+   1 f181060t.asc 22
+   1 f181060t.asc 24
+   1 f181060t.asc 26
+   1 f181060t.asc 28
+   1 f181060t.asc 30
+   1 f181060t.asc 32
+   1 f181060t.asc 34
+   1 f181060t.asc 36
+   1 f181060t.asc 38
+   1 f181060t.asc 4
+   1 f181060t.asc 40
+   1 f181060t.asc 6
+   1 f181060t.asc 8
+   1 f181062.asc 10
+   1 f181062.asc 12
+   1 f181062.asc 121
+   1 f181062.asc 123
+   1 f181062.asc 125
+   1 f181062.asc 127
+   1 f181062.asc 129
+   1 f181062.asc 131
+   1 f181062.asc 133
+   1 f181062.asc 135
+   1 f181062.asc 137
+   1 f181062.asc 139
+   1 f181062.asc 14
+   1 f181062.asc 141
+   1 f181062.asc 143
+   1 f181062.asc 145
+   1 f181062.asc 147
+   1 f181062.asc 149
+   1 f181062.asc 151
+   1 f181062.asc 153
+   1 f181062.asc 155
+   1 f181062.asc 157
+   1 f181062.asc 159
+   1 f181062.asc 16
+   1 f181062.asc 18
+   1 f181062.asc 2
+   1 f181062.asc 20
+   1 f181062.asc 22
+   1 f181062.asc 24
+   1 f181062.asc 26
+   1 f181062.asc 28
+   1 f181062.asc 30
+   1 f181062.asc 32
+   1 f181062.asc 34
+   1 f181062.asc 36
+   1 f181062.asc 38
+   1 f181062.asc 4
+   1 f181062.asc 40
+   1 f181062.asc 6
+   1 f181062.asc 8
+   1 f181063.asc 1
+   1 f181063.asc 11
+   1 f181063.asc 122
+   1 f181063.asc 124
+   1 f181063.asc 126
+   1 f181063.asc 128
+   1 f181063.asc 13
+   1 f181063.asc 130
+   1 f181063.asc 132
+   1 f181063.asc 134
+   1 f181063.asc 136
+   1 f181063.asc 138
+   1 f181063.asc 140
+   1 f181063.asc 142
+   1 f181063.asc 144
+   1 f181063.asc 146
+   1 f181063.asc 148
+   1 f181063.asc 15
+   1 f181063.asc 150
+   1 f181063.asc 152
+   1 f181063.asc 154
+   1 f181063.asc 156
+   1 f181063.asc 158
+   1 f181063.asc 160
+   1 f181063.asc 17
+   1 f181063.asc 19
+   1 f181063.asc 21
+   1 f181063.asc 23
+   1 f181063.asc 25
+   1 f181063.asc 27
+   1 f181063.asc 29
+   1 f181063.asc 3
+   1 f181063.asc 31
+   1 f181063.asc 33
+   1 f181063.asc 35
+   1 f181063.asc 37
+   1 f181063.asc 39
+   1 f181063.asc 5
+   1 f181063.asc 7
+   1 f181063.asc 9
+   1 f181064.asc 10
+   1 f181064.asc 12
+   1 f181064.asc 121
+   1 f181064.asc 123
+   1 f181064.asc 125
+   1 f181064.asc 127
+   1 f181064.asc 129
+   1 f181064.asc 131
+   1 f181064.asc 133
+   1 f181064.asc 135
+   1 f181064.asc 137
+   1 f181064.asc 139
+   1 f181064.asc 14
+   1 f181064.asc 141
+   1 f181064.asc 143
+   1 f181064.asc 145
+   1 f181064.asc 147
+   1 f181064.asc 149
+   1 f181064.asc 151
+   1 f181064.asc 153
+   1 f181064.asc 155
+   1 f181064.asc 157
+   1 f181064.asc 159
+   1 f181064.asc 16
+   1 f181064.asc 18
+   1 f181064.asc 2
+   1 f181064.asc 20
+   1 f181064.asc 22
+   1 f181064.asc 24
+   1 f181064.asc 26
+   1 f181064.asc 28
+   1 f181064.asc 30
+   1 f181064.asc 32
+   1 f181064.asc 34
+   1 f181064.asc 36
+   1 f181064.asc 38
+   1 f181064.asc 4
+   1 f181064.asc 40
+   1 f181064.asc 6
+   1 f181064.asc 8
+   1 f181065.asc 1
+   1 f181065.asc 11
+   1 f181065.asc 122
+   1 f181065.asc 124
+   1 f181065.asc 126
+   1 f181065.asc 128
+   1 f181065.asc 13
+   1 f181065.asc 130
+   1 f181065.asc 132
+   1 f181065.asc 134
+   1 f181065.asc 136
+   1 f181065.asc 138
+   1 f181065.asc 140
+   1 f181065.asc 142
+   1 f181065.asc 144
+   1 f181065.asc 146
+   1 f181065.asc 148
+   1 f181065.asc 15
+   1 f181065.asc 150
+   1 f181065.asc 152
+   1 f181065.asc 154
+   1 f181065.asc 156
+   1 f181065.asc 158
+   1 f181065.asc 160
+   1 f181065.asc 17
+   1 f181065.asc 19
+   1 f181065.asc 21
+   1 f181065.asc 23
+   1 f181065.asc 25
+   1 f181065.asc 27
+   1 f181065.asc 29
+   1 f181065.asc 3
+   1 f181065.asc 31
+   1 f181065.asc 33
+   1 f181065.asc 35
+   1 f181065.asc 37
+   1 f181065.asc 39
+   1 f181065.asc 5
+   1 f181065.asc 7
+   1 f181065.asc 9
+   1 f181066.asc 10
+   1 f181066.asc 12
+   1 f181066.asc 121
+   1 f181066.asc 123
+   1 f181066.asc 125
+   1 f181066.asc 127
+   1 f181066.asc 129
+   1 f181066.asc 131
+   1 f181066.asc 133
+   1 f181066.asc 135
+   1 f181066.asc 137
+   1 f181066.asc 139
+   1 f181066.asc 14
+   1 f181066.asc 141
+   1 f181066.asc 143
+   1 f181066.asc 145
+   1 f181066.asc 147
+   1 f181066.asc 149
+   1 f181066.asc 151
+   1 f181066.asc 153
+   1 f181066.asc 155
+   1 f181066.asc 157
+   1 f181066.asc 159
+   1 f181066.asc 16
+   1 f181066.asc 18
+   1 f181066.asc 2
+   1 f181066.asc 20
+   1 f181066.asc 22
+   1 f181066.asc 24
+   1 f181066.asc 26
+   1 f181066.asc 28
+   1 f181066.asc 30
+   1 f181066.asc 32
+   1 f181066.asc 34
+   1 f181066.asc 36
+   1 f181066.asc 38
+   1 f181066.asc 4
+   1 f181066.asc 40
+   1 f181066.asc 6
+   1 f181066.asc 8
+   1 f181067.asc 1
+   1 f181067.asc 11
+   1 f181067.asc 122
+   1 f181067.asc 124
+   1 f181067.asc 126
+   1 f181067.asc 128
+   1 f181067.asc 13
+   1 f181067.asc 130
+   1 f181067.asc 132
+   1 f181067.asc 134
+   1 f181067.asc 136
+   1 f181067.asc 138
+   1 f181067.asc 140
+   1 f181067.asc 142
+   1 f181067.asc 144
+   1 f181067.asc 146
+   1 f181067.asc 148
+   1 f181067.asc 15
+   1 f181067.asc 150
+   1 f181067.asc 152
+   1 f181067.asc 154
+   1 f181067.asc 156
+   1 f181067.asc 158
+   1 f181067.asc 160
+   1 f181067.asc 17
+   1 f181067.asc 19
+   1 f181067.asc 21
+   1 f181067.asc 23
+   1 f181067.asc 25
+   1 f181067.asc 27
+   1 f181067.asc 29
+   1 f181067.asc 3
+   1 f181067.asc 31
+   1 f181067.asc 33
+   1 f181067.asc 35
+   1 f181067.asc 37
+   1 f181067.asc 39
+   1 f181067.asc 5
+   1 f181067.asc 7
+   1 f181067.asc 9
+   1 f181068b.asc 10
+   1 f181068b.asc 12
+   1 f181068b.asc 121
+   1 f181068b.asc 123
+   1 f181068b.asc 125
+   1 f181068b.asc 127
+   1 f181068b.asc 129
+   1 f181068b.asc 131
+   1 f181068b.asc 133
+   1 f181068b.asc 135
+   1 f181068b.asc 137
+   1 f181068b.asc 139
+   1 f181068b.asc 14
+   1 f181068b.asc 141
+   1 f181068b.asc 143
+   1 f181068b.asc 145
+   1 f181068b.asc 147
+   1 f181068b.asc 149
+   1 f181068b.asc 151
+   1 f181068b.asc 153
+   1 f181068b.asc 155
+   1 f181068b.asc 157
+   1 f181068b.asc 159
+   1 f181068b.asc 16
+   1 f181068b.asc 18
+   1 f181068b.asc 2
+   1 f181068b.asc 20
+   1 f181068b.asc 22
+   1 f181068b.asc 24
+   1 f181068b.asc 26
+   1 f181068b.asc 28
+   1 f181068b.asc 30
+   1 f181068b.asc 32
+   1 f181068b.asc 34
+   1 f181068b.asc 36
+   1 f181068b.asc 38
+   1 f181068b.asc 4
+   1 f181068b.asc 40
+   1 f181068b.asc 6
+   1 f181068b.asc 8
+   1 f181069.asc 1
+   1 f181069.asc 11
+   1 f181069.asc 122
+   1 f181069.asc 124
+   1 f181069.asc 126
+   1 f181069.asc 128
+   1 f181069.asc 13
+   1 f181069.asc 130
+   1 f181069.asc 132
+   1 f181069.asc 134
+   1 f181069.asc 136
+   1 f181069.asc 138
+   1 f181069.asc 140
+   1 f181069.asc 142
+   1 f181069.asc 144
+   1 f181069.asc 146
+   1 f181069.asc 148
+   1 f181069.asc 15
+   1 f181069.asc 150
+   1 f181069.asc 152
+   1 f181069.asc 154
+   1 f181069.asc 156
+   1 f181069.asc 158
+   1 f181069.asc 160
+   1 f181069.asc 17
+   1 f181069.asc 19
+   1 f181069.asc 21
+   1 f181069.asc 23
+   1 f181069.asc 25
+   1 f181069.asc 27
+   1 f181069.asc 29
+   1 f181069.asc 3
+   1 f181069.asc 31
+   1 f181069.asc 33
+   1 f181069.asc 35
+   1 f181069.asc 37
+   1 f181069.asc 39
+   1 f181069.asc 5
+   1 f181069.asc 7
+   1 f181069.asc 9
+   1 f181070b.asc 10
+   1 f181070b.asc 12
+   1 f181070b.asc 121
+   1 f181070b.asc 123
+   1 f181070b.asc 125
+   1 f181070b.asc 127
+   1 f181070b.asc 129
+   1 f181070b.asc 131
+   1 f181070b.asc 133
+   1 f181070b.asc 135
+   1 f181070b.asc 137
+   1 f181070b.asc 139
+   1 f181070b.asc 14
+   1 f181070b.asc 141
+   1 f181070b.asc 143
+   1 f181070b.asc 145
+   1 f181070b.asc 147
+   1 f181070b.asc 149
+   1 f181070b.asc 151
+   1 f181070b.asc 153
+   1 f181070b.asc 155
+   1 f181070b.asc 157
+   1 f181070b.asc 159
+   1 f181070b.asc 16
+   1 f181070b.asc 18
+   1 f181070b.asc 2
+   1 f181070b.asc 20
+   1 f181070b.asc 22
+   1 f181070b.asc 24
+   1 f181070b.asc 26
+   1 f181070b.asc 28
+   1 f181070b.asc 30
+   1 f181070b.asc 32
+   1 f181070b.asc 34
+   1 f181070b.asc 36
+   1 f181070b.asc 38
+   1 f181070b.asc 4
+   1 f181070b.asc 40
+   1 f181070b.asc 6
+   1 f181070b.asc 8
+   1 f181071b.asc 1
+   1 f181071b.asc 11
+   1 f181071b.asc 122
+   1 f181071b.asc 124
+   1 f181071b.asc 126
+   1 f181071b.asc 128
+   1 f181071b.asc 13
+   1 f181071b.asc 130
+   1 f181071b.asc 132
+   1 f181071b.asc 134
+   1 f181071b.asc 136
+   1 f181071b.asc 138
+   1 f181071b.asc 140
+   1 f181071b.asc 142
+   1 f181071b.asc 144
+   1 f181071b.asc 146
+   1 f181071b.asc 148
+   1 f181071b.asc 15
+   1 f181071b.asc 150
+   1 f181071b.asc 152
+   1 f181071b.asc 154
+   1 f181071b.asc 156
+   1 f181071b.asc 158
+   1 f181071b.asc 160
+   1 f181071b.asc 17
+   1 f181071b.asc 19
+   1 f181071b.asc 21
+   1 f181071b.asc 23
+   1 f181071b.asc 25
+   1 f181071b.asc 27
+   1 f181071b.asc 29
+   1 f181071b.asc 3
+   1 f181071b.asc 31
+   1 f181071b.asc 33
+   1 f181071b.asc 35
+   1 f181071b.asc 37
+   1 f181071b.asc 39
+   1 f181071b.asc 5
+   1 f181071b.asc 7
+   1 f181071b.asc 9
+   1 f181072.asc 10
+   1 f181072.asc 12
+   1 f181072.asc 121
+   1 f181072.asc 123
+   1 f181072.asc 125
+   1 f181072.asc 127
+   1 f181072.asc 129
+   1 f181072.asc 131
+   1 f181072.asc 133
+   1 f181072.asc 135
+   1 f181072.asc 137
+   1 f181072.asc 139
+   1 f181072.asc 14
+   1 f181072.asc 141
+   1 f181072.asc 143
+   1 f181072.asc 145
+   1 f181072.asc 147
+   1 f181072.asc 149
+   1 f181072.asc 151
+   1 f181072.asc 153
+   1 f181072.asc 155
+   1 f181072.asc 157
+   1 f181072.asc 159
+   1 f181072.asc 16
+   1 f181072.asc 18
+   1 f181072.asc 2
+   1 f181072.asc 20
+   1 f181072.asc 22
+   1 f181072.asc 24
+   1 f181072.asc 26
+   1 f181072.asc 28
+   1 f181072.asc 30
+   1 f181072.asc 32
+   1 f181072.asc 34
+   1 f181072.asc 36
+   1 f181072.asc 38
+   1 f181072.asc 4
+   1 f181072.asc 40
+   1 f181072.asc 6
+   1 f181072.asc 8
+   1 f181073.asc 1
+   1 f181073.asc 11
+   1 f181073.asc 122
+   1 f181073.asc 124
+   1 f181073.asc 126
+   1 f181073.asc 128
+   1 f181073.asc 13
+   1 f181073.asc 130
+   1 f181073.asc 132
+   1 f181073.asc 134
+   1 f181073.asc 136
+   1 f181073.asc 138
+   1 f181073.asc 140
+   1 f181073.asc 142
+   1 f181073.asc 144
+   1 f181073.asc 146
+   1 f181073.asc 148
+   1 f181073.asc 15
+   1 f181073.asc 150
+   1 f181073.asc 152
+   1 f181073.asc 154
+   1 f181073.asc 156
+   1 f181073.asc 158
+   1 f181073.asc 160
+   1 f181073.asc 17
+   1 f181073.asc 19
+   1 f181073.asc 21
+   1 f181073.asc 23
+   1 f181073.asc 25
+   1 f181073.asc 27
+   1 f181073.asc 29
+   1 f181073.asc 3
+   1 f181073.asc 31
+   1 f181073.asc 33
+   1 f181073.asc 35
+   1 f181073.asc 37
+   1 f181073.asc 39
+   1 f181073.asc 5
+   1 f181073.asc 7
+   1 f181073.asc 9
+   1 f181074.asc 10
+   1 f181074.asc 12
+   1 f181074.asc 121
+   1 f181074.asc 123
+   1 f181074.asc 125
+   1 f181074.asc 127
+   1 f181074.asc 129
+   1 f181074.asc 131
+   1 f181074.asc 133
+   1 f181074.asc 135
+   1 f181074.asc 137
+   1 f181074.asc 139
+   1 f181074.asc 14
+   1 f181074.asc 141
+   1 f181074.asc 143
+   1 f181074.asc 145
+   1 f181074.asc 147
+   1 f181074.asc 149
+   1 f181074.asc 151
+   1 f181074.asc 153
+   1 f181074.asc 155
+   1 f181074.asc 157
+   1 f181074.asc 159
+   1 f181074.asc 16
+   1 f181074.asc 18
+   1 f181074.asc 2
+   1 f181074.asc 20
+   1 f181074.asc 22
+   1 f181074.asc 24
+   1 f181074.asc 26
+   1 f181074.asc 28
+   1 f181074.asc 30
+   1 f181074.asc 32
+   1 f181074.asc 34
+   1 f181074.asc 36
+   1 f181074.asc 38
+   1 f181074.asc 4
+   1 f181074.asc 40
+   1 f181074.asc 6
+   1 f181074.asc 8
+   1 f181075.asc 1
+   1 f181075.asc 11
+   1 f181075.asc 122
+   1 f181075.asc 124
+   1 f181075.asc 126
+   1 f181075.asc 128
+   1 f181075.asc 13
+   1 f181075.asc 130
+   1 f181075.asc 132
+   1 f181075.asc 134
+   1 f181075.asc 136
+   1 f181075.asc 138
+   1 f181075.asc 140
+   1 f181075.asc 142
+   1 f181075.asc 144
+   1 f181075.asc 146
+   1 f181075.asc 148
+   1 f181075.asc 15
+   1 f181075.asc 150
+   1 f181075.asc 152
+   1 f181075.asc 154
+   1 f181075.asc 156
+   1 f181075.asc 158
+   1 f181075.asc 160
+   1 f181075.asc 17
+   1 f181075.asc 19
+   1 f181075.asc 21
+   1 f181075.asc 23
+   1 f181075.asc 25
+   1 f181075.asc 27
+   1 f181075.asc 29
+   1 f181075.asc 3
+   1 f181075.asc 31
+   1 f181075.asc 33
+   1 f181075.asc 35
+   1 f181075.asc 37
+   1 f181075.asc 39
+   1 f181075.asc 5
+   1 f181075.asc 7
+   1 f181075.asc 9
+   1 f181076.asc 10
+   1 f181076.asc 12
+   1 f181076.asc 121
+   1 f181076.asc 123
+   1 f181076.asc 125
+   1 f181076.asc 127
+   1 f181076.asc 129
+   1 f181076.asc 131
+   1 f181076.asc 133
+   1 f181076.asc 135
+   1 f181076.asc 137
+   1 f181076.asc 139
+   1 f181076.asc 14
+   1 f181076.asc 141
+   1 f181076.asc 143
+   1 f181076.asc 145
+   1 f181076.asc 147
+   1 f181076.asc 149
+   1 f181076.asc 151
+   1 f181076.asc 153
+   1 f181076.asc 155
+   1 f181076.asc 157
+   1 f181076.asc 159
+   1 f181076.asc 16
+   1 f181076.asc 18
+   1 f181076.asc 2
+   1 f181076.asc 20
+   1 f181076.asc 22
+   1 f181076.asc 24
+   1 f181076.asc 26
+   1 f181076.asc 28
+   1 f181076.asc 30
+   1 f181076.asc 32
+   1 f181076.asc 34
+   1 f181076.asc 36
+   1 f181076.asc 38
+   1 f181076.asc 4
+   1 f181076.asc 40
+   1 f181076.asc 6
+   1 f181076.asc 8
+   1 f181078.asc 10
+   1 f181078.asc 12
+   1 f181078.asc 121
+   1 f181078.asc 123
+   1 f181078.asc 125
+   1 f181078.asc 127
+   1 f181078.asc 129
+   1 f181078.asc 131
+   1 f181078.asc 133
+   1 f181078.asc 135
+   1 f181078.asc 137
+   1 f181078.asc 139
+   1 f181078.asc 14
+   1 f181078.asc 141
+   1 f181078.asc 143
+   1 f181078.asc 145
+   1 f181078.asc 147
+   1 f181078.asc 149
+   1 f181078.asc 151
+   1 f181078.asc 153
+   1 f181078.asc 155
+   1 f181078.asc 157
+   1 f181078.asc 159
+   1 f181078.asc 16
+   1 f181078.asc 18
+   1 f181078.asc 2
+   1 f181078.asc 20
+   1 f181078.asc 22
+   1 f181078.asc 24
+   1 f181078.asc 26
+   1 f181078.asc 28
+   1 f181078.asc 30
+   1 f181078.asc 32
+   1 f181078.asc 34
+   1 f181078.asc 36
+   1 f181078.asc 38
+   1 f181078.asc 4
+   1 f181078.asc 40
+   1 f181078.asc 6
+   1 f181078.asc 8
+   1 f181079.asc 1
+   1 f181079.asc 11
+   1 f181079.asc 122
+   1 f181079.asc 124
+   1 f181079.asc 126
+   1 f181079.asc 128
+   1 f181079.asc 13
+   1 f181079.asc 130
+   1 f181079.asc 132
+   1 f181079.asc 134
+   1 f181079.asc 136
+   1 f181079.asc 138
+   1 f181079.asc 140
+   1 f181079.asc 142
+   1 f181079.asc 144
+   1 f181079.asc 146
+   1 f181079.asc 148
+   1 f181079.asc 15
+   1 f181079.asc 150
+   1 f181079.asc 152
+   1 f181079.asc 154
+   1 f181079.asc 156
+   1 f181079.asc 158
+   1 f181079.asc 160
+   1 f181079.asc 17
+   1 f181079.asc 19
+   1 f181079.asc 21
+   1 f181079.asc 23
+   1 f181079.asc 25
+   1 f181079.asc 27
+   1 f181079.asc 29
+   1 f181079.asc 3
+   1 f181079.asc 31
+   1 f181079.asc 33
+   1 f181079.asc 35
+   1 f181079.asc 37
+   1 f181079.asc 39
+   1 f181079.asc 5
+   1 f181079.asc 7
+   1 f181079.asc 9
+   1 f181080.asc 10
+   1 f181080.asc 12
+   1 f181080.asc 121
+   1 f181080.asc 123
+   1 f181080.asc 125
+   1 f181080.asc 127
+   1 f181080.asc 129
+   1 f181080.asc 131
+   1 f181080.asc 133
+   1 f181080.asc 135
+   1 f181080.asc 137
+   1 f181080.asc 139
+   1 f181080.asc 14
+   1 f181080.asc 141
+   1 f181080.asc 143
+   1 f181080.asc 145
+   1 f181080.asc 147
+   1 f181080.asc 149
+   1 f181080.asc 151
+   1 f181080.asc 153
+   1 f181080.asc 155
+   1 f181080.asc 157
+   1 f181080.asc 159
+   1 f181080.asc 16
+   1 f181080.asc 18
+   1 f181080.asc 2
+   1 f181080.asc 20
+   1 f181080.asc 22
+   1 f181080.asc 24
+   1 f181080.asc 26
+   1 f181080.asc 28
+   1 f181080.asc 30
+   1 f181080.asc 32
+   1 f181080.asc 34
+   1 f181080.asc 36
+   1 f181080.asc 38
+   1 f181080.asc 4
+   1 f181080.asc 40
+   1 f181080.asc 6
+   1 f181080.asc 8
+   1 f181081.asc 1
+   1 f181081.asc 11
+   1 f181081.asc 122
+   1 f181081.asc 124
+   1 f181081.asc 126
+   1 f181081.asc 128
+   1 f181081.asc 13
+   1 f181081.asc 130
+   1 f181081.asc 132
+   1 f181081.asc 134
+   1 f181081.asc 136
+   1 f181081.asc 138
+   1 f181081.asc 140
+   1 f181081.asc 142
+   1 f181081.asc 144
+   1 f181081.asc 146
+   1 f181081.asc 148
+   1 f181081.asc 15
+   1 f181081.asc 150
+   1 f181081.asc 152
+   1 f181081.asc 154
+   1 f181081.asc 156
+   1 f181081.asc 158
+   1 f181081.asc 160
+   1 f181081.asc 17
+   1 f181081.asc 19
+   1 f181081.asc 21
+   1 f181081.asc 23
+   1 f181081.asc 25
+   1 f181081.asc 27
+   1 f181081.asc 29
+   1 f181081.asc 3
+   1 f181081.asc 31
+   1 f181081.asc 33
+   1 f181081.asc 35
+   1 f181081.asc 37
+   1 f181081.asc 39
+   1 f181081.asc 5
+   1 f181081.asc 7
+   1 f181081.asc 9
+   1 f181082.asc 10
+   1 f181082.asc 12
+   1 f181082.asc 121
+   1 f181082.asc 123
+   1 f181082.asc 125
+   1 f181082.asc 127
+   1 f181082.asc 129
+   1 f181082.asc 131
+   1 f181082.asc 133
+   1 f181082.asc 135
+   1 f181082.asc 137
+   1 f181082.asc 139
+   1 f181082.asc 14
+   1 f181082.asc 141
+   1 f181082.asc 143
+   1 f181082.asc 145
+   1 f181082.asc 147
+   1 f181082.asc 149
+   1 f181082.asc 151
+   1 f181082.asc 153
+   1 f181082.asc 155
+   1 f181082.asc 157
+   1 f181082.asc 159
+   1 f181082.asc 16
+   1 f181082.asc 18
+   1 f181082.asc 2
+   1 f181082.asc 20
+   1 f181082.asc 22
+   1 f181082.asc 24
+   1 f181082.asc 26
+   1 f181082.asc 28
+   1 f181082.asc 30
+   1 f181082.asc 32
+   1 f181082.asc 34
+   1 f181082.asc 36
+   1 f181082.asc 38
+   1 f181082.asc 4
+   1 f181082.asc 40
+   1 f181082.asc 6
+   1 f181082.asc 8
+   1 f181083.asc 1
+   1 f181083.asc 11
+   1 f181083.asc 122
+   1 f181083.asc 124
+   1 f181083.asc 126
+   1 f181083.asc 128
+   1 f181083.asc 13
+   1 f181083.asc 130
+   1 f181083.asc 132
+   1 f181083.asc 134
+   1 f181083.asc 136
+   1 f181083.asc 138
+   1 f181083.asc 140
+   1 f181083.asc 142
+   1 f181083.asc 144
+   1 f181083.asc 146
+   1 f181083.asc 148
+   1 f181083.asc 15
+   1 f181083.asc 150
+   1 f181083.asc 152
+   1 f181083.asc 154
+   1 f181083.asc 156
+   1 f181083.asc 158
+   1 f181083.asc 160
+   1 f181083.asc 17
+   1 f181083.asc 19
+   1 f181083.asc 21
+   1 f181083.asc 23
+   1 f181083.asc 25
+   1 f181083.asc 27
+   1 f181083.asc 29
+   1 f181083.asc 3
+   1 f181083.asc 31
+   1 f181083.asc 33
+   1 f181083.asc 35
+   1 f181083.asc 37
+   1 f181083.asc 39
+   1 f181083.asc 5
+   1 f181083.asc 7
+   1 f181083.asc 9
+   1 f181084.asc 10
+   1 f181084.asc 12
+   1 f181084.asc 121
+   1 f181084.asc 123
+   1 f181084.asc 125
+   1 f181084.asc 127
+   1 f181084.asc 129
+   1 f181084.asc 131
+   1 f181084.asc 133
+   1 f181084.asc 135
+   1 f181084.asc 137
+   1 f181084.asc 139
+   1 f181084.asc 14
+   1 f181084.asc 141
+   1 f181084.asc 143
+   1 f181084.asc 145
+   1 f181084.asc 147
+   1 f181084.asc 149
+   1 f181084.asc 151
+   1 f181084.asc 153
+   1 f181084.asc 155
+   1 f181084.asc 157
+   1 f181084.asc 159
+   1 f181084.asc 16
+   1 f181084.asc 18
+   1 f181084.asc 2
+   1 f181084.asc 20
+   1 f181084.asc 22
+   1 f181084.asc 24
+   1 f181084.asc 26
+   1 f181084.asc 28
+   1 f181084.asc 30
+   1 f181084.asc 32
+   1 f181084.asc 34
+   1 f181084.asc 36
+   1 f181084.asc 38
+   1 f181084.asc 4
+   1 f181084.asc 40
+   1 f181084.asc 6
+   1 f181084.asc 8
+   1 f181086.asc 1
+   1 f181086.asc 11
+   1 f181086.asc 122
+   1 f181086.asc 124
+   1 f181086.asc 126
+   1 f181086.asc 128
+   1 f181086.asc 13
+   1 f181086.asc 130
+   1 f181086.asc 132
+   1 f181086.asc 134
+   1 f181086.asc 136
+   1 f181086.asc 138
+   1 f181086.asc 140
+   1 f181086.asc 142
+   1 f181086.asc 144
+   1 f181086.asc 146
+   1 f181086.asc 148
+   1 f181086.asc 15
+   1 f181086.asc 150
+   1 f181086.asc 152
+   1 f181086.asc 154
+   1 f181086.asc 156
+   1 f181086.asc 158
+   1 f181086.asc 160
+   1 f181086.asc 17
+   1 f181086.asc 19
+   1 f181086.asc 21
+   1 f181086.asc 23
+   1 f181086.asc 25
+   1 f181086.asc 27
+   1 f181086.asc 29
+   1 f181086.asc 3
+   1 f181086.asc 31
+   1 f181086.asc 33
+   1 f181086.asc 35
+   1 f181086.asc 37
+   1 f181086.asc 39
+   1 f181086.asc 5
+   1 f181086.asc 7
+   1 f181086.asc 9
+   1 f181087b.asc 10
+   1 f181087b.asc 12
+   1 f181087b.asc 121
+   1 f181087b.asc 123
+   1 f181087b.asc 125
+   1 f181087b.asc 127
+   1 f181087b.asc 129
+   1 f181087b.asc 131
+   1 f181087b.asc 133
+   1 f181087b.asc 135
+   1 f181087b.asc 137
+   1 f181087b.asc 139
+   1 f181087b.asc 14
+   1 f181087b.asc 141
+   1 f181087b.asc 143
+   1 f181087b.asc 145
+   1 f181087b.asc 147
+   1 f181087b.asc 149
+   1 f181087b.asc 151
+   1 f181087b.asc 153
+   1 f181087b.asc 155
+   1 f181087b.asc 157
+   1 f181087b.asc 159
+   1 f181087b.asc 16
+   1 f181087b.asc 18
+   1 f181087b.asc 2
+   1 f181087b.asc 20
+   1 f181087b.asc 22
+   1 f181087b.asc 24
+   1 f181087b.asc 26
+   1 f181087b.asc 28
+   1 f181087b.asc 30
+   1 f181087b.asc 32
+   1 f181087b.asc 34
+   1 f181087b.asc 36
+   1 f181087b.asc 38
+   1 f181087b.asc 4
+   1 f181087b.asc 40
+   1 f181087b.asc 6
+   1 f181087b.asc 8
+   1 f181088.asc 1
+   1 f181088.asc 11
+   1 f181088.asc 122
+   1 f181088.asc 124
+   1 f181088.asc 126
+   1 f181088.asc 128
+   1 f181088.asc 13
+   1 f181088.asc 130
+   1 f181088.asc 132
+   1 f181088.asc 134
+   1 f181088.asc 136
+   1 f181088.asc 138
+   1 f181088.asc 140
+   1 f181088.asc 142
+   1 f181088.asc 144
+   1 f181088.asc 146
+   1 f181088.asc 148
+   1 f181088.asc 15
+   1 f181088.asc 150
+   1 f181088.asc 152
+   1 f181088.asc 154
+   1 f181088.asc 156
+   1 f181088.asc 158
+   1 f181088.asc 160
+   1 f181088.asc 17
+   1 f181088.asc 19
+   1 f181088.asc 21
+   1 f181088.asc 23
+   1 f181088.asc 25
+   1 f181088.asc 27
+   1 f181088.asc 29
+   1 f181088.asc 3
+   1 f181088.asc 31
+   1 f181088.asc 33
+   1 f181088.asc 35
+   1 f181088.asc 37
+   1 f181088.asc 39
+   1 f181088.asc 5
+   1 f181088.asc 7
+   1 f181088.asc 9
+   1 f181089.asc 10
+   1 f181089.asc 12
+   1 f181089.asc 121
+   1 f181089.asc 123
+   1 f181089.asc 125
+   1 f181089.asc 127
+   1 f181089.asc 129
+   1 f181089.asc 131
+   1 f181089.asc 133
+   1 f181089.asc 135
+   1 f181089.asc 137
+   1 f181089.asc 139
+   1 f181089.asc 14
+   1 f181089.asc 141
+   1 f181089.asc 143
+   1 f181089.asc 145
+   1 f181089.asc 147
+   1 f181089.asc 149
+   1 f181089.asc 151
+   1 f181089.asc 153
+   1 f181089.asc 155
+   1 f181089.asc 157
+   1 f181089.asc 159
+   1 f181089.asc 16
+   1 f181089.asc 18
+   1 f181089.asc 2
+   1 f181089.asc 20
+   1 f181089.asc 22
+   1 f181089.asc 24
+   1 f181089.asc 26
+   1 f181089.asc 28
+   1 f181089.asc 30
+   1 f181089.asc 32
+   1 f181089.asc 34
+   1 f181089.asc 36
+   1 f181089.asc 38
+   1 f181089.asc 4
+   1 f181089.asc 40
+   1 f181089.asc 6
+   1 f181089.asc 8
+   1 f181090.asc 1
+   1 f181090.asc 11
+   1 f181090.asc 122
+   1 f181090.asc 124
+   1 f181090.asc 126
+   1 f181090.asc 128
+   1 f181090.asc 13
+   1 f181090.asc 130
+   1 f181090.asc 132
+   1 f181090.asc 134
+   1 f181090.asc 136
+   1 f181090.asc 138
+   1 f181090.asc 140
+   1 f181090.asc 142
+   1 f181090.asc 144
+   1 f181090.asc 146
+   1 f181090.asc 148
+   1 f181090.asc 15
+   1 f181090.asc 150
+   1 f181090.asc 152
+   1 f181090.asc 154
+   1 f181090.asc 156
+   1 f181090.asc 158
+   1 f181090.asc 160
+   1 f181090.asc 17
+   1 f181090.asc 19
+   1 f181090.asc 21
+   1 f181090.asc 23
+   1 f181090.asc 25
+   1 f181090.asc 27
+   1 f181090.asc 29
+   1 f181090.asc 3
+   1 f181090.asc 31
+   1 f181090.asc 33
+   1 f181090.asc 35
+   1 f181090.asc 37
+   1 f181090.asc 39
+   1 f181090.asc 5
+   1 f181090.asc 7
+   1 f181090.asc 9
+   1 f181091.asc 10
+   1 f181091.asc 12
+   1 f181091.asc 121
+   1 f181091.asc 123
+   1 f181091.asc 125
+   1 f181091.asc 127
+   1 f181091.asc 129
+   1 f181091.asc 131
+   1 f181091.asc 133
+   1 f181091.asc 135
+   1 f181091.asc 137
+   1 f181091.asc 139
+   1 f181091.asc 14
+   1 f181091.asc 141
+   1 f181091.asc 143
+   1 f181091.asc 145
+   1 f181091.asc 147
+   1 f181091.asc 149
+   1 f181091.asc 151
+   1 f181091.asc 153
+   1 f181091.asc 155
+   1 f181091.asc 157
+   1 f181091.asc 159
+   1 f181091.asc 16
+   1 f181091.asc 18
+   1 f181091.asc 2
+   1 f181091.asc 20
+   1 f181091.asc 22
+   1 f181091.asc 24
+   1 f181091.asc 26
+   1 f181091.asc 28
+   1 f181091.asc 30
+   1 f181091.asc 32
+   1 f181091.asc 34
+   1 f181091.asc 36
+   1 f181091.asc 38
+   1 f181091.asc 4
+   1 f181091.asc 40
+   1 f181091.asc 6
+   1 f181091.asc 8
+   1 subj10.asc 1
+   1 subj10.asc 11
+   1 subj10.asc 122
+   1 subj10.asc 124
+   1 subj10.asc 126
+   1 subj10.asc 128
+   1 subj10.asc 13
+   1 subj10.asc 130
+   1 subj10.asc 132
+   1 subj10.asc 134
+   1 subj10.asc 136
+   1 subj10.asc 138
+   1 subj10.asc 140
+   1 subj10.asc 142
+   1 subj10.asc 144
+   1 subj10.asc 146
+   1 subj10.asc 148
+   1 subj10.asc 15
+   1 subj10.asc 150
+   1 subj10.asc 152
+   1 subj10.asc 154
+   1 subj10.asc 156
+   1 subj10.asc 158
+   1 subj10.asc 160
+   1 subj10.asc 17
+   1 subj10.asc 19
+   1 subj10.asc 21
+   1 subj10.asc 23
+   1 subj10.asc 25
+   1 subj10.asc 27
+   1 subj10.asc 29
+   1 subj10.asc 3
+   1 subj10.asc 31
+   1 subj10.asc 33
+   1 subj10.asc 35
+   1 subj10.asc 37
+   1 subj10.asc 39
+   1 subj10.asc 5
+   1 subj10.asc 7
+   1 subj10.asc 9
+   1 subj12.asc 1
+   1 subj12.asc 11
+   1 subj12.asc 122
+   1 subj12.asc 124
+   1 subj12.asc 126
+   1 subj12.asc 128
+   1 subj12.asc 13
+   1 subj12.asc 130
+   1 subj12.asc 132
+   1 subj12.asc 134
+   1 subj12.asc 136
+   1 subj12.asc 138
+   1 subj12.asc 140
+   1 subj12.asc 142
+   1 subj12.asc 144
+   1 subj12.asc 146
+   1 subj12.asc 148
+   1 subj12.asc 15
+   1 subj12.asc 150
+   1 subj12.asc 152
+   1 subj12.asc 154
+   1 subj12.asc 156
+   1 subj12.asc 158
+   1 subj12.asc 160
+   1 subj12.asc 17
+   1 subj12.asc 19
+   1 subj12.asc 21
+   1 subj12.asc 23
+   1 subj12.asc 25
+   1 subj12.asc 27
+   1 subj12.asc 29
+   1 subj12.asc 3
+   1 subj12.asc 31
+   1 subj12.asc 33
+   1 subj12.asc 35
+   1 subj12.asc 37
+   1 subj12.asc 39
+   1 subj12.asc 5
+   1 subj12.asc 7
+   1 subj12.asc 9
+   1 subj13.asc 10
+   1 subj13.asc 12
+   1 subj13.asc 121
+   1 subj13.asc 123
+   1 subj13.asc 125
+   1 subj13.asc 127
+   1 subj13.asc 129
+   1 subj13.asc 131
+   1 subj13.asc 133
+   1 subj13.asc 135
+   1 subj13.asc 137
+   1 subj13.asc 139
+   1 subj13.asc 14
+   1 subj13.asc 141
+   1 subj13.asc 143
+   1 subj13.asc 145
+   1 subj13.asc 147
+   1 subj13.asc 149
+   1 subj13.asc 151
+   1 subj13.asc 153
+   1 subj13.asc 155
+   1 subj13.asc 157
+   1 subj13.asc 159
+   1 subj13.asc 16
+   1 subj13.asc 18
+   1 subj13.asc 2
+   1 subj13.asc 20
+   1 subj13.asc 22
+   1 subj13.asc 24
+   1 subj13.asc 26
+   1 subj13.asc 28
+   1 subj13.asc 30
+   1 subj13.asc 32
+   1 subj13.asc 34
+   1 subj13.asc 36
+   1 subj13.asc 38
+   1 subj13.asc 4
+   1 subj13.asc 40
+   1 subj13.asc 6
+   1 subj13.asc 8
+   1 subj14.asc 1
+   1 subj14.asc 11
+   1 subj14.asc 122
+   1 subj14.asc 124
+   1 subj14.asc 126
+   1 subj14.asc 128
+   1 subj14.asc 13
+   1 subj14.asc 130
+   1 subj14.asc 132
+   1 subj14.asc 134
+   1 subj14.asc 136
+   1 subj14.asc 138
+   1 subj14.asc 140
+   1 subj14.asc 142
+   1 subj14.asc 144
+   1 subj14.asc 146
+   1 subj14.asc 148
+   1 subj14.asc 15
+   1 subj14.asc 150
+   1 subj14.asc 152
+   1 subj14.asc 154
+   1 subj14.asc 156
+   1 subj14.asc 158
+   1 subj14.asc 160
+   1 subj14.asc 17
+   1 subj14.asc 19
+   1 subj14.asc 21
+   1 subj14.asc 23
+   1 subj14.asc 25
+   1 subj14.asc 27
+   1 subj14.asc 29
+   1 subj14.asc 3
+   1 subj14.asc 31
+   1 subj14.asc 33
+   1 subj14.asc 35
+   1 subj14.asc 37
+   1 subj14.asc 39
+   1 subj14.asc 5
+   1 subj14.asc 7
+   1 subj14.asc 9
+   1 subj16.asc 1
+   1 subj16.asc 11
+   1 subj16.asc 122
+   1 subj16.asc 124
+   1 subj16.asc 126
+   1 subj16.asc 128
+   1 subj16.asc 13
+   1 subj16.asc 130
+   1 subj16.asc 132
+   1 subj16.asc 134
+   1 subj16.asc 136
+   1 subj16.asc 138
+   1 subj16.asc 140
+   1 subj16.asc 142
+   1 subj16.asc 144
+   1 subj16.asc 146
+   1 subj16.asc 148
+   1 subj16.asc 15
+   1 subj16.asc 150
+   1 subj16.asc 152
+   1 subj16.asc 154
+   1 subj16.asc 156
+   1 subj16.asc 158
+   1 subj16.asc 160
+   1 subj16.asc 17
+   1 subj16.asc 19
+   1 subj16.asc 21
+   1 subj16.asc 23
+   1 subj16.asc 25
+   1 subj16.asc 27
+   1 subj16.asc 29
+   1 subj16.asc 3
+   1 subj16.asc 31
+   1 subj16.asc 33
+   1 subj16.asc 35
+   1 subj16.asc 37
+   1 subj16.asc 39
+   1 subj16.asc 5
+   1 subj16.asc 7
+   1 subj16.asc 9
+   1 subj6.asc 1
+   1 subj6.asc 11
+   1 subj6.asc 122
+   1 subj6.asc 124
+   1 subj6.asc 126
+   1 subj6.asc 128
+   1 subj6.asc 13
+   1 subj6.asc 130
+   1 subj6.asc 132
+   1 subj6.asc 134
+   1 subj6.asc 136
+   1 subj6.asc 138
+   1 subj6.asc 140
+   1 subj6.asc 142
+   1 subj6.asc 144
+   1 subj6.asc 146
+   1 subj6.asc 148
+   1 subj6.asc 15
+   1 subj6.asc 150
+   1 subj6.asc 152
+   1 subj6.asc 154
+   1 subj6.asc 156
+   1 subj6.asc 158
+   1 subj6.asc 160
+   1 subj6.asc 17
+   1 subj6.asc 19
+   1 subj6.asc 21
+   1 subj6.asc 23
+   1 subj6.asc 25
+   1 subj6.asc 27
+   1 subj6.asc 29
+   1 subj6.asc 3
+   1 subj6.asc 31
+   1 subj6.asc 33
+   1 subj6.asc 35
+   1 subj6.asc 37
+   1 subj6.asc 39
+   1 subj6.asc 5
+   1 subj6.asc 7
+   1 subj6.asc 9
+   1 subject1.asc 1
+   1 subject1.asc 11
+   1 subject1.asc 122
+   1 subject1.asc 124
+   1 subject1.asc 126
+   1 subject1.asc 128
+   1 subject1.asc 13
+   1 subject1.asc 130
+   1 subject1.asc 132
+   1 subject1.asc 134
+   1 subject1.asc 136
+   1 subject1.asc 138
+   1 subject1.asc 140
+   1 subject1.asc 142
+   1 subject1.asc 144
+   1 subject1.asc 146
+   1 subject1.asc 148
+   1 subject1.asc 15
+   1 subject1.asc 150
+   1 subject1.asc 152
+   1 subject1.asc 154
+   1 subject1.asc 156
+   1 subject1.asc 158
+   1 subject1.asc 160
+   1 subject1.asc 17
+   1 subject1.asc 19
+   1 subject1.asc 21
+   1 subject1.asc 23
+   1 subject1.asc 25
+   1 subject1.asc 27
+   1 subject1.asc 29
+   1 subject1.asc 3
+   1 subject1.asc 31
+   1 subject1.asc 33
+   1 subject1.asc 35
+   1 subject1.asc 37
+   1 subject1.asc 39
+   1 subject1.asc 5
+   1 subject1.asc 7
+   1 subject1.asc 9
+   1 subject7.asc 10
+   1 subject7.asc 12
+   1 subject7.asc 121
+   1 subject7.asc 123
+   1 subject7.asc 125
+   1 subject7.asc 127
+   1 subject7.asc 129
+   1 subject7.asc 131
+   1 subject7.asc 133
+   1 subject7.asc 135
+   1 subject7.asc 137
+   1 subject7.asc 139
+   1 subject7.asc 14
+   1 subject7.asc 141
+   1 subject7.asc 143
+   1 subject7.asc 145
+   1 subject7.asc 147
+   1 subject7.asc 149
+   1 subject7.asc 151
+   1 subject7.asc 153
+   1 subject7.asc 155
+   1 subject7.asc 157
+   1 subject7.asc 159
+   1 subject7.asc 16
+   1 subject7.asc 18
+   1 subject7.asc 2
+   1 subject7.asc 20
+   1 subject7.asc 22
+   1 subject7.asc 24
+   1 subject7.asc 26
+   1 subject7.asc 28
+   1 subject7.asc 30
+   1 subject7.asc 32
+   1 subject7.asc 34
+   1 subject7.asc 36
+   1 subject7.asc 38
+   1 subject7.asc 4
+   1 subject7.asc 40
+   1 subject7.asc 6
+   1 subject7.asc 8
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | more
+     
+5t.asc 161 FILLLER tap D FILLLER
+5t.asc 131 clash tap D permit.
+5t.asc 162 FILLLER this D FILLLER
+5t.asc 163 FILLLER tap D FILLLER
+5t.asc 16 match tap D refund.
+5t.asc 164 FILLLER this D FILLLER
+5t.asc 165 FILLLER tap D FILLLER
+5t.asc 141 clash this D address.
+5t.asc 121 clash this D pervert.
+5t.asc 166 FILLLER this D FILLLER
+5t.asc 167 FILLLER tap D FILLLER
+5t.asc 153 clash this D entrance.
+5t.asc 168 FILLLER this D FILLLER
+5t.asc 137 clash this D survey.
+5t.asc 169 FILLLER tap D FILLLER
+5t.asc 170 FILLLER this D FILLLER
+5t.asc 147 clash tap D compound
+5t.asc 171 FILLLER tap D FILLLER
+5t.asc 172 FILLLER this D FILLLER
+5t.asc 14 match this D rebound.
+5t.asc 173 FILLLER tap D FILLLER
+5t.asc 143 clash tap D combat,
+5t.asc 174 FILLLER this D FILLLER
+5t.asc 32 match tap D detail.
+5t.asc 175 FILLLER tap D FILLLER
+5t.asc 176 FILLLER this D FILLLER
+5t.asc 22 match this D ally.
+5t.asc 177 FILLLER tap D FILLLER
+5t.asc 178 FILLLER this D FILLLER
+5t.asc 8 match tap D imports.
+5t.asc 10 match this D object.
+5t.asc 179 FILLLER tap D FILLLER
+5t.asc 180 FILLLER this D FILLLER
+5t.asc 151 clash tap D desert.
+5t.asc 181 FILLLER tap D FILLLER
+5t.asc 182 FILLLER this D FILLLER
+5t.asc 30 match this D convict.
+5t.asc 183 FILLLER tap D FILLLER
+5t.asc 184 FILLLER this D FILLLER
+5t.asc 155 clash tap D produce.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $1,$3}' | sort | uniq -c
+   1  
+  20 5t.asc clash
+  20 5t.asc match
+  20 f181050_all.asc clash
+  20 f181050_all.asc match
+  20 f181051.asc clash
+  20 f181051.asc match
+  22 f181052.asc clash
+  20 f181052.asc match
+  22 f181053.asc clash
+  20 f181053.asc match
+  20 f181054.asc clash
+  20 f181054.asc match
+  20 f181055.asc clash
+  20 f181055.asc match
+  20 f181056.asc clash
+  20 f181056.asc match
+  20 f181057.asc clash
+  20 f181057.asc match
+  20 f181059.asc clash
+  20 f181059.asc match
+  20 f181060t.asc clash
+  20 f181060t.asc match
+  20 f181062.asc clash
+  20 f181062.asc match
+  20 f181063.asc clash
+  20 f181063.asc match
+  20 f181064.asc clash
+  20 f181064.asc match
+  20 f181065.asc clash
+  20 f181065.asc match
+  20 f181066.asc clash
+  20 f181066.asc match
+  20 f181067.asc clash
+  20 f181067.asc match
+  20 f181068b.asc clash
+  20 f181068b.asc match
+  20 f181069.asc clash
+  20 f181069.asc match
+  20 f181070b.asc clash
+  20 f181070b.asc match
+  20 f181071b.asc clash
+  20 f181071b.asc match
+  20 f181072.asc clash
+  20 f181072.asc match
+  20 f181073.asc clash
+  20 f181073.asc match
+  20 f181074.asc clash
+  20 f181074.asc match
+  20 f181075.asc clash
+  20 f181075.asc match
+  20 f181076.asc clash
+  20 f181076.asc match
+  20 f181078.asc clash
+  20 f181078.asc match
+  20 f181079.asc clash
+  20 f181079.asc match
+  20 f181080.asc clash
+  20 f181080.asc match
+  20 f181081.asc clash
+  20 f181081.asc match
+  20 f181082.asc clash
+  20 f181082.asc match
+  20 f181083.asc clash
+  20 f181083.asc match
+  20 f181084.asc clash
+  20 f181084.asc match
+  20 f181086.asc clash
+  20 f181086.asc match
+  20 f181087b.asc clash
+  20 f181087b.asc match
+  20 f181088.asc clash
+  20 f181088.asc match
+  20 f181089.asc clash
+  20 f181089.asc match
+  20 f181090.asc clash
+  20 f181090.asc match
+  20 f181091.asc clash
+  20 f181091.asc match
+  20 subj10.asc clash
+  20 subj10.asc match
+  20 subj12.asc clash
+  20 subj12.asc match
+  20 subj13.asc clash
+  20 subj13.asc match
+  20 subj14.asc clash
+  20 subj14.asc match
+  20 subj16.asc clash
+  20 subj16.asc match
+  20 subj6.asc clash
+  20 subj6.asc match
+  20 subject1.asc clash
+  20 subject1.asc match
+  20 subject7.asc clash
+  20 subject7.asc match
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $1,$3,$4}' | sort | uniq -c
+   1   
+  10 5t.asc clash tap
+  10 5t.asc clash this
+  10 5t.asc match tap
+  10 5t.asc match this
+   7 f181050_all.asc clash tap
+  13 f181050_all.asc clash this
+  10 f181050_all.asc match tap
+  10 f181050_all.asc match this
+  10 f181051.asc clash tap
+  10 f181051.asc clash this
+  10 f181051.asc match tap
+  10 f181051.asc match this
+  12 f181052.asc clash tap
+  10 f181052.asc clash this
+  10 f181052.asc match tap
+  10 f181052.asc match this
+  12 f181053.asc clash tap
+  10 f181053.asc clash this
+  10 f181053.asc match tap
+  10 f181053.asc match this
+   7 f181054.asc clash tap
+  13 f181054.asc clash this
+  10 f181054.asc match tap
+  10 f181054.asc match this
+  10 f181055.asc clash tap
+  10 f181055.asc clash this
+  10 f181055.asc match tap
+  10 f181055.asc match this
+  10 f181056.asc clash tap
+  10 f181056.asc clash this
+  10 f181056.asc match tap
+  10 f181056.asc match this
+  10 f181057.asc clash tap
+  10 f181057.asc clash this
+  10 f181057.asc match tap
+  10 f181057.asc match this
+   7 f181059.asc clash tap
+  13 f181059.asc clash this
+  10 f181059.asc match tap
+  10 f181059.asc match this
+  10 f181060t.asc clash tap
+  10 f181060t.asc clash this
+  10 f181060t.asc match tap
+  10 f181060t.asc match this
+  10 f181062.asc clash tap
+  10 f181062.asc clash this
+  10 f181062.asc match tap
+  10 f181062.asc match this
+   7 f181063.asc clash tap
+  13 f181063.asc clash this
+  10 f181063.asc match tap
+  10 f181063.asc match this
+  10 f181064.asc clash tap
+  10 f181064.asc clash this
+  10 f181064.asc match tap
+  10 f181064.asc match this
+  10 f181065.asc clash tap
+  10 f181065.asc clash this
+  10 f181065.asc match tap
+  10 f181065.asc match this
+  10 f181066.asc clash tap
+  10 f181066.asc clash this
+  10 f181066.asc match tap
+  10 f181066.asc match this
+   7 f181067.asc clash tap
+  13 f181067.asc clash this
+  10 f181067.asc match tap
+  10 f181067.asc match this
+  10 f181068b.asc clash tap
+  10 f181068b.asc clash this
+  10 f181068b.asc match tap
+  10 f181068b.asc match this
+  10 f181069.asc clash tap
+  10 f181069.asc clash this
+  10 f181069.asc match tap
+  10 f181069.asc match this
+  10 f181070b.asc clash tap
+  10 f181070b.asc clash this
+  10 f181070b.asc match tap
+  10 f181070b.asc match this
+   7 f181071b.asc clash tap
+  13 f181071b.asc clash this
+  10 f181071b.asc match tap
+  10 f181071b.asc match this
+  10 f181072.asc clash tap
+  10 f181072.asc clash this
+  10 f181072.asc match tap
+  10 f181072.asc match this
+  10 f181073.asc clash tap
+  10 f181073.asc clash this
+  10 f181073.asc match tap
+  10 f181073.asc match this
+  10 f181074.asc clash tap
+  10 f181074.asc clash this
+  10 f181074.asc match tap
+  10 f181074.asc match this
+   7 f181075.asc clash tap
+  13 f181075.asc clash this
+  10 f181075.asc match tap
+  10 f181075.asc match this
+  10 f181076.asc clash tap
+  10 f181076.asc clash this
+  10 f181076.asc match tap
+  10 f181076.asc match this
+  10 f181078.asc clash tap
+  10 f181078.asc clash this
+  10 f181078.asc match tap
+  10 f181078.asc match this
+   7 f181079.asc clash tap
+  13 f181079.asc clash this
+  10 f181079.asc match tap
+  10 f181079.asc match this
+  10 f181080.asc clash tap
+  10 f181080.asc clash this
+  10 f181080.asc match tap
+  10 f181080.asc match this
+  10 f181081.asc clash tap
+  10 f181081.asc clash this
+  10 f181081.asc match tap
+  10 f181081.asc match this
+  10 f181082.asc clash tap
+  10 f181082.asc clash this
+  10 f181082.asc match tap
+  10 f181082.asc match this
+   7 f181083.asc clash tap
+  13 f181083.asc clash this
+  10 f181083.asc match tap
+  10 f181083.asc match this
+  10 f181084.asc clash tap
+  10 f181084.asc clash this
+  10 f181084.asc match tap
+  10 f181084.asc match this
+  10 f181086.asc clash tap
+  10 f181086.asc clash this
+  10 f181086.asc match tap
+  10 f181086.asc match this
+  10 f181087b.asc clash tap
+  10 f181087b.asc clash this
+  10 f181087b.asc match tap
+  10 f181087b.asc match this
+   7 f181088.asc clash tap
+  13 f181088.asc clash this
+  10 f181088.asc match tap
+  10 f181088.asc match this
+  10 f181089.asc clash tap
+  10 f181089.asc clash this
+  10 f181089.asc match tap
+  10 f181089.asc match this
+  10 f181090.asc clash tap
+  10 f181090.asc clash this
+  10 f181090.asc match tap
+  10 f181090.asc match this
+  10 f181091.asc clash tap
+  10 f181091.asc clash this
+  10 f181091.asc match tap
+  10 f181091.asc match this
+   7 subj10.asc clash tap
+  13 subj10.asc clash this
+  10 subj10.asc match tap
+  10 subj10.asc match this
+  10 subj12.asc clash tap
+  10 subj12.asc clash this
+  10 subj12.asc match tap
+  10 subj12.asc match this
+  10 subj13.asc clash tap
+  10 subj13.asc clash this
+  10 subj13.asc match tap
+  10 subj13.asc match this
+   7 subj14.asc clash tap
+  13 subj14.asc clash this
+  10 subj14.asc match tap
+  10 subj14.asc match this
+  10 subj16.asc clash tap
+  10 subj16.asc clash this
+  10 subj16.asc match tap
+  10 subj16.asc match this
+   7 subj6.asc clash tap
+  13 subj6.asc clash this
+  10 subj6.asc match tap
+  10 subj6.asc match this
+   7 subject1.asc clash tap
+  13 subject1.asc clash this
+  10 subject1.asc match tap
+  10 subject1.asc match this
+  10 subject7.asc clash tap
+  10 subject7.asc clash this
+  10 subject7.asc match tap
+  10 subject7.asc match this
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $1,$3,$4}' | sort | uniq -c | awk '{print $2}' | uniq -c
+   1 
+   4 5t.asc
+   4 f181050_all.asc
+   4 f181051.asc
+   4 f181052.asc
+   4 f181053.asc
+   4 f181054.asc
+   4 f181055.asc
+   4 f181056.asc
+   4 f181057.asc
+   4 f181059.asc
+   4 f181060t.asc
+   4 f181062.asc
+   4 f181063.asc
+   4 f181064.asc
+   4 f181065.asc
+   4 f181066.asc
+   4 f181067.asc
+   4 f181068b.asc
+   4 f181069.asc
+   4 f181070b.asc
+   4 f181071b.asc
+   4 f181072.asc
+   4 f181073.asc
+   4 f181074.asc
+   4 f181075.asc
+   4 f181076.asc
+   4 f181078.asc
+   4 f181079.asc
+   4 f181080.asc
+   4 f181081.asc
+   4 f181082.asc
+   4 f181083.asc
+   4 f181084.asc
+   4 f181086.asc
+   4 f181087b.asc
+   4 f181088.asc
+   4 f181089.asc
+   4 f181090.asc
+   4 f181091.asc
+   4 subj10.asc
+   4 subj12.asc
+   4 subj13.asc
+   4 subj14.asc
+   4 subj16.asc
+   4 subj6.asc
+   4 subject1.asc
+   4 subject7.asc
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$fg
+emacs retrieveTrialInfo.awk
+
+[2]+  Stopped                 emacs retrieveTrialInfo.awk
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4}' | sort | uniq -c | awk '{print $2}' | uniq -c
+   1 
+   2 1
+   2 10
+   1 11
+   2 12
+   2 121
+   2 122
+   2 123
+   2 124
+   2 125
+   2 126
+   2 127
+   2 128
+   2 129
+   1 13
+   1 130
+   2 131
+   2 132
+   2 133
+   2 134
+   2 135
+   2 136
+   2 137
+   1 138
+   2 139
+   2 14
+   2 140
+   2 141
+   1 142
+   2 143
+   2 144
+   2 145
+   2 146
+   2 147
+   1 148
+   2 149
+   1 15
+   2 150
+   2 151
+   2 152
+   2 153
+   1 154
+   2 155
+   2 156
+   2 157
+   1 158
+   2 159
+   2 16
+   1 160
+   1 162
+   1 17
+   2 18
+   2 19
+   2 2
+   2 20
+   2 21
+   2 22
+   1 23
+   2 24
+   1 25
+   2 26
+   1 27
+   2 28
+   2 29
+   2 3
+   2 30
+   2 31
+   2 32
+   1 33
+   2 34
+   2 35
+   2 36
+   1 37
+   2 38
+   1 39
+   2 4
+   2 40
+   2 5
+   2 6
+   2 7
+   2 8
+   2 9
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4}' | sort -n | uniq -c | awk '{print $2}' | uni
+-bash: uni: command not found
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4}' | sort -n | uniq -c | awk '{print $2}' | uniq
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+162
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4}' | sort -n | uniq -c | awk '{print $2}' | uniq -c
+   1 
+   2 1
+   2 2
+   2 3
+   2 4
+   2 5
+   2 6
+   2 7
+   2 8
+   2 9
+   2 10
+   1 11
+   2 12
+   1 13
+   2 14
+   1 15
+   2 16
+   1 17
+   2 18
+   2 19
+   2 20
+   2 21
+   2 22
+   1 23
+   2 24
+   1 25
+   2 26
+   1 27
+   2 28
+   2 29
+   2 30
+   2 31
+   2 32
+   1 33
+   2 34
+   2 35
+   2 36
+   1 37
+   2 38
+   1 39
+   2 40
+   2 121
+   2 122
+   2 123
+   2 124
+   2 125
+   2 126
+   2 127
+   2 128
+   2 129
+   1 130
+   2 131
+   2 132
+   2 133
+   2 134
+   2 135
+   2 136
+   2 137
+   1 138
+   2 139
+   2 140
+   2 141
+   1 142
+   2 143
+   2 144
+   2 145
+   2 146
+   2 147
+   1 148
+   2 149
+   2 150
+   2 151
+   2 152
+   2 153
+   1 154
+   2 155
+   2 156
+   2 157
+   1 158
+   2 159
+   1 160
+   1 162
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4}' | sort -n | uniq -c | awk '{print $2}' | uniq -c | wc -l
+      82
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | head
+     
+5t.asc 131 clash tap D permit.
+5t.asc 16 match tap D refund.
+5t.asc 141 clash this D address.
+5t.asc 121 clash this D pervert.
+5t.asc 153 clash this D entrance.
+5t.asc 137 clash this D survey.
+5t.asc 147 clash tap D compound
+5t.asc 14 match this D rebound.
+5t.asc 143 clash tap D combat,
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$fg
+emacs retrieveTrialInfo.awk
+
+[2]+  Stopped                 emacs retrieveTrialInfo.awk
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | head
+5t.asc 131 clash tap D permit.
+5t.asc 16 match tap D refund.
+5t.asc 141 clash this D address.
+5t.asc 121 clash this D pervert.
+5t.asc 153 clash this D entrance.
+5t.asc 137 clash this D survey.
+5t.asc 147 clash tap D compound
+5t.asc 14 match this D rebound.
+5t.asc 143 clash tap D combat,
+5t.asc 32 match tap D detail.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4,$5,$6}' | wc -l
+    1884
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4,$5,$6}' | sort -n | uniq -c  | wc -l
+     162
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $3,$4,$5,$6}' | sort -n | uniq -c  | wc -l
+     160
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $3,$4,$6}' | sort -n | uniq -c  | wc -l
+     143
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4}' | sort -n | uniq -c  | wc -l
+     144
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4,$5,$6}' | sort -n | uniq -c  | head
+  14 1 match tap A pervert.
+  10 1 match this C pervert.
+  11 2 match tap B complex
+  12 2 match this D complex
+  10 3 match tap C decrease.
+  14 3 match this A decrease.
+  12 4 match tap D defect.
+  11 4 match this B defect.
+  14 5 match tap A Digest.
+  10 5 match this C Digest.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4,$5,$6}' | sort -n | uniq -c  | sort -k6,6 | less
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$fg
+emacs retrieveTrialInfo.awk
+
+[2]+  Stopped                 emacs retrieveTrialInfo.awk
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4,$5,$6}' | sort -n | uniq -c  | sort -k6,6 | less
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4,$5}' | sort -n | uniq -c  | wc -l
+     162
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4,$5}' | sort -n | uniq -c  | more
+  11 1 clash tap B
+   1 1 clash tap C
+  12 1 clash this D
+  14 1 match tap A
+  10 1 match this C
+  14 2 clash tap A
+  10 2 clash this C
+  11 2 match tap B
+  12 2 match this D
+  12 3 clash tap D
+  11 3 clash this B
+  10 3 match tap C
+  14 3 match this A
+  10 4 clash tap C
+  14 4 clash this A
+  12 4 match tap D
+  11 4 match this B
+  11 5 clash tap B
+  12 5 clash this D
+  14 5 match tap A
+  10 5 match this C
+  14 6 clash tap A
+  10 6 clash this C
+  11 6 match tap B
+  12 6 match this D
+  12 7 clash tap D
+  11 7 clash this B
+  10 7 match tap C
+  14 7 match this A
+  10 8 clash tap C
+  14 8 clash this A
+  12 8 match tap D
+  11 8 match this B
+  11 9 clash tap B
+  12 9 clash this D
+  14 9 match tap A
+  10 9 match this C
+  14 10 clash this A
+  10 10 clash this C
+  11 10 match tap B
+  12 10 match this D
+  13 11 clash tap D
+  11 11 clash this B
+  14 11 match tap A
+  10 11 match tap C
+  11 12 clash tap C
+  14 12 clash this A
+  12 12 match tap D
+  11 12 match this B
+  11 13 clash tap B
+  12 13 clash this D
+  14 13 match this A
+  10 13 match this C
+  14 14 clash tap A
+  10 14 clash this C
+  11 14 match tap B
+  12 14 match this D
+  12 15 clash tap D
+  11 15 clash this B
+  14 15 match tap A
+  10 15 match tap C
+  10 16 clash tap C
+  14 16 clash this A
+  12 16 match tap D
+  11 16 match this B
+  11 17 clash tap B
+  12 17 clash this D
+  14 17 match this A
+  10 17 match this C
+  14 18 clash this A
+  10 18 clash this C
+  11 18 match tap B
+  12 18 match this D
+  12 19 clash tap D
+  11 19 clash this B
+  10 19 match tap C
+  14 19 match this A
+  10 20 clash tap C
+  14 20 clash this A
+  12 20 match tap D
+  11 20 match this B
+  11 21 clash tap B
+  12 21 clash this D
+  14 21 match tap A
+  10 21 match this C
+  14 22 clash this A
+  10 22 clash this C
+  11 22 match tap B
+  12 22 match this D
+  12 23 clash tap D
+  11 23 clash this B
+  14 23 match tap A
+  10 23 match tap C
+  10 24 clash tap C
+  14 24 clash this A
+  12 24 match tap D
+  11 24 match this B
+  11 25 clash tap B
+  12 25 clash this D
+  14 25 match this A
+  10 25 match this C
+  14 26 clash tap A
+  10 26 clash this C
+  11 26 match tap B
+  12 26 match this D
+  12 27 clash tap D
+  11 27 clash this B
+  14 27 match tap A
+  10 27 match tap C
+  14 28 clash tap A
+  10 28 clash tap C
+  12 28 match tap D
+  11 28 match this B
+  11 29 clash tap B
+  12 29 clash this D
+  14 29 match tap A
+  10 29 match this C
+  14 30 clash tap A
+  10 30 clash this C
+  11 30 match tap B
+  12 30 match this D
+  12 31 clash tap D
+  11 31 clash this B
+  10 31 match tap C
+  14 31 match this A
+  10 32 clash tap C
+  14 32 clash this A
+  12 32 match tap D
+  11 32 match this B
+  11 33 clash tap B
+  12 33 clash this D
+  14 33 match this A
+  10 33 match this C
+  14 34 clash this A
+  10 34 clash this C
+  11 34 match tap B
+  12 34 match this D
+  12 35 clash tap D
+  11 35 clash this B
+  10 35 match tap C
+  14 35 match this A
+  10 36 clash tap C
+  14 36 clash this A
+  12 36 match tap D
+  11 36 match this B
+  11 37 clash tap B
+  12 37 clash this D
+  14 37 match this A
+  10 37 match this C
+  14 38 clash this A
+  10 38 clash this C
+  11 38 match tap B
+  12 38 match this D
+  12 39 clash tap D
+  11 39 clash this B
+  14 39 match tap A
+  10 39 match tap C
+  14 40 clash tap A
+  10 40 clash tap C
+  12 40 match tap D
+  11 40 match this B
+   1 60 clash tap D
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$grep  "subtypeid 9" *asc 
+5t.asc:MSG	4339816 !V TRIAL_VAR subtypeid 9
+5t.asc:MSG	4339833 !V TRIAL_VAR subtypeid 9
+5t.asc:MSG	4339850 !V TRIAL_VAR subtypeid 9
+5t.asc:MSG	4339868 !V TRIAL_VAR subtypeid 9
+5t.asc:MSG	5318088 !V TRIAL_VAR subtypeid 9
+5t.asc:MSG	5318105 !V TRIAL_VAR subtypeid 9
+5t.asc:MSG	5318122 !V TRIAL_VAR subtypeid 9
+5t.asc:MSG	5318140 !V TRIAL_VAR subtypeid 9
+f181050_all.asc:MSG	1369198 !V TRIAL_VAR subtypeid 9
+f181050_all.asc:MSG	1369215 !V TRIAL_VAR subtypeid 9
+f181050_all.asc:MSG	1369232 !V TRIAL_VAR subtypeid 9
+f181050_all.asc:MSG	1369250 !V TRIAL_VAR subtypeid 9
+f181050_all.asc:MSG	1564197 !V TRIAL_VAR subtypeid 9
+f181050_all.asc:MSG	1564214 !V TRIAL_VAR subtypeid 9
+f181050_all.asc:MSG	1564231 !V TRIAL_VAR subtypeid 9
+f181050_all.asc:MSG	1564249 !V TRIAL_VAR subtypeid 9
+f181051.asc:MSG	1778139 !V TRIAL_VAR subtypeid 9
+f181051.asc:MSG	1778156 !V TRIAL_VAR subtypeid 9
+f181051.asc:MSG	1778173 !V TRIAL_VAR subtypeid 9
+f181051.asc:MSG	1778191 !V TRIAL_VAR subtypeid 9
+f181051.asc:MSG	3221118 !V TRIAL_VAR subtypeid 9
+f181051.asc:MSG	3221135 !V TRIAL_VAR subtypeid 9
+f181051.asc:MSG	3221152 !V TRIAL_VAR subtypeid 9
+f181051.asc:MSG	3221170 !V TRIAL_VAR subtypeid 9
+f181052.asc:MSG	6345110 !V TRIAL_VAR subtypeid 9
+f181052.asc:MSG	6345127 !V TRIAL_VAR subtypeid 9
+f181052.asc:MSG	6345144 !V TRIAL_VAR subtypeid 9
+f181052.asc:MSG	6345162 !V TRIAL_VAR subtypeid 9
+f181052.asc:MSG	6345180 !V TRIAL_VAR subtypeid 9
+f181052.asc:MSG	6568803 !V TRIAL_VAR subtypeid 9
+f181052.asc:MSG	6568820 !V TRIAL_VAR subtypeid 9
+f181052.asc:MSG	6568837 !V TRIAL_VAR subtypeid 9
+f181052.asc:MSG	6568855 !V TRIAL_VAR subtypeid 9
+f181052.asc:MSG	6568873 !V TRIAL_VAR subtypeid 9
+f181053.asc:MSG	15745789 !V TRIAL_VAR subtypeid 9
+f181053.asc:MSG	15745806 !V TRIAL_VAR subtypeid 9
+f181053.asc:MSG	15745823 !V TRIAL_VAR subtypeid 9
+f181053.asc:MSG	15745841 !V TRIAL_VAR subtypeid 9
+f181053.asc:MSG	16940499 !V TRIAL_VAR subtypeid 9
+f181053.asc:MSG	16940516 !V TRIAL_VAR subtypeid 9
+f181053.asc:MSG	16940533 !V TRIAL_VAR subtypeid 9
+f181053.asc:MSG	16940551 !V TRIAL_VAR subtypeid 9
+f181054.asc:MSG	2679090 !V TRIAL_VAR subtypeid 9
+f181054.asc:MSG	2679107 !V TRIAL_VAR subtypeid 9
+f181054.asc:MSG	2679124 !V TRIAL_VAR subtypeid 9
+f181054.asc:MSG	2679142 !V TRIAL_VAR subtypeid 9
+f181054.asc:MSG	2850100 !V TRIAL_VAR subtypeid 9
+f181054.asc:MSG	2850117 !V TRIAL_VAR subtypeid 9
+f181054.asc:MSG	2850134 !V TRIAL_VAR subtypeid 9
+f181054.asc:MSG	2850152 !V TRIAL_VAR subtypeid 9
+f181055.asc:MSG	1132200 !V TRIAL_VAR subtypeid 9
+f181055.asc:MSG	1132217 !V TRIAL_VAR subtypeid 9
+f181055.asc:MSG	1132234 !V TRIAL_VAR subtypeid 9
+f181055.asc:MSG	1132252 !V TRIAL_VAR subtypeid 9
+f181055.asc:MSG	2339622 !V TRIAL_VAR subtypeid 9
+f181055.asc:MSG	2339639 !V TRIAL_VAR subtypeid 9
+f181055.asc:MSG	2339656 !V TRIAL_VAR subtypeid 9
+f181055.asc:MSG	2339674 !V TRIAL_VAR subtypeid 9
+f181056.asc:MSG	6258580 !V TRIAL_VAR subtypeid 9
+f181056.asc:MSG	6258597 !V TRIAL_VAR subtypeid 9
+f181056.asc:MSG	6258614 !V TRIAL_VAR subtypeid 9
+f181056.asc:MSG	6258632 !V TRIAL_VAR subtypeid 9
+f181056.asc:MSG	6377005 !V TRIAL_VAR subtypeid 9
+f181056.asc:MSG	6377022 !V TRIAL_VAR subtypeid 9
+f181056.asc:MSG	6377039 !V TRIAL_VAR subtypeid 9
+f181056.asc:MSG	6377057 !V TRIAL_VAR subtypeid 9
+f181057.asc:MSG	2340208 !V TRIAL_VAR subtypeid 9
+f181057.asc:MSG	2340225 !V TRIAL_VAR subtypeid 9
+f181057.asc:MSG	2340243 !V TRIAL_VAR subtypeid 9
+f181057.asc:MSG	2340261 !V TRIAL_VAR subtypeid 9
+f181057.asc:MSG	3971012 !V TRIAL_VAR subtypeid 9
+f181057.asc:MSG	3971029 !V TRIAL_VAR subtypeid 9
+f181057.asc:MSG	3971046 !V TRIAL_VAR subtypeid 9
+f181057.asc:MSG	3971064 !V TRIAL_VAR subtypeid 9
+f181059.asc:MSG	9428470 !V TRIAL_VAR subtypeid 9
+f181059.asc:MSG	9428487 !V TRIAL_VAR subtypeid 9
+f181059.asc:MSG	9428504 !V TRIAL_VAR subtypeid 9
+f181059.asc:MSG	9428522 !V TRIAL_VAR subtypeid 9
+f181059.asc:MSG	9661262 !V TRIAL_VAR subtypeid 9
+f181059.asc:MSG	9661279 !V TRIAL_VAR subtypeid 9
+f181059.asc:MSG	9661296 !V TRIAL_VAR subtypeid 9
+f181059.asc:MSG	9661314 !V TRIAL_VAR subtypeid 9
+f181060t.asc:MSG	13614525 !V TRIAL_VAR subtypeid 9
+f181060t.asc:MSG	13614542 !V TRIAL_VAR subtypeid 9
+f181060t.asc:MSG	13614559 !V TRIAL_VAR subtypeid 9
+f181060t.asc:MSG	13614577 !V TRIAL_VAR subtypeid 9
+f181060t.asc:MSG	14918404 !V TRIAL_VAR subtypeid 9
+f181060t.asc:MSG	14918421 !V TRIAL_VAR subtypeid 9
+f181060t.asc:MSG	14918438 !V TRIAL_VAR subtypeid 9
+f181060t.asc:MSG	14918456 !V TRIAL_VAR subtypeid 9
+f181062.asc:MSG	1330380 !V TRIAL_VAR subtypeid 9
+f181062.asc:MSG	1330397 !V TRIAL_VAR subtypeid 9
+f181062.asc:MSG	1330414 !V TRIAL_VAR subtypeid 9
+f181062.asc:MSG	1330432 !V TRIAL_VAR subtypeid 9
+f181062.asc:MSG	2931269 !V TRIAL_VAR subtypeid 9
+f181062.asc:MSG	2931286 !V TRIAL_VAR subtypeid 9
+f181062.asc:MSG	2931303 !V TRIAL_VAR subtypeid 9
+f181062.asc:MSG	2931321 !V TRIAL_VAR subtypeid 9
+f181063.asc:MSG	5837520 !V TRIAL_VAR subtypeid 9
+f181063.asc:MSG	5837537 !V TRIAL_VAR subtypeid 9
+f181063.asc:MSG	5837554 !V TRIAL_VAR subtypeid 9
+f181063.asc:MSG	5837572 !V TRIAL_VAR subtypeid 9
+f181063.asc:MSG	5993167 !V TRIAL_VAR subtypeid 9
+f181063.asc:MSG	5993184 !V TRIAL_VAR subtypeid 9
+f181063.asc:MSG	5993201 !V TRIAL_VAR subtypeid 9
+f181063.asc:MSG	5993219 !V TRIAL_VAR subtypeid 9
+f181064.asc:MSG	711953 !V TRIAL_VAR subtypeid 9
+f181064.asc:MSG	711970 !V TRIAL_VAR subtypeid 9
+f181064.asc:MSG	711987 !V TRIAL_VAR subtypeid 9
+f181064.asc:MSG	712005 !V TRIAL_VAR subtypeid 9
+f181064.asc:MSG	1754117 !V TRIAL_VAR subtypeid 9
+f181064.asc:MSG	1754134 !V TRIAL_VAR subtypeid 9
+f181064.asc:MSG	1754151 !V TRIAL_VAR subtypeid 9
+f181064.asc:MSG	1754169 !V TRIAL_VAR subtypeid 9
+f181065.asc:MSG	5698766 !V TRIAL_VAR subtypeid 9
+f181065.asc:MSG	5698783 !V TRIAL_VAR subtypeid 9
+f181065.asc:MSG	5698800 !V TRIAL_VAR subtypeid 9
+f181065.asc:MSG	5698818 !V TRIAL_VAR subtypeid 9
+f181065.asc:MSG	5832640 !V TRIAL_VAR subtypeid 9
+f181065.asc:MSG	5832657 !V TRIAL_VAR subtypeid 9
+f181065.asc:MSG	5832674 !V TRIAL_VAR subtypeid 9
+f181065.asc:MSG	5832692 !V TRIAL_VAR subtypeid 9
+f181066.asc:MSG	8759436 !V TRIAL_VAR subtypeid 9
+f181066.asc:MSG	8759453 !V TRIAL_VAR subtypeid 9
+f181066.asc:MSG	8759470 !V TRIAL_VAR subtypeid 9
+f181066.asc:MSG	8759488 !V TRIAL_VAR subtypeid 9
+f181066.asc:MSG	9760650 !V TRIAL_VAR subtypeid 9
+f181066.asc:MSG	9760667 !V TRIAL_VAR subtypeid 9
+f181066.asc:MSG	9760684 !V TRIAL_VAR subtypeid 9
+f181066.asc:MSG	9760702 !V TRIAL_VAR subtypeid 9
+f181067.asc:MSG	782578 !V TRIAL_VAR subtypeid 9
+f181067.asc:MSG	782595 !V TRIAL_VAR subtypeid 9
+f181067.asc:MSG	782612 !V TRIAL_VAR subtypeid 9
+f181067.asc:MSG	782630 !V TRIAL_VAR subtypeid 9
+f181067.asc:MSG	1114211 !V TRIAL_VAR subtypeid 9
+f181067.asc:MSG	1114228 !V TRIAL_VAR subtypeid 9
+f181067.asc:MSG	1114245 !V TRIAL_VAR subtypeid 9
+f181067.asc:MSG	1114263 !V TRIAL_VAR subtypeid 9
+f181068b.asc:MSG	410380 !V TRIAL_VAR subtypeid 9
+f181068b.asc:MSG	410397 !V TRIAL_VAR subtypeid 9
+f181068b.asc:MSG	410414 !V TRIAL_VAR subtypeid 9
+f181068b.asc:MSG	410432 !V TRIAL_VAR subtypeid 9
+f181068b.asc:MSG	1935328 !V TRIAL_VAR subtypeid 9
+f181068b.asc:MSG	1935345 !V TRIAL_VAR subtypeid 9
+f181068b.asc:MSG	1935362 !V TRIAL_VAR subtypeid 9
+f181068b.asc:MSG	1935380 !V TRIAL_VAR subtypeid 9
+f181069.asc:MSG	4903828 !V TRIAL_VAR subtypeid 9
+f181069.asc:MSG	4903845 !V TRIAL_VAR subtypeid 9
+f181069.asc:MSG	4903862 !V TRIAL_VAR subtypeid 9
+f181069.asc:MSG	4903880 !V TRIAL_VAR subtypeid 9
+f181069.asc:MSG	4903898 !V TRIAL_VAR subtypeid 9
+f181069.asc:MSG	5123099 !V TRIAL_VAR subtypeid 9
+f181069.asc:MSG	5123116 !V TRIAL_VAR subtypeid 9
+f181069.asc:MSG	5123133 !V TRIAL_VAR subtypeid 9
+f181069.asc:MSG	5123151 !V TRIAL_VAR subtypeid 9
+f181069.asc:MSG	5123169 !V TRIAL_VAR subtypeid 9
+f181070b.asc:MSG	10384295 !V TRIAL_VAR subtypeid 9
+f181070b.asc:MSG	10384312 !V TRIAL_VAR subtypeid 9
+f181070b.asc:MSG	10384329 !V TRIAL_VAR subtypeid 9
+f181070b.asc:MSG	10384347 !V TRIAL_VAR subtypeid 9
+f181070b.asc:MSG	12110392 !V TRIAL_VAR subtypeid 9
+f181070b.asc:MSG	12110409 !V TRIAL_VAR subtypeid 9
+f181070b.asc:MSG	12110426 !V TRIAL_VAR subtypeid 9
+f181070b.asc:MSG	12110444 !V TRIAL_VAR subtypeid 9
+f181071b.asc:MSG	5630695 !V TRIAL_VAR subtypeid 9
+f181071b.asc:MSG	5630712 !V TRIAL_VAR subtypeid 9
+f181071b.asc:MSG	5630729 !V TRIAL_VAR subtypeid 9
+f181071b.asc:MSG	5630747 !V TRIAL_VAR subtypeid 9
+f181071b.asc:MSG	5816326 !V TRIAL_VAR subtypeid 9
+f181071b.asc:MSG	5816343 !V TRIAL_VAR subtypeid 9
+f181071b.asc:MSG	5816360 !V TRIAL_VAR subtypeid 9
+f181071b.asc:MSG	5816378 !V TRIAL_VAR subtypeid 9
+f181072.asc:MSG	7384918 !V TRIAL_VAR subtypeid 9
+f181072.asc:MSG	7384935 !V TRIAL_VAR subtypeid 9
+f181072.asc:MSG	7384952 !V TRIAL_VAR subtypeid 9
+f181072.asc:MSG	7384970 !V TRIAL_VAR subtypeid 9
+f181072.asc:MSG	8761866 !V TRIAL_VAR subtypeid 9
+f181072.asc:MSG	8761883 !V TRIAL_VAR subtypeid 9
+f181072.asc:MSG	8761900 !V TRIAL_VAR subtypeid 9
+f181072.asc:MSG	8761918 !V TRIAL_VAR subtypeid 9
+f181073.asc:MSG	16537588 !V TRIAL_VAR subtypeid 9
+f181073.asc:MSG	16537605 !V TRIAL_VAR subtypeid 9
+f181073.asc:MSG	16537622 !V TRIAL_VAR subtypeid 9
+f181073.asc:MSG	16537640 !V TRIAL_VAR subtypeid 9
+f181073.asc:MSG	16749729 !V TRIAL_VAR subtypeid 9
+f181073.asc:MSG	16749746 !V TRIAL_VAR subtypeid 9
+f181073.asc:MSG	16749763 !V TRIAL_VAR subtypeid 9
+f181073.asc:MSG	16749781 !V TRIAL_VAR subtypeid 9
+f181074.asc:MSG	19565464 !V TRIAL_VAR subtypeid 9
+f181074.asc:MSG	19565481 !V TRIAL_VAR subtypeid 9
+f181074.asc:MSG	19565498 !V TRIAL_VAR subtypeid 9
+f181074.asc:MSG	19565516 !V TRIAL_VAR subtypeid 9
+f181074.asc:MSG	21295717 !V TRIAL_VAR subtypeid 9
+f181074.asc:MSG	21295734 !V TRIAL_VAR subtypeid 9
+f181074.asc:MSG	21295751 !V TRIAL_VAR subtypeid 9
+f181074.asc:MSG	21295769 !V TRIAL_VAR subtypeid 9
+f181075.asc:MSG	2859026 !V TRIAL_VAR subtypeid 9
+f181075.asc:MSG	2859043 !V TRIAL_VAR subtypeid 9
+f181075.asc:MSG	2859060 !V TRIAL_VAR subtypeid 9
+f181075.asc:MSG	2859078 !V TRIAL_VAR subtypeid 9
+f181075.asc:MSG	3055688 !V TRIAL_VAR subtypeid 9
+f181075.asc:MSG	3055705 !V TRIAL_VAR subtypeid 9
+f181075.asc:MSG	3055722 !V TRIAL_VAR subtypeid 9
+f181075.asc:MSG	3055740 !V TRIAL_VAR subtypeid 9
+f181076.asc:MSG	1221837 !V TRIAL_VAR subtypeid 9
+f181076.asc:MSG	1221854 !V TRIAL_VAR subtypeid 9
+f181076.asc:MSG	1221871 !V TRIAL_VAR subtypeid 9
+f181076.asc:MSG	1221889 !V TRIAL_VAR subtypeid 9
+f181076.asc:MSG	2853361 !V TRIAL_VAR subtypeid 9
+f181076.asc:MSG	2853378 !V TRIAL_VAR subtypeid 9
+f181076.asc:MSG	2853395 !V TRIAL_VAR subtypeid 9
+f181076.asc:MSG	2853413 !V TRIAL_VAR subtypeid 9
+f181078.asc:MSG	1370934 !V TRIAL_VAR subtypeid 9
+f181078.asc:MSG	1370951 !V TRIAL_VAR subtypeid 9
+f181078.asc:MSG	1370968 !V TRIAL_VAR subtypeid 9
+f181078.asc:MSG	1370986 !V TRIAL_VAR subtypeid 9
+f181078.asc:MSG	2677414 !V TRIAL_VAR subtypeid 9
+f181078.asc:MSG	2677431 !V TRIAL_VAR subtypeid 9
+f181078.asc:MSG	2677448 !V TRIAL_VAR subtypeid 9
+f181078.asc:MSG	2677466 !V TRIAL_VAR subtypeid 9
+f181079.asc:MSG	1910049 !V TRIAL_VAR subtypeid 9
+f181079.asc:MSG	1910066 !V TRIAL_VAR subtypeid 9
+f181079.asc:MSG	1910083 !V TRIAL_VAR subtypeid 9
+f181079.asc:MSG	1910101 !V TRIAL_VAR subtypeid 9
+f181079.asc:MSG	2103271 !V TRIAL_VAR subtypeid 9
+f181079.asc:MSG	2103288 !V TRIAL_VAR subtypeid 9
+f181079.asc:MSG	2103305 !V TRIAL_VAR subtypeid 9
+f181079.asc:MSG	2103323 !V TRIAL_VAR subtypeid 9
+f181080.asc:MSG	937957 !V TRIAL_VAR subtypeid 9
+f181080.asc:MSG	937974 !V TRIAL_VAR subtypeid 9
+f181080.asc:MSG	937991 !V TRIAL_VAR subtypeid 9
+f181080.asc:MSG	938009 !V TRIAL_VAR subtypeid 9
+f181080.asc:MSG	2623413 !V TRIAL_VAR subtypeid 9
+f181080.asc:MSG	2623430 !V TRIAL_VAR subtypeid 9
+f181080.asc:MSG	2623447 !V TRIAL_VAR subtypeid 9
+f181080.asc:MSG	2623465 !V TRIAL_VAR subtypeid 9
+f181081.asc:MSG	3696011 !V TRIAL_VAR subtypeid 9
+f181081.asc:MSG	3696028 !V TRIAL_VAR subtypeid 9
+f181081.asc:MSG	3696045 !V TRIAL_VAR subtypeid 9
+f181081.asc:MSG	3696063 !V TRIAL_VAR subtypeid 9
+f181081.asc:MSG	3887663 !V TRIAL_VAR subtypeid 9
+f181081.asc:MSG	3887680 !V TRIAL_VAR subtypeid 9
+f181081.asc:MSG	3887697 !V TRIAL_VAR subtypeid 9
+f181081.asc:MSG	3887715 !V TRIAL_VAR subtypeid 9
+f181082.asc:MSG	5164563 !V TRIAL_VAR subtypeid 9
+f181082.asc:MSG	5164580 !V TRIAL_VAR subtypeid 9
+f181082.asc:MSG	5164597 !V TRIAL_VAR subtypeid 9
+f181082.asc:MSG	5164615 !V TRIAL_VAR subtypeid 9
+f181082.asc:MSG	6611619 !V TRIAL_VAR subtypeid 9
+f181082.asc:MSG	6611636 !V TRIAL_VAR subtypeid 9
+f181082.asc:MSG	6611653 !V TRIAL_VAR subtypeid 9
+f181082.asc:MSG	6611671 !V TRIAL_VAR subtypeid 9
+f181083.asc:MSG	9938050 !V TRIAL_VAR subtypeid 9
+f181083.asc:MSG	9938067 !V TRIAL_VAR subtypeid 9
+f181083.asc:MSG	9938084 !V TRIAL_VAR subtypeid 9
+f181083.asc:MSG	9938102 !V TRIAL_VAR subtypeid 9
+f181083.asc:MSG	10153147 !V TRIAL_VAR subtypeid 9
+f181083.asc:MSG	10153164 !V TRIAL_VAR subtypeid 9
+f181083.asc:MSG	10153181 !V TRIAL_VAR subtypeid 9
+f181083.asc:MSG	10153199 !V TRIAL_VAR subtypeid 9
+f181084.asc:MSG	1192929 !V TRIAL_VAR subtypeid 9
+f181084.asc:MSG	1192946 !V TRIAL_VAR subtypeid 9
+f181084.asc:MSG	1192963 !V TRIAL_VAR subtypeid 9
+f181084.asc:MSG	1192981 !V TRIAL_VAR subtypeid 9
+f181084.asc:MSG	2271018 !V TRIAL_VAR subtypeid 9
+f181084.asc:MSG	2271035 !V TRIAL_VAR subtypeid 9
+f181084.asc:MSG	2271052 !V TRIAL_VAR subtypeid 9
+f181084.asc:MSG	2271070 !V TRIAL_VAR subtypeid 9
+f181086.asc:MSG	1722504 !V TRIAL_VAR subtypeid 9
+f181086.asc:MSG	1722521 !V TRIAL_VAR subtypeid 9
+f181086.asc:MSG	1722538 !V TRIAL_VAR subtypeid 9
+f181086.asc:MSG	1722556 !V TRIAL_VAR subtypeid 9
+f181086.asc:MSG	1722574 !V TRIAL_VAR subtypeid 9
+f181086.asc:MSG	1948924 !V TRIAL_VAR subtypeid 9
+f181086.asc:MSG	1948941 !V TRIAL_VAR subtypeid 9
+f181086.asc:MSG	1948958 !V TRIAL_VAR subtypeid 9
+f181086.asc:MSG	1948976 !V TRIAL_VAR subtypeid 9
+f181086.asc:MSG	1948994 !V TRIAL_VAR subtypeid 9
+f181087b.asc:MSG	1439454 !V TRIAL_VAR subtypeid 9
+f181087b.asc:MSG	1439471 !V TRIAL_VAR subtypeid 9
+f181087b.asc:MSG	1439488 !V TRIAL_VAR subtypeid 9
+f181087b.asc:MSG	1439506 !V TRIAL_VAR subtypeid 9
+f181087b.asc:MSG	2978925 !V TRIAL_VAR subtypeid 9
+f181087b.asc:MSG	2978942 !V TRIAL_VAR subtypeid 9
+f181087b.asc:MSG	2978959 !V TRIAL_VAR subtypeid 9
+f181087b.asc:MSG	2978977 !V TRIAL_VAR subtypeid 9
+f181088.asc:MSG	7018373 !V TRIAL_VAR subtypeid 9
+f181088.asc:MSG	7018390 !V TRIAL_VAR subtypeid 9
+f181088.asc:MSG	7018407 !V TRIAL_VAR subtypeid 9
+f181088.asc:MSG	7018425 !V TRIAL_VAR subtypeid 9
+f181088.asc:MSG	7325958 !V TRIAL_VAR subtypeid 9
+f181088.asc:MSG	7325975 !V TRIAL_VAR subtypeid 9
+f181088.asc:MSG	7325992 !V TRIAL_VAR subtypeid 9
+f181088.asc:MSG	7326010 !V TRIAL_VAR subtypeid 9
+f181089.asc:MSG	948738 !V TRIAL_VAR subtypeid 9
+f181089.asc:MSG	948755 !V TRIAL_VAR subtypeid 9
+f181089.asc:MSG	948772 !V TRIAL_VAR subtypeid 9
+f181089.asc:MSG	948790 !V TRIAL_VAR subtypeid 9
+f181089.asc:MSG	2750832 !V TRIAL_VAR subtypeid 9
+f181089.asc:MSG	2750849 !V TRIAL_VAR subtypeid 9
+f181089.asc:MSG	2750866 !V TRIAL_VAR subtypeid 9
+f181089.asc:MSG	2750884 !V TRIAL_VAR subtypeid 9
+f181090.asc:MSG	2549215 !V TRIAL_VAR subtypeid 9
+f181090.asc:MSG	2549232 !V TRIAL_VAR subtypeid 9
+f181090.asc:MSG	2549249 !V TRIAL_VAR subtypeid 9
+f181090.asc:MSG	2549267 !V TRIAL_VAR subtypeid 9
+f181090.asc:MSG	2740831 !V TRIAL_VAR subtypeid 9
+f181090.asc:MSG	2740848 !V TRIAL_VAR subtypeid 9
+f181090.asc:MSG	2740865 !V TRIAL_VAR subtypeid 9
+f181090.asc:MSG	2740883 !V TRIAL_VAR subtypeid 9
+f181091.asc:MSG	960573 !V TRIAL_VAR subtypeid 9
+f181091.asc:MSG	960590 !V TRIAL_VAR subtypeid 9
+f181091.asc:MSG	960607 !V TRIAL_VAR subtypeid 9
+f181091.asc:MSG	960625 !V TRIAL_VAR subtypeid 9
+f181091.asc:MSG	2404196 !V TRIAL_VAR subtypeid 9
+f181091.asc:MSG	2404213 !V TRIAL_VAR subtypeid 9
+f181091.asc:MSG	2404230 !V TRIAL_VAR subtypeid 9
+f181091.asc:MSG	2404248 !V TRIAL_VAR subtypeid 9
+subj10.asc:MSG	1029385 !V TRIAL_VAR subtypeid 9
+subj10.asc:MSG	1029402 !V TRIAL_VAR subtypeid 9
+subj10.asc:MSG	1029419 !V TRIAL_VAR subtypeid 9
+subj10.asc:MSG	1029437 !V TRIAL_VAR subtypeid 9
+subj10.asc:MSG	1200836 !V TRIAL_VAR subtypeid 9
+subj10.asc:MSG	1200853 !V TRIAL_VAR subtypeid 9
+subj10.asc:MSG	1200870 !V TRIAL_VAR subtypeid 9
+subj10.asc:MSG	1200888 !V TRIAL_VAR subtypeid 9
+subj12.asc:MSG	1382389 !V TRIAL_VAR subtypeid 9
+subj12.asc:MSG	1382406 !V TRIAL_VAR subtypeid 9
+subj12.asc:MSG	1382423 !V TRIAL_VAR subtypeid 9
+subj12.asc:MSG	1382441 !V TRIAL_VAR subtypeid 9
+subj12.asc:MSG	1382459 !V TRIAL_VAR subtypeid 9
+subj12.asc:MSG	1771316 !V TRIAL_VAR subtypeid 9
+subj12.asc:MSG	1771333 !V TRIAL_VAR subtypeid 9
+subj12.asc:MSG	1771350 !V TRIAL_VAR subtypeid 9
+subj12.asc:MSG	1771368 !V TRIAL_VAR subtypeid 9
+subj12.asc:MSG	1771386 !V TRIAL_VAR subtypeid 9
+subj13.asc:MSG	932306 !V TRIAL_VAR subtypeid 9
+subj13.asc:MSG	932323 !V TRIAL_VAR subtypeid 9
+subj13.asc:MSG	932340 !V TRIAL_VAR subtypeid 9
+subj13.asc:MSG	932358 !V TRIAL_VAR subtypeid 9
+subj13.asc:MSG	2034976 !V TRIAL_VAR subtypeid 9
+subj13.asc:MSG	2034993 !V TRIAL_VAR subtypeid 9
+subj13.asc:MSG	2035010 !V TRIAL_VAR subtypeid 9
+subj13.asc:MSG	2035028 !V TRIAL_VAR subtypeid 9
+subj14.asc:MSG	2370753 !V TRIAL_VAR subtypeid 9
+subj14.asc:MSG	2370770 !V TRIAL_VAR subtypeid 9
+subj14.asc:MSG	2370787 !V TRIAL_VAR subtypeid 9
+subj14.asc:MSG	2370805 !V TRIAL_VAR subtypeid 9
+subj14.asc:MSG	2633779 !V TRIAL_VAR subtypeid 9
+subj14.asc:MSG	2633796 !V TRIAL_VAR subtypeid 9
+subj14.asc:MSG	2633813 !V TRIAL_VAR subtypeid 9
+subj14.asc:MSG	2633831 !V TRIAL_VAR subtypeid 9
+subj16.asc:MSG	3014658 !V TRIAL_VAR subtypeid 9
+subj16.asc:MSG	3014675 !V TRIAL_VAR subtypeid 9
+subj16.asc:MSG	3014692 !V TRIAL_VAR subtypeid 9
+subj16.asc:MSG	3014710 !V TRIAL_VAR subtypeid 9
+subj16.asc:MSG	3247414 !V TRIAL_VAR subtypeid 9
+subj16.asc:MSG	3247431 !V TRIAL_VAR subtypeid 9
+subj16.asc:MSG	3247448 !V TRIAL_VAR subtypeid 9
+subj16.asc:MSG	3247466 !V TRIAL_VAR subtypeid 9
+subj6.asc:MSG	7398068 !V TRIAL_VAR subtypeid 9
+subj6.asc:MSG	7398085 !V TRIAL_VAR subtypeid 9
+subj6.asc:MSG	7398102 !V TRIAL_VAR subtypeid 9
+subj6.asc:MSG	7398120 !V TRIAL_VAR subtypeid 9
+subj6.asc:MSG	7586540 !V TRIAL_VAR subtypeid 9
+subj6.asc:MSG	7586557 !V TRIAL_VAR subtypeid 9
+subj6.asc:MSG	7586574 !V TRIAL_VAR subtypeid 9
+subj6.asc:MSG	7586592 !V TRIAL_VAR subtypeid 9
+subject1.asc:MSG	679043 !V TRIAL_VAR subtypeid 9
+subject1.asc:MSG	679060 !V TRIAL_VAR subtypeid 9
+subject1.asc:MSG	679077 !V TRIAL_VAR subtypeid 9
+subject1.asc:MSG	679095 !V TRIAL_VAR subtypeid 9
+subject1.asc:MSG	898600 !V TRIAL_VAR subtypeid 9
+subject1.asc:MSG	898617 !V TRIAL_VAR subtypeid 9
+subject1.asc:MSG	898634 !V TRIAL_VAR subtypeid 9
+subject1.asc:MSG	898652 !V TRIAL_VAR subtypeid 9
+subject7.asc:MSG	875384 !V TRIAL_VAR subtypeid 9
+subject7.asc:MSG	875401 !V TRIAL_VAR subtypeid 9
+subject7.asc:MSG	875418 !V TRIAL_VAR subtypeid 9
+subject7.asc:MSG	875436 !V TRIAL_VAR subtypeid 9
+subject7.asc:MSG	2133291 !V TRIAL_VAR subtypeid 9
+subject7.asc:MSG	2133308 !V TRIAL_VAR subtypeid 9
+subject7.asc:MSG	2133325 !V TRIAL_VAR subtypeid 9
+subject7.asc:MSG	2133343 !V TRIAL_VAR subtypeid 9
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$grep  "subtypeid 60" *asc 
+5t.asc:MSG	5404007 !V TRIAL_VAR subtypeid 60
+5t.asc:MSG	5404024 !V TRIAL_VAR subtypeid 60
+5t.asc:MSG	5404041 !V TRIAL_VAR subtypeid 60
+5t.asc:MSG	5404059 !V TRIAL_VAR subtypeid 60
+f181050_all.asc:MSG	3339242 !V TRIAL_VAR subtypeid 60
+f181050_all.asc:MSG	3339259 !V TRIAL_VAR subtypeid 60
+f181050_all.asc:MSG	3339276 !V TRIAL_VAR subtypeid 60
+f181050_all.asc:MSG	3339294 !V TRIAL_VAR subtypeid 60
+f181051.asc:MSG	3338375 !V TRIAL_VAR subtypeid 60
+f181051.asc:MSG	3338392 !V TRIAL_VAR subtypeid 60
+f181051.asc:MSG	3338409 !V TRIAL_VAR subtypeid 60
+f181051.asc:MSG	3338427 !V TRIAL_VAR subtypeid 60
+f181052.asc:MSG	7657178 !V TRIAL_VAR subtypeid 60
+f181052.asc:MSG	7657195 !V TRIAL_VAR subtypeid 60
+f181052.asc:MSG	7657212 !V TRIAL_VAR subtypeid 60
+f181052.asc:MSG	7657230 !V TRIAL_VAR subtypeid 60
+f181052.asc:MSG	7657248 !V TRIAL_VAR subtypeid 60
+f181052.asc:MSG	7705655 !V TRIAL_VAR subtypeid 60
+f181052.asc:MSG	7705672 !V TRIAL_VAR subtypeid 60
+f181052.asc:MSG	7705689 !V TRIAL_VAR subtypeid 60
+f181052.asc:MSG	7705707 !V TRIAL_VAR subtypeid 60
+f181052.asc:MSG	7705725 !V TRIAL_VAR subtypeid 60
+f181053.asc:MSG	17008553 !V TRIAL_VAR subtypeid 60
+f181053.asc:MSG	17008570 !V TRIAL_VAR subtypeid 60
+f181053.asc:MSG	17008587 !V TRIAL_VAR subtypeid 60
+f181053.asc:MSG	17008605 !V TRIAL_VAR subtypeid 60
+f181053.asc:MSG	17055303 !V TRIAL_VAR subtypeid 60
+f181053.asc:MSG	17055320 !V TRIAL_VAR subtypeid 60
+f181053.asc:MSG	17055337 !V TRIAL_VAR subtypeid 60
+f181053.asc:MSG	17055355 !V TRIAL_VAR subtypeid 60
+f181054.asc:MSG	1285609 !V TRIAL_VAR subtypeid 60
+f181054.asc:MSG	1285626 !V TRIAL_VAR subtypeid 60
+f181054.asc:MSG	1285643 !V TRIAL_VAR subtypeid 60
+f181054.asc:MSG	1285661 !V TRIAL_VAR subtypeid 60
+f181054.asc:MSG	1304847 !V TRIAL_VAR subtypeid 60
+f181054.asc:MSG	1304864 !V TRIAL_VAR subtypeid 60
+f181054.asc:MSG	1304881 !V TRIAL_VAR subtypeid 60
+f181054.asc:MSG	1304899 !V TRIAL_VAR subtypeid 60
+f181055.asc:MSG	1012800 !V TRIAL_VAR subtypeid 60
+f181055.asc:MSG	1012817 !V TRIAL_VAR subtypeid 60
+f181055.asc:MSG	1012834 !V TRIAL_VAR subtypeid 60
+f181055.asc:MSG	1012852 !V TRIAL_VAR subtypeid 60
+f181055.asc:MSG	1025683 !V TRIAL_VAR subtypeid 60
+f181055.asc:MSG	1025700 !V TRIAL_VAR subtypeid 60
+f181055.asc:MSG	1025717 !V TRIAL_VAR subtypeid 60
+f181055.asc:MSG	1025735 !V TRIAL_VAR subtypeid 60
+f181056.asc:MSG	5354569 !V TRIAL_VAR subtypeid 60
+f181056.asc:MSG	5354586 !V TRIAL_VAR subtypeid 60
+f181056.asc:MSG	5354603 !V TRIAL_VAR subtypeid 60
+f181056.asc:MSG	5354621 !V TRIAL_VAR subtypeid 60
+f181056.asc:MSG	5372481 !V TRIAL_VAR subtypeid 60
+f181056.asc:MSG	5372498 !V TRIAL_VAR subtypeid 60
+f181056.asc:MSG	5372515 !V TRIAL_VAR subtypeid 60
+f181056.asc:MSG	5372533 !V TRIAL_VAR subtypeid 60
+f181057.asc:MSG	2176304 !V TRIAL_VAR subtypeid 60
+f181057.asc:MSG	2176321 !V TRIAL_VAR subtypeid 60
+f181057.asc:MSG	2176338 !V TRIAL_VAR subtypeid 60
+f181057.asc:MSG	2176356 !V TRIAL_VAR subtypeid 60
+f181057.asc:MSG	2197963 !V TRIAL_VAR subtypeid 60
+f181057.asc:MSG	2197980 !V TRIAL_VAR subtypeid 60
+f181057.asc:MSG	2197997 !V TRIAL_VAR subtypeid 60
+f181057.asc:MSG	2198015 !V TRIAL_VAR subtypeid 60
+f181059.asc:MSG	10773191 !V TRIAL_VAR subtypeid 60
+f181059.asc:MSG	10773208 !V TRIAL_VAR subtypeid 60
+f181059.asc:MSG	10773225 !V TRIAL_VAR subtypeid 60
+f181059.asc:MSG	10773243 !V TRIAL_VAR subtypeid 60
+f181060t.asc:MSG	15036342 !V TRIAL_VAR subtypeid 60
+f181060t.asc:MSG	15036359 !V TRIAL_VAR subtypeid 60
+f181060t.asc:MSG	15036376 !V TRIAL_VAR subtypeid 60
+f181060t.asc:MSG	15036394 !V TRIAL_VAR subtypeid 60
+f181062.asc:MSG	3046646 !V TRIAL_VAR subtypeid 60
+f181062.asc:MSG	3046663 !V TRIAL_VAR subtypeid 60
+f181062.asc:MSG	3046680 !V TRIAL_VAR subtypeid 60
+f181062.asc:MSG	3046698 !V TRIAL_VAR subtypeid 60
+f181063.asc:MSG	4970217 !V TRIAL_VAR subtypeid 60
+f181063.asc:MSG	4970234 !V TRIAL_VAR subtypeid 60
+f181063.asc:MSG	4970251 !V TRIAL_VAR subtypeid 60
+f181063.asc:MSG	4970269 !V TRIAL_VAR subtypeid 60
+f181063.asc:MSG	4984594 !V TRIAL_VAR subtypeid 60
+f181063.asc:MSG	4984611 !V TRIAL_VAR subtypeid 60
+f181063.asc:MSG	4984628 !V TRIAL_VAR subtypeid 60
+f181063.asc:MSG	4984646 !V TRIAL_VAR subtypeid 60
+f181064.asc:MSG	528773 !V TRIAL_VAR subtypeid 60
+f181064.asc:MSG	528790 !V TRIAL_VAR subtypeid 60
+f181064.asc:MSG	528807 !V TRIAL_VAR subtypeid 60
+f181064.asc:MSG	528825 !V TRIAL_VAR subtypeid 60
+f181064.asc:MSG	568809 !V TRIAL_VAR subtypeid 60
+f181064.asc:MSG	568826 !V TRIAL_VAR subtypeid 60
+f181064.asc:MSG	568843 !V TRIAL_VAR subtypeid 60
+f181064.asc:MSG	568861 !V TRIAL_VAR subtypeid 60
+f181065.asc:MSG	4631457 !V TRIAL_VAR subtypeid 60
+f181065.asc:MSG	4631474 !V TRIAL_VAR subtypeid 60
+f181065.asc:MSG	4631491 !V TRIAL_VAR subtypeid 60
+f181065.asc:MSG	4631509 !V TRIAL_VAR subtypeid 60
+f181065.asc:MSG	4652389 !V TRIAL_VAR subtypeid 60
+f181065.asc:MSG	4652406 !V TRIAL_VAR subtypeid 60
+f181065.asc:MSG	4652423 !V TRIAL_VAR subtypeid 60
+f181065.asc:MSG	4652441 !V TRIAL_VAR subtypeid 60
+f181066.asc:MSG	8624507 !V TRIAL_VAR subtypeid 60
+f181066.asc:MSG	8624524 !V TRIAL_VAR subtypeid 60
+f181066.asc:MSG	8624541 !V TRIAL_VAR subtypeid 60
+f181066.asc:MSG	8624559 !V TRIAL_VAR subtypeid 60
+f181066.asc:MSG	8638979 !V TRIAL_VAR subtypeid 60
+f181066.asc:MSG	8638996 !V TRIAL_VAR subtypeid 60
+f181066.asc:MSG	8639013 !V TRIAL_VAR subtypeid 60
+f181066.asc:MSG	8639031 !V TRIAL_VAR subtypeid 60
+f181067.asc:MSG	2524925 !V TRIAL_VAR subtypeid 60
+f181067.asc:MSG	2524942 !V TRIAL_VAR subtypeid 60
+f181067.asc:MSG	2524959 !V TRIAL_VAR subtypeid 60
+f181067.asc:MSG	2524977 !V TRIAL_VAR subtypeid 60
+f181068b.asc:MSG	2050024 !V TRIAL_VAR subtypeid 60
+f181068b.asc:MSG	2050041 !V TRIAL_VAR subtypeid 60
+f181068b.asc:MSG	2050058 !V TRIAL_VAR subtypeid 60
+f181068b.asc:MSG	2050076 !V TRIAL_VAR subtypeid 60
+f181069.asc:MSG	6613858 !V TRIAL_VAR subtypeid 60
+f181069.asc:MSG	6613875 !V TRIAL_VAR subtypeid 60
+f181069.asc:MSG	6613892 !V TRIAL_VAR subtypeid 60
+f181069.asc:MSG	6613910 !V TRIAL_VAR subtypeid 60
+f181069.asc:MSG	6613928 !V TRIAL_VAR subtypeid 60
+f181070b.asc:MSG	12318404 !V TRIAL_VAR subtypeid 60
+f181070b.asc:MSG	12318421 !V TRIAL_VAR subtypeid 60
+f181070b.asc:MSG	12318438 !V TRIAL_VAR subtypeid 60
+f181070b.asc:MSG	12318456 !V TRIAL_VAR subtypeid 60
+f181071b.asc:MSG	4030140 !V TRIAL_VAR subtypeid 60
+f181071b.asc:MSG	4030157 !V TRIAL_VAR subtypeid 60
+f181071b.asc:MSG	4030174 !V TRIAL_VAR subtypeid 60
+f181071b.asc:MSG	4030192 !V TRIAL_VAR subtypeid 60
+f181071b.asc:MSG	4047824 !V TRIAL_VAR subtypeid 60
+f181071b.asc:MSG	4047841 !V TRIAL_VAR subtypeid 60
+f181071b.asc:MSG	4047858 !V TRIAL_VAR subtypeid 60
+f181071b.asc:MSG	4047876 !V TRIAL_VAR subtypeid 60
+f181072.asc:MSG	7217690 !V TRIAL_VAR subtypeid 60
+f181072.asc:MSG	7217707 !V TRIAL_VAR subtypeid 60
+f181072.asc:MSG	7217724 !V TRIAL_VAR subtypeid 60
+f181072.asc:MSG	7217742 !V TRIAL_VAR subtypeid 60
+f181072.asc:MSG	7252557 !V TRIAL_VAR subtypeid 60
+f181072.asc:MSG	7252574 !V TRIAL_VAR subtypeid 60
+f181072.asc:MSG	7252591 !V TRIAL_VAR subtypeid 60
+f181072.asc:MSG	7252609 !V TRIAL_VAR subtypeid 60
+f181073.asc:MSG	15093392 !V TRIAL_VAR subtypeid 60
+f181073.asc:MSG	15093409 !V TRIAL_VAR subtypeid 60
+f181073.asc:MSG	15093426 !V TRIAL_VAR subtypeid 60
+f181073.asc:MSG	15093444 !V TRIAL_VAR subtypeid 60
+f181073.asc:MSG	15110063 !V TRIAL_VAR subtypeid 60
+f181073.asc:MSG	15110080 !V TRIAL_VAR subtypeid 60
+f181073.asc:MSG	15110097 !V TRIAL_VAR subtypeid 60
+f181073.asc:MSG	15110115 !V TRIAL_VAR subtypeid 60
+f181074.asc:MSG	19401371 !V TRIAL_VAR subtypeid 60
+f181074.asc:MSG	19401388 !V TRIAL_VAR subtypeid 60
+f181074.asc:MSG	19401405 !V TRIAL_VAR subtypeid 60
+f181074.asc:MSG	19401423 !V TRIAL_VAR subtypeid 60
+f181074.asc:MSG	19419651 !V TRIAL_VAR subtypeid 60
+f181074.asc:MSG	19419668 !V TRIAL_VAR subtypeid 60
+f181074.asc:MSG	19419685 !V TRIAL_VAR subtypeid 60
+f181074.asc:MSG	19419703 !V TRIAL_VAR subtypeid 60
+f181075.asc:MSG	4231514 !V TRIAL_VAR subtypeid 60
+f181075.asc:MSG	4231531 !V TRIAL_VAR subtypeid 60
+f181075.asc:MSG	4231548 !V TRIAL_VAR subtypeid 60
+f181075.asc:MSG	4231566 !V TRIAL_VAR subtypeid 60
+f181076.asc:MSG	2976346 !V TRIAL_VAR subtypeid 60
+f181076.asc:MSG	2976363 !V TRIAL_VAR subtypeid 60
+f181076.asc:MSG	2976380 !V TRIAL_VAR subtypeid 60
+f181076.asc:MSG	2976398 !V TRIAL_VAR subtypeid 60
+f181078.asc:MSG	2789499 !V TRIAL_VAR subtypeid 60
+f181078.asc:MSG	2789516 !V TRIAL_VAR subtypeid 60
+f181078.asc:MSG	2789533 !V TRIAL_VAR subtypeid 60
+f181078.asc:MSG	2789551 !V TRIAL_VAR subtypeid 60
+f181079.asc:MSG	587093 !V TRIAL_VAR subtypeid 60
+f181079.asc:MSG	587110 !V TRIAL_VAR subtypeid 60
+f181079.asc:MSG	587127 !V TRIAL_VAR subtypeid 60
+f181079.asc:MSG	587145 !V TRIAL_VAR subtypeid 60
+f181079.asc:MSG	615210 !V TRIAL_VAR subtypeid 60
+f181079.asc:MSG	615227 !V TRIAL_VAR subtypeid 60
+f181079.asc:MSG	615244 !V TRIAL_VAR subtypeid 60
+f181079.asc:MSG	615262 !V TRIAL_VAR subtypeid 60
+f181080.asc:MSG	784289 !V TRIAL_VAR subtypeid 60
+f181080.asc:MSG	784306 !V TRIAL_VAR subtypeid 60
+f181080.asc:MSG	784323 !V TRIAL_VAR subtypeid 60
+f181080.asc:MSG	784341 !V TRIAL_VAR subtypeid 60
+f181080.asc:MSG	800497 !V TRIAL_VAR subtypeid 60
+f181080.asc:MSG	800514 !V TRIAL_VAR subtypeid 60
+f181080.asc:MSG	800531 !V TRIAL_VAR subtypeid 60
+f181080.asc:MSG	800549 !V TRIAL_VAR subtypeid 60
+f181081.asc:MSG	2268592 !V TRIAL_VAR subtypeid 60
+f181081.asc:MSG	2268609 !V TRIAL_VAR subtypeid 60
+f181081.asc:MSG	2268626 !V TRIAL_VAR subtypeid 60
+f181081.asc:MSG	2268644 !V TRIAL_VAR subtypeid 60
+f181081.asc:MSG	2303352 !V TRIAL_VAR subtypeid 60
+f181081.asc:MSG	2303369 !V TRIAL_VAR subtypeid 60
+f181081.asc:MSG	2303386 !V TRIAL_VAR subtypeid 60
+f181081.asc:MSG	2303404 !V TRIAL_VAR subtypeid 60
+f181082.asc:MSG	5013524 !V TRIAL_VAR subtypeid 60
+f181082.asc:MSG	5013541 !V TRIAL_VAR subtypeid 60
+f181082.asc:MSG	5013558 !V TRIAL_VAR subtypeid 60
+f181082.asc:MSG	5013576 !V TRIAL_VAR subtypeid 60
+f181082.asc:MSG	5025772 !V TRIAL_VAR subtypeid 60
+f181082.asc:MSG	5025789 !V TRIAL_VAR subtypeid 60
+f181082.asc:MSG	5025806 !V TRIAL_VAR subtypeid 60
+f181082.asc:MSG	5025824 !V TRIAL_VAR subtypeid 60
+f181083.asc:MSG	11395407 !V TRIAL_VAR subtypeid 60
+f181083.asc:MSG	11395424 !V TRIAL_VAR subtypeid 60
+f181083.asc:MSG	11395441 !V TRIAL_VAR subtypeid 60
+f181083.asc:MSG	11395459 !V TRIAL_VAR subtypeid 60
+f181084.asc:MSG	2347007 !V TRIAL_VAR subtypeid 60
+f181084.asc:MSG	2347024 !V TRIAL_VAR subtypeid 60
+f181084.asc:MSG	2347041 !V TRIAL_VAR subtypeid 60
+f181084.asc:MSG	2347059 !V TRIAL_VAR subtypeid 60
+f181086.asc:MSG	3320615 !V TRIAL_VAR subtypeid 60
+f181086.asc:MSG	3320632 !V TRIAL_VAR subtypeid 60
+f181086.asc:MSG	3320649 !V TRIAL_VAR subtypeid 60
+f181086.asc:MSG	3320667 !V TRIAL_VAR subtypeid 60
+f181086.asc:MSG	3320685 !V TRIAL_VAR subtypeid 60
+f181087b.asc:MSG	3055364 !V TRIAL_VAR subtypeid 60
+f181087b.asc:MSG	3055381 !V TRIAL_VAR subtypeid 60
+f181087b.asc:MSG	3055398 !V TRIAL_VAR subtypeid 60
+f181087b.asc:MSG	3055416 !V TRIAL_VAR subtypeid 60
+f181088.asc:MSG	4396188 !V TRIAL_VAR subtypeid 60
+f181088.asc:MSG	4396205 !V TRIAL_VAR subtypeid 60
+f181088.asc:MSG	4396222 !V TRIAL_VAR subtypeid 60
+f181088.asc:MSG	4396240 !V TRIAL_VAR subtypeid 60
+f181088.asc:MSG	4418087 !V TRIAL_VAR subtypeid 60
+f181088.asc:MSG	4418104 !V TRIAL_VAR subtypeid 60
+f181088.asc:MSG	4418121 !V TRIAL_VAR subtypeid 60
+f181088.asc:MSG	4418139 !V TRIAL_VAR subtypeid 60
+f181089.asc:MSG	721346 !V TRIAL_VAR subtypeid 60
+f181089.asc:MSG	721363 !V TRIAL_VAR subtypeid 60
+f181089.asc:MSG	721380 !V TRIAL_VAR subtypeid 60
+f181089.asc:MSG	721398 !V TRIAL_VAR subtypeid 60
+f181089.asc:MSG	753610 !V TRIAL_VAR subtypeid 60
+f181089.asc:MSG	753627 !V TRIAL_VAR subtypeid 60
+f181089.asc:MSG	753644 !V TRIAL_VAR subtypeid 60
+f181089.asc:MSG	753662 !V TRIAL_VAR subtypeid 60
+f181090.asc:MSG	632464 !V TRIAL_VAR subtypeid 60
+f181090.asc:MSG	632481 !V TRIAL_VAR subtypeid 60
+f181090.asc:MSG	632498 !V TRIAL_VAR subtypeid 60
+f181090.asc:MSG	632516 !V TRIAL_VAR subtypeid 60
+f181090.asc:MSG	646779 !V TRIAL_VAR subtypeid 60
+f181090.asc:MSG	646796 !V TRIAL_VAR subtypeid 60
+f181090.asc:MSG	646813 !V TRIAL_VAR subtypeid 60
+f181090.asc:MSG	646831 !V TRIAL_VAR subtypeid 60
+f181091.asc:MSG	794236 !V TRIAL_VAR subtypeid 60
+f181091.asc:MSG	794253 !V TRIAL_VAR subtypeid 60
+f181091.asc:MSG	794270 !V TRIAL_VAR subtypeid 60
+f181091.asc:MSG	794288 !V TRIAL_VAR subtypeid 60
+f181091.asc:MSG	815076 !V TRIAL_VAR subtypeid 60
+f181091.asc:MSG	815093 !V TRIAL_VAR subtypeid 60
+f181091.asc:MSG	815110 !V TRIAL_VAR subtypeid 60
+f181091.asc:MSG	815128 !V TRIAL_VAR subtypeid 60
+subj10.asc:MSG	2012867 !V TRIAL_VAR subtypeid 60
+subj10.asc:MSG	2012884 !V TRIAL_VAR subtypeid 60
+subj10.asc:MSG	2012901 !V TRIAL_VAR subtypeid 60
+subj10.asc:MSG	2012919 !V TRIAL_VAR subtypeid 60
+subj12.asc:MSG	3304624 !V TRIAL_VAR subtypeid 60
+subj12.asc:MSG	3304641 !V TRIAL_VAR subtypeid 60
+subj12.asc:MSG	3304658 !V TRIAL_VAR subtypeid 60
+subj12.asc:MSG	3304676 !V TRIAL_VAR subtypeid 60
+subj12.asc:MSG	3304694 !V TRIAL_VAR subtypeid 60
+subj13.asc:MSG	2143584 !V TRIAL_VAR subtypeid 60
+subj13.asc:MSG	2143601 !V TRIAL_VAR subtypeid 60
+subj13.asc:MSG	2143618 !V TRIAL_VAR subtypeid 60
+subj13.asc:MSG	2143636 !V TRIAL_VAR subtypeid 60
+subj14.asc:MSG	1198446 !V TRIAL_VAR subtypeid 60
+subj14.asc:MSG	1198463 !V TRIAL_VAR subtypeid 60
+subj14.asc:MSG	1198480 !V TRIAL_VAR subtypeid 60
+subj14.asc:MSG	1198498 !V TRIAL_VAR subtypeid 60
+subj14.asc:MSG	1221622 !V TRIAL_VAR subtypeid 60
+subj14.asc:MSG	1221639 !V TRIAL_VAR subtypeid 60
+subj14.asc:MSG	1221656 !V TRIAL_VAR subtypeid 60
+subj14.asc:MSG	1221674 !V TRIAL_VAR subtypeid 60
+subj16.asc:MSG	1889450 !V TRIAL_VAR subtypeid 60
+subj16.asc:MSG	1889467 !V TRIAL_VAR subtypeid 60
+subj16.asc:MSG	1889484 !V TRIAL_VAR subtypeid 60
+subj16.asc:MSG	1889502 !V TRIAL_VAR subtypeid 60
+subj16.asc:MSG	1914710 !V TRIAL_VAR subtypeid 60
+subj16.asc:MSG	1914727 !V TRIAL_VAR subtypeid 60
+subj16.asc:MSG	1914744 !V TRIAL_VAR subtypeid 60
+subj16.asc:MSG	1914762 !V TRIAL_VAR subtypeid 60
+subj6.asc:MSG	6293758 !V TRIAL_VAR subtypeid 60
+subj6.asc:MSG	6293775 !V TRIAL_VAR subtypeid 60
+subj6.asc:MSG	6293792 !V TRIAL_VAR subtypeid 60
+subj6.asc:MSG	6293810 !V TRIAL_VAR subtypeid 60
+subj6.asc:MSG	6314226 !V TRIAL_VAR subtypeid 60
+subj6.asc:MSG	6314243 !V TRIAL_VAR subtypeid 60
+subj6.asc:MSG	6314260 !V TRIAL_VAR subtypeid 60
+subj6.asc:MSG	6314278 !V TRIAL_VAR subtypeid 60
+subject1.asc:MSG	1881751 !V TRIAL_VAR subtypeid 60
+subject1.asc:MSG	1881768 !V TRIAL_VAR subtypeid 60
+subject1.asc:MSG	1881785 !V TRIAL_VAR subtypeid 60
+subject1.asc:MSG	1881803 !V TRIAL_VAR subtypeid 60
+subject7.asc:MSG	573919 !V TRIAL_VAR subtypeid 60
+subject7.asc:MSG	573936 !V TRIAL_VAR subtypeid 60
+subject7.asc:MSG	573953 !V TRIAL_VAR subtypeid 60
+subject7.asc:MSG	573971 !V TRIAL_VAR subtypeid 60
+subject7.asc:MSG	650851 !V TRIAL_VAR subtypeid 60
+subject7.asc:MSG	650868 !V TRIAL_VAR subtypeid 60
+subject7.asc:MSG	650885 !V TRIAL_VAR subtypeid 60
+subject7.asc:MSG	650903 !V TRIAL_VAR subtypeid 60
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '$2==60'
+f181053.asc 60 clash tap D permit.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$open f181053.asc 
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$fg
+emacs retrieveTrialInfo.awk
+
+[2]+  Stopped                 emacs retrieveTrialInfo.awk
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | less
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$fg
+emacs retrieveTrialInfo.awk
+
+[2]+  Stopped                 emacs retrieveTrialInfo.awk
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '$2==60'
+f181054.asc 60 clash tap D permit.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$open f181054.asc 
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | less
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$fg
+emacs retrieveTrialInfo.awk
+
+[2]+  Stopped                 emacs retrieveTrialInfo.awk
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '$2==60'
+f181053.asc 60 clash tap D permit.
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | less
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$fg
+emacs retrieveTrialInfo.awk
+
+[2]+  Stopped                 emacs retrieveTrialInfo.awk
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '$2==60'
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4,$5}' | sort -n | uniq -c  | more
+  11 1 clash tap B
+  12 1 clash this D
+  14 1 match tap A
+  10 1 match this C
+  14 2 clash tap A
+  10 2 clash this C
+  11 2 match tap B
+  12 2 match this D
+  12 3 clash tap D
+  11 3 clash this B
+  10 3 match tap C
+  14 3 match this A
+  10 4 clash tap C
+  14 4 clash this A
+  12 4 match tap D
+  11 4 match this B
+  11 5 clash tap B
+  12 5 clash this D
+  14 5 match tap A
+  10 5 match this C
+  14 6 clash tap A
+  10 6 clash this C
+  11 6 match tap B
+  12 6 match this D
+  12 7 clash tap D
+  11 7 clash this B
+  10 7 match tap C
+  14 7 match this A
+  10 8 clash tap C
+  14 8 clash this A
+  12 8 match tap D
+  11 8 match this B
+  11 9 clash tap B
+  12 9 clash this D
+  14 9 match tap A
+  10 9 match this C
+  14 10 clash this A
+  10 10 clash this C
+  11 10 match tap B
+  12 10 match this D
+  13 11 clash tap D
+  11 11 clash this B
+  14 11 match tap A
+  10 11 match tap C
+  11 12 clash tap C
+  14 12 clash this A
+  12 12 match tap D
+  11 12 match this B
+  11 13 clash tap B
+  12 13 clash this D
+  14 13 match this A
+  10 13 match this C
+  14 14 clash tap A
+  10 14 clash this C
+  11 14 match tap B
+  12 14 match this D
+  12 15 clash tap D
+  11 15 clash this B
+  14 15 match tap A
+  10 15 match tap C
+  10 16 clash tap C
+  14 16 clash this A
+  12 16 match tap D
+  11 16 match this B
+  11 17 clash tap B
+  12 17 clash this D
+  14 17 match this A
+  10 17 match this C
+  14 18 clash this A
+  10 18 clash this C
+  11 18 match tap B
+  12 18 match this D
+  12 19 clash tap D
+  11 19 clash this B
+  10 19 match tap C
+  14 19 match this A
+  10 20 clash tap C
+  14 20 clash this A
+  12 20 match tap D
+  11 20 match this B
+  11 21 clash tap B
+  12 21 clash this D
+  14 21 match tap A
+  10 21 match this C
+  14 22 clash this A
+  10 22 clash this C
+  11 22 match tap B
+  12 22 match this D
+  12 23 clash tap D
+  11 23 clash this B
+  14 23 match tap A
+  10 23 match tap C
+  10 24 clash tap C
+  14 24 clash this A
+  12 24 match tap D
+  11 24 match this B
+  11 25 clash tap B
+  12 25 clash this D
+  14 25 match this A
+  10 25 match this C
+  14 26 clash tap A
+  10 26 clash this C
+  11 26 match tap B
+  12 26 match this D
+  12 27 clash tap D
+  11 27 clash this B
+  14 27 match tap A
+  10 27 match tap C
+  14 28 clash tap A
+  10 28 clash tap C
+  12 28 match tap D
+  11 28 match this B
+  11 29 clash tap B
+  12 29 clash this D
+  14 29 match tap A
+  10 29 match this C
+  14 30 clash tap A
+  10 30 clash this C
+  11 30 match tap B
+  12 30 match this D
+  12 31 clash tap D
+  11 31 clash this B
+  10 31 match tap C
+  14 31 match this A
+  10 32 clash tap C
+  14 32 clash this A
+  12 32 match tap D
+  11 32 match this B
+  11 33 clash tap B
+  12 33 clash this D
+  14 33 match this A
+  10 33 match this C
+  14 34 clash this A
+  10 34 clash this C
+  11 34 match tap B
+  12 34 match this D
+  12 35 clash tap D
+  11 35 clash this B
+  10 35 match tap C
+  14 35 match this A
+  10 36 clash tap C
+  14 36 clash this A
+  12 36 match tap D
+  11 36 match this B
+  11 37 clash tap B
+  12 37 clash this D
+  14 37 match this A
+  10 37 match this C
+  14 38 clash this A
+  10 38 clash this C
+  11 38 match tap B
+  12 38 match this D
+  12 39 clash tap D
+  11 39 clash this B
+  14 39 match tap A
+  10 39 match tap C
+  14 40 clash tap A
+  10 40 clash tap C
+  12 40 match tap D
+  11 40 match this B
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4}' | sort -n | uniq -c  | more
+  11 1 clash tap
+  12 1 clash this
+  14 1 match tap
+  10 1 match this
+  14 2 clash tap
+  10 2 clash this
+  11 2 match tap
+  12 2 match this
+  12 3 clash tap
+  11 3 clash this
+  10 3 match tap
+  14 3 match this
+  10 4 clash tap
+  14 4 clash this
+  12 4 match tap
+  11 4 match this
+  11 5 clash tap
+  12 5 clash this
+  14 5 match tap
+  10 5 match this
+  14 6 clash tap
+  10 6 clash this
+  11 6 match tap
+  12 6 match this
+  12 7 clash tap
+  11 7 clash this
+  10 7 match tap
+  14 7 match this
+  10 8 clash tap
+  14 8 clash this
+  12 8 match tap
+  11 8 match this
+  11 9 clash tap
+  12 9 clash this
+  14 9 match tap
+  10 9 match this
+  24 10 clash this
+  11 10 match tap
+  12 10 match this
+  13 11 clash tap
+  11 11 clash this
+  24 11 match tap
+  11 12 clash tap
+  14 12 clash this
+  12 12 match tap
+  11 12 match this
+  11 13 clash tap
+  12 13 clash this
+  24 13 match this
+  14 14 clash tap
+  10 14 clash this
+  11 14 match tap
+  12 14 match this
+  12 15 clash tap
+  11 15 clash this
+  24 15 match tap
+  10 16 clash tap
+  14 16 clash this
+  12 16 match tap
+  11 16 match this
+  11 17 clash tap
+  12 17 clash this
+  24 17 match this
+  24 18 clash this
+  11 18 match tap
+  12 18 match this
+  12 19 clash tap
+  11 19 clash this
+  10 19 match tap
+  14 19 match this
+  10 20 clash tap
+  14 20 clash this
+  12 20 match tap
+  11 20 match this
+  11 21 clash tap
+  12 21 clash this
+  14 21 match tap
+  10 21 match this
+  24 22 clash this
+  11 22 match tap
+  12 22 match this
+  12 23 clash tap
+  11 23 clash this
+  24 23 match tap
+  10 24 clash tap
+  14 24 clash this
+  12 24 match tap
+  11 24 match this
+  11 25 clash tap
+  12 25 clash this
+  24 25 match this
+  14 26 clash tap
+  10 26 clash this
+  11 26 match tap
+  12 26 match this
+  12 27 clash tap
+  11 27 clash this
+  24 27 match tap
+  24 28 clash tap
+  12 28 match tap
+  11 28 match this
+  11 29 clash tap
+  12 29 clash this
+  14 29 match tap
+  10 29 match this
+  14 30 clash tap
+  10 30 clash this
+  11 30 match tap
+  12 30 match this
+  12 31 clash tap
+  11 31 clash this
+  10 31 match tap
+  14 31 match this
+  10 32 clash tap
+  14 32 clash this
+  12 32 match tap
+  11 32 match this
+  11 33 clash tap
+  12 33 clash this
+  24 33 match this
+  24 34 clash this
+  11 34 match tap
+  12 34 match this
+  12 35 clash tap
+  11 35 clash this
+  10 35 match tap
+  14 35 match this
+  10 36 clash tap
+  14 36 clash this
+  12 36 match tap
+  11 36 match this
+  11 37 clash tap
+  12 37 clash this
+  24 37 match this
+  24 38 clash this
+  11 38 match tap
+  12 38 match this
+  12 39 clash tap
+  11 39 clash this
+  24 39 match tap
+  24 40 clash tap
+  12 40 match tap
+  11 40 match this
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4}' | sort -n | uniq -c  | awk '{print $2}' | uniq -c | awk '$1!=4'
+   3 10
+   3 11
+   3 13
+   3 15
+   3 17
+   3 18
+   3 22
+   3 23
+   3 25
+   3 27
+   3 28
+   3 33
+   3 34
+   3 37
+   3 38
+   3 39
+   3 40
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4}' | sort -n | uniq -c  | awk '{print $2}' | uniq -c | awk '$1!=4' | wc-l
+-bash: wc-l: command not found
+^C
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4}' | sort -n | uniq -c  | awk '{print $2}' | uniq -c | awk '$1!=4' | wc -l
+      17
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$awk -f retrieveTrialInfo.awk *asc  | tr -d "\015" | grep -v FILLLER | awk '{print $2,$3,$4,$5}' | sort -n | uniq -c  | more
+  11 1 clash tap B
+  12 1 clash this D
+  14 1 match tap A
+  10 1 match this C
+  14 2 clash tap A
+  10 2 clash this C
+  11 2 match tap B
+  12 2 match this D
+  12 3 clash tap D
+  11 3 clash this B
+  10 3 match tap C
+  14 3 match this A
+  10 4 clash tap C
+  14 4 clash this A
+  12 4 match tap D
+  11 4 match this B
+  11 5 clash tap B
+  12 5 clash this D
+  14 5 match tap A
+  10 5 match this C
+  14 6 clash tap A
+  10 6 clash this C
+  11 6 match tap B
+  12 6 match this D
+  12 7 clash tap D
+  11 7 clash this B
+  10 7 match tap C
+  14 7 match this A
+  10 8 clash tap C
+  14 8 clash this A
+  12 8 match tap D
+  11 8 match this B
+  11 9 clash tap B
+  12 9 clash this D
+  14 9 match tap A
+  10 9 match this C
+  14 10 clash this A
+  10 10 clash this C
+  11 10 match tap B
+  12 10 match this D
+  13 11 clash tap D
+  11 1 clash tap B
+  12 1 clash this D
+  14 1 match tap A
+  10 1 match this C
+  14 2 clash tap A
+  10 2 clash this C
+  11 2 match tap B
+  12 2 match this D
+  12 3 clash tap D
+  11 3 clash this B
+  10 3 match tap C
+  14 3 match this A
+  10 4 clash tap C
+  14 4 clash this A
+  12 4 match tap D
+  11 4 match this B
+  11 5 clash tap B
+  12 5 clash this D
+  14 5 match tap A
+  10 5 match this C
+  14 6 clash tap A
+  10 6 clash this C
+  11 6 match tap B
+  12 6 match this D
+  12 7 clash tap D
+  11 7 clash this B
+  10 7 match tap C
+  14 7 match this A
+  10 8 clash tap C
+  14 8 clash this A
+  12 8 match tap D
+  11 8 match this B
+  11 9 clash tap B
+  12 9 clash this D
+  14 9 match tap A
+  10 9 match this C
+  14 10 clash this A
+  10 10 clash this C
+  11 10 match tap B
+  12 10 match this D
+  13 11 clash tap D
+  11 11 clash this B
+  14 11 match tap A
+  10 11 match tap C
+  11 12 clash tap C
+  14 12 clash this A
+  12 12 match tap D
+  11 12 match this B
+  11 13 clash tap B
+  12 13 clash this D
+  14 13 match this A
+  10 13 match this C
+  14 14 clash tap A
+  10 14 clash this C
+  11 14 match tap B
+  12 14 match this D
+  12 15 clash tap D
+  11 15 clash this B
+  14 15 match tap A
+  10 15 match tap C
+  10 16 clash tap C
+  14 16 clash this A
+  12 16 match tap D
+  11 16 match this B
+  11 17 clash tap B
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$grep "List C" *asc | head -2
+f181052.asc:MSG	6117579 !V TRIAL_VAR List C
+f181052.asc:MSG	6149576 !V TRIAL_VAR List C
+irene@dhcp-130-58-97-110:[~/itang1@swat/PSYC180/limerick1_workspace/data/original_asc]$

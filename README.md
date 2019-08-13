@@ -1,6 +1,6 @@
 # Limerick1 workspace
 
-Technical elements of a cognitive psychology thesis work to be submitted to the [faculty](https://www.swarthmore.edu/psychology/faculty-staff) of the [Department of Psychology](https://www.swarthmore.edu/psychology) at [Swarthmore College](swarthmore.edu) in April 2019 in partial fulfillment for the degree of Bachelor of Arts.
+Technical elements of a cognitive psychology thesis work to be submitted to the [faculty](https://www.swarthmore.edu/psychology/faculty-staff) of the [Department of Psychology](https://www.swarthmore.edu/psychology) at [Swarthmore College](swarthmore.edu) in May 2019 in partial fulfillment for the degree of Bachelor of Arts.
 
 ## Table of Contents
 * [Background / Abstract [draft]](#background-/-abstract)
@@ -25,7 +25,7 @@ Technical elements of a cognitive psychology thesis work to be submitted to the 
 **_Occupation of Inner Speech in the Working Memory During Silent Reading:<br/>
 Effects of Articulatory Suppression on Anticipated Lexical Stress_**
 
-As we silently read words on a page, we read it using an “inner speech” that includes rhythm and inflections as if we are reading aloud. We also use an inner speech when performing non-literary tasks such as problem solving, mental calculation, and decision making. Present research has not yet determined whether these two uses of inner speech occupy the same cognitive resources. This paper presents findings from an eye-tracking study designed to demonstrate that the inner speech of silent reading occupies the same resources in working memory a¬s other mental tasks. In the first part of the experiment, participants read stress-alternating homographs (e.g., PREsent, preSENT) embedded in limericks, which compelled them to initially expect the incorrect prosody of the homograph and thus encounter a reading cost¬. As they read, participants also performed articulatory suppression by repeating the word this aloud. The goal of this was to use the outer voice to occupy the relevant resources in working memory, thus rendering them unavailable to be used during silent reading—this allows us to see if those resources pertain to the inner voice of silent reading. In the second part of the experiment, participants completed the 18-item Varieties of Inner Speech Questionnaire (VISQ; McCarthy-Jones & Fernyhough, 2011) at the completion of the eye-tracking study, which is a self-assessment survey that assesses one’s relationship with inner speech. The goal of this was to see if participants who reported experiencing higher levels of inner speech in their everyday lives would be more susceptible to the reading costs prompted by articulatory suppression during rhythm-mismatching limericks. If the differences in reading costs between reading rhythm-matching and -mismatching limericks vanish while repeating this, and if participants who experience higher levels of inner speech are more affected by articulatory suppression, then this would show that these two inner voices occupy the same working memory resources.
+As we silently read words on a page, we use an “inner speech” that includes rhythm and inflections as if we are reading aloud. We also use an inner speech when performing non-reading tasks such as remembering verbal materials, problem solving, mental calculation, and decision making. Present research has not yet determined whether these two uses of inner speech occupy the same cognitive resources. This paper presents findings from an eye-tracking study designed to explore whether the inner speech of silent reading occupies the same resources in working memory as other mental tasks. In the first part of the experiment, participants read stress-alternating homographs (e.g., PREsent, preSENT) embedded in limericks, which compelled them to initially expect the incorrect prosody of the homograph and thus encounter a reading cost. As they read, participants also performed articulatory suppression by repeating the word this aloud. The goal of this was to use the outer voice to occupy the relevant resources in working memory, thus rendering them unavailable to be used during silent reading—this allows us to see if those resources pertain to the inner voice of silent reading. Participants also completed the 18-item Varieties of Inner Speech Questionnaire (VISQ; McCarthy-Jones & Fernyhough, 2011), a self-assessment survey that assesses one’s relationship with inner speech. The goal of this was to see if participants who reported experiencing higher levels of inner speech in their everyday lives would be more susceptible to the reading costs prompted by articulatory suppression during rhythm-mismatching limericks. If the differences in reading costs between reading rhythm-matching and -mismatching limericks vanish while repeating this, and if participants who experience higher levels of inner speech are more affected by articulatory suppression, then this would show that these two inner voices occupy the same working memory resources. The study found some preliminary evidence that articulatory suppression can diminish the effect of stress clash on silent reading, as well as some preliminary indication that inner speech occupies working memory and that this machinery overlaps with the inner voice of the rehearsal component of the phonological loop.
 
 Key words: inner speech, silent reading, working memory, phonological loop, articulatory suppression, eye movements
 
@@ -174,7 +174,7 @@ After answering these questions, the next that should appear is a "Which analysi
 	* Trials with blinks or track losses on the critical word were eliminated
 		* We eliminated trials with blinks or track losses when we ran Robodoc.
 
-* **Analysis of standard eyetracking measures:** (following Breen and Clifton, 2011; c.f. Rayner, 1998; Rayner et al.,1989)
+* **Analysis of standard eyetracking measures:** (following Breen and Clifton, 2011; see also Rayner, 1998; Rayner et al.,1989)
 	* **First-pass time** - sum of all fixations made from first entering to first leaving a region, eliminating trials on which no such fixations occurred.
 	* **Go-past time** - sum of all fixation durations made from first entering a region to first leaving it to the right.
 	* **Probability of fixating in a region** - no description provided.
@@ -205,7 +205,7 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 |----:|:----:|----|
 | Which analysis? | 2 | |
 | Type an identifying string to print out | First pass time | This doesn't affect functionality. |
-| Throw away zero fixation values? | n | We will take care of  zero-fixations through the awk script |
+| Throw away zero fixation values? | n | We will take care of zero-fixations later through the awk script |
 | Do you want to CULMINATE or AVERAGE multiple fixations in a region? | c | |
 | RAW times, MS/char, or DEVIATION from regression | r | |
 | Conditionalize on presence/absence of regression in critical region? | n | |
@@ -215,9 +215,9 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 | File of item X subject combinations | `firstPassIXS` | We will base our analysis on this file. |
 | Do you want ALL trials written, or just trials with Observations? | a | |
 | Do you want Wide output (all regions in one row) or Narrow (one row per region)? | w | |
-| Subject by subject file, one condition per line (not systat) | `firstPassSXS` | We won't base our analysis on this file, but we might as well save it. |
+| Subject by subject file, one condition per line (not systat) | `firstPassSXS` | We won't base our analysis on this file, but might as well save it. |
 | Subject by subject file, formatted for Systat | [press return] | We don't want this file. |
-| Item by item file, one condition per line (not systat) | `firstPassIXI` | We won't base our analysis on this file, but we might as well save it. |
+| Item by item file, one condition per line (not systat) | `firstPassIXI` | We won't base our analysis on this file, but might as well save it. |
 | Item by item file, formatted for Systat | [press return] | We don't want this file. |
 | Do you want information about long and short times printed? | n | WARNING: "y" is a possible source of segfault. |
 | Do you want a typeout of the item-by-item data? | n | WARNING: "y" is a possible source of segfault. |
@@ -236,9 +236,9 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 | File of item X subject combinations | `goPastIXS` | We will base our analysis on this file. |
 | Do you want ALL trials written, or just trials with Observations? | a | |
 | Do you want Wide output (all regions in one row) or Narrow (one row per region)? | w | |
-| Subject by subject file, one condition per line (not systat) | `goPastSXS` | We won't base our analysis on this file, but we might as well save it. |
+| Subject by subject file, one condition per line (not systat) | `goPastSXS` | We won't base our analysis on this file, but might as well save it. |
 | Subject by subject file, formatted for Systat | [press return] | We don't want this file. |
-| Item by item file, one condition per line (not systat) | `goPastIXI` | We won't base our analysis on this file, but we might as well save it.|
+| Item by item file, one condition per line (not systat) | `goPastIXI` | We won't base our analysis on this file, but might as well save it.|
 | Item by item file, formatted for Systat | [press return] | We don't want this file. |
 | Do you want information about long and short times printed? | n | WARNING: "y" is a possible source of segfault. |
 | Do you want a typeout of the item-by-item data? | n | WARNING: "y" is a possible source of segfault. |
@@ -255,9 +255,9 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 | File of item X subject combinations | `probFixationIXS` | We will base our analysis on this file. |
 | Do you want ALL trials written, or just trials with Observations? | a | |
 | Do you want Wide output (all regions in one row) or Narrow (one row per region)? | w | |
-| Subject by subject file, one condition per line (not systat) | `probFixationSXS` | We won't base our analysis on this file, but we might as well save it. |
+| Subject by subject file, one condition per line (not systat) | `probFixationSXS` | We won't base our analysis on this file, but might as well save it. |
 | Subject by subject file, formatted for Systat | [press return] | We don't want this file. |
-| Item by item file, one condition per line (not systat) | [`probFixationIXI` | We won't base our analysis on this file, but we might as well save it. |
+| Item by item file, one condition per line (not systat) | [`probFixationIXI` | We won't base our analysis on this file, but might as well save it. |
 | Item by item file, formatted for Systat | [press return] | We don't want this file. |
 | Do you want information about long and short times printed? | n | WARNING: "y" is a possible source of segfault. |
 | Do you want a typeout of the item-by-item data? | n | WARNING: "y" is a possible source of segfault. |
@@ -272,9 +272,9 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 | File of item X subject combinations | `probRegressionIXS` | We will base our analysis on this file. |
 | Do you want ALL trials written, or just trials with Observations? | a | |
 | Do you want Wide output (all regions in one row) or Narrow (one row per region)? | w | |
-| Subject by subject file, one condition per line (not systat) | `probRegressionSXS` | We won't base our analysis on this file, but we might as well save it. |
+| Subject by subject file, one condition per line (not systat) | `probRegressionSXS` | We won't base our analysis on this file, but might as well save it. |
 | Subject by subject file, formatted for Systat | [press return] | We don't want this file. |
-| Item by item file, one condition per line (not systat) | `probRegressionIXI` | We won't base our analysis on this file, but we might as well save it. |
+| Item by item file, one condition per line (not systat) | `probRegressionIXI` | We won't base our analysis on this file, but might as well save it. |
 | Item by item file, formatted for Systat | [press return] | We don't want this file. |
 | Do you want information about long and short times printed? | n | WARNING: "y" is a possible source of segfault. |
 | Do you want a typeout of the item-by-item data? | n | WARNING: "y" is a possible source of segfault. |
@@ -294,9 +294,9 @@ WARNING: Sometimes the program segfaults and crashes for various unknown reasons
 | File of item X subject combinations | `firstFixationIXS` | We will base our analysis on this file. |
 | Do you want ALL trials written, or just trials with Observations? | a | |
 | Do you want Wide output (all regions in one row) or Narrow (one row per region)? | w | |
-| Subject by subject file, one condition per line (not systat) | `firstFixationSXS` | We won't base our analysis on this file, but we might as well save it. |
+| Subject by subject file, one condition per line (not systat) | `firstFixationSXS` | We won't base our analysis on this file, but might as well save it. |
 | Subject by subject file, formatted for Systat | [press return] | We don't want this file |
-| Item by item file, one condition per line (not systat) | `firstFixationIXI` | We won't base our analysis on this file, but we might as well save it. |
+| Item by item file, one condition per line (not systat) | `firstFixationIXI` | We won't base our analysis on this file, but might as well save it. |
 | Item by item file, formatted for Systat | [press return] | We don't want this file |
 | Do you want information about long and short times printed? | n | WARNING: "y" is a possible source of segfault. |
 | Do you want a typeout of the item-by-item data? | n | WARNING: "y" is a possible source of segfault. |
@@ -381,9 +381,9 @@ awk -F"," '$4~/_/ && $7!=0{print $2,$4,$7}' firstPassIXS_edited | tr "_" " "| ..
 #### UNBALANCED GRID DUE TO EXCLUDING ZERO FIXATIONS:
 
 ### Graphs
-Copy measures from terminal into excel (perhaps with the aid of a text-to-TSV converter such as https://www.browserling.com/tools/text-to-tsv)
+* Copy measures from terminal into excel (perhaps with the aid of a text-to-TSV converter such as https://www.browserling.com/tools/text-to-tsv)
 
-Make graphs
+* Make graphs
 
 # Support and Contributing
 
@@ -395,10 +395,13 @@ Make graphs
 	* Recalibration can be performed between blocks at each break point, but unfortunately we are not able to perform mid-block recalibration :( In the meantime just guide the participant's gaze to find the trigger point, and remind them again to refrain from moving. Some damage repair can hopefully be absolved when we run `fixAlign.R` on the ascii files.
 
 ## Additional support
-* If anything is buggy or unclear, please open an issue or pull request, or contact ~~itang1@swarthmore.edu~~ itang1@alumni.swarthmore.edu.
+* If anything is buggy or unclear, please open an issue or pull request, or contact ~~itang1@swarthmore.edu~~ itang1@alum.swarthmore.edu.
 * This repo is no longer actively being maintained as of June 2019.
 
 [Back to top](#limerick1-workspace)
+
+## Future work
+* Limerick2
 
 # Acknowledgements
 Thanks to Professor [Dan Grodner](https://www.swarthmore.edu/psychology/faculty-staff) for enormous guidance and so much invested time over the years; to Professors [Dan Grodner](https://www.swarthmore.edu/psychology/faculty-staff) and [Nathan Sanders](http://sanders.phonologist.org) for setting up the experiment; to Drs. [Mara Breen](https://www.mtholyoke.edu/~mbreen/) and [Charles Clifton](http://www.umass.edu/pbs/people/charles-clifton) for providing the [stimuli](https://www.mtholyoke.edu/~mbreen/pubs/LimericksItems.pdf) and [research](https://www.mtholyoke.edu/~mbreen/pubs/BreenClifton_JML_2011.pdf) on which this study was based; to Drs. [Charles Clifton](http://www.umass.edu/pbs/people/charles-clifton), [Adrian Staub](https://www.umass.edu/pbs/people/adrian-staub), [Andrew Cohen](https://www.umass.edu/pbs/people/andrew-cohen), [Jesse Harris](https://linguistics.ucla.edu/person/jesse-harris/), and [colleagues](http://blogs.umass.edu/eyelab/people/) for creating and maintaining the [eyetracking analysis software](http://blogs.umass.edu/eyelab/software/) that we relied on; to the alumni and current students practicing research in the [Swarthmore Psycholinguistics Lab](https://www.swarthmore.edu/psychology/labs); to the [Swarthmore Department of Psychology](https://www.swarthmore.edu/psychology) for sponsoring the experiment; and to the undergraduate students at [Swarthmore College](https://www.swarthmore.edu) who participated in the study.
@@ -413,9 +416,3 @@ Thanks to Professor [Dan Grodner](https://www.swarthmore.edu/psychology/faculty-
 This project was created for non-monetary educational purposes only (please don't sue me)
 
 [Back to top](#limerick1-workspace)
-
-# TODO
-* run the statistics
-* still writing the actual paper
-* when will there be a part 2
-* (unrelated) make progress on the other scalar judgement loading study replication

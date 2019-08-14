@@ -3,7 +3,7 @@
 Technical elements of a cognitive psychology thesis work to be submitted to the [faculty](https://www.swarthmore.edu/psychology/faculty-staff) of the [Department of Psychology](https://www.swarthmore.edu/psychology) at [Swarthmore College](swarthmore.edu) in May 2019 in partial fulfillment for the degree of Bachelor of Arts.
 
 ## Table of Contents
-* [Background / Abstract [draft]](#background-/-abstract)
+* [Abstract](#abstract)
 * [In this repository](#in-this-repository)
 * [Requirements](#requirements)
 * [Usage](#usage)
@@ -18,10 +18,9 @@ Technical elements of a cognitive psychology thesis work to be submitted to the 
 	* [Additional support](#additional-support)
 * [Acknowledgements](#acknowledgements)
 * [License](#license)
-* [TODO](#todo)
 
 
-# Background / Abstract
+# Abstract
 **_Occupation of Inner Speech in the Working Memory During Silent Reading:<br/>
 Effects of Articulatory Suppression on Anticipated Lexical Stress_**
 

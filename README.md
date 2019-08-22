@@ -32,9 +32,11 @@ Key words: inner speech, silent reading, working memory, phonological loop, arti
 
 # In this repository
 
-* `src/` - source code
-* `data/` - data
+* `data/` - collected data
+* `src/` - source code for data processing
+* `awkScripts/` - awk scripts for data wrangling
 * `test/` - testing stuff, everything in here is archived stuff to be ignored
+* `InnerSpeechWorkingMemory.pdf` - copy of paper
 * a mountain of technical difficulties
 
 See [project wiki](https://github.com/itang1/limerick1/wiki) for more details about contents.

@@ -32,9 +32,9 @@ excluded zero-fixations during ./anova for the reading times measures
 
 =====================
 graphs 5: 5/2/19
-we are needing  to do "exploratory research" because something is very wrong with our study
+we are needing  to do "exploratory research" because something is very wrong with our study.
 
-- ran with all  48 participants, excluding everyone who didn't fixate at least 50% of the time
+- ran with all  47 participants, excluding everyone who didn't fixate at least 50% of the time
 - forget about the zero-fixations, just leave them in there. B&C evidently didn't have any problems with zero fixations because their subjects were fixating 90% of the time.
 - forget about  firstFix
 - this is the set used for analyses in the paper

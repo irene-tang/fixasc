@@ -8,7 +8,7 @@ Delete all of the subfolders (and their contents) in data/ that are not data/ori
 Then re-create them as empty folders
 """
 
-paths = ["../data/FA_Dir", "../data/new_asc", "../data/question_acc", "../data/robodoc", "../data/scripter"]
+paths = ["../data/FA_Dir", "../data/reformat_asc", "../data/question_acc", "../data/robodoc", "../data/scripter"]
 # paths = ["../data/FA_Dir", "../data/robodoc"]
 # paths = ["../data/robodoc"]
 
@@ -30,14 +30,14 @@ for path in paths:
 
 
 """
-Runs make_new_asc.py
+Runs reformat_asc.py
 """
-print('\n==========\nrunning make_new_asc\n==========\n', end='')
+print('\n==========\nrunning reformat_asc\n==========\n', end='')
 
 file_list = glob.glob('../data/original_asc/*.asc')
 
 for asc in file_list:
-    p = subprocess.call(['python3', 'make_new_asc/make_new_asc.py', asc])
+    p = subprocess.call(['python3', 'reformat_asc/reformat_asc.py', asc])
     print('.', end='', flush=True)
 
 print()

@@ -18,7 +18,7 @@ def check_args():
 ###################################
 #### global variables here ########
 ###################################
-# temporary buffer to store lines before writing them to new_asc file at the end
+# temporary buffer to store lines before writing them to reformat_asc file at the end
 buffer = []
 # check for correct command-line inputs, and initialize variables
 original_asc = check_args()
@@ -590,14 +590,14 @@ def insert_ias(buffer, remaining_lines):
 
 def write_to_outfile(buffer):
     """
-    Writes the contentes of the buffer list into the new_asc output file
+    Writes the contentes of the buffer list into the reformat_asc output file
     """
     # print original_asc.rsplit('/', 2)
     inpath = original_asc.rsplit('/', 2)
-    new_asc_filename = inpath[0] + '/new_asc/' + inpath[-1].split('.')[0] + '_new.asc'
+    reformat_asc_filename = inpath[0] + '/reformat_asc/' + inpath[-1].split('.')[0] + '_reformat.asc'
 
-    # print new_asc_filename
-    with open(new_asc_filename, 'w+') as outfile:
+    # print reformat_asc_filename
+    with open(reformat_asc_filename, 'w+') as outfile:
         for x in buffer:
             outfile.write(x)
     outfile.close()

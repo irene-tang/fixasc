@@ -3,11 +3,11 @@
 
 import sys
 
-OUTPUT_FOLDER = '../data/scripter/'
+OUTPUT_FOLDER = '../data/scripter_output/'
 
 
 # input_file = input("What is the name of your delimited script file?")
-input_file = "../data/scripter/output_from_scripter.script"
+input_file = "../data/scripter_output/output_from_scripter.script"
 
 output_file = input_file.rsplit('.', 1)[0] + ".cnt"
 # print (output_file)

@@ -50,8 +50,8 @@ import csv
 import argparse
 
 ###### FOLDER LOCATIONS #######
-OUTPUT_FOLDER = '../data/robodoc/'
-INPUT_FOLDER = '../data/FA_Dir/'
+OUTPUT_FOLDER = '../data/robodoc_output/'
+INPUT_FOLDER = '../data/fixed_aligned_asc/'
 ###############################
 
 	##################################################

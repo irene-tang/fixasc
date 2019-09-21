@@ -3,7 +3,7 @@ import statistics # requires python 3.4+
 
 # the min stdev from the median that we're going to tolerate
 MIN_DEV = 2.5
-QUEST_SUM_FILEPATH = "../data/question_acc/QuestSum.txt"
+QUEST_SUM_FILEPATH = "../data/question_acc_output/QuestSum.txt"
 
 # list of lines in the file, excluding the header line
 lines = open(QUEST_SUM_FILEPATH, "r").readlines()[1:]

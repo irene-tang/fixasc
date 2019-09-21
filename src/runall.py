@@ -4,13 +4,11 @@ import subprocess
 import shutil
 
 """
-Delete all of the subfolders (and their contents) in data/ that are not data/original_asc/ or data/eyedry/,
+Delete all of the subfolders (and their contents) in data/ except for data/original_asc/ or data/eyedry_output/
 Then re-create them as empty folders
 """
 
-paths = ["../data/FA_Dir", "../data/reformat_asc", "../data/question_acc", "../data/robodoc", "../data/scripter"]
-# paths = ["../data/FA_Dir", "../data/robodoc"]
-# paths = ["../data/robodoc"]
+paths = ["../data/fix_aligned_asc", "../data/reformatted_asc", "../data/question_acc_output", "../data/robodoc_output", "../data/scripter_output"]
 
 for path in paths:
     try:
@@ -19,6 +17,8 @@ for path in paths:
         print ("Deletion of the directory %s failed" % path)
     else:
         print ("Successfully deleted the directory %s " % path)
+
+print()
 
 for path in paths:
     try:

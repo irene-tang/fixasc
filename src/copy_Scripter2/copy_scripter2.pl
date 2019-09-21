@@ -64,7 +64,7 @@ chomp($sequence);
 
 # print("Enter the name of your output file: ");
 # $outputfile = <STDIN>;
-$outputfile = "../data/scripter/output_from_scripter.script";
+$outputfile = "../data/scripter_output/output_from_scripter.script";
 chomp($outputfile);
 
 open(inputfile, $inputfile) or die("can't open file\n");

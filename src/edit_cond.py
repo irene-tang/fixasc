@@ -3,21 +3,17 @@ import csv
 import numpy as np
 
 # declare output path
-OUTPUT_FOLDER = "../data/eyedry/edited_originals/"
-INPUT_FOLDER =  "../data/eyedry/originals/*IXS"
-# FILES_TO_PROCESS = [
-#     "../data/eyedry/originals/firstPassIXS",
-#     "../data/eyedry/originals/goPastIXS",
-#     "../data/eyedry/originals/probFixationIXS",
-#     "../data/eyedry/originals/probRegressionIXS",
-#     "../data/eyedry/originals/firstFixationIXS",
-# ]
+# INPUT_FOLDER =  "../data/eyedry_output/graphs5/original_eyedry_output_5/*IXS"
+# OUTPUT_FOLDER = "../data/eyedry_output/graphs5/edited_eyedry_output_5/"
+INPUT_FOLDER = sys.argv[1] + '/*IXS'
+OUTPUT_FOLDER = sys.argv[2] + '/'
 
 FILES_TO_PROCESS = [f for f in glob.glob(INPUT_FOLDER)]
 
 # check for correct commandline args
-# if len(sys.argv) != 2:
-#     print('incorrect usage: python3 dataanal.p y[file]')
+if len(sys.argv) != 3:
+    print('incorrect usage: python3 edit_cond.py [INPUT_FOLDER] [OUTPUT_FOLDER]')
+    exit(-1)
 
 # get name of file
 # inputFilename = sys.argv[1]

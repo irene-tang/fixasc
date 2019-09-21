@@ -8,12 +8,12 @@ def check_args():
     """
     # check for correct command-line inputs
     if len(sys.argv) != 2:
-        print ("usage: python makeasc.py [original_asc input]")
+        print ("usage: python reformat_asc.py [original_asc_filename input]")
         exit(-1)
 
     # the original asc input file
-    original_asc = sys.argv[1]
-    return original_asc
+    original_asc_filename = sys.argv[1]
+    return original_asc_filename
 
 ###################################
 #### global variables here ########
@@ -21,7 +21,7 @@ def check_args():
 # temporary buffer to store lines before writing them to reformat_asc file at the end
 buffer = []
 # check for correct command-line inputs, and initialize variables
-original_asc = check_args()
+original_asc_filename = check_args()
 # metadata about the current trial
 trial_metadatas = {
     'subtypeid' : '',
@@ -87,13 +87,13 @@ def getline(remaining_lines):
         # print("Successfully parsed entire file.")
         exit(-1)
 
-def open_input(original_asc):
+def open_input(original_asc_filename):
     """
     Opens the given input file.
     Parses it into a list, and returns that list.
     """
     try:
-        infile = open(original_asc, 'r')
+        infile = open(original_asc_filename, 'r')
         remaining_lines = infile.readlines()
 
         # skip everything after TRIALID 101
@@ -105,7 +105,7 @@ def open_input(original_asc):
         return remaining_lines
 
     except IOError:
-        print("original_asc file not found or path is incorrect")
+        print("original_asc_filename file not found or path is incorrect")
         exit(-1)
 
 def conversion_metadata(buffer, remaining_lines):
@@ -511,12 +511,12 @@ def read_ias_letter(line, timestamp):
     (This method is not currently being used)
     """
     # format the path to the folder where the .ias files are stored
-    # ias_folder = original_asc.split('.')[0] + '_aoi'
+    # ias_folder = original_asc_filename.split('.')[0] + '_aoi'
     ias_folder = ''
 
     for list in ['A', 'B', 'C', 'D', 'RevA', 'RevB', 'RevC', 'RevD']:
-        if str(original_asc.split('/')[-1].split('.')[0]) in lists.get(list, 0):
-            ias_folder = original_asc.rsplit('/', 1)[0] + '/' + list + '_aoi'
+        if str(original_asc_filename.split('/')[-1].split('.')[0]) in lists.get(list, 0):
+            ias_folder = original_asc_filename.rsplit('/', 1)[0] + '/' + list + '_aoi'
             break
     if ias_folder == '':
         print ('unable to determine list')
@@ -592,9 +592,9 @@ def write_to_outfile(buffer):
     """
     Writes the contentes of the buffer list into the reformat_asc output file
     """
-    # print original_asc.rsplit('/', 2)
-    inpath = original_asc.rsplit('/', 2)
-    reformat_asc_filename = inpath[0] + '/reformat_asc/' + inpath[-1].split('.')[0] + '_reformat.asc'
+    # print original_asc_filename.rsplit('/', 2)
+    inpath = original_asc_filename.rsplit('/', 2)
+    reformat_asc_filename = inpath[0] + '/reformatted_asc/' + inpath[-1].split('.')[0] + '_reformatted.asc'
 
     # print reformat_asc_filename
     with open(reformat_asc_filename, 'w+') as outfile:
@@ -609,7 +609,7 @@ def main():
     """
 
     # open the input file, if possible, and read it into a list
-    remaining_lines = open_input(original_asc)
+    remaining_lines = open_input(original_asc_filename)
 
     # the current line that is being examined
     line = ''

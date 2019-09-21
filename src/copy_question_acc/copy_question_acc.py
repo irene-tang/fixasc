@@ -6,8 +6,8 @@ import csv
 import argparse
 
 ###### FOLDER LOCATIONS #######
-INPUT_FOLDER = '../data/new_asc/'
-OUTPUT_FOLDER = '../data/question_acc/'
+INPUT_FOLDER = '../data/reformatted_asc/'
+OUTPUT_FOLDER = '../data/question_acc_output/'
 ###############################
 
 parser = argparse.ArgumentParser()
@@ -52,7 +52,7 @@ for file in file_list:
 		print(file)
 
 	search_strings = ['TRIALID', 'QUESTION_ANSWER', 'TRIAL_RESULT']
-	temp_quest_file = open('../data/question_acc/temp_quest_file','w+')
+	temp_quest_file = open(OUTPUT_FOLDER + '/temp_quest_file','w+')
 	for line in filename:
 		for entry in search_strings:
 			if entry in line:

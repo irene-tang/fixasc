@@ -1,6 +1,0 @@
-awk -F"," '$4~/_/ && NR>1 {print $2,$4,$7}' goPastIXS_edited | awk -f removebadsubs.awk | tr "_" " " | anova sbj clashT second gp
-
-
-
-run for all five of the measures
-maybe need  to switch to ../anova instead of anova

@@ -228,6 +228,7 @@ if not file_list:
 # Write files in file_list to lst file
 f = open(OUTPUT_FOLDER + 'files_processed.lst', 'w')
 for filename in file_list:
+	print("Robodoc found " + filename)
 	#strip off extension
 	output = filename[:-4]
 	#add .da1 extension to filename
@@ -235,6 +236,7 @@ for filename in file_list:
 
 	#Write the name of the new file
 	f.write(str(output_da1)+'\n')
+print("Robodoc found all files_processed")
 
 # Create set of filenames to exclude based on blink exclusion criteria
 # Ignore if auto_exclude = 0

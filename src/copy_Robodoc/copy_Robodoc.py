@@ -51,7 +51,7 @@ import argparse
 
 ###### FOLDER LOCATIONS #######
 OUTPUT_FOLDER = '../data/robodoc_output/'
-INPUT_FOLDER = '../data/fixed_aligned_asc/'
+INPUT_FOLDER = '../data/fix_aligned_asc/'
 ###############################
 
 	##################################################
